@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><title>样张 A · 钩子</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .bubbles { position: absolute; inset: 0; }
+  .bb { position: absolute; padding: 18px 28px; border-radius: 30px; font-family: "Serif"; font-weight: 600; color: var(--ink);
+        background: #fffaf2; box-shadow: 0 10px 28px rgba(110,70,40,.16), 0 1px 0 rgba(255,255,255,.9) inset; white-space: nowrap; }
+  .bb.me { background: #f7cfc8; color: #4a2018; }
+  .bb.l::after, .bb.r::after { content: ""; position: absolute; bottom: -2px; width: 22px; height: 22px; background: inherit; }
+  .bb.l { border-bottom-left-radius: 8px; } .bb.r { border-bottom-right-radius: 8px; }
+  .bb.far { filter: blur(3px); opacity: .55; }
+  .bb.mid { filter: blur(1px); opacity: .85; }
+  .bust { position: absolute; left: 860px; top: 34px; height: 1000px; filter: drop-shadow(0 30px 40px rgba(90,58,30,.32)); }
+  .dust { position: absolute; left: 820px; top: 880px; width: 760px; height: 140px;
+          background: radial-gradient(ellipse 50% 40% at 50% 50%, rgba(210,185,150,.55), rgba(210,185,150,0)); filter: blur(6px); }
+  .seal2 { position: absolute; left: 700px; top: 250px; width: 120px; height: 236px; border: 7px solid var(--seal); border-radius: 12px;
+           box-sizing: border-box; color: var(--seal); font-family: "Serif"; font-weight: 900; font-size: 84px; line-height: 1;
+           display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; transform: rotate(-7deg);
+           mix-blend-mode: multiply; opacity: .93; box-shadow: inset 0 0 0 4px rgba(243,235,221,.55); }
+  /* 柏拉图的回复气泡：尾巴指向胸像的嘴 */
+  .reply { position: absolute; left: 560px; top: 286px; transform: rotate(-2deg); }
+  .reply .who { font-family: "Serif"; font-weight: 700; font-size: 26px; color: var(--ink-2); letter-spacing: 3px; margin: 0 0 8px 6px; }
+  .reply .say { position: relative; padding: 26px 40px; border-radius: 36px; border-bottom-right-radius: 10px;
+    background: #fffdf8; border: 3px solid var(--gold); font-family: "Serif"; font-weight: 900; font-size: 60px; color: var(--ink);
+    box-shadow: 0 18px 40px rgba(110,70,40,.22); white-space: nowrap; }
+  .reply .say::after { content: ""; position: absolute; right: -38px; bottom: 6px; width: 46px; height: 34px; background: #fffdf8;
+    border: 3px solid var(--gold); border-left: none; border-top: none; border-bottom-right-radius: 40px; transform: skewX(-30deg); }
+  .reply .quote { display: inline-block; margin: 12px 0 0 10px; padding: 8px 18px; border-radius: 8px; background: rgba(120,96,72,.12);
+    font-family: "Serif"; font-weight: 500; font-size: 26px; color: #7a6450; }
+  .reply .quote::before { content: "引用："; }
+</style></head>
+<body><div class="stage">
+  <div class="marble"></div>
+  <div class="bubbles" id="bubbles"></div>
+  <svg class="layer" id="svg" viewBox="0 0 1920 1080"></svg>
+  <div class="dust"></div>
+  <img class="bust" src="gen/plato-cut.jpg">
+  <div class="reply">
+    <div class="who">柏拉图</div>
+    <div class="say">我没有说过啊</div>
+    <div class="quote">柏拉图式恋爱</div>
+  </div>
+  <div class="vignette"></div><div class="grain"></div>
+  <div class="capbg"></div>
+  <div class="cap">但这个词，柏拉图<em>一次都没说过</em></div>
+</div>
+<script src="kit.js"></script>
+<script>
+// 示意聊天气泡（不是真实截图）：被胸像震散到两边
+const msgs = ["我们只是柏拉图式恋爱", "网恋三年没见过面，算柏拉图吗", "柏拉图式，懂的都懂", "异地恋＝柏拉图式恋爱？",
+  "我想要一场柏拉图式的爱情", "他说我们是柏拉图式的", "不见面也能爱，很柏拉图", "精神恋爱就是柏拉图式恋爱吧",
+  "柏拉图式恋爱，听起来好高级", "只谈心，不碰身体", "我们是柏拉图式恋爱", "柏拉图式恋爱是什么体验"];
+const R = K.rng(11), host = document.getElementById("bubbles");
+// 左侧密集、右侧边缘一列，中间胸像区域空出
+const slots = [];
+for (let row = 0; row < 8; row++) {
+  const y = 40 + row * 104 + R() * 20;
+  slots.push([30 + R() * 60, y, row % 3 === 0 ? "mid" : ""]);
+  if (row % 2 === 0 && (row < 2 || row > 4)) slots.push([360 + R() * 120, y + 40, row % 4 === 0 ? "far" : "mid"]);
+  slots.push([1560 + R() * 80, y + 10, row % 2 ? "far" : "mid"]);
+}
+slots.forEach(([x, y, depth], i) => {
+  if (y > 800 && x < 1500) return;
+  const d = document.createElement("div"), me = R() < .35;
+  d.className = `bb ${me ? "me r" : "l"} ${depth}`;
+  d.textContent = msgs[i % msgs.length];
+  const fs = depth === "far" ? 26 : depth === "mid" ? 32 : 38;
+  d.style.cssText = `left:${x}px;top:${y}px;font-size:${fs}px;transform:rotate(${(R() - .5) * 14}deg)`;
+  host.appendChild(d);
+});
+// 冲击线 + 微尘
+let s = `<defs><filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="1.2"/></filter></defs>`;
+for (let i = 0; i < 14; i++) {
+  const a = Math.PI * (1.22 + i * .055), x = 1230 + Math.cos(a) * 470, y = 520 + Math.sin(a) * 420;
+  s += `<line x1="${x}" y1="${y}" x2="${x + Math.cos(a) * 60}" y2="${y + Math.sin(a) * 60}" stroke="#c99a4a" stroke-width="4" stroke-linecap="round" opacity=".55"/>`;
+}
+s += K.motes(60, 5, { color: "#c99a4a", op: .6 });
+document.getElementById("svg").innerHTML = s;
+</script>
+</body></html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>loading</title>
+<style>
+@font-face{font-family:NotoSC;src:url(../videos/hok-split/assets/fonts/NotoSansSC-VF.ttf);font-weight:100 900}
+*{box-sizing:border-box} html,body{margin:0;overflow:hidden;background:#070b1c}
+#film{position:absolute;left:0;top:0;width:1920px;height:1080px;border:0;transform-origin:0 0}
+#shade{position:absolute;left:0;right:0;top:0;background:linear-gradient(rgba(7,11,28,.92),rgba(7,11,28,.7) 62%,rgba(7,11,28,0))}
+.t{position:absolute;left:0;right:0;text-align:center;font-family:NotoSC,sans-serif;font-weight:900;color:#fff;line-height:1.16;letter-spacing:.02em;-webkit-text-stroke:14px #0a0a0a;paint-order:stroke fill;text-shadow:0 10px 0 #0a0a0a}
+.t .hl{color:#ffd21f}
+</style>
+</head>
+<body>
+<iframe id="film" src="../videos/hok-split/index.html"></iframe>
+<div id="shade"></div>
+<div class="t" id="t">王者荣耀，<br>为什么<span class="hl">不合区</span>？</div>
+<script type="module">
+// 封面用片里同一个场景定格：S3 苹果收费站张嘴咬掉硬币 25% 的那一拍（52.75 s，「咔嚓！」），隐藏字幕和 HUD，按焦点裁成 4:3 / 3:4。
+const a = new URLSearchParams(location.search).get("a") || "43", W = a === "43" ? 1440 : 1080, H = a === "43" ? 1080 : 1440;
+const FOCUS = [880, 420], T_FRAME = 52.75, f = document.getElementById("film"), s = a === "43" ? 1.05 : 1.45;
+f.style.transform = `translate(${(W / 2 - FOCUS[0] * s).toFixed(1)}px,${(H * .64 - FOCUS[1] * s).toFixed(1)}px) scale(${s})`;
+await document.fonts.load("900 120px NotoSC", "王者荣耀为什么不合区");
+const w = await new Promise((r) => { const c = () => { const x = f.contentWindow; if (x && x.__renderFrame) r(x); else setTimeout(c, 100); }; c(); });
+w.document.getElementById("hud").style.display = "none"; w.__COVER_NO_LEDGER = true;
+w.__renderFrame(T_FRAME); await new Promise(requestAnimationFrame); w.__renderFrame(T_FRAME);
+const t = document.getElementById("t"), sh = document.getElementById("shade");
+t.style.top = a === "43" ? "50px" : "90px"; t.style.fontSize = a === "43" ? "124px" : "128px"; sh.style.height = a === "43" ? "420px" : "540px";
+document.title = "ready";
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+/* 第九期风格样张 · 共用样式。GitHub 浅色世界：浅灰白底、白卡片、Markdown 符号一律暖橙。 */
+@font-face { font-family: "NotoSC"; src: url("fonts/NotoSansSC-VF.ttf"); font-weight: 100 900; }
+@font-face { font-family: "CMono"; src: url("fonts/CascadiaMono.ttf"); }
+
+/* v2（2026-10-18）：用户说手机上对比度太低。所有颜色用 tools/contrast.py 验过：
+   小字 ≥ 7:1，橙/绿文字在白底 ≥ 4.5:1，粉线 ≥ 4:1，token 色块对白纸 ≥ 1.8:1、上面的黑字 ≥ 7:1 */
+:root {
+  --bg: #EBEEF2;
+  --card: #FFFFFF;
+  --line: #9AA4AF;
+  --ink: #1F2328;
+  --ink2: #424A53;
+  --md: #B85400;      /* Markdown 符号，全片固定（白底 4.9:1） */
+  --green: #17702F;   /* 强调 */
+  --pink: #D6404D;    /* 高亮：暖红粉，不偏洋红 */
+  --pink-a: 214, 64, 77;
+  --t1: #F2A16B; --t2: #7CCB9B; --t3: #7EB6E6; --t4: #DDB650; --t5: #EE8E88; /* token 色块，不用紫 */
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1920px; height: 1080px; overflow: hidden; }
+body {
+  font-family: "NotoSC", sans-serif; color: var(--ink);
+  background:
+    radial-gradient(900px 600px at 18% 22%, rgba(242, 161, 107, .16), transparent 70%),
+    radial-gradient(900px 640px at 85% 78%, rgba(124, 203, 155, .16), transparent 70%),
+    radial-gradient(1400px 900px at 50% 45%, #F7F8FA, var(--bg) 70%);
+}
+.mono { font-family: "CMono", monospace; }
+.md { color: var(--md); }
+
+/* 截图卡片 */
+.shot { position: absolute; background: var(--card); border: 1.5px solid var(--line); border-radius: 14px; overflow: hidden;
+  box-shadow: 0 30px 60px -20px rgba(31, 35, 40, .4), 0 8px 18px -8px rgba(31, 35, 40, .2); }
+/* GitHub 截图本身偏灰，略提对比 */
+.shot img { display: block; transform-origin: 0 0; filter: contrast(1.12) saturate(1.1); }
+.hl { position: absolute; border-radius: 6px; background: rgba(var(--pink-a), .22);
+  box-shadow: inset 6px 0 0 var(--pink), inset 0 0 0 2px rgba(var(--pink-a), .55), 0 0 26px rgba(var(--pink-a), .45); }
+
+/* 文件名标签 */
+.chip { position: absolute; padding: 14px 26px; border-radius: 999px; background: #fff; border: 2px solid var(--line);
+  font: 600 40px "CMono", monospace; color: var(--ink); white-space: nowrap;
+  box-shadow: 0 18px 40px -14px rgba(31, 35, 40, .5), 0 0 0 6px rgba(var(--pink-a), .16); }
+
+/* 画面内大字 / 出处 */
+.big { position: absolute; font-weight: 700; letter-spacing: .02em; }
+.src { position: absolute; left: 80px; bottom: 50px; font-size: 28px; font-weight: 500; color: var(--ink2); letter-spacing: .03em; }
+
+/* 字幕区（y 900–1010）在样张里只画一条淡参考线，成片字幕走 SRT */
+.capzone { position: absolute; left: 160px; right: 160px; top: 900px; height: 110px; border-top: 1px dashed rgba(66, 74, 83, .25); }
+.capzone span { position: absolute; right: 0; top: 6px; font-size: 16px; color: rgba(66, 74, 83, .45); }

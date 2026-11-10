@@ -1,0 +1,146 @@
+/* 第十七期 · 蓝色大肥鱼全网刷屏？
+   画风 E「天蓝浅白」：浅天蓝底 + 白卡 + 深蓝灰文字 + 天蓝线条。亮底，对比度按 WCAG 过（见 BRIEF「配色」）。
+   底径向 #eef8fe → #dff1fc → #cde8f7；正文 #143a5c（≥ 9:1）；次要 #2f5f7d（≥ 5.4:1）；强调字 #0a6499（≥ 5:1）；
+   线条 #1279b3（≥ 3.7:1）；天蓝 #1f9bd6 只作填充 / 光晕；暖橙 #f0a04b 只作填充，橙字 #9a4700；腮红珊瑚 #ff9e8f（不透明，不叠在蓝上发紫）。
+   官方 Logo 蓝 #4d6bfe 只用于 Logo 本身。
+   字体：@font-face 只有三个名字——NotoSC（黑）、NotoSerifSC（宋）、WenKai（霞鹜文楷，贴纸 / 手写）。别起 "Serif" / "Sans"。 */
+
+@font-face { font-family: "NotoSerifSC"; src: url("fonts/NotoSerifSC-VF.ttf") format("truetype"); font-weight: 200 900; font-display: block; }
+@font-face { font-family: "NotoSC"; src: url("fonts/NotoSansSC-VF.ttf") format("truetype"); font-weight: 100 900; font-display: block; }
+@font-face { font-family: "WenKai"; src: url("fonts/LXGWWenKai-Regular.ttf") format("truetype"); font-display: block; }
+
+html, body { margin: 0; padding: 0; background: #dff1fc; overflow: hidden; }
+*, *::before, *::after { box-sizing: border-box; }
+#root { position: relative; width: 1920px; height: 1080px; overflow: hidden; }
+.layer { position: absolute; inset: 0; }
+canvas.layer { width: 1920px; height: 1080px; }
+#stage { overflow: visible; transform-origin: 960px 540px; }
+
+/* ---------- 底 ---------- */
+#bg { background: radial-gradient(70% 70% at 50% 42%, #f4fbff 0%, #dff1fc 52%, #c6e3f5 100%); }
+#bg .vig { position: absolute; inset: 0; background: radial-gradient(80% 76% at 50% 46%, transparent 60%, rgba(70, 140, 190, 0.16) 100%); }
+
+/* ---------- HUD ---------- */
+#hud .scrim { position: absolute; left: 0; right: 0; top: 860px; bottom: 0; background: linear-gradient(180deg, rgba(240, 249, 255, 0), rgba(240, 249, 255, 0.82) 55%); }
+#hud .era {
+  position: absolute; left: 50%; top: 34px; margin-left: -200px; width: 400px; height: 56px;
+  border: 2.5px solid #1279b3; border-radius: 999px; background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 6px 22px rgba(31, 155, 214, 0.18);
+  display: grid; place-items: center; overflow: hidden; opacity: 0; visibility: hidden;
+}
+#hud .era span { grid-area: 1 / 1; font-family: "NotoSC", sans-serif; font-weight: 700; font-size: 26px; line-height: 1; letter-spacing: 0.16em; text-indent: 0.16em; color: #143a5c; white-space: nowrap; opacity: 0; }
+#hud .mark {
+  position: absolute; right: 56px; top: 42px; font-family: "NotoSC", sans-serif; font-weight: 700; font-size: 22px;
+  letter-spacing: 0.2em; color: #2f5f7d; border: 2px solid #2f5f7d; border-radius: 999px;
+  padding: 6px 18px; opacity: 0; visibility: hidden; background: rgba(255, 255, 255, 0.92);
+}
+#hud .note {
+  position: absolute; left: 0; right: 0; top: 774px; text-align: center;
+  font-family: "NotoSC", sans-serif; font-weight: 600; font-size: 32px; line-height: 1.3; letter-spacing: 0.04em;
+  color: #2f5f7d; opacity: 0; visibility: hidden;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.95), 0 0 3px rgba(255, 255, 255, 0.95);
+}
+#hud .note b { color: #0a6499; font-weight: 800; }
+#hud .note i { font-style: normal; color: #9a4700; font-weight: 800; }
+#hud .cap {
+  position: absolute; left: 0; right: 0; top: 918px; text-align: center; opacity: 0; visibility: hidden;
+  font-family: "NotoSC", sans-serif; font-weight: 800; font-size: 46px; line-height: 64px; letter-spacing: 0.04em;
+  color: #143a5c; white-space: nowrap;
+  text-shadow: 0 0 14px rgba(255, 255, 255, 0.95), 0 0 4px rgba(255, 255, 255, 1);
+}
+#hud .cap .hi { color: #0a6499; }
+#hud .cap.voice { font-family: "WenKai", serif; font-weight: 400; font-size: 54px; letter-spacing: 0.06em; color: #0a6499; -webkit-text-stroke: 1.3px #0a6499; }
+#hud .flash { position: absolute; inset: 0; background: #fff; opacity: 0; visibility: hidden; }
+
+/* ---------- 通用件 ---------- */
+.abs { position: absolute; }
+.card {
+  position: absolute; background: rgba(255, 255, 255, 0.96); border: 2.5px solid #7cc0e6; border-radius: 26px;
+  box-shadow: 0 22px 60px rgba(40, 110, 160, 0.18), 0 2px 0 rgba(255, 255, 255, 0.9) inset;
+}
+.card.dots { background-color: #ffffff; background-image: radial-gradient(rgba(31, 155, 214, 0.16) 1.6px, transparent 1.7px); background-size: 30px 30px; }
+.lab { position: absolute; font-family: "NotoSC", sans-serif; font-weight: 700; font-size: 30px; line-height: 1.25; letter-spacing: 0.05em; color: #143a5c; white-space: nowrap; }
+.lab.s { font-size: 24px; font-weight: 600; color: #2f5f7d; }
+.lab.ac { color: #0a6499; }
+.lab.or { color: #9a4700; }
+.lab.c { text-align: center; }
+.lab b { color: #0a6499; font-weight: 800; }
+.tag { /* 角标：年份 / 出处 */
+  position: absolute; font-family: "NotoSC", sans-serif; font-weight: 700; font-size: 28px; letter-spacing: 0.08em; color: #0a6499;
+  padding: 6px 16px; border: 2px solid #1279b3; border-radius: 10px; background: rgba(255, 255, 255, 0.95); white-space: nowrap;
+}
+.sticker { /* 称呼贴纸：白底、天蓝描边、霞鹜文楷 */
+  position: absolute; font-family: "WenKai", serif; font-size: 40px; line-height: 1; color: #143a5c; white-space: nowrap;
+  padding: 14px 26px 16px; border: 3px solid #1279b3; border-radius: 22px; background: #ffffff;
+  box-shadow: 0 10px 22px rgba(40, 110, 160, 0.22); transform-origin: 50% 50%;
+}
+.sticker.or { border-color: #e08a2e; }
+.seal {
+  position: absolute; border: 5px solid #c2451e; border-radius: 50%; color: #c2451e; text-align: center;
+  font-family: "NotoSC", sans-serif; font-weight: 900; font-size: 32px; letter-spacing: 0.16em; text-indent: 0.16em;
+  background: rgba(255, 255, 255, 0.9); box-shadow: inset 0 0 0 3px rgba(194, 69, 30, 0.18);
+}
+.seal.blue { border-color: #0a6499; color: #0a6499; box-shadow: inset 0 0 0 3px rgba(10, 100, 153, 0.15); }
+.gl { display: inline-block; }
+svg.art { position: absolute; overflow: visible; }
+
+/* ---------- S1 · 对话窗 ---------- */
+.chat { left: 900px; top: 236px; width: 860px; height: 470px; overflow: hidden; }
+.chat .bar { position: absolute; left: 0; right: 0; top: 0; height: 64px; border-bottom: 2px solid #d4ebf8; display: flex; align-items: center; padding-left: 30px; gap: 12px; font-family: "NotoSC", sans-serif; font-weight: 700; font-size: 26px; color: #143a5c; }
+.chat .bar i { display: inline-block; width: 14px; height: 14px; border-radius: 50%; background: #9fd3ef; }
+.bub { position: absolute; font-family: "NotoSC", sans-serif; font-weight: 600; font-size: 34px; line-height: 1.35; color: #143a5c; padding: 16px 26px; border-radius: 24px; white-space: nowrap; }
+.bub.me { background: #e2f2fc; border: 2px solid #9fd3ef; border-bottom-right-radius: 6px; }
+.bub.ai { background: #ffffff; border: 2px solid #c6e3f5; border-bottom-left-radius: 6px; box-shadow: 0 6px 16px rgba(40, 110, 160, 0.10); }
+.bub.ai b { color: #0a6499; }
+.bub.small { font-size: 28px; color: #2f5f7d; font-weight: 500; }
+.bub .thumb { display: inline-block; width: 120px; height: 90px; vertical-align: middle; margin-right: 14px; border-radius: 12px; background: #fff; border: 2px solid #c6e3f5; }
+
+/* ---------- S2 · 时间轴 ---------- */
+.node { position: absolute; width: 24px; height: 24px; margin: -12px 0 0 -12px; border-radius: 50%; background: #ffffff; border: 5px solid #1279b3; }
+.date { position: absolute; font-family: "NotoSC", sans-serif; font-weight: 800; font-size: 30px; letter-spacing: 0.06em; color: #0a6499; white-space: nowrap; transform: translateX(-50%); }
+.prog { position: absolute; height: 16px; border-radius: 8px; background: #e2f2fc; border: 2px solid #9fd3ef; overflow: hidden; }
+.prog i { position: absolute; left: 0; top: 0; bottom: 0; width: 0; background: linear-gradient(90deg, #1f9bd6, #4fb8e8); }
+.meme { position: absolute; width: 230px; height: 200px; transform-origin: 50% 110%; }
+.meme .ml { position: absolute; left: 0; right: 0; bottom: 14px; text-align: center; font-family: "WenKai", serif; font-size: 32px; color: #143a5c; }
+
+/* ---------- S3 · 金句卡 ---------- */
+.quote { left: 300px; top: 170px; width: 1320px; height: 540px; }
+.quote .qt { position: absolute; left: 0; right: 0; top: 112px; text-align: center; font-family: "NotoSerifSC", serif; font-weight: 900; font-size: 96px; line-height: 1.32; letter-spacing: 0.04em; color: #143a5c; }
+.quote .qt em { font-style: normal; color: #0a6499; }
+.quote .qs { position: absolute; left: 0; right: 0; bottom: 44px; text-align: center; font-family: "NotoSC", sans-serif; font-weight: 700; font-size: 26px; letter-spacing: 0.24em; color: #2f5f7d; }
+.slot { position: absolute; width: 420px; height: 300px; }
+.slot .sn { position: absolute; left: 30px; top: 22px; font-family: "NotoSC", sans-serif; font-weight: 900; font-size: 64px; color: #1f9bd6; }
+.slot .st { position: absolute; left: 0; right: 0; bottom: 34px; text-align: center; font-family: "NotoSC", sans-serif; font-weight: 800; font-size: 40px; letter-spacing: 0.08em; color: #143a5c; }
+
+/* ---------- S3 · ELIZA ---------- */
+.term { left: 250px; top: 196px; width: 900px; height: 520px; background: #fbfdff; }
+.term .bar { position: absolute; left: 0; right: 0; top: 0; height: 60px; border-bottom: 2px solid #d4ebf8; padding-left: 28px; font-family: "NotoSC", sans-serif; font-weight: 800; font-size: 26px; line-height: 58px; letter-spacing: 0.1em; color: #143a5c; }
+.tl { position: absolute; left: 40px; font-family: "NotoSC", sans-serif; font-weight: 600; font-size: 34px; line-height: 1.3; color: #143a5c; white-space: nowrap; }
+.tl .who { display: inline-block; width: 128px; font-weight: 800; color: #2f5f7d; }
+.tl.e .who { color: #0a6499; }
+.tl em { font-style: normal; border-radius: 6px; padding: 0 4px; }
+.rule { left: 1180px; top: 300px; width: 520px; height: 230px; padding: 28px 34px; font-family: "NotoSC", sans-serif; font-weight: 700; font-size: 34px; line-height: 1.5; color: #143a5c; border-color: #e08a2e; }
+.rule b { color: #9a4700; }
+.rule .rk { display: block; font-size: 24px; letter-spacing: 0.24em; color: #9a4700; margin-bottom: 6px; }
+.think { position: absolute; font-family: "NotoSC", sans-serif; font-weight: 800; font-size: 46px; color: #143a5c; text-align: center; }
+
+/* ---------- S3 · 刻度表 / 开关 / 曲线 ---------- */
+.lamp { position: absolute; font-family: "NotoSC", sans-serif; font-weight: 800; font-size: 36px; letter-spacing: 0.1em; color: #143a5c; padding: 14px 30px 14px 74px; border-radius: 999px; background: #fff; border: 3px solid #9fb8c9; white-space: nowrap; }
+.lamp i { position: absolute; left: 22px; top: 50%; width: 34px; height: 34px; margin-top: -17px; border-radius: 50%; background: #cfdbe3; }
+.ax { position: absolute; font-family: "NotoSC", sans-serif; font-weight: 700; font-size: 26px; color: #2f5f7d; white-space: nowrap; }
+.zone { position: absolute; border: 4px solid #1f7a4c; border-radius: 22px; background: rgba(46, 160, 100, 0.08); }
+.zone span { position: absolute; left: 50%; top: -48px; transform: translateX(-50%); font-family: "NotoSC", sans-serif; font-weight: 800; font-size: 30px; color: #1f7a4c; white-space: nowrap; background: rgba(255, 255, 255, 0.95); padding: 2px 12px; border-radius: 8px; }
+
+/* ---------- S4 ---------- */
+.say { position: absolute; font-family: "WenKai", serif; font-size: 40px; color: #143a5c; padding: 18px 30px; border-radius: 30px; background: #fff; border: 3px solid #1279b3; white-space: nowrap; box-shadow: 0 10px 24px rgba(40, 110, 160, 0.18); }
+.say .h { position: absolute; inset: 0; overflow: hidden; border-radius: inherit; }
+.ep { position: absolute; width: 440px; height: 420px; }
+.ep .en { position: absolute; left: 28px; top: 18px; font-family: "NotoSC", sans-serif; font-weight: 900; font-size: 54px; color: #1f9bd6; }
+.ep .et { position: absolute; left: 0; right: 0; bottom: 26px; text-align: center; font-family: "NotoSC", sans-serif; font-weight: 800; font-size: 34px; letter-spacing: 0.06em; color: #143a5c; }
+.big { position: absolute; left: 0; right: 0; text-align: center; font-family: "NotoSC", sans-serif; font-weight: 900; color: #143a5c; white-space: nowrap; text-shadow: 0 0 18px rgba(255, 255, 255, 0.95); }
+.big em { font-style: normal; color: #0a6499; }
+
+/* ---------- S5 ---------- */
+.banner { position: absolute; font-family: "NotoSC", sans-serif; font-weight: 800; font-size: 34px; letter-spacing: 0.08em; color: #fff; background: #1279b3; padding: 12px 30px; border-radius: 14px; white-space: nowrap; box-shadow: 0 10px 26px rgba(18, 121, 179, 0.3); }
+.canon { position: absolute; font-family: "NotoSC", sans-serif; font-weight: 900; font-size: 44px; color: #9a4700; background: #fff4e6; border: 3px solid #e08a2e; padding: 8px 22px; border-radius: 16px; white-space: nowrap; }
+.stamp { position: absolute; font-family: "NotoSC", sans-serif; font-weight: 900; font-size: 34px; letter-spacing: 0.08em; color: #c2451e; border: 5px solid #c2451e; padding: 8px 20px; border-radius: 12px; background: rgba(255, 255, 255, 0.92); white-space: nowrap; }

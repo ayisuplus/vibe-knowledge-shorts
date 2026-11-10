@@ -1,0 +1,187 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>GPT system test</title>
+<style>html,body{margin:0;background:#050510;overflow:hidden}canvas{display:block}</style>
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head><body>
+<script type="module">
+// 日地月试片：?terra=gpt/terra-A-fixed.png&luna=gpt/luna-fixed.png&t=秒
+// Sol 由代码画（噪声表面＋日冕），同时是唯一光源；Luna 绕 Terra 公转；一切由 t 算出
+import * as THREE from 'three';
+const q = new URLSearchParams(location.search);
+const W = 1920, H = 1080;
+const r = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+r.setSize(W, H); r.setPixelRatio(1);
+r.outputColorSpace = THREE.SRGBColorSpace;
+r.toneMapping = THREE.NeutralToneMapping; r.toneMappingExposure = 1.0;
+document.body.appendChild(r.domElement);
+
+const scene = new THREE.Scene();
+const cam = new THREE.PerspectiveCamera(32, W / H, 0.1, 200);
+
+// 星点（固定种子）
+let s = 11; const rnd = () => (s = (s * 16807) % 2147483647) / 2147483647;
+const sp = []; for (let i = 0; i < 2500; i++) { const a = rnd() * 6.283, b = Math.acos(2 * rnd() - 1), R = 90; sp.push(R * Math.sin(b) * Math.cos(a), R * Math.cos(b), R * Math.sin(b) * Math.sin(a)); }
+const sg = new THREE.BufferGeometry(); sg.setAttribute('position', new THREE.Float32BufferAttribute(sp, 3));
+scene.add(new THREE.Points(sg, new THREE.PointsMaterial({ color: 0xc8cde0, size: 0.12 })));
+
+// ── Sol ──
+// view=system：太阳在画面左上（行星多为背光弯月）；view=terra：太阳在画面外左前方（行星约 3/4 受光）
+const VIEW = q.get('view') || 'system';
+// view=climb：Luna → Terra → Sol → Astra 的爬升长镜头（太阳放远，Astra 星簇在更远的上方）
+const SOL = { system: new THREE.Vector3(-11, 4.5, -20), terra: new THREE.Vector3(-6, 5, 30), climb: new THREE.Vector3(-12, 4, -40) }[VIEW];
+const noise = `
+  vec3 h3(vec3 p){p=vec3(dot(p,vec3(127.1,311.7,74.7)),dot(p,vec3(269.5,183.3,246.1)),dot(p,vec3(113.5,271.9,124.6)));return -1.+2.*fract(sin(p)*43758.5453);}
+  float n3(vec3 p){vec3 i=floor(p),f=fract(p),u=f*f*(3.-2.*f);
+    return mix(mix(mix(dot(h3(i),f),dot(h3(i+vec3(1,0,0)),f-vec3(1,0,0)),u.x),mix(dot(h3(i+vec3(0,1,0)),f-vec3(0,1,0)),dot(h3(i+vec3(1,1,0)),f-vec3(1,1,0)),u.x),u.y),
+               mix(mix(dot(h3(i+vec3(0,0,1)),f-vec3(0,0,1)),dot(h3(i+vec3(1,0,1)),f-vec3(1,0,1)),u.x),mix(dot(h3(i+vec3(0,1,1)),f-vec3(0,1,1)),dot(h3(i+vec3(1,1,1)),f-vec3(1,1,1)),u.x),u.y),u.z);}
+  float fbm(vec3 p){float a=.5,v=0.;for(int i=0;i<5;i++){v+=a*n3(p);p*=2.03;a*=.5;}return v;}`;
+const solU = { time: { value: 0 } };
+const sol = new THREE.Mesh(new THREE.SphereGeometry(1.6, 128, 64), new THREE.ShaderMaterial({
+  uniforms: solU,
+  vertexShader: 'varying vec3 p;varying vec3 n;varying vec3 v;void main(){p=position;n=normalize(normalMatrix*normal);vec4 mv=modelViewMatrix*vec4(position,1.);v=normalize(-mv.xyz);gl_Position=projectionMatrix*mv;}',
+  fragmentShader: `uniform float time;varying vec3 p;varying vec3 n;varying vec3 v;${noise}
+    void main(){
+      float g=fbm(p*1.8+vec3(0.,0.,time*.08));                       // 米粒组织
+      float g2=fbm(p*5.0-vec3(time*.05));
+      float k=clamp(.5+1.1*g+.4*g2,0.,1.);
+      vec3 c=mix(vec3(1.0,.80,.55),vec3(1.0,.98,.94),k);              // 暖白，暗纹略偏暖才看得出米粒
+      float limb=pow(max(dot(n,v),0.),.5);                            // 临边昏暗
+      gl_FragColor=vec4(c*mix(.6,1.35,limb),1.);}`
+}));
+sol.position.copy(SOL); scene.add(sol);
+// 日冕：面向镜头的贴片
+const cor = new THREE.Mesh(new THREE.PlaneGeometry(14, 14), new THREE.ShaderMaterial({
+  transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, uniforms: solU,
+  vertexShader: 'varying vec2 u;void main(){u=uv*2.-1.;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}',
+  fragmentShader: `uniform float time;varying vec2 u;${noise}
+    void main(){float d=length(u);float a=atan(u.y,u.x);
+      float ray=.55+.45*fbm(vec3(cos(a)*3.,sin(a)*3.,time*.06));       // 放射状日冕
+      float glow=exp(-d*7.)*1.6+exp(-d*2.6)*.35*ray;
+      glow*=smoothstep(1.,.6,d);
+      gl_FragColor=vec4(vec3(1.,.9,.75)*glow,1.);}`
+}));
+cor.position.copy(SOL); scene.add(cor);
+// 太阳很远，用平行光（方向 = 太阳 → 行星），亮度不随距离衰减
+const sun = new THREE.DirectionalLight(0xfff4e6, 3.4); sun.position.copy(SOL); scene.add(sun);
+if (VIEW === 'terra') { sol.visible = false; cor.visible = false; }
+// 全景时行星多为背光，加一盏来自镜头方向的弱补光，让夜面能看出轮廓
+const fill = new THREE.DirectionalLight(0xd8def0, VIEW === 'system' ? 0.35 : 0); scene.add(fill);
+scene.add(new THREE.AmbientLight(0x30324a, 0.25));
+
+const loader = new THREE.TextureLoader();
+const tex = async (f) => { const t = await loader.loadAsync(f); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 16; return t; };
+const vs = 'varying vec3 n;varying vec3 v;varying vec3 wp;varying vec3 wn;void main(){n=normalize(normalMatrix*normal);wn=normalize(mat3(modelMatrix)*normal);vec4 w=modelMatrix*vec4(position,1.);wp=w.xyz;vec4 mv=viewMatrix*w;v=normalize(-mv.xyz);gl_Position=projectionMatrix*mv;}';
+// 大气：只在朝太阳的一面亮
+const atmo = (R, col) => new THREE.Mesh(new THREE.SphereGeometry(R * 1.09, 128, 64), new THREE.ShaderMaterial({
+  side: THREE.BackSide, transparent: true, blending: THREE.AdditiveBlending, depthWrite: false,
+  uniforms: { c: { value: new THREE.Color(col) }, sp: { value: SOL } }, vertexShader: vs,
+  fragmentShader: 'uniform vec3 c;uniform vec3 sp;varying vec3 n;varying vec3 v;varying vec3 wp;varying vec3 wn;void main(){float d=clamp(-dot(n,v),0.,1.);float f=pow(smoothstep(0.,.42,d),2.)*(1.-smoothstep(.42,.55,d));float day=smoothstep(-.35,.45,dot(wn,normalize(sp-wp)));gl_FragColor=vec4(c*f*day*1.1,1.);}'
+}));
+
+// ── Terra ──
+const terra = new THREE.Mesh(new THREE.SphereGeometry(1, 256, 128),
+  new THREE.MeshStandardMaterial({ map: await tex(q.get('terra') || 'gpt/terra-A-fixed.png'), roughness: 0.85, metalness: 0 }));
+const TERRA = { system: new THREE.Vector3(1.5, -0.3, 0), terra: new THREE.Vector3(0.3, -0.2, 0), climb: new THREE.Vector3(0, 0, 0) }[VIEW];
+// 地轴倾斜 23.5°：先绕 y 自转、再整体倾斜，所以欧拉顺序用 ZYX
+terra.position.copy(TERRA); terra.rotation.order = 'ZYX'; terra.rotation.z = 0.41; scene.add(terra);
+const ta = atmo(1, 0xdfe6ff); ta.position.copy(TERRA); scene.add(ta);
+
+// ── Luna ──
+const luna = new THREE.Mesh(new THREE.SphereGeometry(0.27, 128, 64),
+  new THREE.MeshStandardMaterial({ map: await tex(q.get('luna') || 'gpt/luna-fixed.png'), roughness: 1, metalness: 0 }));
+scene.add(luna);
+
+// ── Astra：代码画的星簇（拉丁语「群星」，GPT-6 旗舰档）──
+// 11 颗星，位置和亮度手写固定（昴星团式的紧凑一簇），每颗是面向镜头的贴片：星核＋十字星芒＋光晕，带轻微闪烁
+const ASTRA = new THREE.Vector3(-24, 34, -50);
+const astra = new THREE.Group(); astra.position.copy(ASTRA); astra.scale.setScalar(1.5); scene.add(astra);
+const astraU = { time: { value: 0 } };
+const STARS = [
+  [0, 0, 0, 1.0], [2.6, 1.1, -0.8, 0.85], [-2.1, 1.6, 0.6, 0.8], [1.2, -2.2, 0.4, 0.75], [-1.4, -1.3, -1.0, 0.7],
+  [3.6, -0.9, 0.9, 0.55], [-3.4, -0.2, 0.3, 0.5], [0.4, 2.9, -0.5, 0.5], [2.2, 2.8, 1.0, 0.4], [-0.9, -3.4, 0.8, 0.4], [4.4, 1.8, -1.2, 0.35],
+];
+const starMat = (b, ph) => new THREE.ShaderMaterial({
+  transparent: true, depthWrite: false, blending: THREE.AdditiveBlending,
+  uniforms: { time: astraU.time, b: { value: b }, ph: { value: ph } },
+  vertexShader: 'varying vec2 u;void main(){u=uv*2.-1.;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}',
+  fragmentShader: `uniform float time;uniform float b;uniform float ph;varying vec2 u;
+    void main(){float r=length(u);
+      float core=exp(-r*26.);                                   // 星核
+      float halo=exp(-r*5.5)*.35;                               // 光晕
+      float spike=(exp(-abs(u.x)*90.)+exp(-abs(u.y)*90.))*exp(-r*3.2)*.8; // 十字星芒
+      float tw=.88+.12*sin(time*2.3+ph);                        // 闪烁
+      float i=(core*2.2+halo+spike)*b*tw*smoothstep(1.,.7,r);
+      gl_FragColor=vec4(vec3(.92,.95,1.)*i,1.);}`
+});
+const starSprites = STARS.map(([x, y, z, b], i) => {
+  const m = new THREE.Mesh(new THREE.PlaneGeometry(3.2 + 3 * b, 3.2 + 3 * b), starMat(b, i * 1.7));
+  m.position.set(x, y, z); astra.add(m); return m;
+});
+// 星簇周围一层很淡的银白星云雾（昴星团式的反射星云）
+const haze = new THREE.Mesh(new THREE.PlaneGeometry(22, 22), new THREE.ShaderMaterial({
+  transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, uniforms: astraU,
+  vertexShader: 'varying vec2 u;void main(){u=uv*2.-1.;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}',
+  fragmentShader: `uniform float time;varying vec2 u;${noise}
+    void main(){float r=length(u);
+      float f=fbm(vec3(u*2.2,time*.03))*.5+.5;
+      float i=pow(f,2.2)*exp(-r*2.4)*.55*smoothstep(1.,.55,r);  // 贴片边缘归零，不露方框
+      gl_FragColor=vec4(vec3(.78,.84,1.)*i,1.);}`
+}));
+astra.add(haze);
+astra.visible = VIEW === 'climb';
+
+// ── climb 镜头路径：关键帧（时间, 机位, 看向）；Catmull-Rom 平滑插值，全程两端缓入缓出 ──
+const L0 = new THREE.Vector3(2.2, 0.4, -1.6);                 // climb 时 Luna 的位置（在 Terra 朝太阳的一侧）
+const KEYS = [
+  [0.0, [1.85, 0.52, -2.45], [2.2, 0.4, -1.6]],               // 贴近 Luna（背对太阳，月面全亮，Terra 在后面）
+  [2.5, [3.4, 0.9, -4.2], [0.6, 0.1, 0]],                     // 拉开，Luna 与 Terra 同框
+  [4.5, [3.0, 0.6, 0.5], [0, 0, 0]],                          // 绕到 Terra 侧面
+  [6.5, [0.4, 0.15, 2.7], [-12, 4, -40]],                     // 到 Terra 背面，太阳被 Terra 挡住
+  [8.0, [0.45, 1.0, 2.85], [-12, 4, -40]],                    // 升起：太阳刚好高出 Terra 边缘约 3°，「日出」
+  [10.0, [-2.0, 3.0, -6.0], [-12, 5, -40]],                   // 飞向太阳
+  [12.0, [-6.0, 4.0, -18.0], [-24, 34, -50]],                 // 抬头：太阳滑出画面下沿，Astra 居中
+];
+const DUR = KEYS[KEYS.length - 1][0];
+const posCurve = new THREE.CatmullRomCurve3(KEYS.map(k => new THREE.Vector3(...k[1])), false, 'centripetal');
+const tgtCurve = new THREE.CatmullRomCurve3(KEYS.map(k => new THREE.Vector3(...k[2])), false, 'centripetal');
+// 时间 → 曲线参数（关键帧在曲线上均分）。只在第一段缓入、最后一段缓出，中间各关键帧准时到达
+const keyU = (t) => {
+  const n = KEYS.length - 1;
+  for (let i = 0; i < n; i++) if (t <= KEYS[i + 1][0]) {
+    let l = (t - KEYS[i][0]) / (KEYS[i + 1][0] - KEYS[i][0]);
+    if (i === 0) l = l * l * (2 - l);                          // 缓入，末端速度与匀速衔接
+    else if (i === n - 1) l = 1 - (1 - l) * (1 - l) * (1 + l); // 缓出
+    return (i + l) / n;
+  }
+  return 1;
+};
+
+const camPos = new THREE.Vector3(), look = new THREE.Vector3();
+window.setState = (deg, t) => {
+  solU.time.value = t;
+  sol.rotation.y = t * 0.05;
+  terra.rotation.y = 0.6 + t * 0.12 + (deg || 0) * 0;      // 自转（deg 留给 turn.mjs，不使用）
+  if (VIEW === 'climb') {
+    luna.position.copy(L0); luna.rotation.y = 2.4 + t * 0.02;
+    const u = keyU(Math.min(t, DUR));
+    posCurve.getPoint(u, camPos); tgtCurve.getPoint(u, look);
+  } else {
+    const a = (VIEW === 'system' ? 0.5 : 2.2) + t * 0.09;   // 月球公转（全景时起点放在 Terra 右前方，不挡住它）
+    luna.position.set(TERRA.x + Math.cos(a) * 2.1, TERRA.y + Math.sin(a) * 0.35, TERRA.z + Math.sin(a) * 2.1);
+    luna.rotation.y = -a;                                   // 潮汐锁定：同一面朝向地球
+    // 镜头：慢慢推进。system：Sol 在画面左侧、Terra 在右；terra：太阳在画面外
+    if (VIEW === 'system') { camPos.set(0.2 - t * 0.03, 0.5, 8.2 - t * 0.08); look.set(-0.3, 0.2, 0); }
+    else { camPos.set(3.2 - t * 0.04, 0.9, 6.4 - t * 0.06); look.set(-0.6, 0, -2); }
+  }
+  cam.position.copy(camPos); cam.lookAt(look);
+  fill.position.copy(camPos);
+  astraU.time.value = t;
+  for (const m of starSprites) m.quaternion.copy(cam.quaternion);
+  haze.quaternion.copy(cam.quaternion);
+  cor.quaternion.copy(cam.quaternion);
+  r.render(scene, cam);
+};
+window.setState(0, +(q.get('t') ?? 0));
+window.__ready = true;
+</script>
+</body></html>

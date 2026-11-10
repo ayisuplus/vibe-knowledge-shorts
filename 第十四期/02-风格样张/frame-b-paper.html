@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>样张 B · 公文作废</title>
+<style>
+@font-face{font-family:NSSC;src:url("assets/fonts/NotoSansSC-VF.ttf") format("truetype");font-weight:100 900;font-display:block}
+@font-face{font-family:NSerif;src:url("assets/fonts/NotoSerifSC-VF.ttf") format("truetype");font-weight:200 900;font-display:block}
+@font-face{font-family:WenKai;src:url("assets/fonts/LXGWWenKai-Regular.ttf") format("truetype");font-display:block}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#e9e2d2}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;
+  background:radial-gradient(70% 62% at 50% 42%,#f3eddd 0%,#ece4d0 55%,#e2d9c4 100%)}
+.mode{position:absolute;left:104px;top:88px;font-family:NSSC;font-size:15px;letter-spacing:.4em;color:rgba(120,96,60,.6)}
+.caption{position:absolute;left:0;right:0;bottom:56px;text-align:center;font-family:NSerif;font-weight:600;
+  font-size:52px;letter-spacing:.02em;color:#2a2419;text-shadow:0 2px 30px rgba(120,96,60,.25)}
+.caption em{font-style:normal;color:#a63a2b}
+.grain{position:absolute;inset:-40px;pointer-events:none;opacity:.07;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='260' height='260'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='4'/></filter><rect width='260' height='260' filter='url(%23n)'/></svg>")}
+.paper{position:absolute;left:50%;top:50%;width:1240px;height:820px;transform:translate(-50%,-54%);
+  background:linear-gradient(180deg,#fbf6ea 0%,#f6efdf 100%);border-radius:6px;
+  box-shadow:0 34px 90px rgba(60,45,20,.35),0 4px 14px rgba(60,45,20,.18);overflow:hidden}
+.paper .fold{position:absolute;left:0;top:0;width:34px;height:100%;
+  background:linear-gradient(90deg,rgba(120,96,60,.08),transparent)}
+.paper .pin{position:absolute;left:46px;top:42px;width:14px;height:34px;background:linear-gradient(180deg,#8a8f98,#5b6068 60%,#8a8f98);
+  border-radius:3px;transform:rotate(-4deg);box-shadow:0 1px 2px rgba(0,0,0,.3)}
+.docno{position:absolute;left:60px;top:70px;font-family:NSSC;font-size:15px;letter-spacing:2px;color:#7a6a4e}
+.redhead{position:absolute;left:0;top:118px;width:100%;text-align:center;font-family:NSSC;font-weight:800;font-size:38px;letter-spacing:16px;color:#b0231a}
+.hrline{position:absolute;left:90px;right:90px;top:178px;height:2px;background:#b0231a}
+.title{position:absolute;left:0;top:218px;width:100%;text-align:center;font-family:NSerif;font-weight:800;font-size:44px;letter-spacing:6px;color:#2a2419}
+.para{position:absolute;left:120px;right:120px;font-family:NSerif;font-size:23px;line-height:2.0;color:#3c3426;text-align:justify}
+.para b{color:#a63a2b}
+.stamp{position:absolute;right:120px;bottom:150px;width:216px;height:216px;border-radius:50%;
+  border:6px solid rgba(178,35,26,.82);opacity:.85;transform:rotate(-14deg);
+  box-shadow:inset 0 0 26px rgba(178,35,26,.28),0 0 0 5px rgba(178,35,26,.06)}
+.stamp::after{content:"";position:absolute;inset:16px;border-radius:50%;border:2px solid rgba(178,35,26,.6)}
+.stamp .s1{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:NSSC;font-weight:800;font-size:34px;letter-spacing:12px;color:rgba(178,35,26,.9);transform:translateX(6px)}
+.stamp .s2{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:NSSC;font-size:15px;letter-spacing:6px;color:rgba(178,35,26,.75);transform:translateY(-78px)}
+.sign{position:absolute;right:130px;bottom:56px;text-align:right;font-family:NSSC;font-size:18px;letter-spacing:2px;color:#7a6a4e}
+.corner{position:absolute;right:44px;top:40px;font-family:NSSC;font-size:15px;letter-spacing:3px;color:#a0927a}
+</style>
+</head>
+<body>
+<div id="root">
+
+<div class="paper">
+  <div class="fold"></div>
+  <div class="pin"></div>
+  <div class="docno">词语管理委员会 · 词语规〔2026〕14 号</div>
+  <div class="redhead">关 于 规 范 使 用 词 语 的 函</div>
+  <div class="hrline"></div>
+  <div class="title">关于"打工人""形式主义"等词的处理意见</div>
+  <div class="para" style="top:318px">各车间、各工位、各算法集群：<br/><br/>经查，<b>"打工人"</b>一词自 2020 年起使用至今，现已不再适应当前生产语境；<b>"形式主义"</b>一词自 2012 年起作为批评用语，亦已失去日常批评对象。<br/>经研究决定：上述词语自本函印发之日起<b>停止使用</b>，其职能分别由<b>"牛马"</b>与<b>"AI味"</b>接替。今后凡涉及劳动者身份之表述，一律以动物学名词为准；凡涉及文本空洞之批评，一律以技术指称代替。</div>
+  <div class="corner">档 2026-014</div>
+  <div class="stamp"><span class="s1">已归档</span><span class="s2">✕ 作废</span></div>
+  <div class="sign">词语管理委员会办公室<br/>2026 年 10 月 22 日</div>
+</div>
+
+<div class="mode">公 文 风 · 样 张 B</div>
+<div class="caption">"打工人"去哪了？——顺便，<em>"形式主义"也没人骂了</em></div>
+<div class="grain"></div>
+</div>
+</body>
+</html>

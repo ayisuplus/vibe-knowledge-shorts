@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>蒸馏</title>
+    <script src="assets/vendor/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "DSerif"; src: url("assets/fonts/NotoSerifSC-VF.ttf") format("truetype"); font-weight: 200 900; }
+      @font-face { font-family: "Gara"; src: url("assets/fonts/GARA.TTF") format("truetype"); }
+      @font-face { font-family: "GaraI"; src: url("assets/fonts/GARAIT.TTF") format("truetype"); }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #0b0806; }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; font-family: "DSerif", serif; background: #0b0806; }
+      .layer { position: absolute; inset: 0; }
+      #bgfill { position: absolute; inset: 0;
+        background: radial-gradient(ellipse 70% 42% at 50% 44%, rgba(120, 86, 46, 0.3) 0%, rgba(40, 28, 16, 0) 70%), radial-gradient(ellipse 120% 80% at 50% 40%, #1d150e 0%, #0b0806 72%); }
+      #warm { position: absolute; inset: 0; opacity: 0; background: radial-gradient(ellipse 80% 55% at 50% 42%, rgba(150, 46, 24, 0.32) 0%, rgba(70, 18, 8, 0.18) 60%, rgba(0, 0, 0, 0) 100%); }
+      .vignette { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse 80% 66% at 50% 46%, transparent 52%, rgba(0, 0, 0, 0.78) 100%); }
+      #world { position: absolute; inset: 0; width: 1080px; height: 1920px; overflow: visible; }
+      svg text:not([font-family]) { font-family: "DSerif"; }
+      .grain { position: absolute; inset: 0; pointer-events: none; opacity: 0.1; mix-blend-mode: overlay;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 0.9  0 0 0 0 0.75  0 0 0 1.2 -0.1'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"); }
+
+      /* 文字层 */
+      #hud { pointer-events: none; }
+      .t { position: absolute; display: block; opacity: 0; color: #efe5cf; white-space: nowrap; font-family: "DSerif", serif; }
+      .hdr { position: absolute; left: 70px; top: 116px; opacity: 0; }
+      .year { display: flex; height: 116px; overflow: hidden; font-family: "DSerif"; font-weight: 600; font-size: 112px; line-height: 116px; color: #d6b06a; text-shadow: 0 0 24px rgba(214, 176, 106, 0.25); }
+      .ycol { display: block; width: 66px; height: 116px; overflow: hidden; text-align: center; }
+      .ystrip { display: flex; flex-direction: column; }
+      .ystrip span { display: block; height: 116px; }
+      .yrule { width: 330px; height: 1px; margin-top: 18px; background: linear-gradient(90deg, #d6b06a 0%, rgba(214, 176, 106, 0) 100%); }
+      .place { left: 72px; top: 268px; font-size: 32px; font-weight: 600; color: #b9ab8f; letter-spacing: 2px; }
+      .ref { right: 70px; top: 126px; text-align: right; display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+      .ref .en { font-family: "GaraI", serif; font-size: 30px; color: #8a6e42; }
+      .ref .zh { font-size: 34px; font-weight: 700; color: #d6b06a; }
+      .ref .by { font-size: 22px; color: #b9ab8f; opacity: 0.85; }
+      .ref .line { width: 380px; height: 1px; background: linear-gradient(270deg, rgba(214, 176, 106, 0.7), rgba(214, 176, 106, 0)); }
+      .seal { position: absolute; display: flex; align-items: center; justify-content: center; opacity: 0; background: #a8382a; color: #f5e6d6; font-family: "DSerif"; font-weight: 900; border-radius: 4px; box-shadow: inset 0 0 0 3px rgba(245, 230, 214, 0.25), 0 6px 18px rgba(0, 0, 0, 0.45); }
+
+      .cap { position: absolute; left: 60px; right: 60px; top: 1490px; display: flex; flex-direction: column; align-items: center; text-align: center; opacity: 0; }
+      .cap b { display: block; font-size: 58px; font-weight: 800; line-height: 1.38; color: #efe5cf; white-space: normal; text-shadow: 0 2px 12px rgba(0, 0, 0, 0.85); }
+      .cap b em { font-style: normal; color: #f1d79c; }
+      .cap .seg { display: inline-block; white-space: nowrap; }
+      .cap .line { display: block; }
+      .cap i { display: block; margin-top: 10px; font-style: normal; font-size: 28px; font-weight: 500; color: #b9ab8f; }
+
+      .title { left: 0; right: 0; text-align: center; font-weight: 900; font-size: 250px; letter-spacing: 30px; padding-left: 30px; line-height: 1.15;
+        background: linear-gradient(180deg, #fff1c8 0%, #e7c27a 42%, #a97d3c 70%, #f3d999 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+      .latin { font-family: "Gara", serif; font-size: 36px; letter-spacing: 14px; color: #b9ab8f; }
+      .lead { font-size: 46px; font-weight: 700; letter-spacing: 6px; }
+      .gi { font-family: "GaraI", serif; font-size: 30px; color: #8a6e42; }
+      .note { font-size: 34px; font-weight: 700; color: #d6b06a; }
+      .stat { font-family: "Gara", serif; font-size: 150px; color: #f1d79c; text-shadow: 0 0 24px rgba(241, 215, 156, 0.35); }
+      .plate { font-family: "DSerif"; }
+      .card { white-space: normal; padding: 30px 38px; background: linear-gradient(180deg, #efe2c2, #d9c69c); color: #2a1d12; border-radius: 4px; box-shadow: 0 14px 30px rgba(0, 0, 0, 0.55); }
+      .card .k { font-size: 28px; font-weight: 700; color: #6b4a2a; }
+      .card .big { font-family: "Gara"; font-size: 96px; line-height: 1.05; color: #2a1d12; }
+      .card .zhbig { font-size: 50px; font-weight: 800; line-height: 1.35; color: #2a1d12; }
+      .card .s { font-size: 30px; color: #4a3220; }
+      .credits { font-size: 24px; line-height: 1.7; color: #b9ab8f; text-align: center; white-space: normal; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-width="1080" data-height="1920" data-duration="160.17">
+      <audio id="music" src="assets/music.m4a" data-start="0" data-duration="160.17" data-track-index="9" data-volume="1"></audio>
+      <audio id="sfx" src="assets/sfx.mp3" data-start="0" data-duration="160.17" data-track-index="10" data-volume="0.9"></audio>
+      <div id="stage" class="layer clip" data-start="0" data-duration="160.17" data-track-index="0">
+        <div id="bgfill"></div>
+        <div id="warm"></div>
+        <div class="vignette" data-layout-ignore></div>
+        <svg id="world" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg"></svg>
+        <div class="grain" data-layout-ignore></div>
+      </div>
+      <div id="hud" class="layer clip" data-start="0" data-duration="160.17" data-track-index="1"></div>
+    </div>
+    <script src="assets/js/lib.js"></script>
+    <script src="assets/js/draw.js"></script>
+    <script src="assets/js/s0s1.js"></script>
+    <script src="assets/js/s2s3.js"></script>
+    <script src="assets/js/s4s5.js"></script>
+    <script src="assets/js/s6s7.js"></script>
+    <script src="assets/js/s8s10.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+      window.__timelines["main"] = window.D.tl;
+    </script>
+  </body>
+</html>

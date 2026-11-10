@@ -1,0 +1,186 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Fable planet test</title>
+<style>html,body{margin:0;background:#050510;overflow:hidden}canvas{display:block}</style>
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head><body>
+<script type="module">
+// 贴图试球：?tex=xxx.png&rot=度&tilt=度&dist=相机距离&light=0|1
+// rot=90 时 u=0/1 的接缝正对镜头；tilt=70 从北极上方看
+import * as THREE from 'three';
+const q = new URLSearchParams(location.search);
+const tex = q.get('tex') || 'fable-A-fixed.png';
+const rot = +(q.get('rot') ?? 20), tilt = +(q.get('tilt') ?? 12), dist = +(q.get('dist') ?? 5.2);
+const lit = q.get('light') !== '0';
+// 大气色：每颗星球自己的色调，如 atm=5fd0ff
+const atmCol = new THREE.Color('#' + (q.get('atm') || 'f2a679'));
+const W = 1920, H = 1080;
+
+// clean=1：透明底、无星空（做封面抠图用）
+const clean = q.get('clean') === '1';
+const r = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true, alpha: clean });
+if (clean) { r.setClearColor(0x000000, 0); document.body.style.background = 'transparent'; document.documentElement.style.background = 'transparent'; }
+r.setSize(W, H); r.setPixelRatio(1);
+r.outputColorSpace = THREE.SRGBColorSpace;
+// 色调映射：tm=aces|neutral|agx（ACES 会把暖光下的青色推向绿）
+r.toneMapping = { aces: THREE.ACESFilmicToneMapping, neutral: THREE.NeutralToneMapping, agx: THREE.AgXToneMapping }[q.get('tm') || 'aces'];
+r.toneMappingExposure = +(q.get('exp') ?? 1.05);
+document.body.appendChild(r.domElement);
+
+const scene = new THREE.Scene();
+const cam = new THREE.PerspectiveCamera(30, W / H, 0.1, 100);
+const t = tilt * Math.PI / 180;
+cam.position.set(0, Math.sin(t) * dist, Math.cos(t) * dist);
+cam.lookAt(0, 0, 0);
+
+// 星点：固定种子，跳帧一致
+let s = 7; const rnd = () => (s = (s * 16807) % 2147483647) / 2147483647;
+const sp = []; for (let i = 0; i < 1500; i++) { const a = rnd() * 6.283, b = Math.acos(2 * rnd() - 1), R = 40; sp.push(R * Math.sin(b) * Math.cos(a), R * Math.cos(b), R * Math.sin(b) * Math.sin(a)); }
+const sg = new THREE.BufferGeometry(); sg.setAttribute('position', new THREE.Float32BufferAttribute(sp, 3));
+if (!clean) scene.add(new THREE.Points(sg, new THREE.PointsMaterial({ color: 0xbfc8e6, size: 0.06, sizeAttenuation: true })));
+
+const map = await new THREE.TextureLoader().loadAsync(tex);
+map.colorSpace = THREE.SRGBColorSpace; map.anisotropy = 16;
+const geo = new THREE.SphereGeometry(1, 256, 128);
+const mat = lit ? new THREE.MeshStandardMaterial({ map, roughness: 0.9, metalness: 0.0 })
+                : new THREE.MeshBasicMaterial({ map });
+// ?emap=xxx.png&emi=强度：自发光贴图（如 Grok 的发光裂谷），背光面也亮
+if (lit && q.get('emap')) {
+  const em = await new THREE.TextureLoader().loadAsync(q.get('emap')); em.colorSpace = THREE.SRGBColorSpace;
+  mat.emissiveMap = em; mat.emissive = new THREE.Color(0xffffff); mat.emissiveIntensity = +(q.get('emi') ?? 1.2);
+}
+const planet = new THREE.Mesh(geo, mat);
+planet.rotation.y = rot * Math.PI / 180;
+scene.add(planet);
+
+if (lit) {
+  const sun = new THREE.DirectionalLight(0xfff1e0, 3.2); sun.position.set(-3, 1.2, 2.2); scene.add(sun);
+  scene.add(new THREE.AmbientLight(0x2a2440, 0.35));
+  // 大气：外壳从星球边缘往外衰减（贴边、无黑缝），只在受光面亮
+  const sunDir = sun.position.clone().normalize();
+  const vs = 'varying vec3 n;varying vec3 v;varying vec3 wn;void main(){n=normalize(normalMatrix*normal);wn=normalize(mat3(modelMatrix)*normal);vec4 p=modelViewMatrix*vec4(position,1.);v=normalize(-p.xyz);gl_Position=projectionMatrix*p;}';
+  const atm = new THREE.Mesh(new THREE.SphereGeometry(1.09, 128, 64), new THREE.ShaderMaterial({
+    side: THREE.BackSide, transparent: true, blending: THREE.AdditiveBlending, depthWrite: false,
+    uniforms: { c: { value: atmCol }, s: { value: sunDir } }, vertexShader: vs,
+    // 背面：视线擦过外壳边缘时 dot≈0（外沿，最暗），越靠近星球边缘 |dot| 越大（最亮）
+    fragmentShader: 'uniform vec3 c;uniform vec3 s;varying vec3 n;varying vec3 v;varying vec3 wn;void main(){float d=clamp(-dot(n,v),0.,1.);float f=pow(smoothstep(0.,.42,d),2.)*(1.-smoothstep(.42,.55,d));float day=smoothstep(-.35,.45,dot(wn,s));gl_FragColor=vec4(c*f*day*1.1,1.);}'
+  }));
+  if (!clean) scene.add(atm);                                           // 透明底时不画大气外壳（它会把背光侧写成不透明的黑圈）
+  // 正面细边光（同样只在受光面）
+  const rim = new THREE.Mesh(new THREE.SphereGeometry(1.002, 128, 64), new THREE.ShaderMaterial({
+    transparent: true, blending: THREE.AdditiveBlending, depthWrite: false,
+    uniforms: { c: { value: atmCol.clone().lerp(new THREE.Color(1, 1, 1), 0.3) }, s: { value: sunDir } }, vertexShader: vs,
+    fragmentShader: 'uniform vec3 c;uniform vec3 s;varying vec3 n;varying vec3 v;varying vec3 wn;void main(){float f=pow(1.-max(dot(n,v),0.),3.);float day=smoothstep(-.2,.5,dot(wn,s));gl_FragColor=vec4(c*f*day*.9,1.);}'
+  }));
+  scene.add(rim);
+}
+// ── 鲸鱼层（?whales=1）：俯视座头鲸发光轮廓，贴在略大一圈的壳上，随星球一起转 ──
+// 每条鲸的位置、朝向、摆尾都由 t 直接算出（不累积），跳到任何一帧都一样
+let setWhales = () => {};
+if (q.get('whales') === '1') {
+  // 画布 1024×WH：横向 1024px = 两个半身长，所以纵向 uv = 0.5 + ly·512/WH
+  const WH = 640;
+  const cv = document.createElement('canvas'); cv.width = 1024; cv.height = WH;
+  const g = cv.getContext('2d');
+  g.translate(0, WH / 2);
+  // 俯视座头鲸，头朝 +x。上半边轮廓，s=-1 镜像成下半边
+  const half = (s) => {
+    g.moveTo(1000, 0);
+    g.bezierCurveTo(998, -30 * s, 972, -68 * s, 920, -94 * s);       // 宽扁的吻部
+    g.bezierCurveTo(870, -114 * s, 800, -120 * s, 740, -118 * s);    // 最宽处约 1/4 体长
+    g.bezierCurveTo(640, -112 * s, 520, -80 * s, 420, -48 * s);
+    g.bezierCurveTo(360, -30 * s, 315, -20 * s, 285, -16 * s);       // 尾柄
+    g.bezierCurveTo(262, -40 * s, 220, -120 * s, 140, -192 * s);     // 尾鳍前缘，外掠到鳍尖
+    g.bezierCurveTo(132, -168 * s, 150, -130 * s, 168, -100 * s);    // 鳍尖回勾
+    g.bezierCurveTo(182, -72 * s, 176, -40 * s, 150, -14 * s);       // 尾鳍后缘
+    g.lineTo(178, 0);                                                 // 尾鳍缺刻
+  };
+  // 长胸鳍：约 1/3 体长，向后外掠
+  const fin = (s) => {
+    g.moveTo(805, -112 * s);
+    g.bezierCurveTo(780, -170 * s, 700, -228 * s, 572, -252 * s);
+    g.bezierCurveTo(556, -244 * s, 588, -216 * s, 640, -186 * s);
+    g.bezierCurveTo(690, -156 * s, 722, -136 * s, 730, -118 * s);
+    g.closePath();
+  };
+  const shape = () => { g.beginPath(); half(1); half(-1); fin(1); fin(-1); };
+  const body = g.createLinearGradient(1000, 0, 200, 0);
+  body.addColorStop(0, 'rgba(30,110,170,0.40)'); body.addColorStop(1, 'rgba(10,50,110,0.28)');
+  shape(); g.fillStyle = body; g.fill();                                          // 半透明身体，透出海底
+  g.shadowColor = '#4fdcff';
+  g.shadowBlur = 34; shape(); g.strokeStyle = 'rgba(79,220,255,0.75)'; g.lineWidth = 9; g.stroke();  // 外层光晕
+  g.shadowBlur = 12; shape(); g.strokeStyle = 'rgba(150,240,255,0.95)'; g.lineWidth = 3.5; g.stroke(); // 轮廓
+  g.shadowBlur = 0; shape(); g.strokeStyle = 'rgba(235,252,255,0.95)'; g.lineWidth = 1.4; g.stroke();  // 高光细线
+  g.beginPath(); g.moveTo(960, 0); g.bezierCurveTo(800, 3, 560, -2, 300, 0);        // 脊线
+  g.strokeStyle = 'rgba(140,235,255,0.45)'; g.lineWidth = 2.2; g.stroke();
+  g.fillStyle = 'rgba(190,248,255,0.85)';
+  // 吻部的疙瘩（座头鲸特征），用固定坐标，不用随机
+  for (const [x, y] of [[985, 0], [968, -18], [968, 18], [948, -34], [948, 34], [952, 0], [930, -16], [930, 16], [912, -46], [912, 46]]) {
+    g.beginPath(); g.arc(x, y, 3.4, 0, 7); g.fill();
+  }
+  for (const y of [-7, 7]) { g.beginPath(); g.ellipse(880, y, 6, 3, 0, 0, 7); g.fill(); } // 喷气孔
+  g.beginPath(); g.ellipse(560, 0, 22, 9, 0, 0, 7);                                          // 背鳍小隆起
+  g.strokeStyle = 'rgba(150,240,255,0.6)'; g.lineWidth = 2; g.stroke();
+  const wtex = new THREE.CanvasTexture(cv); wtex.colorSpace = THREE.SRGBColorSpace; wtex.anisotropy = 16;
+
+  // 鲸群：绕各自大圆游；axis=大圆转轴，a0=起始角，w=角速度(弧度/秒)，s=半身长(弧度)
+  const W = [
+    { axis: [0.25, 1, 0.10], a0: 0.4, w: 0.07, s: 0.15, ph: 0.0 },
+    { axis: [0.22, 1, 0.16], a0: 0.08, w: 0.07, s: 0.10, ph: 1.7 },
+    { axis: [-0.5, 1, -0.3], a0: 2.6, w: 0.06, s: 0.13, ph: 3.1 },
+    { axis: [0.6, 1, 0.5], a0: 4.4, w: 0.08, s: 0.12, ph: 4.6 },
+  ].map(o => ({ ...o, axis: new THREE.Vector3(...o.axis).normalize() }));
+  const N = W.length;
+  const U = { tex: { value: wtex }, sun: { value: new THREE.Vector3(-3, 1.2, 2.2).normalize() }, time: { value: 0 },
+    wp: { value: W.map(() => new THREE.Vector3()) }, wf: { value: W.map(() => new THREE.Vector3()) },
+    wr: { value: W.map(() => new THREE.Vector3()) }, ws: { value: W.map(o => o.s) }, wph: { value: W.map(o => o.ph) } };
+  const shell = new THREE.Mesh(new THREE.SphereGeometry(1.004, 256, 128), new THREE.ShaderMaterial({
+    transparent: true, depthWrite: false, uniforms: U,
+    vertexShader: 'varying vec3 lp;varying vec3 wn;void main(){lp=normalize(position);wn=normalize(mat3(modelMatrix)*normal);gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}',
+    fragmentShader: `
+      uniform sampler2D tex;uniform vec3 sun;uniform float time;
+      uniform vec3 wp[${N}];uniform vec3 wf[${N}];uniform vec3 wr[${N}];uniform float ws[${N}];uniform float wph[${N}];
+      varying vec3 lp;varying vec3 wn;
+      void main(){
+        vec4 acc=vec4(0.);
+        for(int i=0;i<${N};i++){
+          if(dot(lp,wp[i])<0.9) continue;
+          float lx=dot(lp,wf[i])/ws[i];             // 沿身体，+1 头 / -1 尾
+          float ly=dot(lp,wr[i])/ws[i];
+          float tail=smoothstep(0.35,-1.0,lx);         // 越靠尾摆得越大
+          ly-=0.06*tail*sin(time*6.0+wph[i]-lx*3.5);   // 摆尾
+          vec2 uv=vec2(0.5+0.5*lx,0.5+ly*${(512 / WH).toFixed(4)});
+          if(uv.x<0.||uv.x>1.||uv.y<0.||uv.y>1.) continue;
+          vec4 c=texture2D(tex,uv);
+          acc=c+acc*(1.-c.a);
+        }
+        if(acc.a<0.003) discard;
+        float day=smoothstep(-0.4,0.4,dot(wn,sun));
+        acc.rgb*=mix(0.6,1.25,day);                    // 夜面也微微发光（生物荧光）
+        gl_FragColor=vec4(acc.rgb,acc.a*0.9);
+      }`
+  }));
+  planet.add(shell);
+  const p = new THREE.Vector3(), f = new THREE.Vector3(), rr = new THREE.Vector3(), base = new THREE.Vector3();
+  setWhales = (t) => {
+    U.time.value = t;
+    W.forEach((o, i) => {
+      // 起点：转轴的任一垂直向量，再绕转轴转 a0 + w·t
+      base.set(0, 0, 1).cross(o.axis).normalize();
+      p.copy(base).applyAxisAngle(o.axis, o.a0 + o.w * t);
+      f.copy(o.axis).cross(p).normalize();
+      rr.copy(p).cross(f).normalize();
+      U.wp.value[i].copy(p); U.wf.value[i].copy(f); U.wr.value[i].copy(rr);
+    });
+  };
+  setWhales(+(q.get('t') ?? 0));
+  // ?face=i：把第 i 条鲸转到镜头正面（检查用）
+  if (q.has('face')) { const w = U.wp.value[+q.get('face')]; planet.rotation.y = Math.atan2(-w.x, w.z); }
+}
+
+r.render(scene, cam);
+// 自转视频用：按角度/时间重画，同一组参数永远同一画面
+window.setRot = (deg) => { planet.rotation.y = deg * Math.PI / 180; r.render(scene, cam); };
+window.setState = (deg, t) => { planet.rotation.y = deg * Math.PI / 180; setWhales(t); r.render(scene, cam); };
+window.__ready = true;
+</script>
+</body></html>

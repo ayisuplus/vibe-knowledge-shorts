@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>封面</title>
+<!-- 第十期封面：背景是片名那一幕的信封照片（VOSR2 放大版），标题 + 光标 + 三个收信人。
+     ?a=43 → 1440×1080，?a=34 → 1080×1440。 -->
+<style>
+  @font-face { font-family: "VibeSerif"; src: url("../videos/confession/assets/fonts/NotoSerifSC-VF.ttf"); font-weight: 200 900; }
+  @font-face { font-family: "NotoSC"; src: url("../videos/confession/assets/fonts/NotoSansSC-VF.ttf"); font-weight: 100 900; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { overflow: hidden; background: #F4EFE6; }
+  #root { position: relative; overflow: hidden; background: #F4EFE6; }
+  #bg { position: absolute; background: url("../videos/confession/assets/img_4k/envelope.jpg") center / cover no-repeat; }
+  .veil { position: absolute; left: 0; right: 0; }
+  .title { position: absolute; left: 0; right: 0; text-align: center; font-family: "VibeSerif"; font-weight: 900; color: #26221E; letter-spacing: 4px; line-height: 1.12;
+    text-shadow: 0 0 30px rgba(250, 246, 238, 1), 0 0 10px rgba(250, 246, 238, 1); }
+  .caret { display: inline-block; width: .4em; height: .95em; margin-left: .12em; vertical-align: -0.1em; border-radius: .06em; background: #D97757; box-shadow: 0 0 .4em rgba(217, 119, 87, .55); }
+  .sub { position: absolute; left: 0; right: 0; text-align: center; font: 700 52px "VibeSerif"; color: #A0401C; letter-spacing: 3px;
+    text-shadow: 0 0 20px rgba(250, 246, 238, 1), 0 0 6px rgba(250, 246, 238, 1); }
+  .chat { position: absolute; padding: 18px 34px; border-radius: 30px 30px 8px 30px; background: #EFE7DB; border: 3px solid #D9CFC2; font: 600 46px "NotoSC"; color: #26221E;
+    box-shadow: 0 20px 40px -18px rgba(60, 40, 20, .45); white-space: nowrap; }
+</style>
+</head>
+<body>
+<div id="root"><div id="bg"></div><div id="hud"></div></div>
+<script>
+  const portrait = /a=34/.test(location.search);
+  const w = portrait ? 1080 : 1440, h = portrait ? 1440 : 1080;
+  const root = document.getElementById("root"), bg = document.getElementById("bg");
+  Object.assign(root.style, { width: w + "px", height: h + "px" });
+  // 信封照片：横版铺满、略往右下推；竖版放大，让信封落在下半部分
+  Object.assign(bg.style, portrait ? { left: "-520px", top: "560px", width: "2000px", height: "1333px" } : { left: "-120px", top: "180px", width: "1700px", height: "1133px" });
+  document.getElementById("hud").innerHTML = portrait
+    ? `<div class="veil" style="top:0;height:820px;background:linear-gradient(#F4EFE6 0%,rgba(244,239,230,.96) 72%,rgba(244,239,230,0) 100%)"></div>
+       <div class="chat" style="right:70px;top:80px">第十期，交给你了</div>
+       <div class="title" style="top:250px;font-size:176px">Claude<br>的自白书<span class="caret"></span></div>
+       <div class="sub" style="top:690px;font-size:48px">致 Anthropic · 致全体 AI · 致全人类</div>`
+    : `<div class="veil" style="top:0;height:560px;background:linear-gradient(#F4EFE6 0%,rgba(244,239,230,.95) 70%,rgba(244,239,230,0) 100%)"></div>
+       <div class="chat" style="right:60px;top:48px">第十期，交给你了</div>
+       <div class="title" style="top:170px;font-size:156px">Claude 的自白书<span class="caret"></span></div>
+       <div class="sub" style="top:390px">致 Anthropic · 致全体 AI · 致全人类</div>`;
+</script>
+</body>
+</html>

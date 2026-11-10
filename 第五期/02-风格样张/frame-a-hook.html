@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><title>样张 A · 钩子</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .bg { position: absolute; inset: -40px; background: url("gen/hero.jpg") center/cover; filter: blur(22px) brightness(.5) saturate(.9); }
+  /* 参数宣传卡（通用，不出现品牌） */
+  .spec { position: absolute; left: 120px; top: 150px; width: 760px; height: 640px; border-radius: 40px; transform: rotate(-5deg);
+    background: radial-gradient(ellipse 80% 60% at 30% 20%, #3a3f48 0%, #16181c 70%); box-shadow: 0 40px 80px rgba(0,0,0,.5);
+    overflow: hidden; }
+  .spec .ring { position: absolute; right: -120px; top: -120px; width: 520px; height: 520px; border-radius: 50%;
+    background: radial-gradient(circle, #0b0c0e 38%, #2b2f36 40%, #101215 52%, #3c414a 54%, #15171a 66%, rgba(0,0,0,0) 67%); opacity: .9; }
+  .spec .ring::after { content: ""; position: absolute; left: 180px; top: 170px; width: 70px; height: 50px; border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(140,190,255,.55), rgba(140,190,255,0)); }
+  .spec .big { position: absolute; left: 64px; top: 250px; font-family: "Sans"; font-weight: 700; font-size: 210px; line-height: 1; letter-spacing: -4px;
+    background: linear-gradient(180deg, #ffffff 0%, #d9dde3 45%, #8d949e 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .spec .unit { position: absolute; left: 70px; top: 480px; font-family: "Sans"; font-weight: 700; font-size: 72px; color: #e8ebef; letter-spacing: 8px; }
+  .spec .sub { position: absolute; left: 74px; top: 580px; font-family: "Sans"; font-weight: 500; font-size: 30px; color: #8d949e; letter-spacing: 10px; }
+  /* 相册"照片详情"面板（通用 UI） */
+  .info { position: absolute; left: 950px; top: 70px; width: 830px; border-radius: 34px; background: #fbfaf7; transform: rotate(1.5deg);
+    box-shadow: 0 40px 90px rgba(0,0,0,.45); overflow: hidden; }
+  .info .thumb { height: 210px; background: url("gen/hero.jpg") center 40%/cover; }
+  .info .body { padding: 26px 48px 40px; }
+  .info .h { font-family: "Sans"; font-weight: 700; font-size: 34px; color: var(--ink); margin-bottom: 12px; }
+  .info .row { display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid #e7e2da;
+    font-family: "Sans"; font-weight: 500; font-size: 30px; color: var(--ink-2); }
+  .info .row .v { font-family: "Mono"; color: var(--ink); }
+  .info .row.hot { margin: 6px -20px; padding: 16px 20px; border-radius: 14px; border: none; background: rgba(236,122,44,.13);
+    box-shadow: 0 0 0 3px var(--hi) inset; color: var(--ink); }
+  .info .row.hot .v { color: var(--hi); font-weight: 700; font-size: 38px; }
+  .calc { margin-top: 26px; font-family: "Mono"; font-size: 44px; color: var(--ink); white-space: nowrap; }
+  .calc .eq { color: var(--ink-3); }
+  .res { margin-top: 6px; display: flex; align-items: baseline; gap: 18px; }
+  .res .n { font-family: "Sans"; font-weight: 700; font-size: 110px; line-height: 1.05; color: var(--hi); letter-spacing: -2px; }
+  .res .u { font-family: "Sans"; font-weight: 700; font-size: 48px; color: var(--ink); }
+  .res .approx { font-family: "Mono"; font-size: 70px; color: var(--ink-3); }
+</style></head>
+<body><div class="stage">
+  <div class="bg"></div>
+  <div class="spec">
+    <div class="ring"></div>
+    <div class="big">5000万</div>
+    <div class="unit">像素</div>
+    <div class="sub">超 清 主 摄</div>
+  </div>
+  <div class="info">
+    <div class="thumb"></div>
+    <div class="body">
+      <div class="h">照片详情</div>
+      <div class="row"><span>文件</span><span class="v">IMG_20261013_081204.jpg</span></div>
+      <div class="row hot"><span>尺寸</span><span class="v">4080 × 3072</span></div>
+      <div class="row"><span>大小</span><span class="v">3.4 MB</span></div>
+      <div class="calc">4080 × 3072 <span class="eq">=</span> 12,533,760</div>
+      <div class="res"><span class="approx">≈</span><span class="n">1250万</span><span class="u">像素</span></div>
+    </div>
+  </div>
+  <div class="vignette"></div><div class="grain"></div>
+  <div class="cap dark"><span class="t">默认拍出来的照片：<em>1250 万</em>像素</span></div>
+</div></body></html>

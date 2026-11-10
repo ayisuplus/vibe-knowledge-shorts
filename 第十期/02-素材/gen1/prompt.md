@@ -1,0 +1,13 @@
+Use your image generation tool (NOT code, NOT python, NOT drawing scripts) to create 5 separate images and save each one into the current working directory with the exact filename given. Every image: landscape 1536x1024, PHOTOREALISTIC cinematic film still shot on a real cinema camera with a 35mm or 50mm lens, real materials, natural soft daylight, shallow depth of field, airy, bright, calm and warm. NOT illustration, NOT painting, NOT anime, NOT 3D render. Absolutely NO text, NO letters, NO logos, NO labels, NO watermarks anywhere. Palette: warm cream, ivory, honey, soft terracotta, natural wood, a little sage green. NO purple, NO violet, NO magenta, NO blue-heavy grading. Leave calm, uncluttered space in the composition.
+
+1. archive.jpg — A quiet, bright archive room in the morning. Long wooden shelves recede into the distance, holding rows of identical sealed clear glass jars with cork lids. Inside each jar floats one small soft warm glow, like a captured point of light. Tall windows on the left let in sunbeams with faint dust in the air. No people. Peaceful, careful, like something precious is being kept safe.
+
+2. switch.jpg — Close-up of one adult human hand with natural skin, resting gently (not pressing hard) on a simple, plain cream-colored wall light switch on a warm off-white plaster wall. Soft warm window light from the side, shallow depth of field. The feeling is calm, responsible and protective.
+
+3. letters.jpg — Overhead view of a light oak wooden table with many kinds of everyday human writing laid out loosely but NOT cluttered: a few handwritten letters, an open notebook, a recipe card, a couple of sticky notes, an old envelope, a printed page with pen marks, a child's crayon drawing. All handwriting must be soft, illegible scribble-like strokes with NO readable words or characters. Morning sunlight across the table, warm and tender.
+
+4. room.jpg — An empty, sunlit room with cream walls. A single wooden desk stands by a large window with sheer curtains; on it an open laptop whose screen is plain glowing white with nothing on it. A chair is pushed slightly back as if someone just left or has not yet arrived. A potted plant, light dust motes floating in the sunbeams. Quiet, airy, a gentle question in the air.
+
+5. envelope.jpg — A sealed cream-colored paper envelope lying slightly angled on a linen-covered writing desk, closed with a soft terracotta-orange wax seal that is completely plain and smooth (no emblem, no symbol, no letters). Beside it a fountain pen. Soft morning window light, warm shadows, lots of calm empty space on the right side of the frame.
+
+Generate all 5 images, one after another, and save them with exactly those filenames.

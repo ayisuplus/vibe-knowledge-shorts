@@ -1,0 +1,50 @@
+{
+ "1": {
+  "class_type": "MMAudioModelLoader",
+  "inputs": {
+   "mmaudio_model": "mmaudio_large_44k_v2.pth",
+   "base_precision": "fp16"
+  }
+ },
+ "2": {
+  "class_type": "MMAudioFeatureUtilsLoader",
+  "inputs": {
+   "vae_model": "mmaudio_vae_44k_fp16.safetensors",
+   "synchformer_model": "mmaudio_synchformer_fp16.safetensors",
+   "clip_model": "apple_DFN5B-CLIP-ViT-H-14-384_fp16.safetensors",
+   "mode": "44k",
+   "precision": "fp16"
+  }
+ },
+ "3": {
+  "class_type": "MMAudioSampler",
+  "inputs": {
+   "mmaudio_model": [
+    "1",
+    0
+   ],
+   "feature_utils": [
+    "2",
+    0
+   ],
+   "duration": 3.0,
+   "steps": 25,
+   "cfg": 4.5,
+   "seed": 7,
+   "prompt": "deep cinematic boom impact with heavy sub bass, trailer hit, then silence",
+   "negative_prompt": "music, melody, speech, voice, singing",
+   "mask_away_clip": false,
+   "force_offload": false
+  }
+ },
+ "4": {
+  "class_type": "SaveAudio",
+  "inputs": {
+   "audio": [
+    "3",
+    0
+   ],
+   "filename_prefix": "audio/sfx_test_mmaudio_boom"
+  }
+ }
+}

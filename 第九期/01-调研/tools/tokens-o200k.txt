@@ -1,0 +1,11 @@
+o200k_base
+Markdown	chars=41	tokens=28
+HTML	chars=98	tokens=54
+JSON	chars=99	tokens=48
+YAML	chars=64	tokens=35
+纯文本	chars=27	tokens=23
+**重点**	3	['**', '重点', '**']
+# 标题	3	['#', ' 标', '题']
+- 买菜	3	['-', ' 买', '菜']
+<strong>重点</strong>	6	['<strong', '>', '重点', '</', 'strong', '>']
+<h1>标题</h1>	8	['<h', '1', '>', '标题', '</', 'h', '1', '>']

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<!-- 第十一期封面：cover.html?a=43（1440×1080）/ ?a=34（1080×1440）。画面用开场那一帧（全息手托着魔方，frame.jpg 是去掉字的 4K 截图），字在这里排。 -->
+<style>
+  @font-face { font-family: "NotoSC"; src: url("../videos/rubiks/assets/fonts/NotoSansSC-VF.ttf"); font-weight: 100 900; }
+  @font-face { font-family: "CMono"; src: url("../videos/rubiks/assets/fonts/CascadiaMono.ttf"); }
+  html, body { margin: 0; background: #000; overflow: hidden; }
+  #c { position: relative; overflow: hidden; background: #000; }
+  #img { position: absolute; background: url("frame.jpg") no-repeat; background-size: 100% 100%; }
+  .fade { position: absolute; inset: 0; pointer-events: none; }
+  .t { position: absolute; font-family: "NotoSC"; color: #F4FBFF; white-space: nowrap; }
+  .t b { display: block; font-weight: 900; letter-spacing: .06em; line-height: 1; text-shadow: 0 0 34px rgba(56, 232, 255, .65), 0 6px 26px rgba(0, 0, 0, .9); }
+  .t i { display: block; font-style: normal; font-weight: 800; letter-spacing: .08em; color: #DDEFFF; text-shadow: 0 0 22px rgba(56, 232, 255, .45), 0 4px 18px rgba(0, 0, 0, .9); }
+  .hook { position: absolute; font-family: "NotoSC"; font-weight: 800; color: #FFD21A; white-space: nowrap; letter-spacing: .04em;
+    text-shadow: 0 0 24px rgba(255, 210, 26, .55), 0 4px 16px rgba(0, 0, 0, .95); }
+  .hook em { font-family: "CMono"; font-style: normal; font-weight: 700; }
+</style>
+</head>
+<body>
+<div id="c"><div id="img"></div><div class="fade"></div>
+  <div class="t"><b>魔方</b><i>—— 上帝的玩具</i></div>
+  <div class="hook"><em>4325</em> 京种乱法<br>最多 <em>20</em> 步拼回去</div>
+</div>
+<script>
+  const a = new URLSearchParams(location.search).get("a") || "43";
+  const c = document.getElementById("c"), img = document.getElementById("img"), fade = c.querySelector(".fade");
+  const t = c.querySelector(".t"), b = t.querySelector("b"), i = t.querySelector("i"), hook = c.querySelector(".hook");
+  const set = (e, s) => Object.assign(e.style, s);
+  if (a === "43") {
+    // 1440×1080：画面整体右移，让出左边给字（魔方在字的右边，不压字）
+    set(c, { width: "1440px", height: "1080px" });
+    set(img, { left: "-60px", top: "0px", width: "1920px", height: "1080px" });
+    fade.style.background = "linear-gradient(90deg, rgba(0,0,0,.75) 0%, rgba(0,0,0,.35) 38%, rgba(0,0,0,0) 60%)";
+    set(t, { left: "70px", top: "330px" }); set(b, { fontSize: "250px" }); set(i, { fontSize: "86px", marginTop: "26px" });
+    set(hook, { left: "78px", top: "760px", fontSize: "60px", lineHeight: "1.3" });
+  } else {
+    // 1080×1440：画面放在中下，标题在上，钩子在最下面
+    set(c, { width: "1080px", height: "1440px" });
+    set(img, { left: "-470px", top: "430px", width: "1920px", height: "1080px" });
+    fade.style.background = "linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 28%, rgba(0,0,0,0) 40%, rgba(0,0,0,0) 76%, rgba(0,0,0,.85) 88%)";
+    set(t, { left: "0", right: "0", top: "80px", textAlign: "center" }); set(b, { fontSize: "230px" }); set(i, { fontSize: "84px", marginTop: "20px" });
+    set(hook, { left: "0", right: "0", top: "1300px", textAlign: "center", fontSize: "64px", lineHeight: "1.3" });
+    hook.innerHTML = "<em>4325</em> 京种乱法，最多 <em>20</em> 步拼回去";
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+Use your built-in image generation tool to create ONE photorealistic image and save it. Do not write code.
+
+Image: a wide, eye-level photograph inside an empty Formula 1 team pit garage at night, as seen from the back of the garage looking toward the open pit lane door.
+- No car, no people, no text, no numbers, no logos, no brand names, no sponsor graphics anywhere.
+- Light grey epoxy floor with painted white bay markings and soft reflections of the lights.
+- Long white LED light strips on the ceiling; cool, clean, technical light; deep navy wall panels with thin red and yellow accent stripes (plain, unbranded).
+- Neat tool cabinets, wheel guns on hooks, stacked tyres in tyre blankets, a low car stand in the middle of the bay (empty).
+- The pit lane outside the door is dark with a few distant blurred lights.
+- Cinematic, realistic, 35 mm lens, natural perspective, moderate depth of field, slightly moody, high detail.
+- Landscape 16:9, as large as the tool allows.

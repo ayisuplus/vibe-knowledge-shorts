@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><title>样张 C · 爱的阶梯</title>
+<link rel="stylesheet" href="style.css"></head>
+<body><div class="stage">
+  <div class="marble"></div>
+  <svg class="layer" id="svg" viewBox="0 0 1920 1080"></svg>
+  <div class="vignette"></div><div class="grain"></div>
+  <div class="head"><div class="year">约两千四百年前</div><div class="rule"></div><div class="place">雅典 · 柏拉图</div></div>
+  <div class="ref"><div class="orig">Symposium</div><div class="zh">《会饮篇》</div><div class="rule"></div></div>
+  <div class="capbg"></div>
+  <div class="cap">最后，看见「<em>美本身</em>」</div>
+</div>
+<script src="kit.js"></script>
+<script>
+const G = "#c99a4a", GH = "#ebc57a", INK = "#2a1e16";
+const N = 6, W = 214, H = 98, DX = 34, DY = -24, X0 = 300, FLOOR = 880;
+const labels = ["一个人", "所有人", "灵魂", "城邦与法律", "知识", "美本身"];
+
+// 每级上方的金色线描符号（以 0,0 为中心）
+const fig = (x, y, s = 1) => `<g transform="translate(${x},${y}) scale(${s})"><circle cy="-34" r="9"/><path d="M-12,-20 Q0,-26 12,-20 L16,18 L-16,18 Z"/><path d="M-6,-16 L-4,16 M5,-16 L6,16" opacity=".6"/></g>`;
+const icons = [
+  fig(0, 0, 1.25),
+  fig(-34, 6, .95) + fig(-11, -4, 1.05) + fig(14, 2, 1) + fig(36, 8, .9),
+  `<path d="M-40,14 Q-30,30 0,30 Q40,30 46,12 Q20,4 -40,14 Z"/><path d="M46,12 Q58,8 62,0"/><path d="M-40,14 Q-52,10 -50,0 Q-44,-4 -38,4"/>
+   <path d="M-34,6 Q-30,-24 -24,-46 Q-14,-22 -18,4" fill="${GH}" fill-opacity=".35"/>`,
+  `<rect x="-44" y="-26" width="88" height="56" rx="4"/><path d="M-44,-26 q-14,4 -14,28 q0,24 14,28 M44,-26 q14,4 14,28 q0,24 -14,28"/><path d="M-30,-12 h60 M-30,0 h52 M-30,12 h58" opacity=".7"/>`,
+  `<path d="M-46,28 h92 v-14 h-92 Z M-40,14 h82 v-14 h-82 Z M-44,0 h86 v-14 h-86 Z"/><path d="M-20,-36 l4,-8 l4,8 l-8,-4 h8 Z M14,-46 l3,-6 l3,6 l-6,-3 h6 Z M30,-28 l2,-5 l2,5 l-4,-2 h4 Z"/>`,
+  ``
+];
+
+const s = [];
+s.push(`<defs>
+  <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="1.2"/></filter>
+  <filter id="gl" filterUnits="userSpaceOnUse" x="-3000" y="-3000" width="8000" height="8000"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <filter id="burstBlur" filterUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1080"><feGaussianBlur stdDeviation="22"/></filter>
+  <linearGradient id="riser" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f8f1e4"/><stop offset=".15" stop-color="#ebdfcb"/><stop offset="1" stop-color="#cdbb9f"/></linearGradient>
+  <linearGradient id="tread" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fffaf0"/><stop offset="1" stop-color="#f3e8d4"/></linearGradient>
+  <linearGradient id="side" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#bba68a"/><stop offset="1" stop-color="#d8c7ab"/></linearGradient>
+  <radialGradient id="sky" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#fffdf6" stop-opacity="1"/><stop offset=".25" stop-color="#fff2d0" stop-opacity=".85"/><stop offset=".6" stop-color="#f6d79a" stop-opacity=".25"/><stop offset="1" stop-color="#f6d79a" stop-opacity="0"/></radialGradient>
+  <linearGradient id="ray" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff4d6" stop-opacity=".7"/><stop offset="1" stop-color="#fff4d6" stop-opacity="0"/></linearGradient>
+</defs>`);
+
+const stepTop = (i) => FLOOR - (i + 1) * H;      // 第 i 级踏面的高度
+const xl = (i) => X0 + i * W;                 // 第 i 级左边
+const tx = (i) => xl(i) + W / 2 + DX / 2, ty = (i) => stepTop(i) + DY / 2;  // 踏面中心
+const bx = xl(N - 1) + W / 2 + DX / 2, by = stepTop(N - 1) - 150;            // 顶端光源
+
+// 天光：从顶端向左下照的光束
+for (let k = 0; k < 9; k++) {
+  const a = Math.PI * (0.56 + k * .05), L = 1900;
+  s.push(`<path d="M${bx},${by} L${bx + Math.cos(a - .025) * L},${by + Math.sin(a - .025) * L} L${bx + Math.cos(a + .025) * L},${by + Math.sin(a + .025) * L} Z" fill="url(#ray)" opacity="${.28 + (k % 3) * .1}"/>`);
+}
+// 地面倒影线
+s.push(`<rect x="0" y="${FLOOR}" width="1920" height="200" fill="#e2d4bd" opacity=".55"/>`);
+s.push(`<line x1="0" x2="1920" y1="${FLOOR}" y2="${FLOOR}" stroke="${G}" stroke-width="2" opacity=".5"/>`);
+
+// 阶梯：从低往高画，高一级的立面盖住低一级的侧面
+for (let i = 0; i < N; i++) {
+  const x = xl(i), y = stepTop(i);
+  // 侧面（右侧露出的厚度）
+  s.push(`<path d="M${x + W},${y} L${x + W + DX},${y + DY} L${x + W + DX},${FLOOR + DY} L${x + W},${FLOOR} Z" fill="url(#side)"/>`);
+  // 踏面
+  s.push(`<path d="M${x},${y} L${x + DX},${y + DY} L${x + W + DX},${y + DY} L${x + W},${y} Z" fill="url(#tread)"/>`);
+  // 立面
+  s.push(`<rect x="${x}" y="${y}" width="${W}" height="${FLOOR - y}" fill="url(#riser)"/>`);
+  // 与前一级之间的一道浅阴影，让台阶分得开
+  if (i > 0) s.push(`<rect x="${x}" y="${y}" width="14" height="${FLOOR - y}" fill="#a88f70" opacity=".18"/>`);
+  // 金色边线
+  s.push(`<path d="M${x},${y} H${x + W} L${x + W + DX},${y + DY}" fill="none" stroke="${GH}" stroke-width="${i === N - 1 ? 4 : 3}" filter="url(#gl)"/>`);
+  // 标签
+  s.push(`<text x="${x + W / 2}" y="${y + 44}" text-anchor="middle" font-family="Serif" font-weight="700" font-size="26" letter-spacing="3" fill="${i === N - 1 ? "#a8762c" : "#7a6450"}">${labels[i]}</text>`);
+  s.push(`<line x1="${x + W / 2 - 26}" x2="${x + W / 2 + 26}" y1="${y + 60}" y2="${y + 60}" stroke="${G}" stroke-width="1.5" opacity=".7"/>`);
+}
+
+// 顶端"美本身"：一团正在爆开的光
+s.push(`<circle cx="${bx}" cy="${by}" r="300" fill="url(#sky)"/>`);
+s.push(`<circle cx="${bx}" cy="${by}" r="70" fill="#fffdf6" filter="url(#burstBlur)"/>`);
+for (let k = 0; k < 24; k++) {
+  const a = k / 24 * Math.PI * 2, r0 = 70, r1 = k % 2 ? 125 : 175;
+  s.push(`<line x1="${bx + Math.cos(a) * r0}" y1="${by + Math.sin(a) * r0}" x2="${bx + Math.cos(a) * r1}" y2="${by + Math.sin(a) * r1}" stroke="${GH}" stroke-width="${k % 2 ? 2 : 3.5}" stroke-linecap="round" opacity=".75"/>`);
+}
+
+// 每级上方的符号（已走过的发亮）
+icons.forEach((ic, i) => {
+  if (!ic) return;
+  s.push(`<g transform="translate(${tx(i)},${ty(i) - 92})" fill="none" stroke="${GH}" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" filter="url(#gl)" opacity="${i <= 4 ? 1 : .5}">${ic}</g>`);
+});
+
+// 爬梯的小人：站在第五级（知识），抬头望向顶端
+const px = xl(4) + 52, py = ty(4) + 4;
+s.push(`<g transform="translate(${px},${py})">
+  <ellipse cx="0" cy="2" rx="26" ry="6" fill="#8a7458" opacity=".25"/>
+  <path d="M-14,0 Q-18,-50 -10,-78 Q0,-86 12,-78 Q20,-50 16,0 Z" fill="${INK}"/>
+  <path d="M10,-74 Q30,-60 26,-36" stroke="${INK}" stroke-width="9" stroke-linecap="round" fill="none"/>
+  <circle cx="4" cy="-98" r="14" fill="${INK}"/>
+  <path d="M-12,-70 Q2,-40 -6,0" stroke="#5a4636" stroke-width="2" fill="none"/>
+</g>`);
+
+s.push(K.motes(70, 9, { color: "#d9a94e", op: .7, x0: 700, y0: 60, y1: 820 }));
+document.getElementById("svg").innerHTML = s.join("");
+</script>
+</body></html>

@@ -1,0 +1,26 @@
+- [ComfyUI for media generation](comfyui-for-media-generation.md) — use local ComfyUI via comfy-local MCP, not Toonflow; workflows + paths
+- [Video pipeline: HyperFrames](video-pipeline-choice.md) — project-level skills, CLI 0.8.143, own headless Chrome — never the user's Chrome
+- [Episode: 信息茧房](episode-info-cocoon.md) — funnel explainer, landscape, neutral tone, user-supplied music + beat_data.json
+- [Episode 2: 她经济](episode-2-she-economy.md) — stage 1 research dossier at 第二期/01-调研/调研档案.md; neutral mechanism framing; open questions
+- [No purple; warm pinks only](no-purple-pink.md) — pinks must never drift toward magenta/purple
+- [Hook first, fill the frame](short-video-hook-and-fill.md) — strong 0–3s hook; big subject, stat cards, textured bg; no slow intros
+- [On-screen text = only what is shown](onscreen-text-literal.md) — no channel name, no subject labels like 信息论, no decorative formulas
+- [SFX via Woosh / MMAudio](sfx-mmaudio.md) — prefer Sony Woosh in ComfyUI (.venv, hf-mirror); MMAudio weak on UI sounds; non-commercial
+- [Episode 3: 蒸馏](episode-3-distillation.md) — DELIVERED 2026-10-11 as 蒸馏 · AI 摄魂术 (distillation-v3); user corrections on facts, colors, data-flow liquid
+- [Illustration via Codex CLI](codex-image-gen.md) — user's codex-cli exec does image generation; preferred over ComfyUI for illustrations
+- [Episode 4: 柏拉图式恋爱](episode-4-platonic-love.md) — DELIVERED 2026-10-12; landscape Douyin, ep1 music (user's fixed BGM); project 第四期/videos/platonic-love
+- [Episode 5: 像素与调色](episode-5-color-grading.md) — DELIVERED 2026-10-13 as 从第一性原理理解像素与调色; SVG-filter real pixel math, SRT captions
+- [Relatable everyday examples](audience-relatable-examples.md) — start from viewers' daily experience, end with a usable takeaway; why ep4 worked
+- [Captions as separate SRT](captions-as-srt.md) — from ep5: never burn captions; .srt + burned preview; keep caption zone empty
+- [Douyin cover sizes](douyin-cover-sizes.md) — covers are 4:3 1440×1080 + 3:4 1080×1440, never 16:9; tooling in 第四期/05-封面
+- [Episode 6: AI 与共产主义](episode-6-ai-communism.md) — DELIVERED 2026-10-15 as 「AI，会把我们带进共产主义吗？」 4K; door/worker throughline, AI music v4, styled ASS captions
+- [Light, real, calm](visual-tone-light-real.md) — ep6 draft1 feedback: little shake, no oppressive dark, airy-but-filled frames, photoreal images
+- [HyperFrames font-family name bug](hyperframes-font-family-name.md) — never name @font-face "Serif"/"Sans"; render drops Latin glyphs
+- [Episode 7: 树](episode-7-trees.md) — DELIVERED 2026-10-15 as 一棵树，长出整个计算机世界 (4K, 182s); 3D Three.js diorama, one growing tree, roots = CS trees
+- [Douyin taste + topic shortlist](douyin-taste-topic-plan.md) — 2026-10-17: short/stunning/gut-hitting/real confusion; 60–90s; shortlist in 选题策划-2026-10.md
+- [Episode 9: Markdown](episode-9-markdown.md) — DELIVERED 2026-10-18 as Markdown：AI 的最爱 (4K 93.6s); repo-wall hook, two-eyes token split, DOM-only HyperFrames
+- [Episode 8: 一年过得快](episode-8-time-flies.md) — DELIVERED 2026-10-17 (4K 93.6s); calendar-wall throughline, first 60–90s-format ep, Three.js + Codex photos
+- [No dense data visuals](no-dense-data-visuals.md) — numbers/scale shown artistically (towers, light filling); never tiny repeated icons — trypophobia
+- [Phone contrast](phone-contrast.md) — light styles must pass WCAG ratios + a 390px phone preview; orange #B85400; no thin weights for numbers
+- [Hook = subject first](hook-subject-first.md) — first frames show the topic itself (ep9: the .md files); stats like stars only as small backdrop
+- [Creative endings](creative-endings.md) — no formulaic strike-through + takeaway + question ending; never negate a claim the film never planted

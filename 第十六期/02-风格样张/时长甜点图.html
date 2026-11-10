@@ -1,0 +1,83 @@
+<html style="margin:0;padding:0;">
+<title>抖音知识短片时长甜点分析</title>
+<div style="width:100%;box-sizing:border-box;font-family:'Noto Sans SC','PingFang SC',sans-serif;background:#f7f7f5;padding:24px;color:#1a1b1c;">
+  <h2 style="margin:0 0 4px;font-size:20px;">抖音知识短片 · 时长甜点</h2>
+  <p style="margin:0 0 18px;color:#5f6670;font-size:13px;">横轴=时长（秒）；曲线=行业完播率基准（随时长下降）；色带=不同分发逻辑的甜点区</p>
+
+  <svg viewBox="0 0 960 420" width="100%" style="max-width:960px;">
+    <!-- plot area: x 70..920 maps 0..180s ; y 40..320 maps 100%..0 -->
+    <!-- zones -->
+    <rect x="70" y="40" width="141.7" height="280" fill="#e9eef6"/>
+    <rect x="211.7" y="40" width="283.3" height="280" fill="#e6f2ec"/>
+    <rect x="495" y="40" width="425" height="280" fill="#f4ede2"/>
+
+    <!-- y grid -->
+    <g stroke="#d9d8d2" stroke-width="1">
+      <line x1="70" y1="40" x2="920" y2="40"/>
+      <line x1="70" y1="110" x2="920" y2="110"/>
+      <line x1="70" y1="180" x2="920" y2="180"/>
+      <line x1="70" y1="250" x2="920" y2="250"/>
+      <line x1="70" y1="320" x2="920" y2="320"/>
+    </g>
+    <g font-size="11" fill="#5f6670" text-anchor="end">
+      <text x="62" y="44">100%</text>
+      <text x="62" y="114">75%</text>
+      <text x="62" y="184">50%</text>
+      <text x="62" y="254">25%</text>
+      <text x="62" y="324">0</text>
+    </g>
+
+    <!-- completion curve: points (s,%) -> x=70+s*4.722 ; y=320-pct*2.8
+         10s 80 -> 117,96 ; 15s 67 -> 141,132 ; 30s 47 -> 212,188 ; 60s 32 -> 353,230 ;
+         90s 24 -> 495,253 ; 120s 19 -> 637,267 ; 150s 15 -> 778,278 ; 180s 12 -> 920,286 -->
+    <path d="M117,96 C130,110 135,122 141,132 C170,160 190,178 212,188 C270,214 320,224 353,230 C410,240 460,248 495,253 C550,259 600,264 637,267 C690,272 740,275 778,278 C830,281 880,284 920,286"
+          fill="none" stroke="#4f6b9a" stroke-width="2.5"/>
+
+    <!-- vibe typical window 120-150 (x 637..778) -->
+    <rect x="637" y="40" width="141" height="280" fill="#35705a" opacity="0.10"/>
+    <line x1="637" y1="40" x2="637" y2="320" stroke="#35705a" stroke-width="1.2" stroke-dasharray="4 3"/>
+    <line x1="778" y1="40" x2="778" y2="320" stroke="#35705a" stroke-width="1.2" stroke-dasharray="4 3"/>
+
+    <!-- median 130 -->
+    <line x1="708" y1="40" x2="708" y2="320" stroke="#9a6a2f" stroke-width="1.4"/>
+    <text x="708" y="32" font-size="11" fill="#9a6a2f" text-anchor="middle">活动中位 130s</text>
+
+    <!-- recommended 120 -->
+    <line x1="637" y1="40" x2="637" y2="320" stroke="#a14e50" stroke-width="2"/>
+    <circle cx="637" cy="267" r="5" fill="#a14e50"/>
+    <text x="637" y="262" font-size="12" font-weight="bold" fill="#a14e50" text-anchor="middle">推荐 120s</text>
+
+    <!-- x labels -->
+    <g font-size="11" fill="#5f6670" text-anchor="middle">
+      <text x="117" y="338">10s</text>
+      <text x="212" y="338">30s</text>
+      <text x="353" y="338">60s</text>
+      <text x="495" y="338">90s</text>
+      <text x="637" y="338">120s</text>
+      <text x="778" y="338">150s</text>
+      <text x="920" y="338">180s</text>
+    </g>
+
+    <!-- zone labels -->
+    <text x="141" y="60" font-size="12" fill="#4f6b9a" text-anchor="middle">短视频·高完播</text>
+    <text x="353" y="60" font-size="12" fill="#35705a" text-anchor="middle">知识类 1–3 分钟甜点</text>
+    <text x="700" y="78" font-size="11" fill="#35705a" text-anchor="middle">Vibe 头部典型 2–2.5 分钟</text>
+    <text x="850" y="60" font-size="12" fill="#9a6a2f" text-anchor="middle">中长·精选（看停留时长）</text>
+  </svg>
+
+  <table style="width:100%;border-collapse:collapse;margin-top:14px;font-size:13px;">
+    <tr style="background:#eceae4;">
+      <th style="padding:8px;text-align:left;">分发逻辑</th><th style="padding:8px;text-align:left;">核心指标</th><th style="padding:8px;text-align:left;">适合时长</th>
+    </tr>
+    <tr style="border-bottom:1px solid #e4e3dd;">
+      <td style="padding:8px;">主信息流（短视频）</td><td style="padding:8px;">完播率（权重最高）</td><td style="padding:8px;">15–30s 完播最高；知识类 1–3 分钟</td>
+    </tr>
+    <tr style="border-bottom:1px solid #e4e3dd;">
+      <td style="padding:8px;">Vibe 知识大赏头部</td><td style="padding:8px;">完播 + 停留 + 收藏</td><td style="padding:8px;"><b>典型 2–2.5 分钟（120–150s），中位 130s</b></td>
+    </tr>
+    <tr>
+      <td style="padding:8px;">抖音精选 / 中长视频</td><td style="padding:8px;">总停留时长、续播、弹幕（不看完播）</td><td style="padding:8px;">5–15 分钟，&gt;1 分钟即入选道</td>
+    </tr>
+  </table>
+</div>
+</html>

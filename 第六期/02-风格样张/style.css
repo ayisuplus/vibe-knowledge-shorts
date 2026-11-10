@@ -1,0 +1,48 @@
+/* 第六期 · 马克思写下的那扇门，AI 打开了一半 · 横屏 1920×1080 · 庄重的纪录片质感 */
+@font-face { font-family: "Serif"; src: url("fonts/NotoSerifSC-VF.ttf"); font-weight: 200 900; }
+@font-face { font-family: "Sans"; src: url("fonts/NotoSansSC-VF.ttf"); font-weight: 100 900; }
+
+:root {
+  --paper: #ede3d0;
+  --ink: #1e1b18;
+  --red: #c8281e;      /* 正红，偏橙，不偏洋红 */
+  --gold: #d9a441;
+  --gold-hi: #f2cf7a;
+  --ice: #7fc8e8;
+  --cold: #e8f1f5;
+  --neon-c: #2de2e6;
+  --neon-r: #ff3b4a;
+}
+
+html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; background: #0b0a09; }
+.stage { position: relative; width: 1920px; height: 1080px; overflow: hidden; }
+.bg { position: absolute; inset: 0; background-size: cover; background-position: center; }
+.vignette { position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse 75% 70% at 50% 45%, rgba(0,0,0,0) 55%, rgba(0,0,0,.55) 100%); }
+.grain { position: absolute; inset: 0; pointer-events: none; opacity: .10; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .5  0 0 0 0 .5  0 0 0 0 .5  0 0 0 1.6 -0.3'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"); }
+.bars::before, .bars::after { content: ""; position: absolute; left: 0; right: 0; height: 0; background: #000; z-index: 60; }
+
+/* 手稿纸：所有马克思引文共用 */
+.sheet { position: absolute; background: url("gen/parchment.jpg") center/cover, var(--paper);
+  box-shadow: 0 30px 80px rgba(0,0,0,.55), 0 4px 12px rgba(0,0,0,.35); color: var(--ink); }
+.sheet .q { font-family: "Serif"; font-weight: 600; line-height: 1.55; letter-spacing: 2px; }
+.sheet .q b { font-weight: 800; color: var(--red); }
+.seal { position: absolute; font-family: "Serif"; font-weight: 800; color: var(--red); border: 5px solid var(--red);
+  border-radius: 8px; padding: 6px 18px; letter-spacing: 4px; transform: rotate(-6deg); opacity: .92;
+  mix-blend-mode: multiply; filter: url(#rough); }
+.src { font-family: "Sans"; font-weight: 500; color: rgba(30,27,24,.55); letter-spacing: 1px; }
+
+/* 字幕（交付时走 SRT，不烧进成片；样张里只预览位置和样子） */
+.cap { position: absolute; left: 160px; right: 160px; top: 908px; text-align: center; z-index: 50;
+  font-family: "Sans"; font-weight: 700; font-size: 52px; line-height: 1.35; color: #fff; letter-spacing: 2px; }
+.cap span.t { padding: 6px 24px; border-radius: 12px; background: rgba(12,10,9,.62);
+  -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.cap em { font-style: normal; color: var(--gold-hi); }
+.capnote { position: absolute; right: 40px; bottom: 18px; z-index: 55; font-family: "Sans"; font-size: 18px; color: rgba(255,255,255,.45); letter-spacing: 1px; }
+
+/* 金色宋体大字（片名、标语、结尾） */
+.goldtext { font-family: "Serif"; font-weight: 800; letter-spacing: 6px;
+  background: linear-gradient(180deg, #fff1c4 0%, var(--gold-hi) 35%, var(--gold) 70%, #a8741f 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  filter: drop-shadow(0 4px 18px rgba(0,0,0,.6)); }

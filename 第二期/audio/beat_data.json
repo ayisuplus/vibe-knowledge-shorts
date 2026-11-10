@@ -1,0 +1,1847 @@
+{
+ "duration": 180.0,
+ "files": {
+  "master": "配乐-终版.m4a",
+  "A": "music/raw/A_pink_143.flac",
+  "B": "music/raw/B_awake_201.flac"
+ },
+ "edits": {
+  "A_cut": 138.95,
+  "silence": [
+   138.95,
+   141.6
+  ],
+  "B_start": 141.6,
+  "music_box_note": 176.9
+ },
+ "tempo": {
+  "A": 90.67,
+  "B": 77.13
+ },
+ "meter": {
+  "A": "3/4",
+  "B": "4/4"
+ },
+ "sections": [
+  {
+   "id": "S0",
+   "name": "开场",
+   "start": 0.0,
+   "end": 16.614
+  },
+  {
+   "id": "S1",
+   "name": "幼儿园",
+   "start": 16.614,
+   "end": 32.624
+  },
+  {
+   "id": "S2",
+   "name": "读书",
+   "start": 32.624,
+   "end": 60.616
+  },
+  {
+   "id": "S3",
+   "name": "恋爱",
+   "start": 60.616,
+   "end": 84.614
+  },
+  {
+   "id": "S4",
+   "name": "结婚",
+   "start": 84.614,
+   "end": 100.624
+  },
+  {
+   "id": "S5",
+   "name": "生孩子",
+   "start": 100.624,
+   "end": 122.613
+  },
+  {
+   "id": "S6",
+   "name": "中年",
+   "start": 122.613,
+   "end": 141.6
+  },
+  {
+   "id": "S7",
+   "name": "觉醒",
+   "start": 141.6,
+   "end": 166.364
+  },
+  {
+   "id": "S8",
+   "name": "结尾",
+   "start": 166.364,
+   "end": 180.0
+  }
+ ],
+ "beats": [
+  {
+   "t": 0.604,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.324,
+   "section": "S0"
+  },
+  {
+   "t": 1.277,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.334,
+   "section": "S0"
+  },
+  {
+   "t": 1.939,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.188,
+   "section": "S0"
+  },
+  {
+   "t": 2.601,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.187,
+   "section": "S0"
+  },
+  {
+   "t": 3.274,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.253,
+   "section": "S0"
+  },
+  {
+   "t": 3.947,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.25,
+   "section": "S0"
+  },
+  {
+   "t": 4.609,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.175,
+   "section": "S0"
+  },
+  {
+   "t": 5.283,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.401,
+   "section": "S0"
+  },
+  {
+   "t": 5.944,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.246,
+   "section": "S0"
+  },
+  {
+   "t": 6.606,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.103,
+   "section": "S0"
+  },
+  {
+   "t": 7.279,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.373,
+   "section": "S0"
+  },
+  {
+   "t": 7.953,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.381,
+   "section": "S0"
+  },
+  {
+   "t": 8.615,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.222,
+   "section": "S0"
+  },
+  {
+   "t": 9.276,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.069,
+   "section": "S0"
+  },
+  {
+   "t": 9.938,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.148,
+   "section": "S0"
+  },
+  {
+   "t": 10.612,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.124,
+   "section": "S0"
+  },
+  {
+   "t": 11.285,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.254,
+   "section": "S0"
+  },
+  {
+   "t": 11.947,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.261,
+   "section": "S0"
+  },
+  {
+   "t": 12.608,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.252,
+   "section": "S0"
+  },
+  {
+   "t": 13.282,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.212,
+   "section": "S0"
+  },
+  {
+   "t": 13.944,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.365,
+   "section": "S0"
+  },
+  {
+   "t": 14.617,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.413,
+   "section": "S0"
+  },
+  {
+   "t": 15.279,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.028,
+   "section": "S0"
+  },
+  {
+   "t": 15.952,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.285,
+   "section": "S0"
+  },
+  {
+   "t": 16.614,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.385,
+   "section": "S1"
+  },
+  {
+   "t": 17.287,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.243,
+   "section": "S1"
+  },
+  {
+   "t": 17.937,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.295,
+   "section": "S1"
+  },
+  {
+   "t": 18.611,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.439,
+   "section": "S1"
+  },
+  {
+   "t": 19.273,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.332,
+   "section": "S1"
+  },
+  {
+   "t": 19.946,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.341,
+   "section": "S1"
+  },
+  {
+   "t": 20.608,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.674,
+   "section": "S1"
+  },
+  {
+   "t": 21.281,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.317,
+   "section": "S1"
+  },
+  {
+   "t": 21.943,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.41,
+   "section": "S1"
+  },
+  {
+   "t": 22.616,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.469,
+   "section": "S1"
+  },
+  {
+   "t": 23.278,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.015,
+   "section": "S1"
+  },
+  {
+   "t": 23.951,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.333,
+   "section": "S1"
+  },
+  {
+   "t": 24.613,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.393,
+   "section": "S1"
+  },
+  {
+   "t": 25.275,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.302,
+   "section": "S1"
+  },
+  {
+   "t": 25.948,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.287,
+   "section": "S1"
+  },
+  {
+   "t": 26.61,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.443,
+   "section": "S1"
+  },
+  {
+   "t": 27.283,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.275,
+   "section": "S1"
+  },
+  {
+   "t": 27.945,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.252,
+   "section": "S1"
+  },
+  {
+   "t": 28.619,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.637,
+   "section": "S1"
+  },
+  {
+   "t": 29.28,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.234,
+   "section": "S1"
+  },
+  {
+   "t": 29.942,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.309,
+   "section": "S1"
+  },
+  {
+   "t": 30.616,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.456,
+   "section": "S1"
+  },
+  {
+   "t": 31.277,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.377,
+   "section": "S1"
+  },
+  {
+   "t": 31.951,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.414,
+   "section": "S1"
+  },
+  {
+   "t": 32.624,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.476,
+   "section": "S2"
+  },
+  {
+   "t": 33.274,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.144,
+   "section": "S2"
+  },
+  {
+   "t": 33.948,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.177,
+   "section": "S2"
+  },
+  {
+   "t": 34.609,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.635,
+   "section": "S2"
+  },
+  {
+   "t": 35.271,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.162,
+   "section": "S2"
+  },
+  {
+   "t": 35.944,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.185,
+   "section": "S2"
+  },
+  {
+   "t": 36.606,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.723,
+   "section": "S2"
+  },
+  {
+   "t": 37.28,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.265,
+   "section": "S2"
+  },
+  {
+   "t": 37.953,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.215,
+   "section": "S2"
+  },
+  {
+   "t": 38.615,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.761,
+   "section": "S2"
+  },
+  {
+   "t": 39.277,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.238,
+   "section": "S2"
+  },
+  {
+   "t": 39.95,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.251,
+   "section": "S2"
+  },
+  {
+   "t": 40.612,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.37,
+   "section": "S2"
+  },
+  {
+   "t": 41.285,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.282,
+   "section": "S2"
+  },
+  {
+   "t": 41.947,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.114,
+   "section": "S2"
+  },
+  {
+   "t": 42.62,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.364,
+   "section": "S2"
+  },
+  {
+   "t": 43.294,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.002,
+   "section": "S2"
+  },
+  {
+   "t": 43.944,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.527,
+   "section": "S2"
+  },
+  {
+   "t": 44.606,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.846,
+   "section": "S2"
+  },
+  {
+   "t": 45.279,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.301,
+   "section": "S2"
+  },
+  {
+   "t": 45.952,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.302,
+   "section": "S2"
+  },
+  {
+   "t": 46.626,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.514,
+   "section": "S2"
+  },
+  {
+   "t": 47.287,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.292,
+   "section": "S2"
+  },
+  {
+   "t": 47.949,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.333,
+   "section": "S2"
+  },
+  {
+   "t": 48.611,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.792,
+   "section": "S2"
+  },
+  {
+   "t": 49.273,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.36,
+   "section": "S2"
+  },
+  {
+   "t": 49.946,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.572,
+   "section": "S2"
+  },
+  {
+   "t": 50.62,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.559,
+   "section": "S2"
+  },
+  {
+   "t": 51.281,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.003,
+   "section": "S2"
+  },
+  {
+   "t": 51.943,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.285,
+   "section": "S2"
+  },
+  {
+   "t": 52.616,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.589,
+   "section": "S2"
+  },
+  {
+   "t": 53.278,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.307,
+   "section": "S2"
+  },
+  {
+   "t": 53.952,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.21,
+   "section": "S2"
+  },
+  {
+   "t": 54.625,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.522,
+   "section": "S2"
+  },
+  {
+   "t": 55.287,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.267,
+   "section": "S2"
+  },
+  {
+   "t": 55.948,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.282,
+   "section": "S2"
+  },
+  {
+   "t": 56.622,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.491,
+   "section": "S2"
+  },
+  {
+   "t": 57.284,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.143,
+   "section": "S2"
+  },
+  {
+   "t": 57.957,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.189,
+   "section": "S2"
+  },
+  {
+   "t": 58.619,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.667,
+   "section": "S2"
+  },
+  {
+   "t": 59.281,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.205,
+   "section": "S2"
+  },
+  {
+   "t": 59.954,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.192,
+   "section": "S2"
+  },
+  {
+   "t": 60.616,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.626,
+   "section": "S3"
+  },
+  {
+   "t": 61.277,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.181,
+   "section": "S3"
+  },
+  {
+   "t": 61.951,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.246,
+   "section": "S3"
+  },
+  {
+   "t": 62.613,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.872,
+   "section": "S3"
+  },
+  {
+   "t": 63.274,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.16,
+   "section": "S3"
+  },
+  {
+   "t": 63.948,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.218,
+   "section": "S3"
+  },
+  {
+   "t": 64.621,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.612,
+   "section": "S3"
+  },
+  {
+   "t": 65.283,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.279,
+   "section": "S3"
+  },
+  {
+   "t": 65.956,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.118,
+   "section": "S3"
+  },
+  {
+   "t": 66.618,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.78,
+   "section": "S3"
+  },
+  {
+   "t": 67.291,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.026,
+   "section": "S3"
+  },
+  {
+   "t": 67.942,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.428,
+   "section": "S3"
+  },
+  {
+   "t": 68.615,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.499,
+   "section": "S3"
+  },
+  {
+   "t": 69.277,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.24,
+   "section": "S3"
+  },
+  {
+   "t": 69.95,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.37,
+   "section": "S3"
+  },
+  {
+   "t": 70.623,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.64,
+   "section": "S3"
+  },
+  {
+   "t": 71.285,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.285,
+   "section": "S3"
+  },
+  {
+   "t": 71.947,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.277,
+   "section": "S3"
+  },
+  {
+   "t": 72.609,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.729,
+   "section": "S3"
+  },
+  {
+   "t": 73.282,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.479,
+   "section": "S3"
+  },
+  {
+   "t": 73.956,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.59,
+   "section": "S3"
+  },
+  {
+   "t": 74.617,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.604,
+   "section": "S3"
+  },
+  {
+   "t": 75.279,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.022,
+   "section": "S3"
+  },
+  {
+   "t": 75.952,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.506,
+   "section": "S3"
+  },
+  {
+   "t": 76.614,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.765,
+   "section": "S3"
+  },
+  {
+   "t": 77.288,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.183,
+   "section": "S3"
+  },
+  {
+   "t": 77.949,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.38,
+   "section": "S3"
+  },
+  {
+   "t": 78.623,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.62,
+   "section": "S3"
+  },
+  {
+   "t": 79.285,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.272,
+   "section": "S3"
+  },
+  {
+   "t": 79.946,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.228,
+   "section": "S3"
+  },
+  {
+   "t": 80.62,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.568,
+   "section": "S3"
+  },
+  {
+   "t": 81.281,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.146,
+   "section": "S3"
+  },
+  {
+   "t": 81.955,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.261,
+   "section": "S3"
+  },
+  {
+   "t": 82.617,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.765,
+   "section": "S3"
+  },
+  {
+   "t": 83.29,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.197,
+   "section": "S3"
+  },
+  {
+   "t": 83.952,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.275,
+   "section": "S3"
+  },
+  {
+   "t": 84.614,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.668,
+   "section": "S4"
+  },
+  {
+   "t": 85.287,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.214,
+   "section": "S4"
+  },
+  {
+   "t": 85.949,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.229,
+   "section": "S4"
+  },
+  {
+   "t": 86.61,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.72,
+   "section": "S4"
+  },
+  {
+   "t": 87.284,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.16,
+   "section": "S4"
+  },
+  {
+   "t": 87.946,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.212,
+   "section": "S4"
+  },
+  {
+   "t": 88.619,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.763,
+   "section": "S4"
+  },
+  {
+   "t": 89.281,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.214,
+   "section": "S4"
+  },
+  {
+   "t": 89.954,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.153,
+   "section": "S4"
+  },
+  {
+   "t": 90.616,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.663,
+   "section": "S4"
+  },
+  {
+   "t": 91.289,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.009,
+   "section": "S4"
+  },
+  {
+   "t": 91.951,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.532,
+   "section": "S4"
+  },
+  {
+   "t": 92.613,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.815,
+   "section": "S4"
+  },
+  {
+   "t": 93.286,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.211,
+   "section": "S4"
+  },
+  {
+   "t": 93.948,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.314,
+   "section": "S4"
+  },
+  {
+   "t": 94.621,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.491,
+   "section": "S4"
+  },
+  {
+   "t": 95.283,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.253,
+   "section": "S4"
+  },
+  {
+   "t": 95.956,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.361,
+   "section": "S4"
+  },
+  {
+   "t": 96.618,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.741,
+   "section": "S4"
+  },
+  {
+   "t": 97.292,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.391,
+   "section": "S4"
+  },
+  {
+   "t": 97.953,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.638,
+   "section": "S4"
+  },
+  {
+   "t": 98.615,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.657,
+   "section": "S4"
+  },
+  {
+   "t": 99.277,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.019,
+   "section": "S4"
+  },
+  {
+   "t": 99.95,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.384,
+   "section": "S4"
+  },
+  {
+   "t": 100.624,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.534,
+   "section": "S5"
+  },
+  {
+   "t": 101.285,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.213,
+   "section": "S5"
+  },
+  {
+   "t": 101.947,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.402,
+   "section": "S5"
+  },
+  {
+   "t": 102.621,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.74,
+   "section": "S5"
+  },
+  {
+   "t": 103.282,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.211,
+   "section": "S5"
+  },
+  {
+   "t": 103.944,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.385,
+   "section": "S5"
+  },
+  {
+   "t": 104.618,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.562,
+   "section": "S5"
+  },
+  {
+   "t": 105.291,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.15,
+   "section": "S5"
+  },
+  {
+   "t": 105.953,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.601,
+   "section": "S5"
+  },
+  {
+   "t": 106.626,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.496,
+   "section": "S5"
+  },
+  {
+   "t": 107.288,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.001,
+   "section": "S5"
+  },
+  {
+   "t": 107.95,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.541,
+   "section": "S5"
+  },
+  {
+   "t": 108.623,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.533,
+   "section": "S5"
+  },
+  {
+   "t": 109.285,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.38,
+   "section": "S5"
+  },
+  {
+   "t": 109.946,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.311,
+   "section": "S5"
+  },
+  {
+   "t": 110.62,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.462,
+   "section": "S5"
+  },
+  {
+   "t": 111.282,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.439,
+   "section": "S5"
+  },
+  {
+   "t": 111.955,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.215,
+   "section": "S5"
+  },
+  {
+   "t": 112.617,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.619,
+   "section": "S5"
+  },
+  {
+   "t": 113.29,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.029,
+   "section": "S5"
+  },
+  {
+   "t": 113.952,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.379,
+   "section": "S5"
+  },
+  {
+   "t": 114.614,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.912,
+   "section": "S5"
+  },
+  {
+   "t": 115.287,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.167,
+   "section": "S5"
+  },
+  {
+   "t": 115.949,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.437,
+   "section": "S5"
+  },
+  {
+   "t": 116.611,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.798,
+   "section": "S5"
+  },
+  {
+   "t": 117.296,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.073,
+   "section": "S5"
+  },
+  {
+   "t": 117.946,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.427,
+   "section": "S5"
+  },
+  {
+   "t": 118.619,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.9,
+   "section": "S5"
+  },
+  {
+   "t": 119.293,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.079,
+   "section": "S5"
+  },
+  {
+   "t": 119.954,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.339,
+   "section": "S5"
+  },
+  {
+   "t": 120.616,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.737,
+   "section": "S5"
+  },
+  {
+   "t": 121.289,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.362,
+   "section": "S5"
+  },
+  {
+   "t": 121.951,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.471,
+   "section": "S5"
+  },
+  {
+   "t": 122.613,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.573,
+   "section": "S6"
+  },
+  {
+   "t": 123.286,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.006,
+   "section": "S6"
+  },
+  {
+   "t": 123.948,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.403,
+   "section": "S6"
+  },
+  {
+   "t": 124.621,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.741,
+   "section": "S6"
+  },
+  {
+   "t": 125.295,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.274,
+   "section": "S6"
+  },
+  {
+   "t": 125.957,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.273,
+   "section": "S6"
+  },
+  {
+   "t": 126.618,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.856,
+   "section": "S6"
+  },
+  {
+   "t": 127.292,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.218,
+   "section": "S6"
+  },
+  {
+   "t": 127.954,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.419,
+   "section": "S6"
+  },
+  {
+   "t": 128.615,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.695,
+   "section": "S6"
+  },
+  {
+   "t": 129.289,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.229,
+   "section": "S6"
+  },
+  {
+   "t": 129.95,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.698,
+   "section": "S6"
+  },
+  {
+   "t": 130.612,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.744,
+   "section": "S6"
+  },
+  {
+   "t": 131.286,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.323,
+   "section": "S6"
+  },
+  {
+   "t": 131.947,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.448,
+   "section": "S6"
+  },
+  {
+   "t": 132.621,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.505,
+   "section": "S6"
+  },
+  {
+   "t": 133.283,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.115,
+   "section": "S6"
+  },
+  {
+   "t": 133.944,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.28,
+   "section": "S6"
+  },
+  {
+   "t": 134.618,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.649,
+   "section": "S6"
+  },
+  {
+   "t": 135.291,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.127,
+   "section": "S6"
+  },
+  {
+   "t": 135.953,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.432,
+   "section": "S6"
+  },
+  {
+   "t": 136.615,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.491,
+   "section": "S6"
+  },
+  {
+   "t": 137.288,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.375,
+   "section": "S6"
+  },
+  {
+   "t": 137.95,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.569,
+   "section": "S6"
+  },
+  {
+   "t": 138.623,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.55,
+   "section": "S6"
+  },
+  {
+   "t": 153.918,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.334,
+   "section": "S7"
+  },
+  {
+   "t": 154.661,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.391,
+   "section": "S7"
+  },
+  {
+   "t": 155.439,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.378,
+   "section": "S7"
+  },
+  {
+   "t": 156.298,
+   "beat": 4,
+   "type": "弱拍",
+   "strength": 0.656,
+   "section": "S7"
+  },
+  {
+   "t": 157.088,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.278,
+   "section": "S7"
+  },
+  {
+   "t": 157.877,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.288,
+   "section": "S7"
+  },
+  {
+   "t": 158.632,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.188,
+   "section": "S7"
+  },
+  {
+   "t": 159.398,
+   "beat": 4,
+   "type": "弱拍",
+   "strength": 0.133,
+   "section": "S7"
+  },
+  {
+   "t": 160.176,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.124,
+   "section": "S7"
+  },
+  {
+   "t": 160.954,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.268,
+   "section": "S7"
+  },
+  {
+   "t": 161.72,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.283,
+   "section": "S7"
+  },
+  {
+   "t": 162.486,
+   "beat": 4,
+   "type": "弱拍",
+   "strength": 0.172,
+   "section": "S7"
+  },
+  {
+   "t": 163.264,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.258,
+   "section": "S7"
+  },
+  {
+   "t": 164.042,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.241,
+   "section": "S7"
+  },
+  {
+   "t": 164.832,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.235,
+   "section": "S7"
+  },
+  {
+   "t": 165.598,
+   "beat": 4,
+   "type": "弱拍",
+   "strength": 0.324,
+   "section": "S7"
+  },
+  {
+   "t": 166.364,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.248,
+   "section": "S8"
+  },
+  {
+   "t": 167.13,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.134,
+   "section": "S8"
+  },
+  {
+   "t": 167.885,
+   "beat": 3,
+   "type": "次强拍",
+   "strength": 0.203,
+   "section": "S8"
+  },
+  {
+   "t": 168.64,
+   "beat": 4,
+   "type": "弱拍",
+   "strength": 0.267,
+   "section": "S8"
+  },
+  {
+   "t": 169.429,
+   "beat": 1,
+   "type": "强拍",
+   "strength": 0.303,
+   "section": "S8"
+  },
+  {
+   "t": 170.219,
+   "beat": 2,
+   "type": "弱拍",
+   "strength": 0.23,
+   "section": "S8"
+  }
+ ],
+ "downbeats": [
+  0.604,
+  2.601,
+  4.609,
+  6.606,
+  8.615,
+  10.612,
+  12.608,
+  14.617,
+  16.614,
+  18.611,
+  20.608,
+  22.616,
+  24.613,
+  26.61,
+  28.619,
+  30.616,
+  32.624,
+  34.609,
+  36.606,
+  38.615,
+  40.612,
+  42.62,
+  44.606,
+  46.626,
+  48.611,
+  50.62,
+  52.616,
+  54.625,
+  56.622,
+  58.619,
+  60.616,
+  62.613,
+  64.621,
+  66.618,
+  68.615,
+  70.623,
+  72.609,
+  74.617,
+  76.614,
+  78.623,
+  80.62,
+  82.617,
+  84.614,
+  86.61,
+  88.619,
+  90.616,
+  92.613,
+  94.621,
+  96.618,
+  98.615,
+  100.624,
+  102.621,
+  104.618,
+  106.626,
+  108.623,
+  110.62,
+  112.617,
+  114.614,
+  116.611,
+  118.619,
+  120.616,
+  122.613,
+  124.621,
+  126.618,
+  128.615,
+  130.612,
+  132.621,
+  134.618,
+  136.615,
+  138.623,
+  153.918,
+  157.088,
+  160.176,
+  163.264,
+  166.364,
+  169.429
+ ],
+ "accents": [
+  20.608,
+  28.619,
+  34.609,
+  36.606,
+  38.615,
+  44.606,
+  46.626,
+  48.611,
+  49.946,
+  52.616,
+  54.625,
+  58.619,
+  60.616,
+  62.613,
+  64.621,
+  66.618,
+  70.623,
+  72.609,
+  74.617,
+  76.614,
+  78.623,
+  80.62,
+  82.617,
+  84.614,
+  86.61,
+  88.619,
+  90.616,
+  92.613,
+  96.618,
+  98.615,
+  100.624,
+  102.621,
+  104.618,
+  105.953,
+  107.95,
+  112.617,
+  114.614,
+  116.611,
+  118.619,
+  120.616,
+  122.613,
+  124.621,
+  126.618,
+  128.615,
+  130.612,
+  132.621,
+  134.618,
+  137.95,
+  156.298
+ ],
+ "breaths": [
+  50.62,
+  106.626,
+  138.623
+ ],
+ "piano_notes": [
+  141.867,
+  143.272,
+  143.411,
+  143.632,
+  144.886,
+  145.292,
+  146.035,
+  146.128,
+  146.581,
+  147.765,
+  148.125,
+  148.287,
+  148.52,
+  148.856,
+  149.472,
+  149.727,
+  150.667,
+  151.178
+ ]
+}

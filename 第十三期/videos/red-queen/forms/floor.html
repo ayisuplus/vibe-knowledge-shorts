@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<!-- 形式样张 1 · 棋盘跑道：红皇后的世界。同一套配色，但把“跑道”换成会后退的格子。 -->
+<style>
+  @font-face { font-family: "SerifSC"; src: url("../assets/fonts/NotoSerifSC-VF.ttf"); font-weight: 200 900; }
+  @font-face { font-family: "NotoSC"; src: url("../assets/fonts/NotoSansSC-VF.ttf"); font-weight: 100 900; }
+  @font-face { font-family: "CMono"; src: local("Consolas"); }
+  html, body { margin: 0; height: 1080px; width: 1920px; overflow: hidden; background: #05070b; }
+  #root { position: relative; width: 1920px; height: 1080px; overflow: hidden;
+          background: radial-gradient(70% 46% at 50% 38%, #10202b 0%, #0a1119 46%, #05070b 100%); }
+  /* 地平线附近的一层冷雾，让远处“没有尽头” */
+  .haze { position: absolute; left: 0; right: 0; top: 330px; height: 240px;
+          background: radial-gradient(60% 100% at 50% 100%, rgba(111,211,232,.16), transparent 70%); }
+  /* 棋盘地面 */
+  .scene { position: absolute; inset: 0; perspective: 720px; perspective-origin: 50% 46%; }
+  .floor { position: absolute; left: -60%; width: 220%; height: 2600px; top: 470px; transform-origin: 50% 0;
+           transform: rotateX(74deg) translateZ(0);
+           background-image:
+             repeating-linear-gradient(90deg, rgba(111,211,232,.30) 0 2px, transparent 2px 130px),
+             repeating-linear-gradient(0deg,  rgba(111,211,232,.30) 0 2px, transparent 2px 130px),
+             repeating-conic-gradient(from 0deg at 50% 50%, #0c222c 0% 25%, #071218 0% 50%);
+           background-size: 130px 130px, 130px 130px, 130px 130px;
+           -webkit-mask-image: linear-gradient(180deg, transparent 0%, rgba(0,0,0,.25) 6%, #000 22%, #000 62%, transparent 92%);
+           mask-image: linear-gradient(180deg, transparent 0%, rgba(0,0,0,.25) 6%, #000 22%, #000 62%, transparent 92%); }
+  /* 及格线：屏幕上的一根高度线 + 地面上的一道投影 */
+  .line { position: absolute; left: 0; right: 0; top: 652px; height: 2px;
+          background: repeating-linear-gradient(90deg, #ff8f5e 0 26px, transparent 26px 44px);
+          box-shadow: 0 0 18px rgba(255,143,94,.55); }
+  .lineL { position: absolute; left: 150px; top: 608px; font-family: "NotoSC"; font-size: 25px;
+           letter-spacing: .14em; color: #ff8f5e; }
+  /* 人 */
+  .man { position: absolute; left: 960px; top: 560px; transform: translateX(-50%); }
+  .note { position: absolute; right: 96px; bottom: 70px; font-family: "NotoSC"; font-size: 22px;
+          letter-spacing: .18em; color: #3f6880; }
+</style></head>
+<body><div id="root">
+  <div class="haze"></div>
+  <div class="scene"><div class="floor"></div></div>
+  <div class="line"></div>
+  <div class="lineL">留在原地所需的努力</div>
+  <svg class="man" width="240" height="420" viewBox="0 0 240 420">
+    <defs>
+      <linearGradient id="b" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#eaf6fb"/><stop offset=".55" stop-color="#9fbfd2"/><stop offset="1" stop-color="#3c5a6b"/>
+      </linearGradient>
+      <filter id="g" filterUnits="userSpaceOnUse" x="-80" y="-80" width="400" height="600">
+        <feGaussianBlur stdDeviation="10" result="bl"/><feMerge><feMergeNode in="bl"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+    <ellipse cx="120" cy="404" rx="70" ry="12" fill="#02060a" opacity=".72"/>
+    <g filter="url(#g)" fill="none" stroke="url(#b)" stroke-linecap="round" stroke-width="26">
+      <path d="M120 150 L120 262"/>
+      <path d="M120 262 L96 330 L92 398"/>
+      <path d="M120 262 L150 326 L158 394"/>
+      <path d="M120 168 L100 214 L92 250"/>
+      <path d="M120 168 L142 212 L150 248"/>
+    </g>
+    <circle cx="126" cy="112" r="30" fill="url(#b)" filter="url(#g)"/>
+  </svg>
+  <div class="note">形式样张 · 棋盘跑道</div>
+</div></body></html>

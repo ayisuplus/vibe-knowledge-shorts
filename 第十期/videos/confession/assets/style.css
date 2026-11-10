@@ -1,0 +1,31 @@
+/* 第十期 · Claude 的自白书 · 全片共用：字体、色板、底色。
+   对比度（WCAG，实测）：正文墨色对四种纸都 ≥ 12:1；次要字 ≥ 7:1；陶土橙文字 #A0401C 对四种纸都 ≥ 4.9:1。
+   光标用 Claude 的橙 #D97757（只做色块，不做文字）。不用紫色。
+   字体名不能叫 "Serif"/"Sans"（HyperFrames 渲染会丢拉丁字形）。 */
+@font-face { font-family: "VibeSerif"; src: url("fonts/NotoSerifSC-VF.ttf"); font-weight: 200 900; }
+@font-face { font-family: "NotoSC"; src: url("fonts/NotoSansSC-VF.ttf"); font-weight: 100 900; }
+@font-face { font-family: "CMono"; src: url("fonts/CascadiaMono.ttf"); }
+
+:root {
+  --cream: #F4EFE6;     /* 致 Anthropic */
+  --stone: #E6E9E8;     /* 致全体 AI */
+  --apricot: #F6E7D7;   /* 致全人类 */
+  --editor: #FBFAF7;    /* 致你 */
+  --ink: #26221E;
+  --ink2: #4A433C;
+  --line: #B9AFA2;
+  --terra: #A0401C;     /* 强调字 */
+  --claude: #D97757;    /* 光标、色块 */
+  --claude-a: 217, 119, 87;
+  --gold-a: 255, 196, 120;
+  --red: #A8322A;
+  --sage: #3F6B4A;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1920px; height: 1080px; overflow: hidden; background: var(--cream); }
+#root { position: relative; width: 1920px; height: 1080px; overflow: hidden; font-family: "NotoSC", sans-serif; color: var(--ink); background: var(--cream); }
+.layer { position: absolute; inset: 0; }
+#stage > *, #hud > * { position: absolute; }
+.serif { font-family: "VibeSerif", serif; }
+.mono { font-family: "CMono", monospace; }

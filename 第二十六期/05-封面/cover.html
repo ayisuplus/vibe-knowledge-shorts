@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>loading</title>
+<style>
+@font-face{font-family:NotoSC;src:url(../videos/rb19-analysis/assets/fonts/NotoSansSC-VF.ttf);font-weight:100 900}
+*{box-sizing:border-box} html,body{margin:0;overflow:hidden;background:#050608}
+#film{position:absolute;left:0;top:0;width:1920px;height:1080px;border:0;transform-origin:0 0}
+#shade{position:absolute;left:0;right:0;top:0;background:linear-gradient(rgba(5,6,8,.9),rgba(5,6,8,.62) 60%,rgba(5,6,8,0))}
+.t{position:absolute;left:0;right:0;text-align:center;font-family:NotoSC,sans-serif;font-weight:900;color:#f4f1ea;line-height:1.14;text-shadow:0 3px 22px rgba(0,0,0,.95)}
+.t .hl{color:#ffb547}
+</style>
+</head>
+<body>
+<iframe id="film" src="../videos/rb19-analysis/index.html"></iframe>
+<div id="shade"></div>
+<div class="t" id="t"><span class="hl">RB19</span><br>为什么能赢？</div>
+<script type="module">
+// 封面用片里的同一个场景定格：S5 前悬架机械特写、刹车盘发红的那一拍，隐藏字幕和标注，按焦点裁成 4:3 / 3:4。
+const a = new URLSearchParams(location.search).get("a") || "43", W = a === "43" ? 1440 : 1080, H = a === "43" ? 1080 : 1440;
+const q = new URLSearchParams(location.search), T_FRAME = +(q.get("t") || 103.5), FOCUS = [+(q.get("fx") || 900), +(q.get("fy") || 600)];
+const f = document.getElementById("film"), s = a === "43" ? .95 : 1.15;
+f.style.transform = `translate(${(W / 2 - FOCUS[0] * s).toFixed(1)}px,${(H * .62 - FOCUS[1] * s).toFixed(1)}px) scale(${s})`;
+await document.fonts.load("900 120px NotoSC", "RB19为什么能赢？");
+const w = await new Promise((r) => { const c = () => { const x = f.contentWindow; if (x && x.__renderFrame) r(x); else setTimeout(c, 100); }; c(); });
+w.document.getElementById("hud").style.display = "none";
+w.__renderFrame(T_FRAME); await new Promise(requestAnimationFrame); w.__renderFrame(T_FRAME);
+const t = document.getElementById("t"), sh = document.getElementById("shade");
+t.style.top = a === "43" ? "54px" : "96px"; t.style.fontSize = a === "43" ? "128px" : "124px"; sh.style.height = a === "43" ? "430px" : "520px";
+document.title = "ready";
+</script>
+</body>
+</html>

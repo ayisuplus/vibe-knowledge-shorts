@@ -1,0 +1,150 @@
+/* 第十六期 · 每个人都努力，社会就一定更好吗？
+   画风 C「演化宇宙向量」：深蓝黑底 + 金箭头（相加）+ 暖红（相消）+ 青（换轴 / 生命）。无紫、无洋红。
+   底径向 #112042 → #0a1229 → #050816；金 #ffc247 / #ffd777 / #fff1c2；红 #ef4444；青 #4fd8e8；象牙白 #f6efdc；次要 #a9b8d4。
+   字体：@font-face 只有三个名字——NotoSC（黑）、NotoSerifSC（宋）、WenKai（霞鹜文楷）。别起 "Serif" / "Sans"。 */
+
+@font-face { font-family: "NotoSerifSC"; src: url("fonts/NotoSerifSC-VF.ttf") format("truetype"); font-weight: 200 900; font-display: block; }
+@font-face { font-family: "NotoSC"; src: url("fonts/NotoSansSC-VF.ttf") format("truetype"); font-weight: 100 900; font-display: block; }
+@font-face { font-family: "WenKai"; src: url("fonts/LXGWWenKai-Regular.ttf") format("truetype"); font-display: block; }
+
+html, body { margin: 0; padding: 0; background: #050816; overflow: hidden; }
+*, *::before, *::after { box-sizing: border-box; }
+#root { position: relative; width: 1920px; height: 1080px; overflow: hidden; }
+.layer { position: absolute; inset: 0; }
+canvas.layer { width: 1920px; height: 1080px; }
+
+/* ---------- 底 ---------- */
+#bg { background: radial-gradient(72% 66% at 50% 44%, #112042 0%, #0a1229 56%, #050816 100%); }
+#bg .vig {
+  position: absolute; inset: 0;
+  background: radial-gradient(78% 72% at 50% 46%, transparent 58%, rgba(2, 4, 12, 0.6) 100%);
+}
+
+/* ---------- HUD ---------- */
+#hud .scrim {
+  position: absolute; left: 0; right: 0; top: 846px; bottom: 0;
+  background: linear-gradient(180deg, rgba(3, 6, 18, 0), rgba(3, 6, 18, 0.62));
+}
+#hud .era {
+  position: absolute; left: 50%; top: 36px; margin-left: -230px;
+  width: 460px; height: 52px; border: 2px solid rgba(255, 194, 71, 0.6); border-radius: 999px;
+  background: rgba(10, 18, 41, 0.78); display: grid; place-items: center; overflow: hidden; opacity: 0; visibility: hidden;
+}
+#hud .era span {
+  grid-area: 1 / 1; font-family: "NotoSC", sans-serif; font-weight: 600; font-size: 24px; line-height: 1;
+  letter-spacing: 0.12em; color: #ffd777; white-space: nowrap; opacity: 0;
+}
+#hud .mark {
+  position: absolute; right: 56px; top: 44px; font-family: "NotoSC", sans-serif; font-weight: 600; font-size: 20px;
+  letter-spacing: 0.2em; color: #a9b8d4; border: 1.5px solid rgba(169, 184, 212, 0.5); border-radius: 999px;
+  padding: 6px 18px; opacity: 0; visibility: hidden; background: rgba(10, 18, 41, 0.75);
+}
+#hud .note {
+  position: absolute; left: 0; right: 0; top: 778px; text-align: center;
+  font-family: "NotoSC", sans-serif; font-weight: 500; font-size: 34px; line-height: 1.3; letter-spacing: 0.04em;
+  color: #a9b8d4; opacity: 0; visibility: hidden; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+}
+#hud .note b { color: #ffd777; font-weight: 700; }
+#hud .cap {
+  position: absolute; left: 0; right: 0; top: 912px; text-align: center; opacity: 0; visibility: hidden;
+  font-family: "NotoSC", sans-serif; font-weight: 800; font-size: 46px; line-height: 64px; letter-spacing: 0.04em;
+  color: #f6efdc; text-shadow: 0 2px 14px rgba(0, 0, 0, 0.7);
+}
+#hud .cap .hi { color: #ffc247; }
+#hud .cap .en {
+  display: block; font-family: "NotoSerifSC", serif; font-style: italic; font-weight: 500; font-size: 26px; line-height: 30px;
+  letter-spacing: 0.02em; color: #a9b8d4;
+}
+
+/* ---------- 舞台上的标注 ---------- */
+.lab {
+  position: absolute; font-family: "NotoSC", sans-serif; font-weight: 600; font-size: 28px; line-height: 1.25;
+  letter-spacing: 0.06em; color: #f6efdc; white-space: nowrap; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.75);
+}
+.lab b { color: #ffd777; font-weight: 800; }
+.lab.gold { color: #ffd777; }
+.lab.red { color: #ff7a6b; }
+.lab.cyan { color: #7be7f2; }
+.lab.dim { color: #a9b8d4; }
+.lab.c { text-align: center; }
+.gl { display: inline-block; }
+
+/* 通用小卡（半透明深底 + 金边） */
+.card {
+  position: absolute; border: 2px solid rgba(255, 194, 71, 0.55); border-radius: 18px;
+  background: rgba(8, 14, 34, 0.78); box-shadow: 0 18px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* 读数框：合力 / 投入 / 人均产出 */
+.readout {
+  position: absolute; width: 300px; padding: 12px 22px 14px; text-align: center;
+  border: 2px solid rgba(255, 194, 71, 0.55); border-radius: 18px; background: rgba(8, 14, 34, 0.8);
+}
+.readout .rk { display: block; font-family: "NotoSC", sans-serif; font-weight: 600; font-size: 22px; letter-spacing: 0.16em; color: #a9b8d4; }
+.readout .rv { display: block; margin-top: 2px; font-family: "NotoSC", sans-serif; font-weight: 800; font-size: 64px; line-height: 1.1; color: #ffd777; font-variant-numeric: tabular-nums; }
+.readout.red { border-color: rgba(239, 68, 68, 0.65); }
+.readout.red .rv { color: #ff7a6b; }
+.readout.cyan { border-color: rgba(79, 216, 232, 0.6); }
+.readout.cyan .rv { color: #7be7f2; }
+
+/* 「类比」「示意」小章 */
+.seal {
+  position: absolute; border: 5px solid #ffc247; border-radius: 50%; color: #ffc247; text-align: center;
+  font-family: "NotoSC", sans-serif; font-weight: 800; font-size: 34px; letter-spacing: 0.2em; text-indent: 0.2em;
+  box-shadow: inset 0 0 22px rgba(255, 194, 71, 0.28), 0 0 0 4px rgba(255, 194, 71, 0.08); background: rgba(8, 14, 34, 0.6);
+}
+.hw { color: #f6efdc; }
+.hw.ac { color: #ffd777; }
+.nib { background: #ffd777; }
+
+/* ---------- S2 · 引文卡 / 论文页 ---------- */
+.qcard { left: 280px; top: 262px; width: 1360px; height: 330px; opacity: 0; visibility: hidden; }
+.qcard .qsrc { position: absolute; left: 56px; top: 32px; font-family: "NotoSC", sans-serif; font-weight: 600; font-size: 26px; letter-spacing: 0.14em; color: #a9b8d4; }
+.qcard .qbar { position: absolute; left: 56px; top: 96px; width: 6px; height: 196px; border-radius: 3px; background: #ffc247; box-shadow: 0 0 18px rgba(255, 194, 71, 0.6); transform-origin: 50% 0; }
+.qcard .qtext { position: absolute; left: 92px; top: 88px; right: 56px; font-family: "NotoSerifSC", serif; font-style: italic; font-weight: 500; font-size: 58px; line-height: 1.4; letter-spacing: 0.01em; color: #f6efdc; }
+.qcard .qtext b { color: #ffd777; font-weight: 700; }
+.qcard .qcur { display: inline-block; width: 4px; height: 0.86em; background: #ffd777; vertical-align: -0.08em; margin-left: 6px; }
+
+.paper {
+  position: absolute; left: 360px; top: 176px; width: 1200px; height: 580px; border-radius: 10px;
+  background: linear-gradient(180deg, #fbf6ea, #f1e8d2); border: 2px solid #cdbf9f;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.62); overflow: hidden; will-change: transform, opacity; opacity: 0; visibility: hidden;
+}
+.paper .pj { position: absolute; left: 64px; right: 64px; top: 30px; display: flex; justify-content: space-between; font-family: "NotoSC", sans-serif; font-weight: 600; font-size: 22px; letter-spacing: 0.2em; color: #6f5f45; }
+.paper .prule { position: absolute; left: 64px; right: 64px; top: 76px; height: 2px; background: #cdbf9f; transform-origin: 0 50%; }
+.paper .pt { position: absolute; left: 64px; top: 96px; font-family: "NotoSerifSC", serif; font-weight: 800; font-size: 60px; letter-spacing: 0.04em; color: #2a2419; white-space: nowrap; }
+.paper .pa { position: absolute; left: 66px; top: 178px; font-family: "NotoSerifSC", serif; font-weight: 600; font-size: 28px; letter-spacing: 0.3em; color: #6f5f45; }
+.paper .bars { position: absolute; left: 66px; top: 262px; width: 500px; }
+.paper .bars i { display: block; height: 10px; border-radius: 5px; background: #d8ccb0; margin: 0 0 17px; transform-origin: 0 50%; }
+.paper .bars i.gap { height: 16px; background: none; margin: 0; }
+.paper .fig { position: absolute; left: 632px; top: 226px; width: 500px; height: 320px; overflow: visible; }
+.paper .fig text { font-family: "NotoSC", sans-serif; font-weight: 600; font-size: 20px; letter-spacing: 0.08em; fill: #6f5f45; }
+.paper .sheen { position: absolute; top: -10%; height: 120%; width: 280px; left: 0; opacity: 0; pointer-events: none; background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,252,240,0.6), rgba(255,255,255,0)); }
+.qcard { background: rgba(6, 10, 26, 0.93); }
+.lab.big { font-size: 40px; font-weight: 800; letter-spacing: 0.12em; }
+
+/* ---------- S5 · 数据卡 ---------- */
+.dcard { left: 410px; top: 232px; width: 1100px; height: 440px; opacity: 0; visibility: hidden; background: rgba(6, 10, 26, 0.9); }
+.dcard .dk { position: absolute; left: 0; right: 0; top: 34px; text-align: center; font-family: "NotoSC", sans-serif; font-weight: 600; font-size: 32px; letter-spacing: 0.24em; color: #a9b8d4; }
+.dcard .dv { position: absolute; left: 0; right: 0; top: 62px; text-align: center; font-family: "NotoSC", sans-serif; font-weight: 800; font-size: 214px; line-height: 1.1; color: #ffd777; font-variant-numeric: tabular-nums; text-shadow: 0 0 46px rgba(255, 194, 71, 0.45); }
+.dcard .du { position: absolute; left: 0; right: 0; top: 296px; text-align: center; font-family: "NotoSC", sans-serif; font-weight: 800; font-size: 54px; letter-spacing: 0.2em; color: #f6efdc; }
+.dcard .ds { position: absolute; left: 0; right: 0; bottom: 26px; text-align: center; font-family: "NotoSC", sans-serif; font-weight: 600; font-size: 30px; letter-spacing: 0.08em; color: #a9b8d4; }
+
+/* ---------- S6 · 主句 / 引用卡 / 免责 / 问句 / 最后一闪 ---------- */
+#hud .flash { position: absolute; inset: 0; background: #fff; opacity: 0; visibility: hidden; }
+.scrimT { position: absolute; left: 0; right: 0; top: 300px; height: 380px; opacity: 0; visibility: hidden; background: radial-gradient(60% 56% at 50% 50%, rgba(2, 5, 16, 0.78) 0%, rgba(2, 5, 16, 0.5) 55%, rgba(2, 5, 16, 0) 100%); }
+.thesis { position: absolute; left: 0; right: 0; top: 400px; text-align: center; font-family: "NotoSC", sans-serif; font-weight: 800; font-size: 96px; line-height: 1.2; letter-spacing: 0.06em; color: #f6efdc; text-shadow: 0 4px 24px rgba(0, 0, 0, 0.75); white-space: nowrap; opacity: 0; visibility: hidden; }
+.thesis .tg { display: inline-block; opacity: 0; }
+.thesis .tg.hi { color: #ffc247; text-shadow: 0 0 36px rgba(255, 194, 71, 0.55), 0 4px 24px rgba(0, 0, 0, 0.75); }
+.thesisline { position: absolute; left: 1004px; top: 516px; width: 220px; height: 24px; opacity: 0; visibility: hidden; }
+.thesisline svg { width: 220px; height: 24px; overflow: visible; }
+.refs { left: 290px; top: 246px; width: 1340px; height: 444px; opacity: 0; visibility: hidden; background: rgba(6, 10, 26, 0.92); }
+.refs .rt { position: absolute; left: 40px; top: 24px; font-family: "NotoSC", sans-serif; font-weight: 700; font-size: 28px; letter-spacing: 0.3em; color: #ffd777; }
+.refs .ref { position: absolute; width: 600px; height: 78px; padding: 8px 20px 0 26px; border-left: 5px solid rgba(255, 194, 71, 0.35); opacity: 0.15; }
+.refs .ref b { display: block; font-family: "NotoSC", sans-serif; font-weight: 800; font-size: 32px; line-height: 1.25; letter-spacing: 0.04em; color: #f6efdc; }
+.refs .ref span { display: block; font-family: "NotoSC", sans-serif; font-weight: 500; font-size: 24px; line-height: 1.3; letter-spacing: 0.03em; color: #a9b8d4; white-space: nowrap; }
+.refs .ref.on { border-left-color: #ffc247; }
+.disc { position: absolute; left: 0; right: 0; top: 712px; text-align: center; font-family: "NotoSC", sans-serif; font-weight: 600; font-size: 28px; letter-spacing: 0.06em; color: #a9b8d4; opacity: 0; visibility: hidden; text-shadow: 0 2px 12px rgba(0,0,0,.8); }
+.qend { position: absolute; left: 0; right: 0; top: 428px; text-align: center; font-family: "NotoSC", sans-serif; font-weight: 800; font-size: 78px; line-height: 1.2; letter-spacing: 0.05em; color: #f6efdc; opacity: 0; visibility: hidden; text-shadow: 0 4px 22px rgba(0, 0, 0, 0.8); white-space: nowrap; }
+.qend .qt { display: inline-block; }
+.qend b.a { color: #ffc247; } .qend b.b { color: #ff7a6b; }

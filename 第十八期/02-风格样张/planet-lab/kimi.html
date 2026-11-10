@@ -1,0 +1,73 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Kimi moon test</title>
+<style>html,body{margin:0;background:#050510;overflow:hidden}canvas{display:block}</style>
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head><body>
+<script type="module">
+// 月之暗面试片：?day=kimi/kimi-day-A-fixed.png&night=kimi/kimi-night-fixed.png&t=秒&orbit=0|1
+// 月球相对太阳不转（永远只亮半面）；受光面显示白天贴图，背光面只显示夜光细线，线上有光脉冲流动；镜头从亮面绕到暗面
+import * as THREE from 'three';
+const q = new URLSearchParams(location.search);
+const W = 1920, H = 1080;
+const r = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+r.setSize(W, H); r.setPixelRatio(1);
+r.outputColorSpace = THREE.SRGBColorSpace;
+r.toneMapping = THREE.NeutralToneMapping; r.toneMappingExposure = 1.0;
+document.body.appendChild(r.domElement);
+const scene = new THREE.Scene();
+const cam = new THREE.PerspectiveCamera(32, W / H, 0.1, 200);
+
+let s = 31; const rnd = () => (s = (s * 16807) % 2147483647) / 2147483647;
+const sp = []; for (let i = 0; i < 2500; i++) { const a = rnd() * 6.283, b = Math.acos(2 * rnd() - 1), R = 90; sp.push(R * Math.sin(b) * Math.cos(a), R * Math.cos(b), R * Math.sin(b) * Math.sin(a)); }
+const sg = new THREE.BufferGeometry(); sg.setAttribute('position', new THREE.Float32BufferAttribute(sp, 3));
+scene.add(new THREE.Points(sg, new THREE.PointsMaterial({ color: 0xc8cde0, size: 0.12 })));
+
+const loader = new THREE.TextureLoader();
+const tex = async (f) => { const t = await loader.loadAsync(f); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 16; return t; };
+const SUN = new THREE.Vector3(1, 0.18, 0.15).normalize();      // 太阳从 +x 方向照来，固定不动
+const U = {
+  day: { value: await tex(q.get('day') || 'kimi/kimi-day-A-fixed.png') },
+  night: { value: await tex(q.get('night') || 'kimi/kimi-night-fixed.png') },
+  sun: { value: SUN }, time: { value: 0 },
+};
+const moon = new THREE.Mesh(new THREE.SphereGeometry(1, 256, 128), new THREE.ShaderMaterial({
+  uniforms: U,
+  vertexShader: 'varying vec2 vUv;varying vec3 wn;void main(){vUv=uv;wn=normalize(mat3(modelMatrix)*normal);gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}',
+  fragmentShader: `uniform sampler2D day;uniform sampler2D night;uniform vec3 sun;uniform float time;varying vec2 vUv;varying vec3 wn;
+    void main(){
+      float ndl=dot(normalize(wn),sun);
+      vec3 albedo=texture2D(day,vUv).rgb;
+      vec3 lit=albedo*(max(ndl,0.)*1.25+.015);                               // 月面：几乎无大气，明暗交界清楚
+      float dark=1.-smoothstep(-.12,.06,ndl);                                 // 只在背光面显示夜光
+      float glow=texture2D(night,vUv).r;
+      float pulse=.55+.45*pow(.5+.5*sin(vUv.x*62.83-time*1.4+vUv.y*9.),3.);  // 沿线条（大致横向）流动的光脉冲
+      vec3 em=vec3(.72,.84,1.)*glow*pulse*dark*1.6;
+      gl_FragColor=vec4(lit+em,1.);
+      #include <tonemapping_fragment>
+      #include <colorspace_fragment>
+    }`
+}));
+scene.add(moon);
+// 暗面边缘一圈极淡的冷色轮廓光，免得暗面边缘融进黑底
+const rim = new THREE.Mesh(new THREE.SphereGeometry(1.004, 128, 64), new THREE.ShaderMaterial({
+  transparent: true, blending: THREE.AdditiveBlending, depthWrite: false, uniforms: { sun: { value: SUN } },
+  vertexShader: 'varying vec3 n;varying vec3 v;varying vec3 wn;void main(){n=normalize(normalMatrix*normal);wn=normalize(mat3(modelMatrix)*normal);vec4 mv=modelViewMatrix*vec4(position,1.);v=normalize(-mv.xyz);gl_Position=projectionMatrix*mv;}',
+  fragmentShader: 'uniform vec3 sun;varying vec3 n;varying vec3 v;varying vec3 wn;void main(){float f=pow(1.-max(dot(n,v),0.),5.);float dark=1.-smoothstep(-.1,.2,dot(wn,sun));gl_FragColor=vec4(vec3(.55,.68,1.)*f*dark*.45,1.);}'
+}));
+scene.add(rim);
+
+const camPos = new THREE.Vector3(), look = new THREE.Vector3(0, 0, 0);
+const DIST = +(q.get('dist') ?? 4.6);
+window.setState = (deg, t) => {
+  U.time.value = t;
+  moon.rotation.y = 0;                                         // 不自转：亮面永远朝着太阳
+  // 镜头方位角：从偏向太阳的一侧（月面大半亮）慢慢绕到背面（只剩暗面和夜光）
+  const a = (q.has('az') ? +q.get('az') : 25 + t * 17) * Math.PI / 180;
+  camPos.set(Math.cos(a) * DIST, 0.55, Math.sin(a) * DIST);
+  cam.position.copy(camPos); cam.lookAt(look);
+  r.render(scene, cam);
+};
+window.setState(0, +(q.get('t') ?? 0));
+window.__ready = true;
+</script>
+</body></html>

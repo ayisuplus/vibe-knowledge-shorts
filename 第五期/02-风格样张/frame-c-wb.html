@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><title>样张 C · 白平衡</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  /* 照片放大 1.4 倍，米饭碗（原图 640, 867）落在画面 (781, 860) */
+  .ph { position: absolute; inset: 0; background-size: 2150px auto; background-position: -115px -354px; background-repeat: no-repeat; }
+  .ph.raw { background-image: url("gen/bad-yellow.jpg"); }
+  .ph.fix { background-image: url("gen/yellow-fixed.png"); clip-path: circle(560px at 781px 860px); }
+  .ring { position: absolute; left: 221px; top: 300px; width: 1120px; height: 1120px; border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(255,255,255,.95), 0 0 40px 10px rgba(255,255,255,.55); }
+  .tap { position: absolute; left: 781px; top: 800px; width: 64px; height: 64px; margin: -32px 0 0 -32px; border-radius: 50%;
+    border: 5px solid #fff; box-shadow: 0 0 0 10px rgba(255,255,255,.35), 0 6px 18px rgba(0,0,0,.35); }
+  .pxcard { left: 1150px; top: 150px; width: 600px; }
+  .pxcard .row { justify-content: space-between; }
+  .pxcard .m { color: var(--hi); font-weight: 700; }
+  .pxcard .eq { color: var(--ink-3); }
+  .pxcard .out { font-weight: 700; }
+  .pxcard .hd { display: flex; justify-content: space-between; font-family: "Sans"; font-weight: 500; font-size: 22px; color: var(--ink-3);
+    padding: 0 0 4px 48px; letter-spacing: 1px; }
+</style></head>
+<body><div class="stage">
+  <div class="ph raw"></div>
+  <div class="ph fix"></div>
+  <div class="ring"></div>
+  <div class="tap"></div>
+  <div class="pxcard">
+    <div class="title">白米饭 · 本该是白的</div>
+    <div class="hd"><span>读数</span><span>乘</span><span>结果</span></div>
+    <div class="row"><span class="k r">R</span><span>253</span><span class="m">× 1.00</span><span class="eq">=</span><span class="out">253</span></div>
+    <div class="row"><span class="k g">G</span><span>177</span><span class="m">× 1.43</span><span class="eq">=</span><span class="out">253</span></div>
+    <div class="row"><span class="k b">B</span><span>&nbsp;37</span><span class="m">× 6.85</span><span class="eq">=</span><span class="out">253</span></div>
+  </div>
+  <div class="tag">简化演示</div>
+  <div class="vignette"></div><div class="grain"></div>
+  <div class="cap"><span class="t">把它的三个数<em>拉平</em></span></div>
+</div></body></html>

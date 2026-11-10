@@ -1,0 +1,30 @@
+/* 字体名只用 NotoSC / NotoSerifSC（AGENTS.md；不要叫 Serif/Sans，渲染会丢拉丁字形） */
+@font-face { font-family: "NotoSC"; src: url("fonts/NotoSansSC-VF.ttf") format("truetype"); font-weight: 100 900; }
+@font-face { font-family: "NotoSerifSC"; src: url("fonts/NotoSerifSC-VF.ttf") format("truetype"); font-weight: 200 900; }
+
+html, body { margin: 0; width: 1920px; height: 1080px; background: #03030a; overflow: hidden; }
+#root { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: #03030a; }
+.layer { position: absolute; inset: 0; }
+#gl { display: block; width: 1920px; height: 1080px; }
+#hud { pointer-events: none; font-family: "NotoSC", sans-serif; }
+#hud > div { position: absolute; will-change: opacity, transform; }
+/* 119.5 秒硬切黑：HUD 里的普通元素，由 film.js 按 t 控制（不能做成计时片段——框架在片段时间内会强制显示它） */
+#hud > .cut { inset: 0; background: #000; }
+
+/* 字幕：画面 85–91% 高度，46px 粗体 */
+.cap { left: 0; right: 0; top: 918px; text-align: center; }
+.cap b { display: inline-block; font-weight: 700; font-size: 46px; line-height: 1.25; color: #f4f6fb; letter-spacing: 0.02em;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9), 0 0 18px rgba(0, 0, 0, 0.75); padding: 0 40px; }
+
+/* 名牌：跟着星移动的细字 */
+.tag { left: 0; top: 0; white-space: nowrap; font-size: 28px; font-weight: 500; letter-spacing: 0.06em; color: rgba(236, 240, 252, 0.92);
+  padding: 4px 14px 6px; border-bottom: 1px solid rgba(236, 240, 252, 0.45); text-shadow: 0 1px 6px rgba(0, 0, 0, 0.85); }
+
+/* 结尾问句：画面中央大字（不进滚动字幕） */
+.question { left: 50%; top: 46%; transform: translate(-50%, -50%); white-space: nowrap; }
+.question span { font-family: "NotoSerifSC", serif; font-weight: 600; font-size: 64px; color: #fbf7ef; letter-spacing: 0.04em;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9), 0 0 30px rgba(0, 0, 0, 0.6); }
+
+/* 资料与免责：底部一行小字 */
+.credit { left: 0; right: 0; top: 1004px; text-align: center; font-size: 28px; color: rgba(220, 226, 240, 0.72); letter-spacing: 0.03em;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9); }

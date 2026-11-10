@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<!-- 第十七期封面：cover.html?a=43（1440×1080）/ ?a=34（1080×1440）。
+     主视觉用片里同一张素材：用户设定卡上的鲸鱼娘半身像（assets/img/girl-portrait.jpg），装在开场那张白卡里，
+     左下角留一只官方 Logo（art.js 的矢量描摹），四周贴着称呼贴纸——「被叫着叫着，Logo 长出了脸」。
+     模块要走 http（tools/cover.mjs 起静态服务，根 = 第十七期/），不能直接双击打开。 -->
+<style>
+  @font-face { font-family: "NotoSC"; src: url("../videos/blue-fish/assets/fonts/NotoSansSC-VF.ttf"); font-weight: 100 900; }
+  @font-face { font-family: "WenKai"; src: url("../videos/blue-fish/assets/fonts/LXGWWenKai-Regular.ttf"); }
+  html, body { margin: 0; overflow: hidden; background: #dff1fc; }
+  #c { position: relative; overflow: hidden; background: radial-gradient(70% 70% at 50% 42%, #f4fbff 0%, #dff1fc 52%, #c6e3f5 100%); }
+  #c::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(rgba(18,121,179,.16) 2px, transparent 2.2px); background-size: 36px 36px; }
+  .card { position: absolute; background: #fff; border: 3px solid #7cc0e6; border-radius: 34px; box-shadow: 0 30px 70px rgba(40,110,160,.2);
+          background-image: radial-gradient(rgba(31,155,214,.16) 1.8px, transparent 2px); background-size: 32px 32px; }
+  .wh { position: absolute; width: 498px; height: 400px; transform-origin: 50% 50%; }
+  .stk { position: absolute; font-family: "WenKai", serif; color: #143a5c; white-space: nowrap; padding: .32em .62em .38em; border: 4px solid #1279b3; border-radius: .55em; background: #fff; box-shadow: 0 12px 26px rgba(40,110,160,.25); }
+  .stk.or { border-color: #e08a2e; }
+  .pill { position: absolute; left: 50%; transform: translateX(-50%); white-space: nowrap; font-family: "NotoSC"; font-weight: 800; color: #143a5c; letter-spacing: .18em;
+          border: 3px solid #1279b3; border-radius: 999px; background: rgba(255,255,255,.95); }
+  .title { position: absolute; left: 0; right: 0; text-align: center; font-family: "NotoSC"; font-weight: 900; color: #143a5c; letter-spacing: .02em;
+           text-shadow: 0 0 24px #fff, 0 0 8px #fff; }
+  .title .l { display: block; white-space: nowrap; }
+  .title em { font-style: normal; color: #0a6499; }
+  .foot { position: absolute; left: 0; right: 0; text-align: center; white-space: nowrap; font-family: "NotoSC"; font-weight: 600; color: #2f5f7d; letter-spacing: .34em; }
+</style>
+</head>
+<body>
+<div id="c">
+  <div class="card" id="card"></div>
+  <div class="wh" id="wh"></div>
+  <div class="pill" id="pill">「鱼灾」背后的心理学</div>
+  <div class="title" id="title"></div>
+  <div class="foot" id="foot">VIBE 知识大赏 · 第十七期</div>
+</div>
+<script type="module">
+  window.__LOGO_URL = "../videos/blue-fish/assets/img/logo-whale.svg";
+  const { whaleSVG } = await import("../videos/blue-fish/assets/js/art.js");
+  const a = new URLSearchParams(location.search).get("a") || "43";
+  const set = (e, s) => Object.assign(e.style, s);
+  const c = document.getElementById("c"), card = document.getElementById("card"), wh = document.getElementById("wh");
+  const pill = document.getElementById("pill"), title = document.getElementById("title"), foot = document.getElementById("foot");
+  await document.fonts.load('900 100px "NotoSC"'); await document.fonts.load('40px "WenKai"'); await document.fonts.ready;
+
+  const L = a === "43"
+    ? { W: 1440, H: 1080, card: [250, 150, 940, 560], whale: [720, 425, 1.32], pill: { top: 44, fs: 30, pad: "10px 34px" },
+        title: { top: 742, fs: 128, lh: 1.08 }, lines: ["<em>蓝色大肥鱼</em>", "为什么刷屏了？"], t2: 0.62, foot: { bottom: 34, fs: 22 },
+        stk: [["闺女", 225, 210, -9, 46, ""], ["吃白饭", 1035, 205, 7, 46, "or"], ["大肥鱼", 1050, 560, -6, 42, ""], ["本鲸", 196, 420, 6, 40, "or"]] }
+    : { W: 1080, H: 1440, card: [90, 210, 900, 640], whale: [540, 525, 1.42], pill: { top: 64, fs: 32, pad: "10px 34px" },
+        title: { top: 926, fs: 150, lh: 1.08 }, lines: ["<em>蓝色大肥鱼</em>", "为什么刷屏了？"], t2: 0.58, foot: { bottom: 46, fs: 24 },
+        stk: [["闺女", 70, 240, -9, 48, ""], ["吃白饭", 760, 230, 7, 48, "or"], ["大肥鱼", 780, 760, -6, 44, ""], ["本鲸", 40, 560, 6, 42, "or"]] };
+
+  set(c, { width: L.W + "px", height: L.H + "px" });
+  const [cx, cy, cw, ch] = L.card; set(card, { left: cx + "px", top: cy + "px", width: cw + "px", height: ch + "px" });
+  // 主视觉：用户设定卡上的鲸鱼娘半身像（抠图）从白卡里探出来，左下角是官方 Logo——「Logo 长出了血肉」
+  wh.innerHTML = `<img src="../videos/blue-fish/assets/img/girl-portrait.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 8%;-webkit-mask-image:linear-gradient(180deg,#000 86%,transparent 100%)">`;
+  const [wx, wy, ws] = L.whale; set(wh, { left: cx + "px", top: cy + "px", width: cw + "px", height: ch + "px", transform: "none", borderRadius: "34px", overflow: "hidden" });
+  const lg = document.createElement("div"); lg.innerHTML = whaleSVG("cov"); set(lg, { position: "absolute", left: cx + 18 + "px", top: cy + ch - 150 + "px", width: "498px", height: "400px", transform: "scale(0.36)", transformOrigin: "0 0" }); c.appendChild(lg);
+  for (const [s, x, y, r, fs, cls] of L.stk) { const e = document.createElement("div"); e.className = "stk " + cls; e.textContent = s; set(e, { left: x + "px", top: y + "px", fontSize: fs + "px", transform: `rotate(${r}deg)` }); c.appendChild(e); }
+  set(pill, { top: L.pill.top + "px", fontSize: L.pill.fs + "px", padding: L.pill.pad });
+  title.innerHTML = `<span class="l">${L.lines[0]}</span><span class="l" style="font-size:${L.t2}em;margin-top:.12em">${L.lines[1]}</span>`;
+  set(title, { top: L.title.top + "px", fontSize: L.title.fs + "px", lineHeight: L.title.lh });
+  set(foot, { bottom: L.foot.bottom + "px", fontSize: L.foot.fs + "px" });
+  document.title = "ready";
+</script>
+</body>
+</html>

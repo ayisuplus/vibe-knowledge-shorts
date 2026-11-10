@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>样张 C · 争议段</title>
+<link rel="stylesheet" href="holo.css">
+</head>
+<body>
+<div class="stage red" id="stage">
+  <svg class="layer" id="s" width="1080" height="1920" viewBox="0 0 1080 1920"></svg>
+  <div class="scan"></div><div class="grain"></div><div class="vignette"></div>
+  <div class="safe" style="left:60px;top:140px;width:880px;height:1500px"></div>
+</div>
+<script src="holo.js"></script>
+<script>
+const s = document.getElementById("s");
+H.defs(s);
+const RED = "#ff4d3a", AMB = "#ffb547";
+H.particles(s, { n: 150, seed: 31, color: RED, op: 0.5 });
+H.grid(s, { y0: 1600, color: RED, op: 0.28 });
+// 背景警示斜纹
+const st = H.el(s, "g", { opacity: .05 });
+for (let x = -1920; x < 1080; x += 70) H.el(st, "path", { d: `M${x} 1920 L${x + 1920} 0`, stroke: RED, "stroke-width": 26 });
+
+// ---- 标题 ----
+H.el(s, "text", { x: 540, y: 262, "text-anchor": "middle", "font-size": 100, "font-weight": 900, fill: "#ffe7e2", filter: "url(#glowS)" }, "如果老师没同意呢？");
+
+// ---- 老师（红色警戒） ----
+const net = H.net(s, { cx: 540, top: 360, h: 300, w: 760, layers: [10, 16, 18, 16, 10], color: RED, seed: 9, lineOp: .25 });
+H.el(s, "text", { x: 90, y: 400, "font-size": 34, "font-weight": 700, fill: RED, filter: "url(#glowS)" }, "老师模型");
+
+// ---- 一大片账号，从老师身上抽线 ----
+const r = H.rng(77), acc = [];
+const cols = 30, rows = 9, ax0 = 80, ay0 = 820, dx = 920 / (cols - 1), dy = 26;
+const ag = H.el(s, "g", {});
+for (let j = 0; j < rows; j++) for (let i = 0; i < cols; i++) {
+  const x = ax0 + i * dx + (j % 2) * dx / 2 - dx / 4, y = ay0 + j * dy;
+  acc.push([x, y]);
+  // 小人：头 + 肩
+  H.el(ag, "circle", { cx: x, cy: y - 5, r: 4, fill: "#ffe7e2", opacity: .55 + r() * .4 });
+  H.el(ag, "path", { d: `M${x - 7} ${y + 8} Q${x} ${y - 2} ${x + 7} ${y + 8}`, stroke: "#ffe7e2", "stroke-width": 2, fill: "none", opacity: .5 });
+}
+const bottom = net.pts[net.pts.length - 1];
+const th = H.el(s, "g", { stroke: RED, "stroke-width": 1.2, fill: "none" });
+for (let k = 0; k < 120; k++) {
+  const a = acc[Math.floor(r() * acc.length)], b = bottom[Math.floor(r() * bottom.length)];
+  H.el(th, "path", { d: `M${b.x} ${b.y} C${b.x} ${b.y + 80} ${a[0]} ${a[1] - 110} ${a[0]} ${a[1] - 14}`, opacity: .12 + r() * .35 });
+}
+// 线上的数据滴
+for (let k = 0; k < 40; k++) {
+  const a = acc[Math.floor(r() * acc.length)], t = r();
+  H.el(s, "circle", { cx: 540 + (a[0] - 540) * t, cy: 660 + (a[1] - 680) * t, r: 3, fill: AMB, opacity: .8, filter: "url(#glowS)" });
+}
+
+// ---- 数字卡 ----
+const card = H.el(s, "g", {});
+H.el(card, "rect", { x: 70, y: 1100, width: 880, height: 300, fill: "rgba(255,77,58,0.07)", stroke: RED, "stroke-opacity": .5, "stroke-width": 1.5 });
+H.brackets(card, 70, 1100, 880, 300, { color: RED, len: 30, sw: 3 });
+H.el(card, "rect", { x: 100, y: 1124, width: 300, height: 50, rx: 25, fill: "none", stroke: AMB, "stroke-width": 2 });
+H.el(card, "text", { x: 250, y: 1158, "text-anchor": "middle", "font-size": 28, fill: AMB }, "一家美国 AI 公司称");
+H.el(card, "text", { x: 100, y: 1318, "font-size": 156, fill: "#ffe7e2", class: "mono", filter: "url(#glowS)" }, "1600");
+H.el(card, "text", { x: 470, y: 1318, "font-size": 120, "font-weight": 900, fill: "#ffe7e2", filter: "url(#glowS)" }, "万+");
+H.el(card, "text", { x: 720, y: 1318, "font-size": 52, "font-weight": 700, fill: RED }, "次对话");
+H.el(card, "text", { x: 100, y: 1374, "font-size": 36, fill: "#ffe7e2", opacity: .75 }, "来自约 2.4 万个账号");
+
+// ---- 另一面（中性青色） ----
+const cn = H.el(s, "g", {});
+H.el(cn, "rect", { x: 70, y: 1430, width: 880, height: 150, fill: "rgba(61,242,255,0.05)", stroke: "#3df2ff", "stroke-opacity": .45, "stroke-width": 1.5 });
+H.el(cn, "text", { x: 100, y: 1490, "font-size": 40, "font-weight": 700, fill: "#3df2ff" }, "指控方：未公开原始数据");
+H.el(cn, "text", { x: 100, y: 1552, "font-size": 40, "font-weight": 700, fill: "#3df2ff" }, "被点名的公司：未承认");
+
+H.brackets(s, 36, 120, 1008, 1620, { color: RED, len: 46, sw: 2, op: .35 });
+</script>
+</body>
+</html>

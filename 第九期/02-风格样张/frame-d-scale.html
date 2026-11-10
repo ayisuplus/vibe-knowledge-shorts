@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>样张 D · token 天平</title>
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  /* S5 约 70 秒：同一份清单的五种写法，各自是一根 token 长棒（长度 = token 数，实测）。
+     棒身只有极淡的分段缝，不画一格格的小方块。Markdown 那根发绿光，HTML 那根带一个「≈ 2 倍」的括号。 */
+  #title { position: absolute; left: 150px; top: 110px; display: flex; align-items: center; gap: 26px; }
+  #title .paper { width: 74px; height: 92px; background: #fff; border: 1px solid var(--line); border-radius: 6px; position: relative;
+    box-shadow: 0 14px 28px -12px rgba(31, 35, 40, .35); }
+  #title .paper::before { content: "#"; position: absolute; left: 12px; top: 6px; font: 600 30px "CMono"; color: var(--md); }
+  #title .paper::after { content: ""; position: absolute; left: 14px; right: 14px; top: 52px; height: 18px;
+    background: linear-gradient(#C9D1D9 0 5px, transparent 5px 12px, #C9D1D9 12px); }
+  #title b { font-size: 46px; font-weight: 700; }
+  .row { position: absolute; left: 150px; height: 84px; display: flex; align-items: center; }
+  .row .name { width: 270px; font: 600 44px "CMono", monospace; color: var(--ink2); }
+  .rod { position: relative; height: 64px; border-radius: 32px; overflow: hidden;
+    box-shadow: 0 18px 30px -16px rgba(31, 35, 40, .35), inset 0 -6px 0 rgba(31, 35, 40, .14); }
+  .rod::after { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(90deg, transparent 0 calc(var(--u) - 1.5px), rgba(255, 255, 255, .42) calc(var(--u) - 1.5px) var(--u)); }
+  .row .n { margin-left: 30px; font-size: 64px; font-weight: 500; }
+  .row.mdrow .name { color: var(--ink); font-weight: 600; }
+  .row.mdrow .rod { box-shadow: 0 0 0 4px rgba(23, 112, 47, .9), 0 0 50px rgba(23, 112, 47, .45); }
+  .row.mdrow .n { color: var(--green); font-weight: 600; }
+  #brace { position: absolute; border: 3px solid var(--pink); border-left: none; border-radius: 0 22px 22px 0; }
+  #brace span { position: absolute; left: 34px; top: 50%; transform: translateY(-50%); white-space: nowrap; font-size: 48px; font-weight: 800; color: var(--pink); }
+</style>
+</head>
+<body>
+<div id="rows"></div>
+<div id="brace"><span>≈ 2 倍</span></div>
+<div class="src">实测：GPT-4o 分词器（o200k）</div>
+<div class="capzone"><span>字幕区</span></div>
+<script>
+  const U = 20; // 一个 token 的长度（px）
+  const rows = [
+    ["纯文本", 23, "linear-gradient(90deg, #DDB650, #E9CD80)"],
+    ["Markdown", 28, "linear-gradient(90deg, #7CCB9B, #A6DDBA)"],
+    ["YAML", 35, "linear-gradient(90deg, #7EB6E6, #A7CDEE)"],
+    ["JSON", 48, "linear-gradient(90deg, #F2A16B, #F6BD95)"],
+    ["HTML", 54, "linear-gradient(90deg, #EE8E88, #F3ADA8)"],
+  ];
+  const box = document.getElementById("rows");
+  const pos = {};
+  rows.forEach(([name, n, bg], i) => {
+    const r = document.createElement("div");
+    r.className = "row" + (name === "Markdown" ? " mdrow" : "");
+    r.style.top = 170 + i * 128 + "px";
+    r.innerHTML = `<div class="name">${name}</div><div class="rod" style="width:${n * U}px;background:${bg};--u:${U}px"></div><div class="n">${n}</div>`;
+    box.appendChild(r);
+    pos[name] = r.querySelector(".rod").getBoundingClientRect();
+  });
+  // 括号：从 Markdown 那根的末端，括到 HTML 那根的末端
+  const a = pos.Markdown, b = pos.HTML, br = document.getElementById("brace");
+  Object.assign(br.style, { left: b.right + 140 + "px", top: a.top + a.height / 2 + "px", width: 40 + "px", height: b.top - a.top + "px" });
+</script>
+</body>
+</html>

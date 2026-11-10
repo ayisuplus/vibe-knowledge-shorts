@@ -1,0 +1,66 @@
+/* 第四期 · 柏拉图式恋爱 · 横屏 1920×1080 · 明亮暖色大理石 */
+@font-face { font-family: "Serif"; src: url("fonts/NotoSerifSC-VF.ttf"); font-weight: 200 900; }
+@font-face { font-family: "Gara"; src: url("fonts/GARA.TTF"); }
+@font-face { font-family: "GaraB"; src: url("fonts/GARABD.TTF"); }
+@font-face { font-family: "GaraI"; src: url("fonts/GARAIT.TTF"); }
+
+:root {
+  --marble: #f3ebdd;
+  --marble-2: #e6d9c4;
+  --ink: #2a1e16;
+  --ink-2: #6b5646;
+  --gold: #c99a4a;
+  --gold-hi: #ebc57a;
+  --rose: #d4505e;      /* 字幕重点：暖玫红，色相约 354°，不偏紫 */
+  --rose-soft: #f4b3b3;
+  --clay: #c8643b;      /* 陶土橙 */
+  --glaze: #1e1612;     /* 陶罐黑釉 */
+  --cream: #f6ead2;
+  --seal: #a8382a;
+}
+
+html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; background: var(--marble); }
+.stage { position: relative; width: 1920px; height: 1080px; overflow: hidden;
+  background:
+    radial-gradient(ellipse 60% 55% at 50% 42%, #fbf5ea 0%, rgba(251,245,234,0) 70%),
+    linear-gradient(#f3ebdd, #ece1cf); }
+.stage .marble { position: absolute; inset: 0; background: url("gen/marble-bg.jpg") center/cover no-repeat; opacity: .9; }
+svg.layer { position: absolute; inset: 0; display: block; }
+.vignette { position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse 75% 70% at 50% 45%, rgba(0,0,0,0) 55%, rgba(92,60,30,.22) 100%); }
+.grain { position: absolute; inset: 0; pointer-events: none; opacity: .07; mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .4  0 0 0 0 .3  0 0 0 0 .2  0 0 0 1.4 -0.2'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"); }
+
+/* 档案头（左上） */
+.head { position: absolute; left: 96px; top: 64px; color: var(--ink); }
+.head .year { font-family: "Serif"; font-weight: 800; font-size: 64px; letter-spacing: 2px; color: var(--gold); line-height: 1;
+  text-shadow: 0 1px 0 rgba(255,255,255,.6); }
+.head .year.num { font-family: "GaraB"; font-size: 84px; letter-spacing: 0; }
+.head .rule { width: 420px; height: 2px; margin: 14px 0 12px; background: linear-gradient(90deg, var(--gold), rgba(201,154,74,0)); }
+.head .place { font-family: "Serif"; font-weight: 600; font-size: 28px; letter-spacing: 6px; color: var(--ink-2); }
+
+/* 出处（右上） */
+.ref { position: absolute; right: 96px; top: 70px; text-align: right; color: var(--ink-2); }
+.ref .orig { font-family: "GaraI"; font-size: 40px; color: var(--ink); }
+.ref .zh { font-family: "Serif"; font-weight: 600; font-size: 26px; letter-spacing: 4px; margin-top: 4px; }
+.ref .rule { width: 220px; height: 1px; margin: 12px 0 0 auto; background: linear-gradient(270deg, var(--gold), rgba(201,154,74,0)); }
+
+/* 字幕（底部） */
+.cap { position: absolute; left: 160px; right: 160px; top: 908px; text-align: center;
+  font-family: "Serif"; font-weight: 800; font-size: 54px; line-height: 1.32; color: var(--ink); letter-spacing: 1px;
+  text-shadow: 0 0 18px rgba(251,245,234,.95), 0 0 4px rgba(251,245,234,.9); }
+.cap em { font-style: normal; color: var(--rose); }
+.cap .note { display: block; font-weight: 500; font-size: 26px; color: var(--ink-2); letter-spacing: 2px; margin-top: 6px; }
+.cap.light { color: var(--cream); text-shadow: 0 0 16px rgba(20,12,8,.9), 0 0 4px rgba(20,12,8,.9); }
+.cap.light em { color: #ff8a8f; }
+
+/* 字幕底衬：柔和的米白光晕，保证压在图上也读得清 */
+.capbg { position: absolute; left: 260px; right: 260px; top: 880px; height: 170px; pointer-events: none;
+  background: radial-gradient(ellipse 50% 50% at 50% 50%, rgba(248,241,229,.92) 0%, rgba(248,241,229,.75) 45%, rgba(248,241,229,0) 100%); }
+.capbg.dark { background: radial-gradient(ellipse 50% 50% at 50% 50%, rgba(18,12,9,.75) 0%, rgba(18,12,9,.45) 50%, rgba(18,12,9,0) 100%); }
+
+/* 印章 */
+.seal { position: absolute; width: 132px; height: 132px; border: 6px solid var(--seal); border-radius: 10px; box-sizing: border-box;
+  color: var(--seal); font-family: "Serif"; font-weight: 900; font-size: 50px; line-height: 1; display: grid;
+  grid-template-columns: 1fr 1fr; place-items: center; padding: 10px; opacity: .92; transform: rotate(-8deg);
+  box-shadow: inset 0 0 0 3px rgba(243,235,221,.6); mix-blend-mode: multiply; }

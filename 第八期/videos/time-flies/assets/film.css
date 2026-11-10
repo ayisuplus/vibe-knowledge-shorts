@@ -1,0 +1,80 @@
+/* 正片专用（通用的 .big .tag .stat .note .panel 在 style.css） */
+#hud > div { position: absolute; }
+
+/* S1 片名：逐字浮现 */
+.title { left: 0; top: 0; width: 1920px; text-align: center; font-family: "VibeSerif"; font-weight: 900; font-size: 104px; letter-spacing: 10px; color: #2a2420; text-shadow: 0 0 30px rgba(248, 243, 234, 0.95), 0 0 8px rgba(248, 243, 234, 0.9); transform-origin: 50% 0; white-space: nowrap; }
+.title i { font-style: normal; display: inline-block; }
+
+/* S2 年龄尺 */
+.ruler { left: 150px; top: 768px; width: 1620px; height: 4px; border-radius: 2px; background: #2a2420; transform-origin: 0 50%; }
+.tick { left: 0; top: 784px; transform: translateX(-50%); font-family: "VibeSans"; font-weight: 800; font-size: 30px; color: #2a2420; white-space: nowrap; }
+.tick::before { content: ""; position: absolute; left: 50%; top: -18px; width: 3px; height: 12px; margin-left: -1.5px; background: #2a2420; }
+.who { left: 0; top: 0; width: 196px; height: 250px; border-radius: 14px; overflow: hidden; background: #fbf8f2; border: 6px solid #fbf8f2; box-shadow: 0 14px 34px rgba(90, 64, 30, 0.2); transform-origin: 50% 100%; }
+.who img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; display: block; }
+.dot { left: 0; top: 0; width: 13px; height: 13px; border-radius: 50%; background: #cfc4b4; }
+.dot.on { background: #e8707a; box-shadow: 0 0 10px rgba(232, 112, 122, 0.55); }
+.count { left: 150px; top: 60px; font-family: "VibeSans"; font-weight: 900; font-size: 110px; color: #c26f30; font-variant-numeric: tabular-nums; text-shadow: 0 0 26px rgba(248, 243, 234, 0.95); }
+.count span { font-size: 0.5em; color: #2a2420; margin-left: 8px; }
+.fast { right: 150px; top: 82px; padding: 10px 30px; border-radius: 999px; background: rgba(255, 249, 246, 0.95); border: 3px solid #e8707a; font-family: "VibeSerif"; font-weight: 900; font-size: 52px; color: #c24d59; box-shadow: 0 10px 30px rgba(200, 90, 100, 0.18); }
+.src { right: 150px; top: 846px; font-family: "VibeSans"; font-weight: 500; font-size: 22px; color: #8a7c6c; }
+
+/* 字幕预览（?caps=1） */
+.cap2 { left: 160px; right: 160px; top: 908px; display: flex; justify-content: center; text-align: center; z-index: 9; }
+.cap2 b { display: inline-block; font-family: "VibeSerif"; font-size: 54px; font-weight: 800; line-height: 1.35; letter-spacing: 2px; color: #2a2420; text-shadow: 0 0 18px rgba(250, 246, 238, 1), 0 0 6px rgba(250, 246, 238, 1); }
+.cap2 b em { font-style: normal; color: #d65c68; }
+
+/* S3 坠落实验 */
+.fallimg { overflow: hidden; border: 0 solid #fbf8f2; border-radius: 0; box-shadow: 0 18px 46px rgba(70, 50, 20, 0.22); background: #fbf8f2; }
+.fallimg img { width: 100%; height: 100%; object-fit: cover; display: block; transform-origin: 50% 30%; }
+.meter { left: 1690px; top: 120px; width: 120px; height: 760px; }
+.meter i { position: absolute; left: 20px; top: 0; width: 4px; height: 760px; background: #fffaf0; box-shadow: 0 0 8px rgba(40, 30, 20, 0.5); transform-origin: 50% 0; }
+.meter i::before, .meter i::after { content: ""; position: absolute; left: -14px; width: 32px; height: 4px; background: #fffaf0; }
+.meter i::before { top: 0; } .meter i::after { bottom: 0; }
+.meter b { position: absolute; left: 40px; top: 350px; white-space: nowrap; font-family: "VibeSans"; font-weight: 900; font-size: 56px; color: #fffaf0; text-shadow: 0 2px 14px rgba(30, 20, 10, 0.6); }
+.bars { left: 940px; top: 300px; }
+.bars .row { display: flex; align-items: center; height: 92px; margin-bottom: 36px; }
+.bars span { width: 200px; font-family: "VibeSerif"; font-weight: 800; font-size: 44px; color: #2a2420; }
+.bars i { display: block; height: 52px; border-radius: 10px; }
+.bars .b0 { background: #b9b0a3; }
+.bars .b1 { background: #e8707a; box-shadow: 0 0 22px rgba(232, 112, 122, 0.45); }
+.plus { left: 1380px; top: 120px; font-family: "VibeSans"; font-weight: 900; font-size: 150px; color: #c26f30; text-shadow: 0 0 30px rgba(248, 243, 234, 0.95); transform-origin: 30% 60%; }
+.lcd { left: 1240px; top: 700px; width: 230px; height: 120px; border-radius: 18px; background: #23201d; box-shadow: inset 0 0 0 6px #4a443d, 0 12px 30px rgba(40, 30, 20, 0.3); display: flex; align-items: center; justify-content: center; }
+.lcd b { font-family: "VibeSans"; font-weight: 800; font-size: 76px; color: #ff9a70; filter: blur(2.2px); text-shadow: 0 0 14px #ff7a50, 6px 0 0 rgba(255, 140, 100, 0.45), -6px 0 0 rgba(255, 140, 100, 0.3); font-variant-numeric: tabular-nums; }
+.shards { left: 0; top: 0; width: 1920px; height: 1080px; display: grid; grid-template-columns: repeat(8, 1fr); grid-template-rows: repeat(5, 1fr); gap: 10px; padding: 10px; }
+.shards i { display: block; border-radius: 6px; background-image: url("img/fall-tower.jpg"); background-size: 800% 500%; box-shadow: 0 6px 16px rgba(70, 50, 20, 0.2); }
+.bigline { left: 0; top: 400px; width: 1920px; text-align: center; font-family: "VibeSerif"; font-weight: 900; font-size: 128px; letter-spacing: 12px; color: #2a2420; text-shadow: 0 0 40px rgba(248, 243, 234, 1), 0 0 12px rgba(248, 243, 234, 1); }
+.bigline.l2 { top: 470px; font-size: 104px; }
+.bigline em { font-style: normal; color: #c26f30; }
+
+/* S4 */
+.study { left: 0; top: 0; padding: 22px 40px; border-radius: 20px; background: rgba(255, 251, 244, 0.96); border: 2px solid #e2d3b6; box-shadow: 0 14px 40px rgba(90, 60, 20, 0.16); font-family: "VibeSerif"; font-weight: 900; font-size: 54px; letter-spacing: 4px; color: #2a2420; transform-origin: 50% 50%; }
+.tag.vivid { border-color: #e8707a; color: #c24d59; font-size: 44px; padding: 12px 34px; }
+
+/* S5 沙漏 */
+.hg { left: 0; top: 0; width: 300px; height: 480px; transform-origin: 150px 240px; }
+.hg .glass { position: absolute; inset: 0; width: 300px; height: 480px; overflow: visible; z-index: 3; }
+.hg .glass rect { fill: #9a7a5a; }
+.hg .glass path { fill: none; stroke: rgba(150, 135, 115, 0.85); stroke-width: 5; stroke-linecap: round; }
+.hg .bulb { position: absolute; left: 0; width: 300px; overflow: hidden; }
+.hg .bulb.top { top: 20px; height: 220px; clip-path: polygon(3% 0, 97% 0, 54% 100%, 46% 100%); background: rgba(255, 255, 255, 0.35); }
+.hg .bulb.bot { top: 240px; height: 220px; clip-path: polygon(46% 0, 54% 0, 97% 100%, 3% 100%); background: rgba(255, 255, 255, 0.35); }
+.hg .bulb.pileb { background: none; }
+.hg .sand { position: absolute; left: 0; bottom: 0; width: 300px; height: 0; background-size: 300px 220px; background-position: 50% 100%; }
+.hg.l .sand { filter: saturate(0.4) brightness(0.95); }
+.hg .stream { position: absolute; left: 150px; top: 236px; width: 4px; height: 210px; margin-left: -2px; background: linear-gradient(#c9a77a, #e4c79c); opacity: 0; z-index: 2; }
+.hg.l .stream { background: #a9a49c; }
+.hg .pile { position: absolute; left: 0; top: 0; width: 300px; display: flex; flex-wrap: wrap; justify-content: center; align-content: flex-start; gap: 4px; padding-top: 2px; opacity: 0; }
+.hg .pile img { width: 60px; height: 44px; object-fit: cover; border: 2px solid #fbf8f2; border-radius: 4px; transform: rotate(180deg); }
+.hg.l .pile img { filter: saturate(0.4); }
+.hg.glow { filter: drop-shadow(0 0 26px rgba(232, 112, 122, 0.55)); }
+.phase { left: 0; top: 0; font-family: "VibeSerif"; font-weight: 900; font-size: 64px; letter-spacing: 8px; color: #2a2420; white-space: nowrap; text-shadow: 0 0 24px rgba(248, 243, 234, 1); }
+.phase.back { color: #c26f30; }
+.verdict { left: 0; top: 0; white-space: nowrap; font-family: "VibeSerif"; font-weight: 900; font-size: 50px; letter-spacing: 3px; color: #2a2420; text-shadow: 0 0 20px rgba(248, 243, 234, 1); }
+.verdict em { font-style: normal; color: #c24d59; }
+
+/* S6 / S7 */
+.tag.hero { font-size: 40px; padding: 10px 30px; border-width: 3px; border-color: #e8707a; color: #b9474f; }
+.endpanel { left: 0; top: 0; width: 1920px; height: 1080px; background: radial-gradient(ellipse 46% 34% at 50% 46%, rgba(248, 243, 234, 0.97) 0%, rgba(248, 243, 234, 0.88) 55%, rgba(248, 243, 234, 0) 100%); }
+.ending { left: 0; top: 330px; width: 1920px; text-align: center; font-family: "VibeSerif"; font-weight: 900; font-size: 96px; line-height: 1.45; letter-spacing: 8px; color: #2a2420; }
+.refs { left: 0; top: 960px; width: 1920px; text-align: center; font-family: "VibeSans"; font-weight: 500; font-size: 22px; color: #8a7c6c; }
+.fadeout { left: 0; top: 0; width: 1920px; height: 1080px; background: #f4eee4; }

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>样张 C · 蓝图标尺</title>
+<style>
+@font-face{font-family:NSSC;src:url("assets/fonts/NotoSansSC-VF.ttf") format("truetype");font-weight:100 900;font-display:block}
+@font-face{font-family:NSerif;src:url("assets/fonts/NotoSerifSC-VF.ttf") format("truetype");font-weight:200 900;font-display:block}
+@font-face{font-family:WenKai;src:url("assets/fonts/LXGWWenKai-Regular.ttf") format("truetype");font-display:block}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#fbfaf6}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;
+  background:radial-gradient(88% 78% at 50% 42%,#fdfcf8 0%,#f7f5ef 62%,#eceadf 100%)}
+svg.sheet{position:absolute;inset:0;width:1920px;height:1080px}
+.caption{position:absolute;left:0;right:0;bottom:54px;text-align:center;
+  font-family:NSerif;font-weight:500;font-size:54px;color:#1d3557;letter-spacing:.02em}
+.caption b{font-weight:800;color:#c8362b}
+.titleblock{position:absolute;right:76px;bottom:150px;width:404px;border:1.5px solid #1d3557;
+  font-family:NSSC;font-size:14px;color:#1d3557;background:rgba(255,255,255,.55)}
+.titleblock .row{display:flex;border-bottom:1px solid rgba(29,53,87,.42)}
+.titleblock .row:last-child{border-bottom:0}
+.titleblock .c{padding:6px 9px;border-right:1px solid rgba(29,53,87,.42);flex:1;letter-spacing:.05em}
+.titleblock .c:last-child{border-right:0}
+.titleblock .h{letter-spacing:.28em;font-size:11px;color:#6b8299;display:block;margin-bottom:1px}
+</style>
+</head>
+<body>
+<div id="root">
+<svg class="sheet" viewBox="0 0 1920 1080" fill="none">
+  <defs>
+    <pattern id="g10" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0 L0 0 0 40" stroke="#1d3557" stroke-opacity=".06" stroke-width="1"/>
+    </pattern>
+    <pattern id="g50" width="200" height="200" patternUnits="userSpaceOnUse">
+      <rect width="200" height="200" fill="url(#g10)"/>
+      <path d="M200 0 L0 0 0 200" stroke="#1d3557" stroke-opacity=".12" stroke-width="1.4"/>
+    </pattern>
+    <pattern id="hatch" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="9" stroke="#1d3557" stroke-opacity=".4" stroke-width="1.2"/>
+    </pattern>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M0 1 L9 5 L0 9 z" fill="#1d3557"/>
+    </marker>
+    <marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M0 1 L9 5 L0 9 z" fill="#c8362b"/>
+    </marker>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#g50)"/>
+  <rect x="52" y="52" width="1816" height="976" stroke="#1d3557" stroke-width="2" stroke-opacity=".5"/>
+
+  <!-- ===== 跑步机 正视图 ===== -->
+  <path d="M606 700 L1314 700 A46 46 0 0 1 1314 792 L606 792 A46 46 0 0 1 606 700 Z"
+        fill="#fff" stroke="#1d3557" stroke-width="2.6"/>
+  <g stroke="#1d3557" stroke-opacity=".5" stroke-width="1.4">
+    <path d="M652 700 L652 792"/><path d="M698 700 L698 792"/><path d="M744 700 L744 792"/>
+    <path d="M790 700 L790 792"/><path d="M836 700 L836 792"/><path d="M882 700 L882 792"/>
+    <path d="M928 700 L928 792"/><path d="M974 700 L974 792"/><path d="M1020 700 L1020 792"/>
+    <path d="M1066 700 L1066 792"/><path d="M1112 700 L1112 792"/><path d="M1158 700 L1158 792"/>
+    <path d="M1204 700 L1204 792"/><path d="M1250 700 L1250 792"/><path d="M1296 700 L1296 792"/>
+  </g>
+  <circle cx="606" cy="746" r="46" fill="#fff" stroke="#1d3557" stroke-width="2.6"/>
+  <circle cx="1314" cy="746" r="46" fill="#fff" stroke="#1d3557" stroke-width="2.6"/>
+  <circle cx="606" cy="746" r="8" fill="none" stroke="#1d3557" stroke-width="2"/>
+  <circle cx="1314" cy="746" r="8" fill="none" stroke="#1d3557" stroke-width="2"/>
+
+  <rect x="606" y="792" width="708" height="18" fill="url(#hatch)" stroke="#1d3557" stroke-width="1.6"/>
+  <path d="M640 810 L640 862 M1280 810 L1280 862" stroke="#1d3557" stroke-width="2.4"/>
+  <path d="M606 862 L674 862 M1246 862 L1314 862" stroke="#1d3557" stroke-width="3.4"/>
+
+  <!-- 立柱 + 控制台 -->
+  <path d="M470 862 L470 300" stroke="#1d3557" stroke-width="3"/>
+  <path d="M436 862 L504 862" stroke="#1d3557" stroke-width="3.4"/>
+  <path d="M470 792 L606 792" stroke="#1d3557" stroke-width="2.4"/>
+  <rect x="452" y="190" width="216" height="110" fill="#fff" stroke="#1d3557" stroke-width="2.6"/>
+  <text x="560" y="224" text-anchor="middle" font-family="NSSC" font-size="14" letter-spacing="6" fill="#6b8299">跑道速度</text>
+  <text x="536" y="286" text-anchor="middle" font-family="NSerif" font-size="66" font-weight="700" fill="#1d3557">2.4</text>
+  <text x="602" y="286" font-family="NSerif" font-size="36" fill="#6b8299">×</text>
+
+  <!-- 皮带方向 -->
+  <path d="M700 830 L1240 830" stroke="#1d3557" stroke-width="1.6" stroke-dasharray="14 10" marker-end="url(#ar)" opacity=".55"/>
+  <text x="726" y="866" font-family="NSSC" font-size="16" letter-spacing="3" fill="#6b8299">皮带方向</text>
+
+  <!-- ===== 人 ===== -->
+  <g transform="translate(876,277) scale(1.15)" fill="none" stroke="#1d3557" stroke-width="11"
+     stroke-linecap="round" stroke-linejoin="round">
+    <path d="M118 92 L104 116 L100 214 M100 214 L146 286 L156 366 M100 214 L58 264 L30 320 M104 116 L58 142 L44 92 M104 116 L152 150 L180 122"/>
+    <circle cx="118" cy="54" r="30" fill="#fbfaf6"/>
+  </g>
+
+  <!-- 尺寸线 -->
+  <path d="M606 916 L1314 916" stroke="#1d3557" stroke-width="1.4" marker-start="url(#ar)" marker-end="url(#ar)"/>
+  <path d="M606 812 L606 928 M1314 812 L1314 928" stroke="#1d3557" stroke-opacity=".4" stroke-width="1.2"/>
+  <text x="960" y="946" text-anchor="middle" font-family="NSSC" font-size="16" letter-spacing="2" fill="#6b8299">1 800 mm</text>
+
+  <!-- ===== 及格线 ===== -->
+  <path d="M300 400 L1620 400" stroke="#c8362b" stroke-width="2.6" stroke-dasharray="26 12"/>
+  <text x="300" y="374" font-family="NSSC" font-size="20" letter-spacing="6" fill="#c8362b">及 格 线</text>
+  <text x="1648" y="408" font-family="NSSC" font-size="17" fill="#c8362b">当前</text>
+  <path d="M1560 470 L1560 400" stroke="#c8362b" stroke-width="1.8" marker-start="url(#arR)" marker-end="url(#arR)"/>
+  <text x="1536" y="504" text-anchor="end" font-family="NSSC" font-size="17" fill="#c8362b">每年上移一格</text>
+
+  <!-- 左侧标尺 -->
+  <g stroke="#1d3557" stroke-opacity=".65" stroke-width="1.6">
+    <path d="M232 260 L232 900"/>
+    <path d="M232 260 L262 260"/><path d="M232 380 L254 380"/><path d="M232 500 L262 500"/>
+    <path d="M232 620 L254 620"/><path d="M232 740 L262 740"/><path d="M232 860 L254 860"/>
+  </g>
+  <g font-family="NSSC" font-size="14" fill="#6b8299">
+    <text x="206" y="265" text-anchor="end">3.0</text>
+    <text x="206" y="505" text-anchor="end">2.0</text>
+    <text x="206" y="745" text-anchor="end">1.0</text>
+  </g>
+  <text x="150" y="580" font-family="NSSC" font-size="14" letter-spacing="4" fill="#6b8299"
+        transform="rotate(-90 150 580)">单位：倍</text>
+</svg>
+
+<div class="caption">社会进步了，为什么我<b>反而更累</b></div>
+<div class="titleblock">
+  <div class="row"><div class="c"><span class="h">图 名</span>跑道 · 正视图</div></div>
+  <div class="row"><div class="c"><span class="h">比例</span>1 : 10</div><div class="c"><span class="h">图号</span>R-13 / 03</div></div>
+  <div class="row"><div class="c"><span class="h">项目</span>vibe 知识大赏 · 第十三期</div></div>
+</div>
+</div>
+</body>
+</html>

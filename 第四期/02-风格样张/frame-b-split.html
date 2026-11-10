@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><title>样张 B · 劈成两半</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .head.dark .place { color: #e9d8bb; }
+  .ref.dark .orig { color: #f6ead2; } .ref.dark .zh, .ref.dark { color: #d9c6a6; }
+</style></head>
+<body><div class="stage">
+  <div class="marble"></div>
+  <svg class="layer" id="svg" viewBox="0 0 1920 1080"></svg>
+  <div class="vignette"></div><div class="grain"></div>
+  <div class="head dark"><div class="year">约两千四百年前</div><div class="rule"></div><div class="place">雅典 · 柏拉图</div></div>
+  <div class="ref dark"><div class="orig">Symposium</div><div class="zh">《会饮篇》</div><div class="rule"></div></div>
+  <div class="cap light">宙斯决定：把每个人<em>劈成两半</em></div>
+</div>
+<script src="kit.js"></script>
+<script>
+const clay = "#c8643b", L = "#2a140b", glaze = "#1e1612";
+const vase = "M150,-20 C30,300 30,780 150,1100 L1770,1100 C1890,780 1890,300 1770,-20 Z";
+
+// 宙斯：侧身朝右，左手持权杖，右手刚把闪电掷出
+const zeus = `
+<g id="zeus">
+  <line x1="318" y1="372" x2="292" y2="796" stroke="${clay}" stroke-width="9" stroke-linecap="round"/>
+  <path d="M308,362 l10,-18 l10,18 z" fill="${clay}"/>
+  <path d="M352,398 C326,520 306,650 292,786 L478,786 C462,640 450,520 436,398 Q394,384 352,398 Z" fill="${clay}"/>
+  <path d="M352,398 C326,520 306,650 292,786 L478,786 C462,640 450,520 436,398 Q394,384 352,398 Z" fill="none" stroke="${L}" stroke-width="3.5"/>
+  <path d="M356,470 Q400,520 446,470" stroke="${L}" stroke-width="3" fill="none"/>
+  <path d="M362,520 Q352,640 330,780" stroke="${L}" stroke-width="2.4" fill="none" opacity=".8"/>
+  <path d="M390,530 Q384,650 378,782" stroke="${L}" stroke-width="2.4" fill="none" opacity=".8"/>
+  <path d="M420,520 Q428,650 438,782" stroke="${L}" stroke-width="2.4" fill="none" opacity=".8"/>
+  <path d="M446,500 Q456,640 466,782" stroke="${L}" stroke-width="2.4" fill="none" opacity=".8"/>
+  <path d="M300,748 Q384,730 474,750" stroke="${L}" stroke-width="3" fill="none"/>
+  <ellipse cx="318" cy="792" rx="22" ry="7" fill="${clay}" stroke="${L}" stroke-width="2.5"/>
+  <ellipse cx="442" cy="792" rx="24" ry="7" fill="${clay}" stroke="${L}" stroke-width="2.5"/>
+  <path d="M352,420 Q330,470 322,430" stroke="${clay}" stroke-width="22" stroke-linecap="round" fill="none"/>
+  <path d="M428,414 Q470,380 516,336" stroke="${clay}" stroke-width="24" stroke-linecap="round" fill="none"/>
+  <path d="M428,414 Q470,380 516,336" stroke="${L}" stroke-width="2.6" fill="none" opacity=".5"/>
+  <circle cx="522" cy="330" r="15" fill="${clay}" stroke="${L}" stroke-width="2.5"/>
+  <rect x="380" y="372" width="28" height="30" fill="${clay}"/>
+  <circle cx="394" cy="344" r="36" fill="${clay}" stroke="${L}" stroke-width="3.5"/>
+  <path d="M362,326 Q380,292 420,306 Q404,316 398,330 Q378,322 362,346 Z" fill="${L}"/>
+  <path d="M360,328 Q392,300 426,318" stroke="${clay}" stroke-width="4" fill="none"/>
+  <path d="M428,334 l14,14 l-13,4" fill="${clay}" stroke="${L}" stroke-width="2.5" stroke-linejoin="round"/>
+  <circle cx="414" cy="334" r="3.4" fill="${L}"/>
+  <path d="M404,326 q8,-5 16,0" stroke="${L}" stroke-width="2.6" fill="none"/>
+  <path d="M370,356 Q380,404 416,402 Q434,392 430,362 Q412,372 392,362 Z" fill="${L}"/>
+  <path d="M378,372 q4,14 12,22 M392,374 q2,14 8,22 M406,374 q0,12 4,20" stroke="${clay}" stroke-width="1.6" fill="none" opacity=".7"/>
+</g>`;
+
+// 雷霆（宙斯手里的双头权器）
+const bolt = `<g transform="translate(540,318) rotate(-28)">
+  <path d="M-34,0 Q-10,-11 0,0 Q-10,11 -34,0 Z M34,0 Q10,-11 0,0 Q10,11 34,0 Z" fill="#f6ead2" stroke="${L}" stroke-width="2"/>
+  <path d="M-34,0 l-14,-9 M-34,0 l-16,0 M-34,0 l-14,9 M34,0 l14,-9 M34,0 l16,0 M34,0 l14,9" stroke="#f6ead2" stroke-width="3" stroke-linecap="round"/>
+</g>`;
+
+const lightning = "M572,306 L668,352 L640,368 L760,402 L728,420 L868,446 L842,462 L944,474";
+
+const parts = [];
+parts.push(`<defs>
+  <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="1.2"/></filter>
+  <filter id="glow" filterUnits="userSpaceOnUse" x="-3000" y="-3000" width="6000" height="6000"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <filter id="bigglow" filterUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1080"><feGaussianBlur stdDeviation="14" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <linearGradient id="glazeG" x1="0" x2="1" y1="0" y2="0">
+    <stop offset="0" stop-color="#070504"/><stop offset=".12" stop-color="#16100c"/>
+    <stop offset=".28" stop-color="#2a1f18"/><stop offset=".33" stop-color="#3a2c22"/><stop offset=".38" stop-color="#241a14"/>
+    <stop offset=".7" stop-color="${glaze}"/><stop offset=".9" stop-color="#110c09"/><stop offset="1" stop-color="#060403"/>
+  </linearGradient>
+  <linearGradient id="sheen" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".07"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+  <radialGradient id="flash" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#fff6dc" stop-opacity=".95"/><stop offset=".18" stop-color="#ffe2a0" stop-opacity=".5"/><stop offset=".5" stop-color="#d98a3a" stop-opacity=".12"/><stop offset="1" stop-color="#ffd98a" stop-opacity="0"/></radialGradient>
+  <clipPath id="vaseClip"><path d="${vase}"/></clipPath>
+</defs>`);
+parts.push(`<path d="${vase}" fill="url(#glazeG)"/>`);
+parts.push(`<g clip-path="url(#vaseClip)">`);
+parts.push(`<rect x="470" y="0" width="230" height="1080" fill="url(#sheen)"/>`);
+parts.push(K.meander(0, 1920, 228, 34, clay, 6));
+parts.push(K.meander(0, 1920, 832, 30, clay, 5.5));
+// 地面线
+parts.push(`<line x1="120" x2="1800" y1="800" y2="800" stroke="${clay}" stroke-width="3" opacity=".7"/>`);
+parts.push(zeus, bolt);
+// 冲击闪光
+parts.push(`<circle cx="975" cy="470" r="240" fill="url(#flash)" style="mix-blend-mode:screen"/>`);
+parts.push(`<path d="${lightning}" fill="none" stroke="#ffe7b0" stroke-width="16" stroke-linejoin="miter" filter="url(#bigglow)" opacity=".9"/>`);
+parts.push(`<path d="${lightning}" fill="none" stroke="#fffaf0" stroke-width="6" stroke-linejoin="miter"/>`);
+// 被劈开的圆形人：两半弹开
+parts.push(`<g transform="translate(905,486) rotate(-15)">${K.roundHuman("hl", { r: 98, half: -1 })}</g>`);
+parts.push(`<g transform="translate(1062,500) rotate(17)">${K.roundHuman("hr", { r: 98, half: 1 })}</g>`);
+// 碎光
+const R = K.rng(7);
+for (let i = 0; i < 16; i++) {
+  const a = R() * Math.PI * 2, d = 120 + R() * 140, x = 985 + Math.cos(a) * d, y = 470 + Math.sin(a) * d * .8, l = 10 + R() * 18;
+  parts.push(`<line x1="${x}" y1="${y}" x2="${x + Math.cos(a) * l}" y2="${y + Math.sin(a) * l}" stroke="#ffe7b0" stroke-width="3" stroke-linecap="round" opacity="${.5 + R() * .5}"/>`);
+}
+// 其他圆形人：还在往右边滚，带滚动弧线
+[[1330, 672, 64, 18], [1540, 610, 58, -22], [1725, 548, 50, 26]].forEach(([x, y, r, rot], i) => {
+  parts.push(`<path d="M${x - r * 2.4},${y + r * .9} A${r * 1.6},${r * 1.6} 0 0 1 ${x - r * 1.2},${y - r * 1.1}" fill="none" stroke="#f6ead2" stroke-width="3" stroke-dasharray="2 12" stroke-linecap="round" opacity=".55"/>`);
+  parts.push(`<g transform="translate(${x},${y}) rotate(${rot})">${K.roundHuman("o" + i, { r })}</g>`);
+});
+parts.push(`</g>`);
+// 陶罐两侧的轮廓高光
+parts.push(`<path d="M150,-20 C30,300 30,780 150,1100" fill="none" stroke="#5a4232" stroke-width="3" opacity=".7"/>`);
+parts.push(`<path d="M1770,-20 C1890,300 1890,780 1770,1100" fill="none" stroke="#3a2a20" stroke-width="3" opacity=".7"/>`);
+parts.push(K.motes(40, 3, { y0: 260, y1: 820, op: .5 }));
+document.getElementById("svg").innerHTML = parts.join("");
+</script>
+</body></html>

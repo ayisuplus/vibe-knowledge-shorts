@@ -1,0 +1,8 @@
+{
+  "name": "pattern-tape",
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "hyperframes": "0.8.169"
+  }
+}

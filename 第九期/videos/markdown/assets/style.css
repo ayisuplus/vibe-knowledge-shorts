@@ -1,0 +1,33 @@
+/* 第九期 · 全片共用：字体、色板（样张 v2，手机对比度已用 WCAG 实测）、底色。
+   小字 ≥ 7:1，橙/绿文字在白底 ≥ 4.5:1，粉线 ≥ 4:1，token 色块对白纸 ≥ 1.8:1。
+   字体名不能叫 "Serif"/"Sans"（HyperFrames 渲染会丢拉丁字形）。 */
+@font-face { font-family: "NotoSC"; src: url("fonts/NotoSansSC-VF.ttf"); font-weight: 100 900; }
+@font-face { font-family: "CMono"; src: url("fonts/CascadiaMono.ttf"); }
+
+:root {
+  --bg: #EBEEF2;
+  --card: #FFFFFF;
+  --line: #9AA4AF;
+  --ink: #1F2328;
+  --ink2: #424A53;
+  --md: #B05000;      /* Markdown 符号，全片固定（白底 5.2:1） */
+  --md-a: 176, 80, 0;
+  --green: #17702F;
+  --green-a: 23, 112, 47;
+  --pink: #D6404D;    /* 暖红粉，不偏洋红 */
+  --pink-a: 214, 64, 77;
+  --t1: #F2A16B; --t2: #7CCB9B; --t3: #7EB6E6; --t4: #DDB650; --t5: #EE8E88; /* token 色块，不用紫 */
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1920px; height: 1080px; overflow: hidden; background: var(--bg); }
+#root { position: relative; width: 1920px; height: 1080px; overflow: hidden; font-family: "NotoSC", sans-serif; color: var(--ink);
+  background:
+    radial-gradient(900px 600px at 18% 22%, rgba(242, 161, 107, .16), transparent 70%),
+    radial-gradient(900px 640px at 85% 78%, rgba(124, 203, 155, .16), transparent 70%),
+    radial-gradient(1400px 900px at 50% 45%, #F7F8FA, var(--bg) 70%); }
+.layer { position: absolute; inset: 0; }
+#stage { perspective: 2200px; perspective-origin: 50% 42%; }
+#stage > *, #hud > * { position: absolute; }
+.mono { font-family: "CMono", monospace; }
+.md { color: var(--md); }

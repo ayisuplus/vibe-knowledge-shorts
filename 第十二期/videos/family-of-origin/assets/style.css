@@ -1,0 +1,85 @@
+/* 第十二期「被曲解的词语 01 · 原生家庭」· 全片共用：字体、色板、暖白纸张底。
+   颜色照风格样张，用 WCAG 实测过手机尺寸：正文 ≥ 7:1，橙字 ≥ 4.5:1，
+   便利贴对卡 ≥ 1.8:1、便利贴上的字 ≥ 7:1，卡边对底 ≥ 2:1。
+   字体名不能叫 "Serif"/"Sans"（HyperFrames 渲染会丢拉丁字形）。 */
+@font-face { font-family: "NotoSC"; src: url("fonts/NotoSansSC-VF.ttf"); font-weight: 100 900; }
+@font-face { font-family: "NotoSerifSC"; src: url("fonts/NotoSerifSC-VF.ttf"); font-weight: 200 900; }
+@font-face { font-family: "WenKai"; src: url("fonts/LXGWWenKai-Regular.ttf"); }
+
+:root {
+  --bg: #F7F2EA;
+  --card: #FFFDF8;
+  --edge: #A8977F;
+  --ink: #2B2622;
+  --ink2: #6B6157;
+  --orange: #A84C00;      /* 年份、强调（暖白底 4.5:1 以上） */
+  --gold: #F2B45A;
+  --gold-hi: #FBE3B0;
+  --crack: #4A3F38;
+  --note-ink: #231A13;
+  --n1: #E8B23A;          /* 黄 */
+  --n2: #F2A061;          /* 橙 */
+  --n3: #F09A8E;          /* 暖粉，不偏洋红 */
+  --n4: #E9B57E;          /* 杏 */
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1920px; height: 1080px; overflow: hidden; background: var(--bg); }
+#root { position: relative; width: 1920px; height: 1080px; overflow: hidden;
+  font-family: "NotoSC", sans-serif; color: var(--ink); background: var(--bg); }
+.layer { position: absolute; inset: 0; }
+#stage { perspective: 2400px; perspective-origin: 50% 46%; }
+#stage > *, #hud > *, #paper > * { position: absolute; }
+
+/* 纸纹 + 窗光（底层，不参与动画） */
+#paper { pointer-events: none; }
+.grain { position: absolute; inset: 0; opacity: .5; mix-blend-mode: multiply;
+  background-image: url("img/grain.svg"); }
+.winlight { position: absolute; inset: -200px;
+  background: radial-gradient(1100px 760px at 14% 6%, rgba(251, 227, 176, .75), transparent 70%); }
+.winbars { position: absolute; inset: -200px; opacity: .07; filter: blur(18px);
+  background: repeating-linear-gradient(118deg, transparent 0 260px, #6B5A44 260px 282px, transparent 282px 560px); }
+
+/* 词条卡 */
+.card { background: var(--card); border: 2px solid var(--edge); border-radius: 18px;
+  box-shadow: 0 50px 90px -40px rgba(74, 58, 40, .55), 0 14px 30px -14px rgba(74, 58, 40, .35); }
+.card .series { position: absolute; left: 56px; top: 40px; font: 600 26px "NotoSC"; letter-spacing: .12em; color: var(--ink2); }
+.card .word { position: absolute; font: 800 190px/1 "NotoSerifSC"; letter-spacing: .06em; color: var(--ink); white-space: nowrap; }
+.card .py { position: absolute; font: 500 40px "NotoSC"; letter-spacing: .1em; color: var(--ink2); white-space: nowrap; }
+.card .en { position: absolute; font: italic 500 40px "NotoSerifSC"; color: var(--orange); white-space: nowrap; }
+.card .def { position: absolute; font: 500 44px "NotoSC"; color: var(--ink); white-space: nowrap; }
+.card .rule { position: absolute; height: 2px; background: var(--edge); opacity: .7; }
+
+/* 便利贴 */
+.note { padding: 46px 34px 30px; font: 52px/1.28 "WenKai", serif; color: var(--note-ink);
+  background: linear-gradient(180deg, rgba(0,0,0,.06) 0 26px, transparent 26px), var(--c, var(--n1));
+  box-shadow: 0 24px 36px -16px rgba(60, 40, 20, .55), 0 3px 6px rgba(60, 40, 20, .2);
+  border-radius: 3px 3px 10px 3px; }
+.note::after { content: ""; position: absolute; right: 0; bottom: 0; width: 60px; height: 60px;
+  background: linear-gradient(135deg, transparent 50%, rgba(0,0,0,.10) 50%, rgba(255,255,255,.35) 75%);
+  border-top-left-radius: 30px; }
+.n1 { --c: var(--n1); } .n2 { --c: var(--n2); } .n3 { --c: var(--n3); } .n4 { --c: var(--n4); }
+
+/* 画面内文字 */
+.big { font-weight: 800; letter-spacing: .02em; white-space: nowrap; }
+.lbl { font: 600 34px "NotoSC"; color: var(--ink2); white-space: nowrap; }
+.year { font: 800 64px "NotoSC"; color: var(--ink2); white-space: nowrap; }
+
+/* 老照片 */
+.print { background: #FBF7EE; padding: 26px 26px 64px; border-radius: 6px; border: 2px solid var(--edge);
+  box-shadow: 0 60px 100px -40px rgba(74, 58, 40, .6), 0 16px 30px -14px rgba(74, 58, 40, .4); }
+.print img { display: block; width: 100%; }
+
+/* 字幕预览（?caps=1）。成片不烧字幕，交付 SRT */
+.cap { left: 160px; right: 160px; top: 930px; text-align: center;
+  font: 600 46px "NotoSC"; color: var(--ink); text-shadow: 0 2px 10px rgba(247, 242, 234, .9); }
+.cap em { color: var(--orange); font-style: normal; }
+
+/* 组：便利贴墙 / 照片组，整体当一台摄影机推拉 */
+.deck { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; transform-origin: 50% 50%; }
+.deck > * { position: absolute; }
+.tcard { background: var(--card); border: 2px solid var(--edge); border-radius: 18px;
+  box-shadow: 0 50px 90px -40px rgba(74,58,40,.55), 0 14px 30px -14px rgba(74,58,40,.35); }
+.tcard .series { position: absolute; left: 60px; top: 44px; font: 600 30px "NotoSC"; letter-spacing: .14em; color: var(--ink2); }
+.tcard .tt { position: absolute; left: 0; right: 0; top: 150px; text-align: center;
+  font: 800 108px/1.2 "NotoSerifSC"; letter-spacing: .04em; color: var(--ink); }

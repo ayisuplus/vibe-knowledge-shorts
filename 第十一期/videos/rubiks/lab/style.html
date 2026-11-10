@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1920, height=1080">
+    <title>风格样张</title>
+    <script src="../assets/vendor/gsap.min.js"></script>
+    <script type="importmap">{ "imports": { "three": "../assets/vendor/three.module.js", "three/addons/": "../assets/vendor/addons/" } }</script>
+    <link rel="stylesheet" href="../assets/style.css">
+  </head>
+  <body>
+    <!-- 风格样张：?f=A|B|C|D。底下的字幕行只是示意位置（成片字幕走 SRT）。 -->
+    <div id="root" data-composition-id="main" data-start="0" data-width="1920" data-height="1080" data-duration="1">
+      <div id="under" class="layer"></div>
+      <canvas id="gl" class="layer" width="1920" height="1080"></canvas>
+      <div id="hud" class="layer"></div>
+    </div>
+    <script>window.__timelines = window.__timelines || {}; window.__timelines["main"] = gsap.timeline({ paused: true });</script>
+    <script type="module" src="../assets/js/style.js"></script>
+  </body>
+</html>

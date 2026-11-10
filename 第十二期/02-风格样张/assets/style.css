@@ -1,0 +1,69 @@
+/* 第十二期风格样张 · 共用样式。暖白纸张的世界：词条卡 + 便利贴，窗光从左上斜照进来。
+   颜色都用 tools/contrast.py 验过（手机对比度规矩）：小字 ≥ 7:1，橙字 ≥ 4.5:1，便利贴对卡 ≥ 1.8:1、上面的字 ≥ 7:1，卡边对底 ≥ 2:1 */
+@font-face { font-family: "NotoSansSCVF"; src: url("fonts/NotoSansSC-VF.ttf"); font-weight: 100 900; }
+@font-face { font-family: "NotoSerifSCVF"; src: url("fonts/NotoSerifSC-VF.ttf"); font-weight: 200 900; }
+@font-face { font-family: "WenKai"; src: url("fonts/LXGWWenKai-Regular.ttf"); }
+
+:root {
+  --bg: #F7F2EA;
+  --card: #FFFDF8;
+  --edge: #A8977F;     /* 卡边，对底 2.55:1 */
+  --ink: #2B2622;
+  --ink2: #6B6157;
+  --orange: #A84C00;   /* 年份、强调（底色上也 ≥ 4.5:1） */
+  --gold: #F2B45A;
+  --gold-hi: #FBE3B0;
+  --crack: #4A3F38;
+  --note-ink: #231A13;
+  /* 便利贴：黄、橙、暖粉（不偏洋红）、杏 */
+  --n1: #E8B23A; --n2: #F2A061; --n3: #F09A8E; --n4: #E9B57E;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1920px; height: 1080px; overflow: hidden; }
+body {
+  font-family: "NotoSansSCVF", sans-serif; color: var(--ink); position: relative;
+  background:
+    radial-gradient(1100px 760px at 14% 6%, rgba(251, 227, 176, .75), transparent 70%),   /* 窗光 */
+    radial-gradient(1500px 900px at 60% 60%, #FAF6EF, var(--bg) 75%);
+}
+/* 纸纹 + 窗格斜影 */
+body::before { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .5; mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .55  0 0 0 0 .48  0 0 0 0 .40  0 0 0 .09 0'/></filter><rect width='400' height='400' filter='url(%23n)'/></svg>"); }
+.window-shadow { position: absolute; inset: -200px; pointer-events: none; opacity: .07;
+  background: repeating-linear-gradient(118deg, transparent 0 260px, #6B5A44 260px 282px, transparent 282px 560px);
+  filter: blur(18px); }
+
+/* 词条卡 */
+.card { position: absolute; background: var(--card); border: 2px solid var(--edge); border-radius: 18px;
+  box-shadow: 0 50px 90px -40px rgba(74, 58, 40, .55), 0 14px 30px -14px rgba(74, 58, 40, .35); }
+.card .series { position: absolute; left: 56px; top: 40px; font: 600 26px "NotoSansSCVF"; letter-spacing: .12em; color: var(--ink2); }
+.card .word { position: absolute; font: 800 190px/1 "NotoSerifSCVF"; letter-spacing: .06em; color: var(--ink); }
+.card .py { position: absolute; font: 500 40px "NotoSansSCVF"; letter-spacing: .1em; color: var(--ink2); }
+.card .en { position: absolute; font: italic 500 40px "NotoSerifSCVF"; color: var(--orange); }
+.card .def { position: absolute; font: 500 44px "NotoSansSCVF"; color: var(--ink); }
+.card .rule { position: absolute; height: 2px; background: var(--edge); opacity: .7; }
+
+/* 便利贴：上缘一条略深的胶带区；卷边投影 */
+.note { position: absolute; width: 360px; min-height: 250px; padding: 46px 34px 30px;
+  font: 52px/1.28 "WenKai", "KaiTi", serif; color: var(--note-ink);
+  background: linear-gradient(180deg, rgba(0,0,0,.06) 0 26px, transparent 26px), var(--c, var(--n1));
+  box-shadow: 0 24px 36px -16px rgba(60, 40, 20, .55), 0 3px 6px rgba(60, 40, 20, .2);
+  border-radius: 3px 3px 10px 3px; }
+.note::after { content: ""; position: absolute; right: 0; bottom: 0; width: 60px; height: 60px;
+  background: linear-gradient(135deg, transparent 50%, rgba(0,0,0,.10) 50%, rgba(255,255,255,.35) 75%);
+  border-top-left-radius: 30px; }
+.note.small { width: 290px; min-height: 200px; font-size: 46px; }
+.note.c1 { --c: var(--n1); } .note.c2 { --c: var(--n2); } .note.c3 { --c: var(--n3); } .note.c4 { --c: var(--n4); }
+/* 正在翘起、被撕下的一张 */
+.note.peel { transform-origin: 50% 0; }
+
+/* 画面内大字 / 年份 */
+.big { position: absolute; font-weight: 800; letter-spacing: .02em; }
+.year { position: absolute; font: 800 64px "NotoSansSCVF"; color: var(--ink2); }
+.year.on { color: var(--orange); font-size: 92px; }
+
+/* 字幕区（y 900–1010）只画一条淡参考线，成片字幕走 SRT */
+.capzone { position: absolute; left: 160px; right: 160px; top: 900px; height: 110px; border-top: 1px dashed rgba(107, 97, 87, .35); }
+.capzone span { position: absolute; right: 0; top: 6px; font-size: 16px; color: rgba(107, 97, 87, .6); }
+.capzone i { position: absolute; left: 0; right: 0; top: 30px; text-align: center; font: normal 500 44px "NotoSansSCVF"; color: rgba(43, 38, 34, .32); }

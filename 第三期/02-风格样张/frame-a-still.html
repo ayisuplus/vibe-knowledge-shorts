@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>样张 A · 你以为的蒸馏</title>
+<link rel="stylesheet" href="holo.css">
+</head>
+<body>
+<div class="stage" id="stage">
+  <svg class="layer" id="s" width="1080" height="1920" viewBox="0 0 1080 1920"></svg>
+  <div class="scan"></div><div class="grain"></div><div class="vignette"></div>
+  <div class="safe" style="left:60px;top:140px;width:880px;height:1500px"></div>
+</div>
+<script src="holo.js"></script>
+<script>
+const s = document.getElementById("s");
+const d = H.defs(s);
+// 冷凝管里的渐变：靠近烧瓶是热的琥珀色，越往下越冷、变成青色
+const cg = H.el(d, "linearGradient", { id: "cool", gradientUnits: "userSpaceOnUse", x1: 668, y1: 515, x2: 170, y2: 1200 });
+H.el(cg, "stop", { offset: 0, "stop-color": "#ffb547" });
+H.el(cg, "stop", { offset: .45, "stop-color": "#ffe9b8" });
+H.el(cg, "stop", { offset: 1, "stop-color": "#3df2ff" });
+const clip = H.el(d, "clipPath", { id: "bulb" });
+H.el(clip, "circle", { cx: 700, cy: 840, r: 160 });
+
+H.particles(s, { n: 170, seed: 21, op: 0.5 });
+H.grid(s, { y0: 1560, op: 0.32 });
+// 背景幽灵字
+H.el(s, "text", { x: 540, y: 1060, "text-anchor": "middle", "font-size": 380, "font-weight": 900, fill: "#3df2ff", opacity: 0.03 }, "蒸馏");
+
+const app = H.el(s, "g", { transform: "translate(0,0)" });
+const glass = { stroke: "#3df2ff", "stroke-width": 3.2, fill: "url(#fillIce)", filter: "url(#glowS)", "stroke-linejoin": "round", "stroke-linecap": "round" };
+const line = (g, d, extra = {}) => H.el(g, "path", { d, fill: "none", stroke: "#3df2ff", "stroke-width": 3.2, filter: "url(#glowS)", "stroke-linecap": "round", ...extra });
+const FY = 1560; // 地面
+
+// 铁架台
+const stand = H.el(app, "g", { opacity: .55 });
+line(stand, `M930 360 V${FY} M840 ${FY} H1010`);
+line(stand, "M930 630 H735", { "stroke-width": 2.4 });
+H.el(stand, "rect", { x: 722, y: 618, width: 24, height: 26, rx: 4, fill: "none", stroke: "#3df2ff", "stroke-width": 2.4 });
+
+// 升降台（剪式）
+const jack = H.el(app, "g", { opacity: .6 });
+line(jack, `M545 1300 H855 M545 ${FY - 4} H855`);
+line(jack, `M575 1306 L825 ${FY - 10} M825 1306 L575 ${FY - 10}`, { "stroke-width": 2.4 });
+H.el(jack, "circle", { cx: 700, cy: (1306 + FY - 10) / 2, r: 7, fill: "none", stroke: "#3df2ff", "stroke-width": 2.4 });
+
+// 三脚架 + 石棉网
+const tri = H.el(app, "g", { opacity: .7 });
+line(tri, "M560 1012 H840");
+line(tri, "M585 1012 L560 1300 M815 1012 L840 1300", { "stroke-width": 2.6 });
+for (let x = 575; x <= 825; x += 18) line(tri, `M${x} 1006 L${x + 10} 1018`, { "stroke-width": 1.2, filter: "" });
+
+// 圆底烧瓶（中心 700,840，半径 160）
+H.el(app, "path", { d: "M670 680 V540 H730 V680 A160 160 0 1 1 670 680 Z", ...glass });
+const liq = H.el(app, "g", { "clip-path": "url(#bulb)" });
+H.el(liq, "rect", { x: 520, y: 870, width: 360, height: 160, fill: "url(#fillHolo)", opacity: 1.6 });
+H.el(liq, "path", { d: "M520 872 Q560 858 600 872 T680 872 T760 872 T840 872 T900 872", stroke: "#3df2ff", "stroke-width": 3, fill: "none", filter: "url(#glowS)" });
+const rb = H.rng(5);
+for (let i = 0; i < 26; i++) H.el(liq, "circle", { cx: 570 + rb() * 260, cy: 890 + rb() * 100, r: 3 + rb() * 9, fill: "none", stroke: "#e8fdff", "stroke-width": 2, opacity: .4 + rb() * .5 });
+for (let i = 0; i < 5; i++) {
+  const x = 660 + i * 20;
+  line(app, `M${x} 850 C${x - 30} 780 ${x + 30} 720 ${x} 660 S${x - 20} 580 ${x} 530`, { stroke: "#ffb547", "stroke-width": 2, opacity: .35 + .1 * i, filter: "url(#glow)" });
+}
+
+// 蒸馏头 + 温度计
+H.el(app, "path", { d: "M670 540 V480 H730 V540", ...glass, fill: "none" });
+line(app, "M700 350 V600", { stroke: "#e8fdff", "stroke-width": 2.4 });
+line(app, "M700 470 V600", { stroke: "#ffb547", "stroke-width": 4.5 });
+H.el(app, "circle", { cx: 700, cy: 606, r: 10, fill: "#ffb547", filter: "url(#glowS)" });
+H.el(app, "rect", { x: 686, y: 338, width: 28, height: 14, rx: 3, fill: "none", stroke: "#3df2ff", "stroke-width": 2 });
+for (let y = 380; y <= 580; y += 25) line(app, `M700 ${y} h12`, { "stroke-width": 1.5, stroke: "#e8fdff", opacity: .7 });
+
+// 冷凝管（斜向左下）
+const P0 = [668, 515], P1 = [170, 1200];
+const ux = P1[0] - P0[0], uy = P1[1] - P0[1], L = Math.hypot(ux, uy), nx = -uy / L, ny = ux / L;
+const at = (t, off = 0) => [P0[0] + ux * t + nx * off, P0[1] + uy * t + ny * off];
+const j0 = .16, j1 = .86, R = 40;
+const q = (p) => p[0] + " " + p[1];
+H.el(app, "path", { d: `M${q(at(j0, R))} L${q(at(j1, R))} Q${q(at(j1 + .035))} ${q(at(j1, -R))} L${q(at(j0, -R))} Q${q(at(j0 - .035))} ${q(at(j0, R))} Z`, ...glass, fill: "rgba(61,242,255,0.07)" });
+const wi = at(j1 - .05, -R), wo = at(j0 + .05, R);
+line(app, `M${q(wi)} l${-nx * 46} ${-ny * 46}`, { "stroke-width": 7, opacity: .7 });
+line(app, `M${q(wo)} l${nx * 46} ${ny * 46}`, { "stroke-width": 7, opacity: .7 });
+H.el(app, "line", { x1: P0[0], y1: P0[1], x2: P1[0], y2: P1[1], stroke: "url(#cool)", "stroke-width": 16, "stroke-linecap": "round", opacity: .25 });
+H.el(app, "line", { x1: P0[0], y1: P0[1], x2: P1[0], y2: P1[1], stroke: "url(#cool)", "stroke-width": 4, "stroke-linecap": "round", filter: "url(#glow)" });
+for (let i = 1; i < 14; i++) { const [x, y] = at(i / 14); H.el(app, "circle", { cx: x, cy: y, r: 4.5, fill: i < 6 ? "#ffd27a" : "#e8fdff", filter: "url(#glowS)", opacity: .9 }); }
+
+// 接液管 + 锥形瓶
+line(app, "M170 1200 V1330");
+H.el(app, "path", { d: `M140 1330 H200 V1372 L300 ${FY - 14} Q306 ${FY} 290 ${FY} H50 Q34 ${FY} 40 ${FY - 14} L140 1372 Z`, ...glass });
+H.el(app, "path", { d: `M78 1496 H262 L292 ${FY - 10} Q296 ${FY - 4} 286 ${FY - 4} H54 Q44 ${FY - 4} 48 ${FY - 10} Z`, fill: "#3df2ff", opacity: .35, filter: "url(#glowS)" });
+line(app, "M78 1496 H262", { "stroke-width": 3 });
+H.el(app, "path", { d: "M170 1392 C184 1414 186 1428 170 1434 C154 1428 156 1414 170 1392 Z", fill: "#e8fdff", filter: "url(#glowL)" });
+H.el(app, "ellipse", { cx: 170, cy: 1497, rx: 46, ry: 6, fill: "none", stroke: "#e8fdff", "stroke-width": 2, opacity: .7 });
+H.el(app, "ellipse", { cx: 170, cy: 1497, rx: 80, ry: 10, fill: "none", stroke: "#3df2ff", "stroke-width": 1.5, opacity: .4 });
+
+// 酒精灯（放在升降台上）
+H.el(app, "path", { d: "M630 1298 L645 1205 Q700 1185 755 1205 L770 1298 Z", ...glass });
+H.el(app, "rect", { x: 688, y: 1166, width: 24, height: 30, rx: 4, fill: "none", stroke: "#3df2ff", "stroke-width": 2.6 });
+H.el(app, "path", { d: "M700 1036 C737 1088 737 1136 700 1168 C663 1136 663 1088 700 1036 Z", fill: "url(#flame)", filter: "url(#glowL)" });
+H.el(app, "path", { d: "M700 1090 C714 1114 714 1138 700 1156 C686 1138 686 1114 700 1090 Z", fill: "#fff4d6", opacity: .85 });
+
+// 阶段标签：文字 + 引线（引线从部件指向文字）
+const tag = (tx, ty, t, c, px, py, anchor = "start") => {
+  const ex = anchor === "start" ? tx - 12 : tx + 12;
+  line(app, `M${px} ${py} L${ex} ${ty - 13}`, { "stroke-width": 1.6, stroke: c, opacity: .75, filter: "" });
+  H.el(app, "circle", { cx: px, cy: py, r: 4, fill: c });
+  H.el(app, "text", { x: tx, y: ty, "font-size": 40, "font-weight": 700, fill: c, filter: "url(#glowS)", "text-anchor": anchor }, t);
+};
+tag(790, 1120, "加热", "#ffb547", 728, 1110);
+tag(880, 860, "沸腾", "#ffb547", 855, 900);
+tag(560, 470, "汽化", "#ffd27a", 662, 560, "end");
+tag(250, 790, "冷凝", "#3df2ff", 400, 868, "end");
+tag(320, 1460, "收集", "#e8fdff", 228, 1497);
+
+// ---- 标题 ----
+H.el(s, "text", { x: 540, y: 270, "text-anchor": "middle", "font-size": 124, "font-weight": 900, fill: "#e8fdff", filter: "url(#glowS)", "letter-spacing": 6 }, "你以为的蒸馏");
+H.el(s, "line", { x1: 300, y1: 315, x2: 780, y2: 315, stroke: "#3df2ff", "stroke-width": 2, opacity: .6 });
+
+H.brackets(s, 36, 120, 1008, 1620, { len: 46, sw: 2, op: .35 });
+</script>
+</body>
+</html>

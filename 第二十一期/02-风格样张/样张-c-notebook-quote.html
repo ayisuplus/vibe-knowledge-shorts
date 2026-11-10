@@ -1,0 +1,41 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><title>样张 C · 实验记录本</title><style>
+@font-face{font-family:NotoSC;src:url(fonts/NotoSansSC-VF.ttf)}
+@font-face{font-family:NotoSerifSC;src:url(fonts/NotoSerifSC-VF.ttf)}
+@font-face{font-family:CascadiaMono;src:url(fonts/CascadiaMono.ttf)}
+@font-face{font-family:WenKai;src:url(fonts/LXGWWenKai-Regular.ttf)}
+*{box-sizing:border-box} html,body{margin:0;width:1920px;height:1080px;overflow:hidden}
+body{font-family:NotoSC,sans-serif}
+.frame{position:relative;width:1920px;height:1080px;overflow:hidden;isolation:isolate}
+.art{position:absolute;inset:0;width:1920px;height:1080px}
+.mono{font-family:CascadiaMono,NotoSC,monospace}
+.serif{font-family:NotoSerifSC,serif}
+.hand{font-family:WenKai,NotoSC,sans-serif}
+.abs{position:absolute}
+.mode{position:absolute;left:76px;top:47px;font-size:24px;font-weight:600;letter-spacing:.14em;opacity:.85}
+.tag{position:absolute;left:50%;top:37px;transform:translateX(-50%);height:48px;line-height:44px;padding:0 28px;border-radius:25px;font-size:23px;letter-spacing:.12em;border:1px solid;white-space:nowrap}
+.mark{position:absolute;right:80px;top:48px;font-size:25px;letter-spacing:.10em;opacity:.85}
+.note{position:absolute;top:782px;left:110px;width:1700px;text-align:center;font-size:30px;font-weight:500;line-height:1.3;white-space:nowrap}
+.caption{position:absolute;top:918px;left:110px;width:1700px;text-align:center;font-size:46px;line-height:1.35;font-weight:800;letter-spacing:.035em;white-space:nowrap;text-shadow:0 2px 12px #000c}
+.cap-en{display:block;font-size:26px;font-weight:400;font-style:italic;letter-spacing:.02em;opacity:.72;margin-top:4px}
+
+.frame{color:#f1ede4;background:radial-gradient(ellipse at 50% 45%,#262523 0%,#1a1918 55%,#0f0f0e 100%)}
+.mode,.mark{color:#b9b2a3}.tag{color:#ffc58a;border-color:#7a5a36;background:#171512e0}
+.note{color:#cfc8ba}.caption{color:#fffaf0}
+.hl{position:absolute;font-family:WenKai,NotoSC,sans-serif;white-space:nowrap}
+.tk{position:absolute;width:200px;margin-left:-100px;text-align:center;font-family:WenKai,NotoSC,sans-serif;font-size:34px;color:#e9e3d6}
+.card{position:absolute;left:190px;top:206px;width:800px;height:520px;background:#f1ead9;color:#26221b;transform:rotate(-1.6deg);box-shadow:0 30px 80px #000b;padding:48px 58px}
+.card:before{content:"";position:absolute;left:300px;top:-18px;width:180px;height:40px;background:#e8d9b0cc;transform:rotate(2deg)}
+.card .k{font-family:WenKai,NotoSC,sans-serif;font-size:28px;color:#8a5a26}
+.card .q{margin-top:22px;font-size:54px;line-height:1.38;font-weight:900}
+.card .en{margin-top:20px;font-size:22px;line-height:1.5;font-style:italic;color:#5e5546}
+.card .ft{position:absolute;left:58px;bottom:34px;font-size:21px;color:#6e6455}
+.big{position:absolute;font-family:WenKai,NotoSC,sans-serif;line-height:1}
+</style></head><body><div class="frame"><svg class="art" viewBox="0 0 1920 1080"><defs>
+<filter id="soft" filterUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1080"><feGaussianBlur stdDeviation="18"/></filter>
+<filter id="soft2" filterUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1080"><feGaussianBlur stdDeviation="42"/></filter>
+<filter id="rough" filterUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1080"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="7" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="4"/></filter>
+<radialGradient id="orbCore"><stop offset="0" stop-color="#fffbe9"/><stop offset=".35" stop-color="#ffd890"/><stop offset="1" stop-color="#ffb347" stop-opacity="0"/></radialGradient>
+<radialGradient id="orbHalo"><stop offset="0" stop-color="#ffb347" stop-opacity=".55"/><stop offset="1" stop-color="#ffb347" stop-opacity="0"/></radialGradient>
+<pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0 L0 0 0 40" fill="none" stroke="#ffffff" stroke-opacity=".045" stroke-width="1"/></pattern>
+<pattern id="grid5" width="200" height="200" patternUnits="userSpaceOnUse"><path d="M200 0 L0 0 0 200" fill="none" stroke="#ffffff" stroke-opacity=".08" stroke-width="1.2"/></pattern>
+</defs><rect width="1920" height="1080" fill="url(#grid)"/><rect width="1920" height="1080" fill="url(#grid5)"/><line x1="150" y1="0" x2="150" y2="1080" stroke="#ffb347" stroke-opacity=".22" stroke-width="2"/><g filter="url(#rough)"><ellipse cx="1250" cy="600" rx="200" ry="104" fill="none" stroke="#ffb347" stroke-width="5" transform="rotate(-5 1250 600)"/><path d="M1440 560 C1480 530 1500 510 1520 488" fill="none" stroke="#ffb347" stroke-width="3.5" stroke-linecap="round"/><path d="M1500 488 L1522 486 L1518 508" fill="none" stroke="#ffb347" stroke-width="3.5" stroke-linecap="round"/></g></svg><div class="card serif"><div class="k">1944 · 美国陆军士兵调查</div><div class="q">有能力的兵，<br>在军队里升得上去吗？</div><div class="en">“Do you think a soldier with ability has a good chance for promotion in the Army?”</div><div class="ft">入伍 1–2 年 · 美国本土白人士兵 · 图为示意</div></div><div class="big" style="left:1110px;top:220px;font-size:40px;color:#e9e3d6">宪兵当上军士</div><div class="big" style="left:1110px;top:280px;font-size:110px;color:#f2eee4">24%</div><div class="big" style="left:1110px;top:448px;font-size:40px;color:#e9e3d6">航空兵当上军士</div><div class="big" style="left:1110px;top:520px;font-size:150px;color:#ffc58a">47%</div><div class="big" style="left:1500px;top:380px;font-size:42px;line-height:1.35;color:#ffc58a;transform:rotate(-4deg)">可他们<br>更不看好升职？</div><div class="mode">C · 实验记录本</div><div class="tag">④ 会变的尺子 · 1944</div><div class="mark">风格样张</div><div class="note" data-check="note">Stouffer 等《美国士兵》1949 · 图 IX · 入伍 1–2 年白人士兵</div><div class="caption" data-check="caption">升得更快的航空兵，反而更不看好升职。<span class="cap-en">The Air Corps promoted faster — and doubted promotion more.</span></div></div></body></html>

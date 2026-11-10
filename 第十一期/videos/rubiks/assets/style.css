@@ -1,0 +1,44 @@
+/* 第十一期 · 魔方——上帝的玩具 · 全片共用：字体、色板。
+   暗场科技展台：深石墨蓝底；字一律亮色（对底色 ≥ 7:1）；青色强调，紫色只做光晕边缘。
+   字体名不能叫 "Serif"/"Sans"（HyperFrames 渲染会丢拉丁字形）。 */
+@font-face { font-family: "NotoSC"; src: url("fonts/NotoSansSC-VF.ttf"); font-weight: 100 900; }
+@font-face { font-family: "CMono"; src: url("fonts/CascadiaMono.ttf"); }
+:root {
+  --bg: #070B12;
+  --ink: #EAF6FF;      /* 主字 */
+  --ink2: #A9C3D6;     /* 次要字 */
+  --cyan: #38E8FF;
+  --cyan-a: 56, 232, 255;
+  --violet-a: 122, 92, 255;
+  --gold: #FFD21A;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1920px; height: 1080px; overflow: hidden; background: var(--bg); }
+#root { position: relative; width: 1920px; height: 1080px; overflow: hidden; font-family: "NotoSC", sans-serif; color: var(--ink); background: var(--bg); }
+.layer { position: absolute; inset: 0; }
+#hud > * { position: absolute; }
+.mono { font-family: "CMono", monospace; }
+/* 开场标题 */
+.ttl { left: 1250px; top: 330px; line-height: 1.05; }
+.ttl b { display: block; font-weight: 900; font-size: 230px; letter-spacing: .06em; color: #F4FBFF;
+  text-shadow: 0 0 30px rgba(var(--cyan-a), .55), 0 0 90px rgba(var(--cyan-a), .25); }
+.ttl i { display: block; font-style: normal; font-weight: 800; font-size: 84px; letter-spacing: .08em; margin-top: 26px; color: #DDEFFF;
+  text-shadow: 0 0 24px rgba(var(--violet-a), .55), 0 0 60px rgba(var(--cyan-a), .2); }
+/* 标签（爆炸图） */
+.tag { display: flex; align-items: center; gap: 14px; padding: 12px 26px; border-radius: 14px; background: rgba(8, 16, 26, .78); border: 2px solid rgba(var(--cyan-a), .7);
+  box-shadow: 0 0 24px rgba(var(--cyan-a), .3); font: 700 40px "NotoSC"; white-space: nowrap; }
+.tag em { font: 700 42px "CMono"; font-style: normal; color: var(--cyan); }
+.lead { height: 3px; transform-origin: 0 50%; background: linear-gradient(90deg, rgba(var(--cyan-a), .9), rgba(var(--cyan-a), .2)); }
+.dot { width: 16px; height: 16px; margin: -8px 0 0 -8px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 16px var(--cyan); }
+/* 上帝之数 */
+.big20 { left: 120px; top: 170px; font: 900 560px/1 "CMono"; letter-spacing: -.04em; color: #F4FBFF;
+  text-shadow: 0 0 40px rgba(var(--cyan-a), .6), 0 0 120px rgba(var(--violet-a), .45); }
+.lbl { font: 800 64px "NotoSC"; letter-spacing: .12em; color: var(--ink); text-shadow: 0 0 24px rgba(var(--cyan-a), .5); }
+.sub { font: 600 40px "NotoSC"; color: var(--ink2); }
+/* 宇宙时间线 */
+.num { font: 700 84px "CMono"; letter-spacing: .02em; color: #F4FBFF; text-shadow: 0 0 26px rgba(var(--cyan-a), .5); white-space: nowrap; }
+.beam { height: 10px; border-radius: 5px; background: linear-gradient(90deg, #FFF 0%, rgba(var(--cyan-a), 1) 3%, rgba(var(--cyan-a), .85) 70%, rgba(var(--cyan-a), 0) 100%);
+  box-shadow: 0 0 30px rgba(var(--cyan-a), .7), 0 0 80px rgba(var(--cyan-a), .35); }
+.seg { height: 34px; border-radius: 6px; background: #FFD21A; box-shadow: 0 0 24px rgba(255, 210, 26, .9); }
+.cap { left: 0; right: 0; bottom: 70px; text-align: center; font: 700 46px "NotoSC"; color: #F4FBFF; text-shadow: 0 2px 10px rgba(0, 0, 0, .9); }
+.cap.prev { opacity: .9; }

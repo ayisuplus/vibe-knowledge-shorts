@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1920, height=1080">
+    <title>马克思写下的那扇门，AI 打开了一半</title>
+    <script src="assets/vendor/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "VibeSerif"; src: url("assets/fonts/NotoSerifSC-VF.ttf"); font-weight: 200 900; }
+      @font-face { font-family: "VibeSans"; src: url("assets/fonts/NotoSansSC-VF.ttf"); font-weight: 100 900; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1920px; height: 1080px; overflow: hidden; background: #0b0a09; }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; font-family: "VibeSans", sans-serif; background: #0b0a09; }
+      .layer { position: absolute; inset: 0; }
+      #world { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden; }
+      svg text { font-family: "VibeSans"; font-weight: 700; }
+      svg text.serif { font-family: "VibeSerif"; }
+      .vignette { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse 75% 70% at 50% 45%, rgba(0, 0, 0, 0) 62%, rgba(0, 0, 0, 0.22) 100%); }
+      .grain { position: absolute; inset: 0; pointer-events: none; opacity: 0.06; mix-blend-mode: overlay;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .5  0 0 0 0 .5  0 0 0 0 .5  0 0 0 1.6 -0.3'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"); }
+
+      #hud { pointer-events: none; }
+      .t { position: absolute; display: block; visibility: hidden; color: #fff; white-space: nowrap; font-family: "VibeSans"; font-weight: 700; }
+      .t em { font-style: normal; color: #f2cf7a; }
+
+      /* 手稿纸 */
+      .sheet { position: absolute; visibility: hidden; background: url("assets/img/parchment.jpg") center / cover, #ede3d0; color: #1e1b18; transform-origin: 50% 50%;
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55), 0 4px 12px rgba(0, 0, 0, 0.35); padding: 64px 72px; }
+      .sheet .q { font-family: "VibeSerif"; font-weight: 600; line-height: 1.6; letter-spacing: 2px; white-space: normal; }
+      .sheet .q b { font-weight: 800; color: #c8281e; }
+      .sheet .q span.c { opacity: 0; }
+      .sheet .src { margin-top: 22px; font-family: "VibeSans"; font-weight: 500; font-size: 22px; color: rgba(30, 27, 24, 0.72); letter-spacing: 1px; }
+      .seal { position: absolute; font-family: "VibeSerif"; font-weight: 800; color: #c8281e; border: 5px solid #c8281e; border-radius: 8px; padding: 6px 18px; letter-spacing: 4px; opacity: 0; white-space: nowrap; mix-blend-mode: multiply; }
+      .tape { position: absolute; width: 120px; height: 34px; background: rgba(235, 228, 210, 0.55); box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); }
+
+      /* 金色宋体 */
+      .gold { font-family: "VibeSerif"; font-weight: 800; letter-spacing: 6px; color: #e9bb5a;
+        background: linear-gradient(180deg, #fff1c4 0%, #f2cf7a 35%, #d9a441 70%, #a8741f 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+        filter: drop-shadow(0 4px 18px rgba(0, 0, 0, 0.6)); }
+      .serif { font-family: "VibeSerif"; }
+      .card { display: inline-block; padding: 18px 30px; border-radius: 14px; background: rgba(14, 12, 10, 0.72); border: 1px solid rgba(242, 207, 122, 0.35); color: #f4ead6; font-size: 44px; letter-spacing: 2px; }
+      .card small { display: block; margin-top: 6px; font-size: 24px; font-weight: 500; color: rgba(244, 234, 214, 0.6); letter-spacing: 1px; }
+      .chip { display: inline-block; text-align: center; line-height: 1.35; padding: 8px 20px; border-radius: 10px; font-size: 30px; letter-spacing: 3px; }
+      .qcard { padding: 40px 54px; border-radius: 6px; background: url("assets/img/parchment.jpg") center / cover, #ede3d0; color: #1e1b18; white-space: normal;
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6); font-family: "VibeSerif"; font-weight: 600; font-size: 44px; line-height: 1.6; letter-spacing: 2px; }
+      .qcard .by { display: block; margin-top: 18px; font-family: "VibeSans"; font-size: 26px; font-weight: 500; color: rgba(30, 27, 24, 0.6); text-align: right; letter-spacing: 1px; }
+      .qcard.dark { background: rgba(10, 14, 22, 0.78); color: #e8f1f5; border: 1px solid rgba(127, 200, 232, 0.4); }
+      .qcard.dark .by { color: rgba(232, 241, 245, 0.6); }
+      .huge { font-size: 120px; letter-spacing: 8px; }
+      .big { font-size: 84px; letter-spacing: 6px; }
+      .num { font-family: "VibeSerif"; font-weight: 800; font-variant-numeric: tabular-nums; }
+
+      /* 字幕预览（?caps=1）。成片不显示，交付 SRT */
+      .cap { position: absolute; z-index: 9; left: 160px; right: 160px; top: 908px; display: flex; flex-direction: column; align-items: center; text-align: center; visibility: hidden; }
+      .cap b { display: inline-block; font-size: 52px; font-weight: 700; line-height: 1.35; letter-spacing: 2px; color: #fff; padding: 4px 24px; border-radius: 12px; background: rgba(12, 10, 9, 0.62); }
+      .cap b em { font-style: normal; color: #f2cf7a; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-width="1920" data-height="1080" data-duration="264.89">
+      <audio id="music" src="assets/music.m4a" data-start="0" data-duration="264.89" data-track-index="9" data-volume="1"></audio>
+      <audio id="sfx" src="assets/sfx.mp3" data-start="0" data-duration="264.89" data-track-index="10" data-volume="0.85"></audio>
+      <div id="stage" class="layer clip" data-start="0" data-duration="264.89" data-track-index="0">
+        <svg id="world" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"></svg>
+        <div class="vignette" data-layout-ignore=""></div>
+        <div class="grain" data-layout-ignore=""></div>
+      </div>
+      <div id="hud" class="layer clip" data-start="0" data-duration="264.89" data-track-index="1"></div>
+    </div>
+    <script src="assets/js/captions.js"></script>
+    <script src="assets/js/lights.js"></script>
+    <script src="assets/js/lib.js"></script>
+    <script src="assets/js/s00.js"></script>
+    <script src="assets/js/s0s1.js"></script>
+    <script src="assets/js/s2s3.js"></script>
+    <script src="assets/js/s4s5.js"></script>
+    <script src="assets/js/s6s7.js"></script>
+    <script src="assets/js/s8s9.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = window.D.tl;
+    </script>
+  </body>
+</html>

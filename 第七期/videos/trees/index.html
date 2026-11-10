@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1920, height=1080">
+    <title>一棵树，长出整个计算机世界</title>
+    <script src="assets/vendor/gsap.min.js"></script>
+    <script src="assets/js/captions.js"></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "./assets/vendor/three.module.js",
+          "three/addons/": "./assets/vendor/addons/"
+        }
+      }
+    </script>
+    <style>
+      @font-face { font-family: "VibeSerif"; src: url("assets/fonts/NotoSerifSC-VF.ttf"); font-weight: 200 900; }
+      @font-face { font-family: "VibeSans"; src: url("assets/fonts/NotoSansSC-VF.ttf"); font-weight: 100 900; }
+      @font-face { font-family: "VibeHand"; src: url("assets/fonts/SegoeScript.ttf"); }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1920px; height: 1080px; overflow: hidden; background: #f4efe6; }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: #f4efe6; font-family: "VibeSans", sans-serif; color: #23262b; }
+      .layer { position: absolute; inset: 0; }
+      #gl { position: absolute; inset: 0; width: 1920px; height: 1080px; display: block; }
+      #hud { pointer-events: none; }
+      #hud > div { position: absolute; }
+
+      /* S0 计算机树示意图 */
+      .diag { left: 1290px; top: 440px; }
+      .diag line { stroke: #b8862a; stroke-width: 5; stroke-linecap: round; }
+      .diag circle { fill: #fffaf0; stroke: #b8862a; stroke-width: 4; }
+      .diag circle.root { fill: #f2c14e; stroke: #a8741f; }
+
+      /* S1 片名 */
+      .title { left: 0; right: 0; top: 150px; text-align: center; font-family: "VibeSerif"; font-weight: 900; font-size: 96px; line-height: 1.25; letter-spacing: 8px; color: #23262b; text-shadow: 0 2px 18px rgba(244, 239, 230, 0.9); }
+
+      /* S2 规则卡 */
+      .rulecard { left: 130px; top: 130px; padding: 26px 40px 22px; border-radius: 22px; background: rgba(255, 251, 242, 0.94); box-shadow: 0 14px 40px rgba(90, 60, 20, 0.16); border: 2px solid #e2d3b6; }
+      .rule-row { display: flex; align-items: center; gap: 18px; font-family: "VibeSerif"; font-weight: 800; font-size: 48px; letter-spacing: 3px; }
+      .rule-n { margin-top: 8px; text-align: center; font-family: "VibeSerif"; font-weight: 800; font-size: 44px; color: #8a5a3b; transform-origin: 50% 50%; }
+      .rule-n b { font-size: 92px; color: #c26f30; font-variant-numeric: tabular-nums; }
+
+      /* S2 自然界的分叉 */
+      .photo { width: 480px; height: 320px; border-radius: 18px; overflow: hidden; background: #fff; box-shadow: 0 18px 46px rgba(70, 50, 20, 0.22); border: 6px solid #fffaf0; transform-origin: 50% 50%; }
+      .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+      .photo span { position: absolute; left: 16px; bottom: 14px; padding: 4px 16px; border-radius: 999px; background: rgba(255, 251, 242, 0.92); font-family: "VibeSans"; font-weight: 800; font-size: 30px; }
+      .photo .n23 { position: absolute; right: 18px; top: 10px; font-style: normal; font-family: "VibeSerif"; font-weight: 900; font-size: 96px; color: #fffaf0; text-shadow: 0 4px 18px rgba(60, 40, 20, 0.55); transform-origin: 100% 0; visibility: hidden; }
+
+
+      /* 跟着 3D 点走的标签 */
+      .lab, .lvl, .lvl-title, .chip { left: 0; top: 0; white-space: nowrap; }
+      .lab { padding: 6px 18px; border-radius: 999px; background: rgba(255, 250, 238, 0.94); color: #23262b; font-family: "VibeSans"; font-weight: 800; font-size: 30px; box-shadow: 0 6px 18px rgba(90, 60, 20, 0.22); border: 2px solid #d9c49a; display: flex; align-items: center; gap: 6px; }
+      .lab.hi { background: #f2c14e; border-color: #b8862a; }
+      .lab.num { font-size: 32px; font-variant-numeric: tabular-nums; }
+      .lvl { font-family: "VibeSans"; font-weight: 800; font-size: 30px; color: #23262b; text-shadow: 0 0 8px rgba(255, 248, 235, 0.95), 0 0 2px rgba(255, 248, 235, 1); }
+      .lvl-title { font-family: "VibeSerif"; font-weight: 900; font-size: 48px; color: #23262b; text-shadow: 0 0 10px rgba(255, 248, 235, 0.95), 0 0 3px rgba(255, 248, 235, 1); }
+      .chip { padding: 6px 18px; border-radius: 12px; background: rgba(255, 250, 238, 0.94); font-family: "VibeSans"; font-weight: 800; font-size: 30px; color: #8a5a3b; border: 2px solid #d9c49a; }
+
+      /* S3 三条规矩 / 绕回来 / 朋友圈 */
+      .rules { left: 110px; top: 110px; padding: 22px 34px; border-radius: 20px; background: rgba(255, 251, 242, 0.95); box-shadow: 0 14px 40px rgba(90, 60, 20, 0.18); border: 2px solid #e2d3b6; }
+      .rules .rt { font-family: "VibeSerif"; font-weight: 900; font-size: 40px; letter-spacing: 4px; margin-bottom: 10px; }
+      .rules .rr { font-family: "VibeSans"; font-weight: 700; font-size: 32px; line-height: 1.6; color: #3a3530; }
+      .loop { left: 0; top: 0; }
+      .friends { left: 1500px; top: 330px; }
+      .friends .ftag { width: max-content; margin: 6px auto 0; padding: 4px 18px; border-radius: 999px; background: rgba(255, 250, 240, 0.95); font-family: "VibeSans"; font-weight: 800; font-size: 32px; color: #a83e29; }
+
+      /* S4 猜数卡 / 区间条 / 层数 */
+      .guess { left: 1500px; top: 300px; width: 280px; padding: 18px 0 22px; border-radius: 24px; text-align: center; background: rgba(255, 251, 242, 0.96); box-shadow: 0 16px 44px rgba(90, 60, 20, 0.2); border: 2px solid #e2d3b6; }
+      .guess .q { font-family: "VibeSerif"; font-weight: 900; font-size: 120px; line-height: 1.1; color: #23262b; font-variant-numeric: tabular-nums; }
+      .guess .res { height: 52px; font-family: "VibeSans"; font-weight: 800; font-size: 40px; color: #c26f30; }
+      .guess .res.ok { color: #3f8a46; }
+      .range { left: 360px; top: 70px; width: 1200px; height: 34px; display: flex; gap: 2px; }
+      .range i { flex: 1; border-radius: 3px; background: rgba(120, 100, 80, 0.25); }
+      .range i.on { background: #f2c14e; }
+      .range i.ok { background: #3f8a46; }
+      .range b { position: absolute; top: 40px; transform: translateX(-50%); white-space: nowrap; font-family: "VibeSans"; font-weight: 800; font-size: 28px; color: #fffaf0; text-shadow: 0 1px 6px rgba(40, 25, 10, 0.9), 0 0 2px rgba(40, 25, 10, 1); }
+      .layers { left: 120px; top: 120px; font-family: "VibeSerif"; font-weight: 900; font-size: 64px; color: #23262b; text-shadow: 0 0 14px rgba(255, 248, 235, 0.9); transform-origin: 0 50%; }
+      .layers b { font-size: 120px; font-variant-numeric: tabular-nums; }
+
+      /* S4 100 万 vs 40 */
+      .split { left: 0; top: 0; width: 1920px; height: 1080px; display: flex; background: rgba(244, 239, 230, 0.94); }
+      .split .half { position: relative; flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+      .split .half.l { border-right: 3px dashed #d4c3a2; overflow: hidden; }
+      .split .pole { position: absolute; left: 150px; top: 60px; height: 1000px; }
+      .split .pole i { position: absolute; width: 26px; height: 26px; border-radius: 50%; background: #2b2a2e; }
+      .split .pole::after { content: ""; position: absolute; left: 90px; top: 700px; width: 10px; height: 400px; background: linear-gradient(#2b2a2e, rgba(43, 42, 46, 0)); }
+      .split .cap1 { font-family: "VibeSerif"; font-weight: 900; font-size: 64px; letter-spacing: 6px; margin-top: 20px; }
+      .split .big { font-family: "VibeSerif"; font-weight: 900; font-size: 120px; color: #23262b; }
+      .split .big small { font-size: 56px; margin-left: 6px; }
+      .split .half.l .cap1, .split .half.l .big { position: relative; left: 60px; }
+      .split .forty { display: inline-block; color: #d9483b; transform-origin: 50% 60%; }
+      .phone { left: 1440px; top: 210px; }
+
+
+      /* S5 句子 / 语法树 */
+      .sent { left: 0; top: 0; white-space: nowrap; padding: 10px 26px; border-radius: 14px; background: rgba(250, 243, 228, 0.95); box-shadow: inset 0 2px 6px rgba(90, 60, 20, 0.25), 0 6px 20px rgba(90, 60, 20, 0.18); font-family: "VibeSerif"; font-weight: 900; font-size: 54px; letter-spacing: 4px; color: #23262b; display: flex; align-items: center; }
+      .sent .cut { display: inline-block; width: 0; height: 56px; border-right: 4px solid #c26f30; margin: 0 2px; }
+      .sent.expr { font-family: "VibeSans"; letter-spacing: 8px; }
+      .mean { left: 0; top: 0; white-space: nowrap; padding: 8px 24px; border-radius: 12px; background: #23262b; color: #fffaf0; font-family: "VibeSans"; font-weight: 700; font-size: 36px; }
+      .mean b { color: #ffd27a; }
+      .wrong { left: 1380px; top: 640px; padding: 12px 26px; border-radius: 14px; background: rgba(255, 243, 238, 0.95); border: 2px solid #e8705a; font-family: "VibeSans"; font-weight: 800; font-size: 40px; color: #b4452f; display: flex; gap: 16px; align-items: center; }
+      .wrong s { text-decoration-thickness: 4px; }
+
+      /* S6 问题牌 / 是否 / 20 个问题 */
+      .tag, .yn { left: 0; top: 0; white-space: nowrap; }
+      .tag { padding: 8px 20px; border-radius: 12px; background: rgba(255, 251, 242, 0.96); color: #23262b; font-family: "VibeSans"; font-weight: 700; font-size: 32px; box-shadow: 0 6px 18px rgba(90, 60, 20, 0.18); border: 2px solid #c9b48e; }
+      .tag.hi { background: #f2c14e; border-color: #b8862a; }
+      .tag.good { background: #5e9e5a; color: #fff; border-color: #4a8547; }
+      .tag.bad { background: #8a6c3a; color: #fff; border-color: #6e5530; }
+      .tag.bad .x { color: #ffd2c6; }
+      .tag.over { background: #fff3ee; color: #b4452f; border-color: #e8705a; font-size: 28px; }
+      .yn { padding: 2px 12px; border-radius: 999px; background: #3f8a46; color: #fff; font-family: "VibeSans"; font-weight: 800; font-size: 24px; }
+      .yn.no { background: #8a7a66; }
+      .q20 { left: 1240px; top: 140px; padding: 22px 36px; border-radius: 20px; background: rgba(255, 251, 242, 0.96); box-shadow: 0 14px 40px rgba(90, 60, 20, 0.18); border: 2px solid #e2d3b6; font-family: "VibeSerif"; font-weight: 800; font-size: 40px; line-height: 1.5; transform-origin: 50% 50%; }
+      .q20 b { font-variant-numeric: tabular-nums; color: #c26f30; font-size: 52px; }
+      .note { right: 60px; top: 846px; font-family: "VibeSans"; font-weight: 500; font-size: 24px; color: rgba(35, 38, 43, 0.75); }
+
+
+      /* S7 投票 */
+      .vote { left: 0; top: 0; white-space: nowrap; padding: 2px 10px; border-radius: 8px; font-family: "VibeSans"; font-weight: 800; font-size: 21px; color: #fff; box-shadow: 0 3px 8px rgba(60, 40, 20, 0.25); }
+      .vote.good { background: #5e9e5a; }
+      .vote.bad { background: #8a6c3a; }
+      .tally { left: 0; right: 0; top: 96px; display: flex; flex-direction: column; align-items: center; }
+      .tally .tl { padding: 14px 40px; border-radius: 20px; background: rgba(255, 251, 242, 0.96); box-shadow: 0 14px 40px rgba(90, 60, 20, 0.2); border: 2px solid #e2d3b6; font-family: "VibeSerif"; font-weight: 900; font-size: 54px; letter-spacing: 3px; }
+      .tally .tl b { color: #3f8a46; font-size: 72px; }
+      .tally .tl b:last-child { color: #8a6c3a; }
+      .tally .sy { margin-top: 6px; font-family: "VibeSans"; font-weight: 600; font-size: 24px; color: rgba(35, 38, 43, 0.7); }
+
+      /* S8 生命之树 / 书页 */
+      .spec { left: 0; top: 0; zoom: 1.45; filter: drop-shadow(0 3px 6px rgba(255, 250, 240, 0.9)); }
+      .pages { left: 0; top: 0; width: 1920px; height: 1080px; background: radial-gradient(ellipse at 50% 45%, #f6efe1 0%, #e8dcc4 100%); }
+      .pages .pg { position: absolute; left: 50%; top: 46%; margin-left: -420px; margin-top: -330px; width: 840px; height: 640px; border-radius: 6px; box-shadow: 0 30px 70px rgba(70, 50, 20, 0.28); display: flex; flex-direction: column; align-items: center; justify-content: center; transform-origin: 50% 50%; }
+      .pages .note { background: repeating-linear-gradient(#fbf6e9 0 39px, #d9cdb4 39px 40px); border-left: 26px solid #6b4e3a; }
+      .pages .note .yr { position: absolute; left: 48px; top: 30px; font-family: "VibeHand"; font-size: 40px; color: #3a3026; }
+      .pages .note .think { position: absolute; right: 46px; top: 54px; font-family: "VibeHand"; font-size: 72px; color: #2f2820; transform: rotate(-6deg); }
+      .pages .book { background: #efe2c6; }
+      .pages .book .cap { margin-top: 16px; font-family: "VibeSans"; font-weight: 600; font-size: 26px; color: #4a3f30; }
+
+      /* S9 金句 */
+      .closing { left: 150px; top: 330px; }
+      .closing .l1 { font-family: "VibeSerif"; font-weight: 900; font-size: 136px; letter-spacing: 12px; color: #23262b; }
+      .closing .l2 { margin-top: 18px; font-family: "VibeSerif"; font-weight: 700; font-size: 56px; letter-spacing: 6px; color: #8a5a3b; }
+      .fadeout { left: 0; top: 0; width: 1920px; height: 1080px; background: #f4efe6; }
+
+      /* 字幕预览（?caps=1） */
+      .cap { left: 160px; right: 160px; top: 908px; display: flex; justify-content: center; text-align: center; z-index: 9; }
+      .cap b { display: inline-block; font-size: 52px; font-weight: 700; line-height: 1.35; letter-spacing: 2px; color: #fffaf0; padding: 4px 26px; border-radius: 12px; background: rgba(35, 30, 24, 0.58); }
+      .cap b em { font-style: normal; color: #ffd27a; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-width="1920" data-height="1080" data-duration="182">
+      <audio id="music" src="assets/music.m4a" data-start="0" data-duration="182" data-track-index="9" data-volume="1"></audio>
+      <audio id="sfx" src="assets/sfx.mp3" data-start="0" data-duration="182" data-track-index="10" data-volume="0.85"></audio>
+      <div id="stage" class="layer clip" data-start="0" data-duration="182" data-track-index="0">
+        <canvas id="gl" width="1920" height="1080"></canvas>
+      </div>
+      <div id="hud" class="layer clip" data-start="0" data-duration="182" data-track-index="1"></div>
+    </div>
+    <script>
+      // 时间线在这里先注册（框架加载时就要找到它）；3D 模块加载后往里填驱动 tween
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+    </script>
+    <script type="module" src="assets/js/film.js"></script>
+  </body>
+</html>

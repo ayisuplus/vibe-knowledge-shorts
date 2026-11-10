@@ -1,0 +1,3555 @@
+{
+  "version": 1,
+  "historyId": "f1006328-0ef7-476c-90e3-e05fb8138d7e",
+  "currentRevision": "b7f42000-c7b8-4975-8eae-982851c4380b",
+  "pendingChanges": false,
+  "files": {
+    "BRIEF.md": {
+      "hash": "2868b46096ddd8a843a3e1ace9999904066ee58ad00b566abb9d2b9f0c58b1ce",
+      "content": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\28\\2868b46096ddd8a843a3e1ace9999904066ee58ad00b566abb9d2b9f0c58b1ce"
+    },
+    "assets/img/grain.svg": {
+      "hash": "09fa677c21c160264c055d4c4041918c202ca21e0f3b0aa858e5efa4bab9b23a",
+      "content": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\09\\09fa677c21c160264c055d4c4041918c202ca21e0f3b0aa858e5efa4bab9b23a"
+    },
+    "assets/img/p1-residential-dusk.jpg": {
+      "hash": "e3cb2e82456d9ef9446d0b746b78600577bd88266651bb2d84dffe160bbca612",
+      "content": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\e3\\e3cb2e82456d9ef9446d0b746b78600577bd88266651bb2d84dffe160bbca612"
+    },
+    "assets/img/p2-kauai-coast.jpg": {
+      "hash": "d711fd79218f3c8ae5bcc3316eac57ed91476ea7f78978d0f636b304837921de",
+      "content": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\d7\\d711fd79218f3c8ae5bcc3316eac57ed91476ea7f78978d0f636b304837921de"
+    },
+    "assets/img/p3-holding-hands.jpg": {
+      "hash": "ddd32edd5f44310e8b1d1517594d6c6e2a742c703e36aa7859f76a5b46d5dcab",
+      "content": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\dd\\ddd32edd5f44310e8b1d1517594d6c6e2a742c703e36aa7859f76a5b46d5dcab"
+    },
+    "assets/img/p4-young-parents-1990s.jpg": {
+      "hash": "52a8d3b81bde879ba54e2d921c4b6cf8af38323e6990505b898ad803150e18b7",
+      "content": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\52\\52a8d3b81bde879ba54e2d921c4b6cf8af38323e6990505b898ad803150e18b7"
+    },
+    "assets/img/p5-grandparents-1960s.jpg": {
+      "hash": "b1b94fe12783e0a8a1bc364c74dd4799f95ddec9fa238f55c2183abe83d09624",
+      "content": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\b1\\b1b94fe12783e0a8a1bc364c74dd4799f95ddec9fa238f55c2183abe83d09624"
+    },
+    "assets/js/captions.js": {
+      "hash": "416b3fe6bb01ca2a809b71fd332b86cc7c3fa43a879517ab8578ade72bae69a5",
+      "content": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\41\\416b3fe6bb01ca2a809b71fd332b86cc7c3fa43a879517ab8578ade72bae69a5"
+    },
+    "assets/js/deck.js": {
+      "hash": "8cfa7b916875fd3f57856e665a58bca720dbf7499fb73601c00e8260d50fd78d",
+      "content": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\8c\\8cfa7b916875fd3f57856e665a58bca720dbf7499fb73601c00e8260d50fd78d"
+    },
+    "assets/js/film.js": {
+      "hash": "4d0a7eba9f94a7e9c69aeb65d22fb4e74111604ace3551e2264154a76f23cfbe",
+      "content": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\4d\\4d0a7eba9f94a7e9c69aeb65d22fb4e74111604ace3551e2264154a76f23cfbe"
+    },
+    "assets/js/lib.js": {
+      "hash": "579872ce1c405311abc65a9d0cd309328a5a59340c6a96f3393d9f763d9063a3",
+      "content": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\57\\579872ce1c405311abc65a9d0cd309328a5a59340c6a96f3393d9f763d9063a3"
+    },
+    "assets/js/s0.js": {
+      "hash": "0d45dbb66b4fa39d828d4fdaa698108b8dda4db3c7dbe02932ecf1ad857a48b1",
+      "content": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\0d\\0d45dbb66b4fa39d828d4fdaa698108b8dda4db3c7dbe02932ecf1ad857a48b1"
+    },
+    "assets/js/s3.js": {
+      "hash": "1f13da2eef0dddef52e3f7e3806412332f07f2028b291a9f6ed4d242ccf5f1b5",
+      "content": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\1f\\1f13da2eef0dddef52e3f7e3806412332f07f2028b291a9f6ed4d242ccf5f1b5"
+    },
+    "assets/js/s4.js": {
+      "hash": "952adaf81c193c14f1f661fa0a6cbad6a39e22f818d8740bb6245ec6030469f6",
+      "content": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\95\\952adaf81c193c14f1f661fa0a6cbad6a39e22f818d8740bb6245ec6030469f6"
+    },
+    "assets/js/s5.js": {
+      "hash": "1fdbe981048bc2497d5829e0f7a2b9335d1c9f2f431483cc150c2cb72525ec71",
+      "content": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\1f\\1fdbe981048bc2497d5829e0f7a2b9335d1c9f2f431483cc150c2cb72525ec71"
+    },
+    "assets/js/s6.js": {
+      "hash": "4239f16987a9b5c8e2346eea3cf85613ded00531d3edc5d8df3a2f46819975e5",
+      "content": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\42\\4239f16987a9b5c8e2346eea3cf85613ded00531d3edc5d8df3a2f46819975e5"
+    },
+    "assets/js/s7.js": {
+      "hash": "2892ea70ccd4ae9970e77f33e0a4671b91282b6e56debc4c96259cfce4301399",
+      "content": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\28\\2892ea70ccd4ae9970e77f33e0a4671b91282b6e56debc4c96259cfce4301399"
+    },
+    "assets/style.css": {
+      "hash": "ffaed8bfb0c6f2945a2f8545898ebc3570a827c13486a0d4e8c7bc9ffffe114d",
+      "content": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\ff\\ffaed8bfb0c6f2945a2f8545898ebc3570a827c13486a0d4e8c7bc9ffffe114d"
+    },
+    "assets/vendor/gsap.min.js": {
+      "hash": "c174bfce53a729418d57a8ad8625e7247c793a22fef8e2851e3cfa3de9cd8280",
+      "content": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\c1\\c174bfce53a729418d57a8ad8625e7247c793a22fef8e2851e3cfa3de9cd8280"
+    },
+    "hyperframes.json": {
+      "hash": "ad5dadeef78a520800a9e5cdd27a92ff5ac37f11b6a07f611b6b52b9f8c79a17",
+      "content": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\ad\\ad5dadeef78a520800a9e5cdd27a92ff5ac37f11b6a07f611b6b52b9f8c79a17"
+    },
+    "index.html": {
+      "hash": "2b001ce91caf231f27beb2ad2c5025d937a39f591fc9a53cdbafbe736acdb29c",
+      "content": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\2b\\2b001ce91caf231f27beb2ad2c5025d937a39f591fc9a53cdbafbe736acdb29c"
+    },
+    "package.json": {
+      "hash": "03500f58bef07f1f0ad5e9c7dc77fb25aa65a966ac0d2ba560ff8ef62f125a28",
+      "content": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\03\\03500f58bef07f1f0ad5e9c7dc77fb25aa65a966ac0d2ba560ff8ef62f125a28"
+    },
+    "tools/probe.mjs": {
+      "hash": "1de1831e9697b1f82d3ca6d5bd9b9be91db59189d2e86dec06b616a5189b0064",
+      "content": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\1d\\1de1831e9697b1f82d3ca6d5bd9b9be91db59189d2e86dec06b616a5189b0064"
+    },
+    "tools/shot.mjs": {
+      "hash": "4184df11e08298c76e42c47f1cce76b50a691dc2895f9d2065060c2b518f0069",
+      "content": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\41\\4184df11e08298c76e42c47f1cce76b50a691dc2895f9d2065060c2b518f0069"
+    },
+    "tools/srt.mjs": {
+      "hash": "9e3719aad81da53cc48b6f86c9f4df47922e00528344354e9fe70b3cb9a92e49",
+      "content": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\9e\\9e3719aad81da53cc48b6f86c9f4df47922e00528344354e9fe70b3cb9a92e49"
+    },
+    "assets/fonts/LXGWWenKai-Regular.ttf": {
+      "hash": "2d73eea94ad808999d90c0000c239a84a33b09d4bc6ab6c5b8bbf1eda8a7fc8b",
+      "content": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\2d\\2d73eea94ad808999d90c0000c239a84a33b09d4bc6ab6c5b8bbf1eda8a7fc8b"
+    },
+    "assets/fonts/NotoSansSC-VF.ttf": {
+      "hash": "763146584cf0710223441356b4395e279021b0806c196614377a7a0174ae074a",
+      "content": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\76\\763146584cf0710223441356b4395e279021b0806c196614377a7a0174ae074a"
+    },
+    "assets/fonts/NotoSerifSC-VF.ttf": {
+      "hash": "a4aed9985a5916fbf6690456f8732a9fccd517938e353165d4142b4f11a39280",
+      "content": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\a4\\a4aed9985a5916fbf6690456f8732a9fccd517938e353165d4142b4f11a39280"
+    },
+    "assets/music.m4a": {
+      "hash": "5317139d4030a7a7e8f213b7146f89507ae32203ae12bc4d678f497b5f76baae",
+      "content": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\53\\5317139d4030a7a7e8f213b7146f89507ae32203ae12bc4d678f497b5f76baae"
+    }
+  },
+  "revisions": {
+    "f3ba8746-f0d6-42b2-8e63-32ee37157289": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1792583521414,
+      "endedAt": 1792583521438,
+      "files": {
+        "assets/js/deck.js": {
+          "before": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\39\\39cf1b6cee41c618ce2dc02f0bf815e3eda4dcce766222bb0591fc6e48bac08d",
+          "after": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\5e\\5e3e5dfd306abaaebe47e63e747494bbb77a78d92be5176573a79dd2fda242b5"
+        },
+        "assets/js/s0.js": {
+          "before": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\b4\\b441c9871652805f9d55e4f6472366331c23d451c7d492057f90fac40e066efb",
+          "after": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\bb\\bb49ea7cc20315c2df7f061b50d82126d3f6247aa4609ab49b396605f2f4fc9a"
+        },
+        "assets/js/s5.js": {
+          "before": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\52\\52fac48301a96294ad7323e32ee4115876399bddfa6432eb35c955a8fbd21ae9",
+          "after": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\4c\\4cdfbe75ca96fdb0fd8aeeab241123d568d1ba52c50bad664a168a5d18781a45"
+        },
+        "assets/js/s6.js": {
+          "before": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\2a\\2a8b63704bbb33524707ff75f32c86cd7cca7c596e3706eea247f1e2c07d05b4",
+          "after": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\cc\\ccde2ad923ee76851fb02dccfca93a50f83ceba9a66b1e140107a9bce7d55f23"
+        }
+      }
+    },
+    "d51c54f9-d722-4cd8-8fcc-36fb9ecd3fa6": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1792583583593,
+      "endedAt": 1792583583686,
+      "files": {
+        "assets/js/s0.js": {
+          "before": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\bb\\bb49ea7cc20315c2df7f061b50d82126d3f6247aa4609ab49b396605f2f4fc9a",
+          "after": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\bb\\bb3eedcbc9039f3023000bb2b2cefc4e560063d0fa9f0eb395fdf003ec81824f"
+        },
+        "assets/js/s3.js": {
+          "before": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\d8\\d8ff8c4cea5201798a278a7fd6d6d451b115ffa60cf5b98aec9f0fd5bb853eca",
+          "after": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\27\\27d4186820857fb13994220d81e6184567090fbc3778ed64360cd7b92a635f83"
+        },
+        "assets/js/s4.js": {
+          "before": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\a8\\a832dfabf4611aff60e6a0f817b12129bf98a5fc137e56d56a187fb415d345b9",
+          "after": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\64\\64b4a666f1f9fe7a868524eb8f39c674e9fb1080cd1ee74a4c1c2112624a0e87"
+        },
+        "assets/js/s5.js": {
+          "before": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\4c\\4cdfbe75ca96fdb0fd8aeeab241123d568d1ba52c50bad664a168a5d18781a45",
+          "after": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\40\\4048570c63b78f809fa75d93ca5b312ba7887d490c83020306a137c40ecab5d9"
+        },
+        "assets/js/s6.js": {
+          "before": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\cc\\ccde2ad923ee76851fb02dccfca93a50f83ceba9a66b1e140107a9bce7d55f23",
+          "after": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\39\\397bd07406bdc4e9e6748a3aa38f20ae23fddc4bfafa5f79bff9e416e0d13706"
+        },
+        "assets/js/s7.js": {
+          "before": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\f6\\f69db694af9de78db40616a28655115e7ce608ae86cfca87caf07edfec54ea94",
+          "after": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\c8\\c87a7c611136b28489055db5f81bf2b5be8ad6a4b66e925d4349ddf013deb84c"
+        }
+      }
+    },
+    "c63d22af-9ab1-4e2c-8d9b-b5e26908eb13": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1792583675674,
+      "endedAt": 1792583675674,
+      "files": {
+        "assets/js/s0.js": {
+          "before": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\bb\\bb3eedcbc9039f3023000bb2b2cefc4e560063d0fa9f0eb395fdf003ec81824f",
+          "after": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\b8\\b8ce39f9d276fb41771ca20f2c682af9eeb92411016fb09aa60d70ce49eddf85"
+        }
+      }
+    },
+    "062299e8-1b2e-44c8-90af-d45d3356a63a": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1792583710093,
+      "endedAt": 1792583710094,
+      "files": {
+        "assets/js/s0.js": {
+          "before": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\b8\\b8ce39f9d276fb41771ca20f2c682af9eeb92411016fb09aa60d70ce49eddf85",
+          "after": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\98\\9841f35ef1be61b0a9bac70461a53f8cca8f9738999f36bdff0850f0b324167d"
+        }
+      }
+    },
+    "9ee5ea4c-9751-499f-a77f-822307399a7d": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1792583866392,
+      "endedAt": 1792583866393,
+      "files": {
+        "assets/js/s3.js": {
+          "before": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\27\\27d4186820857fb13994220d81e6184567090fbc3778ed64360cd7b92a635f83",
+          "after": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\82\\828b832b2fef8d1cd2b6cdbadcb8cacbae52c9007e6c4b35257ef51900ce0c4b"
+        }
+      }
+    },
+    "99150f00-9adc-4343-a61f-93b9b5a7f8ac": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1792583939225,
+      "endedAt": 1792583939274,
+      "files": {
+        "assets/js/deck.js": {
+          "before": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\5e\\5e3e5dfd306abaaebe47e63e747494bbb77a78d92be5176573a79dd2fda242b5",
+          "after": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\8c\\8cfa7b916875fd3f57856e665a58bca720dbf7499fb73601c00e8260d50fd78d"
+        },
+        "assets/js/s3.js": {
+          "before": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\82\\828b832b2fef8d1cd2b6cdbadcb8cacbae52c9007e6c4b35257ef51900ce0c4b",
+          "after": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\aa\\aafdcab5f5b4f6b76e1cf86584c619e8a1909d5122dcfddeca785bf54138c7d2"
+        },
+        "assets/js/s4.js": {
+          "before": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\64\\64b4a666f1f9fe7a868524eb8f39c674e9fb1080cd1ee74a4c1c2112624a0e87",
+          "after": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\52\\522def73d5b837c8e8195b7d66b86dadbf02ba1e2f6144e5c3168ea0bdc12e23"
+        },
+        "assets/js/s6.js": {
+          "before": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\39\\397bd07406bdc4e9e6748a3aa38f20ae23fddc4bfafa5f79bff9e416e0d13706",
+          "after": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\27\\27b3c1d90b3cbf2cf94d5856da1c63b1f9831097fa5ee2d6332cb67bd578f775"
+        }
+      }
+    },
+    "46b751b6-02b1-4f9b-9a3f-9cd0c977b757": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1792584006335,
+      "endedAt": 1792584006386,
+      "files": {
+        "assets/js/s3.js": {
+          "before": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\aa\\aafdcab5f5b4f6b76e1cf86584c619e8a1909d5122dcfddeca785bf54138c7d2",
+          "after": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\48\\484f0d360c207ae492676d8e8e11cba88733e4e93508d669953d447220869baf"
+        },
+        "assets/js/s4.js": {
+          "before": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\52\\522def73d5b837c8e8195b7d66b86dadbf02ba1e2f6144e5c3168ea0bdc12e23",
+          "after": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\14\\14c2e7a7c624386a325e06a23502e2aeea21b53da82c0be279548ef342c6efe9"
+        },
+        "assets/js/s5.js": {
+          "before": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\40\\4048570c63b78f809fa75d93ca5b312ba7887d490c83020306a137c40ecab5d9",
+          "after": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\3f\\3fc014cfc2fd6014ccac4b22caf22858cc98b099d01d409861462db6a9147045"
+        }
+      }
+    },
+    "975c0e9d-dc09-4d23-8730-b58cf4e02c1b": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1792584081869,
+      "endedAt": 1792584081923,
+      "files": {
+        "assets/js/s3.js": {
+          "before": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\48\\484f0d360c207ae492676d8e8e11cba88733e4e93508d669953d447220869baf",
+          "after": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\1f\\1f13da2eef0dddef52e3f7e3806412332f07f2028b291a9f6ed4d242ccf5f1b5"
+        },
+        "assets/js/s4.js": {
+          "before": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\14\\14c2e7a7c624386a325e06a23502e2aeea21b53da82c0be279548ef342c6efe9",
+          "after": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\8f\\8f11b40190a9a408710240d8349a9e6cd567488e05054ae9c57c8cade41f37c2"
+        },
+        "assets/js/s5.js": {
+          "before": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\3f\\3fc014cfc2fd6014ccac4b22caf22858cc98b099d01d409861462db6a9147045",
+          "after": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\db\\db5172f691a7a851520aa110819f7b85b2bd53ccf91737e90d3167ba91957a7d"
+        },
+        "assets/js/s6.js": {
+          "before": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\27\\27b3c1d90b3cbf2cf94d5856da1c63b1f9831097fa5ee2d6332cb67bd578f775",
+          "after": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\3f\\3f8cc2a98e90b80194787ee0ace591873783a0acd699b1c224cb4021e9510fa5"
+        }
+      }
+    },
+    "c53e5a24-a7f1-4c24-b564-3e480c553639": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1792584130727,
+      "endedAt": 1792584130766,
+      "files": {
+        "assets/js/s4.js": {
+          "before": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\8f\\8f11b40190a9a408710240d8349a9e6cd567488e05054ae9c57c8cade41f37c2",
+          "after": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\e1\\e11d6ff0df78e7af644d6a860f39196d3390558db7e75f14298b1e5c3054df9f"
+        },
+        "assets/js/s5.js": {
+          "before": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\db\\db5172f691a7a851520aa110819f7b85b2bd53ccf91737e90d3167ba91957a7d",
+          "after": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\90\\90e7f3c433ee9c3e4736601aab32caa75a88444f76e6d5de3577262415195e56"
+        },
+        "assets/js/s6.js": {
+          "before": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\3f\\3f8cc2a98e90b80194787ee0ace591873783a0acd699b1c224cb4021e9510fa5",
+          "after": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\82\\82834b4753ad6b5bcd71fbe3ebda1c29f36c4b2a6c9d8edb74c4426ed213d3cb"
+        }
+      }
+    },
+    "a5d7bb78-240e-41da-854f-98851efb491e": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1792584201821,
+      "endedAt": 1792584201822,
+      "files": {
+        "assets/js/s6.js": {
+          "before": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\82\\82834b4753ad6b5bcd71fbe3ebda1c29f36c4b2a6c9d8edb74c4426ed213d3cb",
+          "after": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\42\\4239f16987a9b5c8e2346eea3cf85613ded00531d3edc5d8df3a2f46819975e5"
+        }
+      }
+    },
+    "3b8902aa-b3f4-4a15-b258-1b5701df7a21": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1792584250851,
+      "endedAt": 1792584250852,
+      "files": {
+        "assets/js/s7.js": {
+          "before": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\c8\\c87a7c611136b28489055db5f81bf2b5be8ad6a4b66e925d4349ddf013deb84c",
+          "after": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\a4\\a466a135ccfb766c7901c76eff0ee3603c914184d46bff2e37ad23e65742efd2"
+        }
+      }
+    },
+    "34da280c-80c7-49d7-bb1f-023cc672b6ee": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1792584289944,
+      "endedAt": 1792584289944,
+      "files": {
+        "assets/js/s7.js": {
+          "before": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\a4\\a466a135ccfb766c7901c76eff0ee3603c914184d46bff2e37ad23e65742efd2",
+          "after": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\eb\\eb71dd49beae326cf583fe65d915ddbc8e02b54ce72303c56eab3b063d731bfe"
+        }
+      }
+    },
+    "614c02c0-6000-47b4-a6ec-34a82e014f9a": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1792584322160,
+      "endedAt": 1792584322161,
+      "files": {
+        "assets/js/s7.js": {
+          "before": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\eb\\eb71dd49beae326cf583fe65d915ddbc8e02b54ce72303c56eab3b063d731bfe",
+          "after": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\28\\2892ea70ccd4ae9970e77f33e0a4671b91282b6e56debc4c96259cfce4301399"
+        }
+      }
+    },
+    "accadc6f-0db8-43ca-90f1-2d1ed5eb6de1": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1792584420415,
+      "endedAt": 1792584420455,
+      "files": {
+        "assets/js/s0.js": {
+          "before": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\98\\9841f35ef1be61b0a9bac70461a53f8cca8f9738999f36bdff0850f0b324167d",
+          "after": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\11\\11c997800ce90fdb4c99b35e9488753d762d46ce82323043cd73bb66b337b408"
+        },
+        "assets/js/s4.js": {
+          "before": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\e1\\e11d6ff0df78e7af644d6a860f39196d3390558db7e75f14298b1e5c3054df9f",
+          "after": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\95\\952adaf81c193c14f1f661fa0a6cbad6a39e22f818d8740bb6245ec6030469f6"
+        },
+        "assets/js/s5.js": {
+          "before": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\90\\90e7f3c433ee9c3e4736601aab32caa75a88444f76e6d5de3577262415195e56",
+          "after": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\1f\\1fdbe981048bc2497d5829e0f7a2b9335d1c9f2f431483cc150c2cb72525ec71"
+        }
+      }
+    },
+    "b7f42000-c7b8-4975-8eae-982851c4380b": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1792584445529,
+      "endedAt": 1792584445530,
+      "files": {
+        "assets/js/s0.js": {
+          "before": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\11\\11c997800ce90fdb4c99b35e9488753d762d46ce82323043cd73bb66b337b408",
+          "after": "C:\\Users\\36322\\.cache\\hyperframes\\history\\f1006328-0ef7-476c-90e3-e05fb8138d7e\\blobs\\0d\\0d45dbb66b4fa39d828d4fdaa698108b8dda4db3c7dbe02932ecf1ad857a48b1"
+        }
+      }
+    }
+  },
+  "checks": {
+    "latest": {
+      "revision": "b7f42000-c7b8-4975-8eae-982851c4380b",
+      "id": "e44c6c06-fbdf-43c6-891c-331fc1638ef7"
+    },
+    "revisions": {
+      "f3ba8746-f0d6-42b2-8e63-32ee37157289": [
+        {
+          "id": "9ed1c9da-f91e-4c56-a43b-09f381a52d08",
+          "scope": "project",
+          "metadata": {
+            "ok": false,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 3000,
+              "contrast": true,
+              "strict": false,
+              "snapshots": false,
+              "browserGpuMode": "auto"
+            }
+          },
+          "createdAt": 1792583531901,
+          "contentHash": "5c53d53a60b8d621dc14f9da1a16bf6f55f5a0a46247636bca57a50f90fcc62c",
+          "revision": "f3ba8746-f0d6-42b2-8e63-32ee37157289",
+          "inputFingerprint": "eded02198093e8e18588c54da32fb2d5b2500566d62c65b707d6ad19c2c5c65d",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "6da986c6-2af7-4675-bacc-6a9fa9392dc1"
+        }
+      ],
+      "d51c54f9-d722-4cd8-8fcc-36fb9ecd3fa6": [
+        {
+          "id": "10f8c13e-ae03-4c33-a69b-33611408895e",
+          "scope": "project",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 3000,
+              "contrast": true,
+              "strict": false,
+              "snapshots": false,
+              "browserGpuMode": "auto"
+            }
+          },
+          "createdAt": 1792583594796,
+          "contentHash": "fe07f57ba521d26bfb28f70acf7c7c07ebc16080a0459e820e9ffa1fee314047",
+          "revision": "d51c54f9-d722-4cd8-8fcc-36fb9ecd3fa6",
+          "inputFingerprint": "5528bf858fed59c4862139b3e2886598d2325bcc6c72314536f667af21d38042",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "6da986c6-2af7-4675-bacc-6a9fa9392dc1"
+        }
+      ],
+      "614c02c0-6000-47b4-a6ec-34a82e014f9a": [
+        {
+          "id": "bc572cb8-945b-45ab-8668-97a7f79daddc",
+          "scope": "project",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 3000,
+              "contrast": true,
+              "strict": false,
+              "snapshots": false,
+              "browserGpuMode": "auto"
+            }
+          },
+          "createdAt": 1792584356685,
+          "contentHash": "b5fbec1c48aba3f2073df375c97310c14704b3a2a395b4bcb68d3d64c0cb95d1",
+          "revision": "614c02c0-6000-47b4-a6ec-34a82e014f9a",
+          "inputFingerprint": "dce88a9931fa92f3c19799da300d7f6651c222433194ad6fe01be0e2dda8d55f",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "6da986c6-2af7-4675-bacc-6a9fa9392dc1"
+        }
+      ],
+      "b7f42000-c7b8-4975-8eae-982851c4380b": [
+        {
+          "id": "e44c6c06-fbdf-43c6-891c-331fc1638ef7",
+          "scope": "project",
+          "report": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\artifacts\\checks\\e44c6c06-fbdf-43c6-891c-331fc1638ef7.json",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 3000,
+              "contrast": true,
+              "strict": false,
+              "snapshots": false,
+              "browserGpuMode": "auto"
+            }
+          },
+          "createdAt": 1792584456720,
+          "contentHash": "7fe7781fc5541a2ed94f9d05f7ddb5f7475535619fc9baa48040935aaab005c9",
+          "revision": "b7f42000-c7b8-4975-8eae-982851c4380b",
+          "inputFingerprint": "014b993bd0236b889e5fb7f2bb3e1be642efcb65f5da3719a909aa8f455fd5c3",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ]
+    },
+    "unversioned": [
+      {
+        "id": "b3ea50bb-2d51-48b9-a273-e05d6c9c73e0",
+        "scope": "project",
+        "report": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\artifacts\\checks\\b3ea50bb-2d51-48b9-a273-e05d6c9c73e0.json",
+        "metadata": {
+          "ok": false,
+          "browserSkipped": false,
+          "options": {
+            "samples": 9,
+            "atTransitions": false,
+            "maxIssues": 80,
+            "collapseStatic": true,
+            "tolerance": 2,
+            "timeout": 3000,
+            "contrast": true,
+            "strict": false,
+            "snapshots": false,
+            "browserGpuMode": "auto"
+          }
+        },
+        "createdAt": 1792583490853,
+        "contentHash": "d0457b4bb9898ec3f09699b1a100aa01f64018833c27dda7509e55e1a164294b",
+        "revision": null,
+        "inputFingerprint": "a31bc215dda76d32bb9c2a649239165bd287e190b30f1b86061d466337569289",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      }
+    ]
+  },
+  "snapshots": {
+    "latest": {
+      "revision": "accadc6f-0db8-43ca-90f1-2d1ed5eb6de1",
+      "id": "24bb3576-a0c5-4990-9073-61faa44aafe8-4"
+    },
+    "revisions": {
+      "d51c54f9-d722-4cd8-8fcc-36fb9ecd3fa6": [
+        {
+          "scope": "full",
+          "id": "e0fb0a70-9d4c-4360-b994-2bc7923d8dfb-0",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\a\\frame-00-at-2.6s.png",
+          "time": 2.6,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583619844,
+          "contentHash": "f8b827bd25dc3d48cfabf80c11761482380db86246bdf582c26b5be13cb4595b",
+          "revision": "d51c54f9-d722-4cd8-8fcc-36fb9ecd3fa6",
+          "inputFingerprint": "5528bf858fed59c4862139b3e2886598d2325bcc6c72314536f667af21d38042",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "e0fb0a70-9d4c-4360-b994-2bc7923d8dfb-1",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\a\\frame-01-at-6.6s.png",
+          "time": 6.6,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583619844,
+          "contentHash": "ae8f54e631e34e28377e939007c37dbe55d732303e4d496c1f5f522336bb68ad",
+          "revision": "d51c54f9-d722-4cd8-8fcc-36fb9ecd3fa6",
+          "inputFingerprint": "5528bf858fed59c4862139b3e2886598d2325bcc6c72314536f667af21d38042",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "e0fb0a70-9d4c-4360-b994-2bc7923d8dfb-2",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\a\\frame-02-at-9.6s.png",
+          "time": 9.6,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583619844,
+          "contentHash": "bc8699e011548bcb8d7613c55d6e4cc70c55eaccd5dcb88b240c9bf23c32aba4",
+          "revision": "d51c54f9-d722-4cd8-8fcc-36fb9ecd3fa6",
+          "inputFingerprint": "5528bf858fed59c4862139b3e2886598d2325bcc6c72314536f667af21d38042",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "e0fb0a70-9d4c-4360-b994-2bc7923d8dfb-3",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\a\\frame-03-at-13s.png",
+          "time": 13,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583619844,
+          "contentHash": "cf44787bb8e8309c85cdc408b8f2a627e36a0758d23a8cb2906cb59d97ddd935",
+          "revision": "d51c54f9-d722-4cd8-8fcc-36fb9ecd3fa6",
+          "inputFingerprint": "5528bf858fed59c4862139b3e2886598d2325bcc6c72314536f667af21d38042",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "e0fb0a70-9d4c-4360-b994-2bc7923d8dfb-4",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\a\\frame-04-at-16s.png",
+          "time": 16,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583619844,
+          "contentHash": "7a224f12f59b0acbb6f56efc92beff98474cbab14594844139336cf7fb955589",
+          "revision": "d51c54f9-d722-4cd8-8fcc-36fb9ecd3fa6",
+          "inputFingerprint": "5528bf858fed59c4862139b3e2886598d2325bcc6c72314536f667af21d38042",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "e0fb0a70-9d4c-4360-b994-2bc7923d8dfb-5",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\a\\frame-05-at-18.2s.png",
+          "time": 18.2,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583619844,
+          "contentHash": "bf854fb0ad2eea269d308af8eb78a61931edd5024adb5b0e8f1468d0e16ce2ee",
+          "revision": "d51c54f9-d722-4cd8-8fcc-36fb9ecd3fa6",
+          "inputFingerprint": "5528bf858fed59c4862139b3e2886598d2325bcc6c72314536f667af21d38042",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "e0fb0a70-9d4c-4360-b994-2bc7923d8dfb-6",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\a\\frame-06-at-20s.png",
+          "time": 20,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583619844,
+          "contentHash": "bf854fb0ad2eea269d308af8eb78a61931edd5024adb5b0e8f1468d0e16ce2ee",
+          "revision": "d51c54f9-d722-4cd8-8fcc-36fb9ecd3fa6",
+          "inputFingerprint": "5528bf858fed59c4862139b3e2886598d2325bcc6c72314536f667af21d38042",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "e0fb0a70-9d4c-4360-b994-2bc7923d8dfb-7",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\a\\frame-07-at-22.6s.png",
+          "time": 22.6,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583619844,
+          "contentHash": "bf854fb0ad2eea269d308af8eb78a61931edd5024adb5b0e8f1468d0e16ce2ee",
+          "revision": "d51c54f9-d722-4cd8-8fcc-36fb9ecd3fa6",
+          "inputFingerprint": "5528bf858fed59c4862139b3e2886598d2325bcc6c72314536f667af21d38042",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "e0fb0a70-9d4c-4360-b994-2bc7923d8dfb-8",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\a\\frame-08-at-26.5s.png",
+          "time": 26.5,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583619844,
+          "contentHash": "0a3123b735eb12b7cd2e753df5731758897e8e3cf134a1ebf2d4309f2401a278",
+          "revision": "d51c54f9-d722-4cd8-8fcc-36fb9ecd3fa6",
+          "inputFingerprint": "5528bf858fed59c4862139b3e2886598d2325bcc6c72314536f667af21d38042",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "e0fb0a70-9d4c-4360-b994-2bc7923d8dfb-9",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\a\\frame-09-at-28.4s.png",
+          "time": 28.4,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583619844,
+          "contentHash": "9493dcf57e030e37cf0b2371f2d176ff7f0cd10bc5186a740bbd513b2d101232",
+          "revision": "d51c54f9-d722-4cd8-8fcc-36fb9ecd3fa6",
+          "inputFingerprint": "5528bf858fed59c4862139b3e2886598d2325bcc6c72314536f667af21d38042",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ],
+      "c63d22af-9ab1-4e2c-8d9b-b5e26908eb13": [
+        {
+          "scope": "full",
+          "id": "f71be6cb-f320-4a87-ab37-936536828d0b-0",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\b\\frame-00-at-11.5s.png",
+          "time": 11.5,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583681219,
+          "contentHash": "63c26fbf54738f8d141e447da746c762cfdaf03c6e5100779cb826bbf45b3ee7",
+          "revision": "c63d22af-9ab1-4e2c-8d9b-b5e26908eb13",
+          "inputFingerprint": "9e6520e0d531f79720f67369df1bb26092cae0b24de883eef64fd9bb3a1846b4",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "f71be6cb-f320-4a87-ab37-936536828d0b-1",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\b\\frame-01-at-15.5s.png",
+          "time": 15.5,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583681220,
+          "contentHash": "166d85f4fe8c0107711b51f5074370bfbe325dd19ee75ada7657719013c76c1b",
+          "revision": "c63d22af-9ab1-4e2c-8d9b-b5e26908eb13",
+          "inputFingerprint": "9e6520e0d531f79720f67369df1bb26092cae0b24de883eef64fd9bb3a1846b4",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "f71be6cb-f320-4a87-ab37-936536828d0b-2",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\b\\frame-02-at-17.6s.png",
+          "time": 17.6,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583681220,
+          "contentHash": "c44177a38559603c3bd29b57de95184632004afe1d9e96a98e813e4921708e31",
+          "revision": "c63d22af-9ab1-4e2c-8d9b-b5e26908eb13",
+          "inputFingerprint": "9e6520e0d531f79720f67369df1bb26092cae0b24de883eef64fd9bb3a1846b4",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "f71be6cb-f320-4a87-ab37-936536828d0b-3",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\b\\frame-03-at-19.8s.png",
+          "time": 19.8,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583681220,
+          "contentHash": "55381c24ce568e2de0a2e92353d02d513228c1cfa337f5e3d09df0eb7aed683a",
+          "revision": "c63d22af-9ab1-4e2c-8d9b-b5e26908eb13",
+          "inputFingerprint": "9e6520e0d531f79720f67369df1bb26092cae0b24de883eef64fd9bb3a1846b4",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "f71be6cb-f320-4a87-ab37-936536828d0b-4",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\b\\frame-04-at-22.8s.png",
+          "time": 22.8,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583681220,
+          "contentHash": "641c53c5b5d0931dce5b7c0baccb6ed6f60325ec9a87a247d07a4a8783ecec78",
+          "revision": "c63d22af-9ab1-4e2c-8d9b-b5e26908eb13",
+          "inputFingerprint": "9e6520e0d531f79720f67369df1bb26092cae0b24de883eef64fd9bb3a1846b4",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "f71be6cb-f320-4a87-ab37-936536828d0b-5",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\b\\frame-05-at-25s.png",
+          "time": 25,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583681220,
+          "contentHash": "ec1db2e34b98007c804449fc972b95ca52b8eb8047376989866f4991b9956e28",
+          "revision": "c63d22af-9ab1-4e2c-8d9b-b5e26908eb13",
+          "inputFingerprint": "9e6520e0d531f79720f67369df1bb26092cae0b24de883eef64fd9bb3a1846b4",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "f71be6cb-f320-4a87-ab37-936536828d0b-6",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\b\\frame-06-at-26.8s.png",
+          "time": 26.8,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583681220,
+          "contentHash": "55bdbe5e14b4f6af5ab1a077425a0082437e9a4380817733c812ea5c67a5898f",
+          "revision": "c63d22af-9ab1-4e2c-8d9b-b5e26908eb13",
+          "inputFingerprint": "9e6520e0d531f79720f67369df1bb26092cae0b24de883eef64fd9bb3a1846b4",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "f71be6cb-f320-4a87-ab37-936536828d0b-7",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\b\\frame-07-at-28.6s.png",
+          "time": 28.6,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583681220,
+          "contentHash": "a72c973cd461351af57a43da9bc21cef2ade45fa615112fc58241219cdbe82ec",
+          "revision": "c63d22af-9ab1-4e2c-8d9b-b5e26908eb13",
+          "inputFingerprint": "9e6520e0d531f79720f67369df1bb26092cae0b24de883eef64fd9bb3a1846b4",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ],
+      "062299e8-1b2e-44c8-90af-d45d3356a63a": [
+        {
+          "scope": "full",
+          "id": "85cadde6-98c2-4517-97d1-0f94ef505673-0",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\c\\frame-00-at-19.8s.png",
+          "time": 19.8,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583716445,
+          "contentHash": "7a984d4b58baa7ffe70e5ac7e4de58c9b150b6dc2fc92e560700bd511b9f5978",
+          "revision": "062299e8-1b2e-44c8-90af-d45d3356a63a",
+          "inputFingerprint": "45202c06d4df097ce109327a23f367f85070ffd29ccca6da072cc543829053ed",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "85cadde6-98c2-4517-97d1-0f94ef505673-1",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\c\\frame-01-at-20.6s.png",
+          "time": 20.6,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583716446,
+          "contentHash": "ae496ffa7b3fac2a00828fc7c16a529a5d1731010638edc1d546d0f1a2fb329d",
+          "revision": "062299e8-1b2e-44c8-90af-d45d3356a63a",
+          "inputFingerprint": "45202c06d4df097ce109327a23f367f85070ffd29ccca6da072cc543829053ed",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "85cadde6-98c2-4517-97d1-0f94ef505673-2",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\c\\frame-02-at-22.6s.png",
+          "time": 22.6,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583716446,
+          "contentHash": "022d954ae561f24e61f8fd0564796724f759e25e54bdb764c1cd506fd5297d38",
+          "revision": "062299e8-1b2e-44c8-90af-d45d3356a63a",
+          "inputFingerprint": "45202c06d4df097ce109327a23f367f85070ffd29ccca6da072cc543829053ed",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "85cadde6-98c2-4517-97d1-0f94ef505673-3",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\c\\frame-03-at-24.6s.png",
+          "time": 24.6,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583716446,
+          "contentHash": "cd184bd024dec770ef47e537cc37aa56f583a873d086ee89b43da2bc8127d285",
+          "revision": "062299e8-1b2e-44c8-90af-d45d3356a63a",
+          "inputFingerprint": "45202c06d4df097ce109327a23f367f85070ffd29ccca6da072cc543829053ed",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "85cadde6-98c2-4517-97d1-0f94ef505673-4",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\c\\frame-04-at-30.6s.png",
+          "time": 30.6,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583716446,
+          "contentHash": "739c932ed3d78c6315f2fe59dca9ff7659c647b7999e082e86c0fef6f2c766f5",
+          "revision": "062299e8-1b2e-44c8-90af-d45d3356a63a",
+          "inputFingerprint": "45202c06d4df097ce109327a23f367f85070ffd29ccca6da072cc543829053ed",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "85cadde6-98c2-4517-97d1-0f94ef505673-5",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\c\\frame-05-at-32.4s.png",
+          "time": 32.4,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583716446,
+          "contentHash": "4e78cc7ffc836ce10f67bab820373194c4018035854ff66f454b734c69d6da02",
+          "revision": "062299e8-1b2e-44c8-90af-d45d3356a63a",
+          "inputFingerprint": "45202c06d4df097ce109327a23f367f85070ffd29ccca6da072cc543829053ed",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "85cadde6-98c2-4517-97d1-0f94ef505673-6",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\c\\frame-06-at-34s.png",
+          "time": 34,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583716446,
+          "contentHash": "665c30f5ab5d8eb69313167fdb0f6cbdc4b49d623ab839d1d26612606b356ca1",
+          "revision": "062299e8-1b2e-44c8-90af-d45d3356a63a",
+          "inputFingerprint": "45202c06d4df097ce109327a23f367f85070ffd29ccca6da072cc543829053ed",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "85cadde6-98c2-4517-97d1-0f94ef505673-7",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\c\\frame-07-at-35.4s.png",
+          "time": 35.4,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583716446,
+          "contentHash": "0b530f38249ae85938365153ab566ce2d7987271566ce56551d56701af009d46",
+          "revision": "062299e8-1b2e-44c8-90af-d45d3356a63a",
+          "inputFingerprint": "45202c06d4df097ce109327a23f367f85070ffd29ccca6da072cc543829053ed",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "85cadde6-98c2-4517-97d1-0f94ef505673-8",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\c\\frame-08-at-37s.png",
+          "time": 37,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583716447,
+          "contentHash": "b8057b2d44b0a007f7ad1b68b650c3f1d744612e5f0f38245dcb959ddee5956e",
+          "revision": "062299e8-1b2e-44c8-90af-d45d3356a63a",
+          "inputFingerprint": "45202c06d4df097ce109327a23f367f85070ffd29ccca6da072cc543829053ed",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "85cadde6-98c2-4517-97d1-0f94ef505673-9",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\c\\frame-09-at-39.2s.png",
+          "time": 39.2,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583716447,
+          "contentHash": "0bd135acba75b13c0c11b805eed67fa79ff283e0b90184efacc07148e9f2b5ae",
+          "revision": "062299e8-1b2e-44c8-90af-d45d3356a63a",
+          "inputFingerprint": "45202c06d4df097ce109327a23f367f85070ffd29ccca6da072cc543829053ed",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "85cadde6-98c2-4517-97d1-0f94ef505673-10",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\c\\frame-10-at-41.5s.png",
+          "time": 41.5,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583716447,
+          "contentHash": "113cc783b3e2ed19c9b0c79d67475f0f1fe8b608f1cce8595c96eb06067cd655",
+          "revision": "062299e8-1b2e-44c8-90af-d45d3356a63a",
+          "inputFingerprint": "45202c06d4df097ce109327a23f367f85070ffd29ccca6da072cc543829053ed",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "85cadde6-98c2-4517-97d1-0f94ef505673-11",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\c\\frame-11-at-44s.png",
+          "time": 44,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583716447,
+          "contentHash": "8300edb391bf3385a82b84815493e47f70c34ee8d5f1a1dc2d99d7f8535c348c",
+          "revision": "062299e8-1b2e-44c8-90af-d45d3356a63a",
+          "inputFingerprint": "45202c06d4df097ce109327a23f367f85070ffd29ccca6da072cc543829053ed",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ],
+      "9ee5ea4c-9751-499f-a77f-822307399a7d": [
+        {
+          "scope": "full",
+          "id": "7368ef8f-564e-4a21-aa39-c1587f5ecd8c-0",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\d\\frame-00-at-30.6s.png",
+          "time": 30.6,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583873317,
+          "contentHash": "0c1d0a94f82943a0696f0378999479ec21dc9f58f6c9ca90489c819b6ba31c22",
+          "revision": "9ee5ea4c-9751-499f-a77f-822307399a7d",
+          "inputFingerprint": "78ebb3decee8c62bd146ebd6244f47dd2ac7a6dc247a130e6465d268aceae02a",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7368ef8f-564e-4a21-aa39-c1587f5ecd8c-1",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\d\\frame-01-at-32.6s.png",
+          "time": 32.6,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583873317,
+          "contentHash": "c9ee16063e87ffa7054bd139f4ed1dbead08f4ca35103cd3fbac37a121265726",
+          "revision": "9ee5ea4c-9751-499f-a77f-822307399a7d",
+          "inputFingerprint": "78ebb3decee8c62bd146ebd6244f47dd2ac7a6dc247a130e6465d268aceae02a",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7368ef8f-564e-4a21-aa39-c1587f5ecd8c-2",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\d\\frame-02-at-34.2s.png",
+          "time": 34.2,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583873317,
+          "contentHash": "6f586f4f3baeef6f605a1289263b324a77dc651b0a45c681c908186e79972cb5",
+          "revision": "9ee5ea4c-9751-499f-a77f-822307399a7d",
+          "inputFingerprint": "78ebb3decee8c62bd146ebd6244f47dd2ac7a6dc247a130e6465d268aceae02a",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7368ef8f-564e-4a21-aa39-c1587f5ecd8c-3",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\d\\frame-03-at-36.4s.png",
+          "time": 36.4,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583873317,
+          "contentHash": "a6406e5ec305efae30172b003e45378d5bc261caed6a8b061d588e2ed367b588",
+          "revision": "9ee5ea4c-9751-499f-a77f-822307399a7d",
+          "inputFingerprint": "78ebb3decee8c62bd146ebd6244f47dd2ac7a6dc247a130e6465d268aceae02a",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7368ef8f-564e-4a21-aa39-c1587f5ecd8c-4",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\d\\frame-04-at-39.4s.png",
+          "time": 39.4,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583873317,
+          "contentHash": "7fc959aa730b8f6bd687a8089de51513e1e1b283ead2cb7e1764c46ff6d97d18",
+          "revision": "9ee5ea4c-9751-499f-a77f-822307399a7d",
+          "inputFingerprint": "78ebb3decee8c62bd146ebd6244f47dd2ac7a6dc247a130e6465d268aceae02a",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7368ef8f-564e-4a21-aa39-c1587f5ecd8c-5",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\d\\frame-05-at-41.6s.png",
+          "time": 41.6,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583873318,
+          "contentHash": "4c09452f6f5dcb2afe5d7e7baee0d446681856ac6008cd8ed71b3698677f2d64",
+          "revision": "9ee5ea4c-9751-499f-a77f-822307399a7d",
+          "inputFingerprint": "78ebb3decee8c62bd146ebd6244f47dd2ac7a6dc247a130e6465d268aceae02a",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7368ef8f-564e-4a21-aa39-c1587f5ecd8c-6",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\d\\frame-06-at-44s.png",
+          "time": 44,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583873318,
+          "contentHash": "97dc4f67726aa6fb8713e6f8e7a99538e0110461e6ba11478700ef9c6e582782",
+          "revision": "9ee5ea4c-9751-499f-a77f-822307399a7d",
+          "inputFingerprint": "78ebb3decee8c62bd146ebd6244f47dd2ac7a6dc247a130e6465d268aceae02a",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7368ef8f-564e-4a21-aa39-c1587f5ecd8c-7",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\d\\frame-07-at-47.6s.png",
+          "time": 47.6,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583873318,
+          "contentHash": "427d387e59de061f29909c76506b1b7bc5a6676275bd53bb976e3334ced3733c",
+          "revision": "9ee5ea4c-9751-499f-a77f-822307399a7d",
+          "inputFingerprint": "78ebb3decee8c62bd146ebd6244f47dd2ac7a6dc247a130e6465d268aceae02a",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7368ef8f-564e-4a21-aa39-c1587f5ecd8c-8",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\d\\frame-08-at-49.6s.png",
+          "time": 49.6,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583873318,
+          "contentHash": "b73105b0064e35e336197c2c938e566ebab957511a8d7356a61062c018ba71f8",
+          "revision": "9ee5ea4c-9751-499f-a77f-822307399a7d",
+          "inputFingerprint": "78ebb3decee8c62bd146ebd6244f47dd2ac7a6dc247a130e6465d268aceae02a",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7368ef8f-564e-4a21-aa39-c1587f5ecd8c-9",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\d\\frame-09-at-52s.png",
+          "time": 52,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583873319,
+          "contentHash": "a30ea2c054a53aa2ff1ac86068759372dece06ea89f6b9fd37119c31144242bb",
+          "revision": "9ee5ea4c-9751-499f-a77f-822307399a7d",
+          "inputFingerprint": "78ebb3decee8c62bd146ebd6244f47dd2ac7a6dc247a130e6465d268aceae02a",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7368ef8f-564e-4a21-aa39-c1587f5ecd8c-10",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\d\\frame-10-at-54.2s.png",
+          "time": 54.2,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583873319,
+          "contentHash": "f22d06726c518a2cfa55466407063ac7ff12b1529a629f65ba9f1bcb1dc3b293",
+          "revision": "9ee5ea4c-9751-499f-a77f-822307399a7d",
+          "inputFingerprint": "78ebb3decee8c62bd146ebd6244f47dd2ac7a6dc247a130e6465d268aceae02a",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7368ef8f-564e-4a21-aa39-c1587f5ecd8c-11",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\d\\frame-11-at-55.6s.png",
+          "time": 55.6,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583873319,
+          "contentHash": "71b80ae0753f2577eb84970f57c547af4270ab3f2256d6d869843d183c46c2b8",
+          "revision": "9ee5ea4c-9751-499f-a77f-822307399a7d",
+          "inputFingerprint": "78ebb3decee8c62bd146ebd6244f47dd2ac7a6dc247a130e6465d268aceae02a",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ],
+      "99150f00-9adc-4343-a61f-93b9b5a7f8ac": [
+        {
+          "scope": "full",
+          "id": "7f8b555c-3e57-4d52-9278-2ba12b1b2eed-0",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\e\\frame-00-at-30.6s.png",
+          "time": 30.6,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583945494,
+          "contentHash": "3a1608b17d3a93f011057597f3fb91e34f3bf7d3796f3b084d117b535721ff35",
+          "revision": "99150f00-9adc-4343-a61f-93b9b5a7f8ac",
+          "inputFingerprint": "e4736bd7ebabc69865f9ce6b8ec9f1e0449a3202886f24714fa8bfce30e17a13",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7f8b555c-3e57-4d52-9278-2ba12b1b2eed-1",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\e\\frame-01-at-34.2s.png",
+          "time": 34.2,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583945495,
+          "contentHash": "fd32661d9d40788033d29b53658d78e7a2f1e4a4e91d8dfe285758c16a554e66",
+          "revision": "99150f00-9adc-4343-a61f-93b9b5a7f8ac",
+          "inputFingerprint": "e4736bd7ebabc69865f9ce6b8ec9f1e0449a3202886f24714fa8bfce30e17a13",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7f8b555c-3e57-4d52-9278-2ba12b1b2eed-2",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\e\\frame-02-at-39.4s.png",
+          "time": 39.4,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583945495,
+          "contentHash": "a4452f7c92574477dbbc8943334d68ef4fccaff0d2762b2dc946fc6bc572568d",
+          "revision": "99150f00-9adc-4343-a61f-93b9b5a7f8ac",
+          "inputFingerprint": "e4736bd7ebabc69865f9ce6b8ec9f1e0449a3202886f24714fa8bfce30e17a13",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7f8b555c-3e57-4d52-9278-2ba12b1b2eed-3",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\e\\frame-03-at-41.6s.png",
+          "time": 41.6,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583945496,
+          "contentHash": "d3fd5c25dd42d2a1a10d0c03f0fd681ab9f29278413eeb45e533b8a22b143567",
+          "revision": "99150f00-9adc-4343-a61f-93b9b5a7f8ac",
+          "inputFingerprint": "e4736bd7ebabc69865f9ce6b8ec9f1e0449a3202886f24714fa8bfce30e17a13",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7f8b555c-3e57-4d52-9278-2ba12b1b2eed-4",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\e\\frame-04-at-44s.png",
+          "time": 44,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583945496,
+          "contentHash": "dbbf3b46adc7441a753cd1e465be865d0e39b69380956ba55aa155dfc6bda33d",
+          "revision": "99150f00-9adc-4343-a61f-93b9b5a7f8ac",
+          "inputFingerprint": "e4736bd7ebabc69865f9ce6b8ec9f1e0449a3202886f24714fa8bfce30e17a13",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7f8b555c-3e57-4d52-9278-2ba12b1b2eed-5",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\e\\frame-05-at-51.6s.png",
+          "time": 51.6,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583945496,
+          "contentHash": "7031e4484b9ba052a9bb79b2a8bbc5636d29e26902e233570d7d26a171fb370c",
+          "revision": "99150f00-9adc-4343-a61f-93b9b5a7f8ac",
+          "inputFingerprint": "e4736bd7ebabc69865f9ce6b8ec9f1e0449a3202886f24714fa8bfce30e17a13",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7f8b555c-3e57-4d52-9278-2ba12b1b2eed-6",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\e\\frame-06-at-52.6s.png",
+          "time": 52.6,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583945497,
+          "contentHash": "e4fa2cbda1a1e9642fc5ce5fd5e84a26f278ff97528aadd240cbbf9e7dfd5fbf",
+          "revision": "99150f00-9adc-4343-a61f-93b9b5a7f8ac",
+          "inputFingerprint": "e4736bd7ebabc69865f9ce6b8ec9f1e0449a3202886f24714fa8bfce30e17a13",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7f8b555c-3e57-4d52-9278-2ba12b1b2eed-7",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\e\\frame-07-at-53.6s.png",
+          "time": 53.6,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583945497,
+          "contentHash": "839c474ba9c197dcddcacb1043843f18348043961659a849542991fbf20e671c",
+          "revision": "99150f00-9adc-4343-a61f-93b9b5a7f8ac",
+          "inputFingerprint": "e4736bd7ebabc69865f9ce6b8ec9f1e0449a3202886f24714fa8bfce30e17a13",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7f8b555c-3e57-4d52-9278-2ba12b1b2eed-8",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\e\\frame-08-at-55.2s.png",
+          "time": 55.2,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583945497,
+          "contentHash": "6d755f5df5f64d6aeaa26208eac23d42715d03e6285e168b6d6c9f2b093088be",
+          "revision": "99150f00-9adc-4343-a61f-93b9b5a7f8ac",
+          "inputFingerprint": "e4736bd7ebabc69865f9ce6b8ec9f1e0449a3202886f24714fa8bfce30e17a13",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7f8b555c-3e57-4d52-9278-2ba12b1b2eed-9",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\e\\frame-09-at-57.5s.png",
+          "time": 57.5,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583945498,
+          "contentHash": "d862147953038535012c9ac85db1418a6c69c944d870c23168434a4013e7bec7",
+          "revision": "99150f00-9adc-4343-a61f-93b9b5a7f8ac",
+          "inputFingerprint": "e4736bd7ebabc69865f9ce6b8ec9f1e0449a3202886f24714fa8bfce30e17a13",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7f8b555c-3e57-4d52-9278-2ba12b1b2eed-10",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\e\\frame-10-at-60.4s.png",
+          "time": 60.4,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583945498,
+          "contentHash": "1c0f95d610cbab2552047a3dfac2e7157751086d435ae91df321f2e8ec83d18f",
+          "revision": "99150f00-9adc-4343-a61f-93b9b5a7f8ac",
+          "inputFingerprint": "e4736bd7ebabc69865f9ce6b8ec9f1e0449a3202886f24714fa8bfce30e17a13",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7f8b555c-3e57-4d52-9278-2ba12b1b2eed-11",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\e\\frame-11-at-62.4s.png",
+          "time": 62.4,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792583945499,
+          "contentHash": "f29f6fa498cf48fe93b28b1c0ae6d686dcbcdd9a0c8210a4f30dc246d8f79e25",
+          "revision": "99150f00-9adc-4343-a61f-93b9b5a7f8ac",
+          "inputFingerprint": "e4736bd7ebabc69865f9ce6b8ec9f1e0449a3202886f24714fa8bfce30e17a13",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ],
+      "46b751b6-02b1-4f9b-9a3f-9cd0c977b757": [
+        {
+          "scope": "full",
+          "id": "1ddbc1b0-f06a-42bb-95ca-168e1d2dc05d-0",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\f\\frame-00-at-39.4s.png",
+          "time": 39.4,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584013383,
+          "contentHash": "95e4435ac07c7eddba31fa776bbc44a512d1bc6dd7227b6ab8acc9cc6b3da4c1",
+          "revision": "46b751b6-02b1-4f9b-9a3f-9cd0c977b757",
+          "inputFingerprint": "5451483e0029bb0af69238b24f04f6f336a39d82363aa0d4c9819c4c3e73ddea",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "1ddbc1b0-f06a-42bb-95ca-168e1d2dc05d-1",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\f\\frame-01-at-41s.png",
+          "time": 41,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584013384,
+          "contentHash": "7664506422a952797b644855ded717b8eb23e21bf0fb91bd63802a62fda8ddfa",
+          "revision": "46b751b6-02b1-4f9b-9a3f-9cd0c977b757",
+          "inputFingerprint": "5451483e0029bb0af69238b24f04f6f336a39d82363aa0d4c9819c4c3e73ddea",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "1ddbc1b0-f06a-42bb-95ca-168e1d2dc05d-2",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\f\\frame-02-at-42.4s.png",
+          "time": 42.4,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584013384,
+          "contentHash": "8d9aef3edd27c133556a34db7e286108cdbc082412f94c23c571321edd442551",
+          "revision": "46b751b6-02b1-4f9b-9a3f-9cd0c977b757",
+          "inputFingerprint": "5451483e0029bb0af69238b24f04f6f336a39d82363aa0d4c9819c4c3e73ddea",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "1ddbc1b0-f06a-42bb-95ca-168e1d2dc05d-3",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\f\\frame-03-at-44s.png",
+          "time": 44,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584013385,
+          "contentHash": "6761c356efafa0f0f8f8b31b7e51223be0afee7364ea380c43a91c222aec61a5",
+          "revision": "46b751b6-02b1-4f9b-9a3f-9cd0c977b757",
+          "inputFingerprint": "5451483e0029bb0af69238b24f04f6f336a39d82363aa0d4c9819c4c3e73ddea",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "1ddbc1b0-f06a-42bb-95ca-168e1d2dc05d-4",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\f\\frame-04-at-52.6s.png",
+          "time": 52.6,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584013385,
+          "contentHash": "69706e61751725bd0dbff501fcbd64c5cec381c23381ebdfcc16ab6e04bd58d0",
+          "revision": "46b751b6-02b1-4f9b-9a3f-9cd0c977b757",
+          "inputFingerprint": "5451483e0029bb0af69238b24f04f6f336a39d82363aa0d4c9819c4c3e73ddea",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "1ddbc1b0-f06a-42bb-95ca-168e1d2dc05d-5",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\f\\frame-05-at-53.9s.png",
+          "time": 53.9,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584013385,
+          "contentHash": "7aeb9253dab4b446d158ddca8ed43f3f58c7bfa3dcb08a9982d8bc0e6b249ac9",
+          "revision": "46b751b6-02b1-4f9b-9a3f-9cd0c977b757",
+          "inputFingerprint": "5451483e0029bb0af69238b24f04f6f336a39d82363aa0d4c9819c4c3e73ddea",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "1ddbc1b0-f06a-42bb-95ca-168e1d2dc05d-6",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\f\\frame-06-at-62.4s.png",
+          "time": 62.4,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584013386,
+          "contentHash": "a3619c5efcd288e9c55bfebb8eab2aad278e883a378ea632e70ac99e1f675b0a",
+          "revision": "46b751b6-02b1-4f9b-9a3f-9cd0c977b757",
+          "inputFingerprint": "5451483e0029bb0af69238b24f04f6f336a39d82363aa0d4c9819c4c3e73ddea",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "1ddbc1b0-f06a-42bb-95ca-168e1d2dc05d-7",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\f\\frame-07-at-64.2s.png",
+          "time": 64.2,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584013386,
+          "contentHash": "1a8897b1f2fea21da03afed61ddd65fa617cbe3857f7a7177d837eb22e32fb29",
+          "revision": "46b751b6-02b1-4f9b-9a3f-9cd0c977b757",
+          "inputFingerprint": "5451483e0029bb0af69238b24f04f6f336a39d82363aa0d4c9819c4c3e73ddea",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "1ddbc1b0-f06a-42bb-95ca-168e1d2dc05d-8",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\f\\frame-08-at-66.6s.png",
+          "time": 66.6,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584013386,
+          "contentHash": "ddf5e4d528ca312dea280bc351aca1e71d774ae135970c6ba2d9e6fb3da80fec",
+          "revision": "46b751b6-02b1-4f9b-9a3f-9cd0c977b757",
+          "inputFingerprint": "5451483e0029bb0af69238b24f04f6f336a39d82363aa0d4c9819c4c3e73ddea",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "1ddbc1b0-f06a-42bb-95ca-168e1d2dc05d-9",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\f\\frame-09-at-69s.png",
+          "time": 69,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584013387,
+          "contentHash": "e743eca8b530b0f3ed8fb5cd82cf798e57c30cb3fce17c14cbfcc5c86e2dfc3c",
+          "revision": "46b751b6-02b1-4f9b-9a3f-9cd0c977b757",
+          "inputFingerprint": "5451483e0029bb0af69238b24f04f6f336a39d82363aa0d4c9819c4c3e73ddea",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "1ddbc1b0-f06a-42bb-95ca-168e1d2dc05d-10",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\f\\frame-10-at-70.8s.png",
+          "time": 70.8,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584013387,
+          "contentHash": "5184105b50da5c47c9429a200358b66e0efbffac080e84b8faa1c69d344d1360",
+          "revision": "46b751b6-02b1-4f9b-9a3f-9cd0c977b757",
+          "inputFingerprint": "5451483e0029bb0af69238b24f04f6f336a39d82363aa0d4c9819c4c3e73ddea",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "1ddbc1b0-f06a-42bb-95ca-168e1d2dc05d-11",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\f\\frame-11-at-73s.png",
+          "time": 73,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584013388,
+          "contentHash": "5aa7517af0b55b47d2fe232ddc5a0cbccdd270fd04f03ae8a91daa46cb63eaa1",
+          "revision": "46b751b6-02b1-4f9b-9a3f-9cd0c977b757",
+          "inputFingerprint": "5451483e0029bb0af69238b24f04f6f336a39d82363aa0d4c9819c4c3e73ddea",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ],
+      "975c0e9d-dc09-4d23-8730-b58cf4e02c1b": [
+        {
+          "scope": "full",
+          "id": "2b51f9cf-29c1-44e6-b5fc-c889e9ef311e-0",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\g\\frame-00-at-31s.png",
+          "time": 31,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584088717,
+          "contentHash": "2768c2a26cd0413671cbed7ca2bd2aba7299c31b5924bce94593b133fdeee3c0",
+          "revision": "975c0e9d-dc09-4d23-8730-b58cf4e02c1b",
+          "inputFingerprint": "ca4a54cb2e6e424c90dd68596222951693b709087cd9fdd8e23603ae9e9f6d44",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "2b51f9cf-29c1-44e6-b5fc-c889e9ef311e-1",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\g\\frame-01-at-35s.png",
+          "time": 35,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584088717,
+          "contentHash": "cd84b810b18d041ce44fb5215791e78c54e1ef0d860f5e177cc68af03b0fc6ed",
+          "revision": "975c0e9d-dc09-4d23-8730-b58cf4e02c1b",
+          "inputFingerprint": "ca4a54cb2e6e424c90dd68596222951693b709087cd9fdd8e23603ae9e9f6d44",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "2b51f9cf-29c1-44e6-b5fc-c889e9ef311e-2",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\g\\frame-02-at-39.6s.png",
+          "time": 39.6,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584088718,
+          "contentHash": "9706e34a8aa08fcc0720fc49bfa6f66953827ed03d750b6f033a7021d75bc1e7",
+          "revision": "975c0e9d-dc09-4d23-8730-b58cf4e02c1b",
+          "inputFingerprint": "ca4a54cb2e6e424c90dd68596222951693b709087cd9fdd8e23603ae9e9f6d44",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "2b51f9cf-29c1-44e6-b5fc-c889e9ef311e-3",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\g\\frame-03-at-42s.png",
+          "time": 42,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584088718,
+          "contentHash": "e0a50746e04259e826749d0237cea7a14d0a14c6b6206c859c7b125a1a3eecd5",
+          "revision": "975c0e9d-dc09-4d23-8730-b58cf4e02c1b",
+          "inputFingerprint": "ca4a54cb2e6e424c90dd68596222951693b709087cd9fdd8e23603ae9e9f6d44",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "2b51f9cf-29c1-44e6-b5fc-c889e9ef311e-4",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\g\\frame-04-at-44s.png",
+          "time": 44,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584088718,
+          "contentHash": "a65a765922ebfba96dcd49cc5177291ab891fb211078db7904b4aa6080cf9901",
+          "revision": "975c0e9d-dc09-4d23-8730-b58cf4e02c1b",
+          "inputFingerprint": "ca4a54cb2e6e424c90dd68596222951693b709087cd9fdd8e23603ae9e9f6d44",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "2b51f9cf-29c1-44e6-b5fc-c889e9ef311e-5",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\g\\frame-05-at-53.9s.png",
+          "time": 53.9,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584088719,
+          "contentHash": "2479c8c2e225f3616eccff312d142dbfd5820e98579b57de57087e29bf607efa",
+          "revision": "975c0e9d-dc09-4d23-8730-b58cf4e02c1b",
+          "inputFingerprint": "ca4a54cb2e6e424c90dd68596222951693b709087cd9fdd8e23603ae9e9f6d44",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "2b51f9cf-29c1-44e6-b5fc-c889e9ef311e-6",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\g\\frame-06-at-69.4s.png",
+          "time": 69.4,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584088719,
+          "contentHash": "8d93e0a8b10b1cc1bc9f17f739a0f66e036d381f0c83b093884a26a149f84d2a",
+          "revision": "975c0e9d-dc09-4d23-8730-b58cf4e02c1b",
+          "inputFingerprint": "ca4a54cb2e6e424c90dd68596222951693b709087cd9fdd8e23603ae9e9f6d44",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "2b51f9cf-29c1-44e6-b5fc-c889e9ef311e-7",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\g\\frame-07-at-71s.png",
+          "time": 71,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584088720,
+          "contentHash": "afda666bc38f59584a1e886910122d0de522b1d964af70182ff6252f41913996",
+          "revision": "975c0e9d-dc09-4d23-8730-b58cf4e02c1b",
+          "inputFingerprint": "ca4a54cb2e6e424c90dd68596222951693b709087cd9fdd8e23603ae9e9f6d44",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "2b51f9cf-29c1-44e6-b5fc-c889e9ef311e-8",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\g\\frame-08-at-73.4s.png",
+          "time": 73.4,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584088720,
+          "contentHash": "014c2fed86209e22d63f34a857cfd0a423ac4397386e6314b5dff34a55b3564e",
+          "revision": "975c0e9d-dc09-4d23-8730-b58cf4e02c1b",
+          "inputFingerprint": "ca4a54cb2e6e424c90dd68596222951693b709087cd9fdd8e23603ae9e9f6d44",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "2b51f9cf-29c1-44e6-b5fc-c889e9ef311e-9",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\g\\frame-09-at-75.6s.png",
+          "time": 75.6,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584088721,
+          "contentHash": "359087424ca2386ad5b266203ca6c6473c84d004016b11d0f4889c175b05a5e3",
+          "revision": "975c0e9d-dc09-4d23-8730-b58cf4e02c1b",
+          "inputFingerprint": "ca4a54cb2e6e424c90dd68596222951693b709087cd9fdd8e23603ae9e9f6d44",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "2b51f9cf-29c1-44e6-b5fc-c889e9ef311e-10",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\g\\frame-10-at-77.4s.png",
+          "time": 77.4,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584088721,
+          "contentHash": "c4c4caf381286f132352e3e90c7ee2d81d3c895ad7a8a66ebe3551a45fb2c70c",
+          "revision": "975c0e9d-dc09-4d23-8730-b58cf4e02c1b",
+          "inputFingerprint": "ca4a54cb2e6e424c90dd68596222951693b709087cd9fdd8e23603ae9e9f6d44",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "2b51f9cf-29c1-44e6-b5fc-c889e9ef311e-11",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\g\\frame-11-at-79.6s.png",
+          "time": 79.6,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584088721,
+          "contentHash": "e1161de276cb9bd9a7848252caa18a6eb05990954608dd8cd6b5eac42def9559",
+          "revision": "975c0e9d-dc09-4d23-8730-b58cf4e02c1b",
+          "inputFingerprint": "ca4a54cb2e6e424c90dd68596222951693b709087cd9fdd8e23603ae9e9f6d44",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ],
+      "c53e5a24-a7f1-4c24-b564-3e480c553639": [
+        {
+          "scope": "full",
+          "id": "56a37e93-dab4-4249-b45d-3374423a68ec-0",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\h\\frame-00-at-53s.png",
+          "time": 53,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584137795,
+          "contentHash": "443d408358efdecc4f91107fb0578593c8c76d7521bdbe7b1e8c6931c827f3a1",
+          "revision": "c53e5a24-a7f1-4c24-b564-3e480c553639",
+          "inputFingerprint": "c1eeaf8c52d6f2b5fe4520107ba464c3666746e8f03f1485f88414b7b7164224",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "56a37e93-dab4-4249-b45d-3374423a68ec-1",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\h\\frame-01-at-54.6s.png",
+          "time": 54.6,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584137795,
+          "contentHash": "223d5fdc2cfec3e4599553f290383f8cd9f0f497a81a38ac4a78201f289b38f3",
+          "revision": "c53e5a24-a7f1-4c24-b564-3e480c553639",
+          "inputFingerprint": "c1eeaf8c52d6f2b5fe4520107ba464c3666746e8f03f1485f88414b7b7164224",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "56a37e93-dab4-4249-b45d-3374423a68ec-2",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\h\\frame-02-at-69.8s.png",
+          "time": 69.8,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584137796,
+          "contentHash": "5a0d96ff212ac078fcd426f44875e5e6fbf4c95003448963502e5321fca7c0e5",
+          "revision": "c53e5a24-a7f1-4c24-b564-3e480c553639",
+          "inputFingerprint": "c1eeaf8c52d6f2b5fe4520107ba464c3666746e8f03f1485f88414b7b7164224",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "56a37e93-dab4-4249-b45d-3374423a68ec-3",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\h\\frame-03-at-79.6s.png",
+          "time": 79.6,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584137796,
+          "contentHash": "0b3de92a5fe529816c2196d2a399da297cbd2603c2034628febad4531572f1a2",
+          "revision": "c53e5a24-a7f1-4c24-b564-3e480c553639",
+          "inputFingerprint": "c1eeaf8c52d6f2b5fe4520107ba464c3666746e8f03f1485f88414b7b7164224",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "56a37e93-dab4-4249-b45d-3374423a68ec-4",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\h\\frame-04-at-81.2s.png",
+          "time": 81.2,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584137797,
+          "contentHash": "82dc20dc11486b95c615d33ce2128018d7bd81a28c96d13f8dc196010c66a6f5",
+          "revision": "c53e5a24-a7f1-4c24-b564-3e480c553639",
+          "inputFingerprint": "c1eeaf8c52d6f2b5fe4520107ba464c3666746e8f03f1485f88414b7b7164224",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "56a37e93-dab4-4249-b45d-3374423a68ec-5",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\h\\frame-05-at-83.4s.png",
+          "time": 83.4,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584137797,
+          "contentHash": "5b3488ba3ca0a2a9b81e9a104baaa8609eff8e2a912c47dc146018337e0eeec3",
+          "revision": "c53e5a24-a7f1-4c24-b564-3e480c553639",
+          "inputFingerprint": "c1eeaf8c52d6f2b5fe4520107ba464c3666746e8f03f1485f88414b7b7164224",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "56a37e93-dab4-4249-b45d-3374423a68ec-6",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\h\\frame-06-at-85.8s.png",
+          "time": 85.8,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584137798,
+          "contentHash": "c09c041d4ede81f86935c9bbf63277648e286f2e9f4448d6648351073351c568",
+          "revision": "c53e5a24-a7f1-4c24-b564-3e480c553639",
+          "inputFingerprint": "c1eeaf8c52d6f2b5fe4520107ba464c3666746e8f03f1485f88414b7b7164224",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "56a37e93-dab4-4249-b45d-3374423a68ec-7",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\h\\frame-07-at-87.6s.png",
+          "time": 87.6,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584137798,
+          "contentHash": "6a00a4eda8e3a5deba518b14667a14a14a8d1e2d23782d9b5e83e869ab8024c2",
+          "revision": "c53e5a24-a7f1-4c24-b564-3e480c553639",
+          "inputFingerprint": "c1eeaf8c52d6f2b5fe4520107ba464c3666746e8f03f1485f88414b7b7164224",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "56a37e93-dab4-4249-b45d-3374423a68ec-8",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\h\\frame-08-at-89s.png",
+          "time": 89,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584137799,
+          "contentHash": "8579bfd4288e6ca5266bd6622801d69a1ac4daf53e324b37dba1db541982ddb9",
+          "revision": "c53e5a24-a7f1-4c24-b564-3e480c553639",
+          "inputFingerprint": "c1eeaf8c52d6f2b5fe4520107ba464c3666746e8f03f1485f88414b7b7164224",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "56a37e93-dab4-4249-b45d-3374423a68ec-9",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\h\\frame-09-at-90.6s.png",
+          "time": 90.6,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584137799,
+          "contentHash": "3465b5d43652132bc9ee27e217405f58cb84ec512ab4b93013324bcc223c5e16",
+          "revision": "c53e5a24-a7f1-4c24-b564-3e480c553639",
+          "inputFingerprint": "c1eeaf8c52d6f2b5fe4520107ba464c3666746e8f03f1485f88414b7b7164224",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "56a37e93-dab4-4249-b45d-3374423a68ec-10",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\h\\frame-10-at-92s.png",
+          "time": 92,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584137800,
+          "contentHash": "95b54358462f123ea68c2f02fe2542e4a52f8bcd323d4c362a54e8c4b2d5caa1",
+          "revision": "c53e5a24-a7f1-4c24-b564-3e480c553639",
+          "inputFingerprint": "c1eeaf8c52d6f2b5fe4520107ba464c3666746e8f03f1485f88414b7b7164224",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "56a37e93-dab4-4249-b45d-3374423a68ec-11",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\h\\frame-11-at-93.4s.png",
+          "time": 93.4,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584137800,
+          "contentHash": "b7a2ea219be7d0652d54262678b66b825bfff88a7f52c5908709cede7a13364c",
+          "revision": "c53e5a24-a7f1-4c24-b564-3e480c553639",
+          "inputFingerprint": "c1eeaf8c52d6f2b5fe4520107ba464c3666746e8f03f1485f88414b7b7164224",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ],
+      "a5d7bb78-240e-41da-854f-98851efb491e": [
+        {
+          "scope": "full",
+          "id": "6c9d56b6-5cf1-485e-b464-fee1bdae8df0-0",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\i\\frame-00-at-87.4s.png",
+          "time": 87.4,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584207256,
+          "contentHash": "5472b0e29f3b5ce23371d43926133b54d3e59c97e395f0b9970fc0bd84a7ddaa",
+          "revision": "a5d7bb78-240e-41da-854f-98851efb491e",
+          "inputFingerprint": "02f2fd34742a1f2dfb0b06dbb6afdbed22fc369a08b0a2185a06bfba13cbbf55",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "6c9d56b6-5cf1-485e-b464-fee1bdae8df0-1",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\i\\frame-01-at-88.4s.png",
+          "time": 88.4,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584207257,
+          "contentHash": "458e1c4afa9fe107049169b5b4bc695a2eb5f25e66b64c16fdf291bb6b0414c2",
+          "revision": "a5d7bb78-240e-41da-854f-98851efb491e",
+          "inputFingerprint": "02f2fd34742a1f2dfb0b06dbb6afdbed22fc369a08b0a2185a06bfba13cbbf55",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "6c9d56b6-5cf1-485e-b464-fee1bdae8df0-2",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\i\\frame-02-at-89.4s.png",
+          "time": 89.4,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584207258,
+          "contentHash": "3bb8283e842cee5a85abd47b378d233cdb32d77d194da6f238d95ee45223a60b",
+          "revision": "a5d7bb78-240e-41da-854f-98851efb491e",
+          "inputFingerprint": "02f2fd34742a1f2dfb0b06dbb6afdbed22fc369a08b0a2185a06bfba13cbbf55",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "6c9d56b6-5cf1-485e-b464-fee1bdae8df0-3",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\i\\frame-03-at-90.2s.png",
+          "time": 90.2,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584207258,
+          "contentHash": "56332af938ff7eea3b68976d394c1affd26aea5654450e21af0ac88bf0100387",
+          "revision": "a5d7bb78-240e-41da-854f-98851efb491e",
+          "inputFingerprint": "02f2fd34742a1f2dfb0b06dbb6afdbed22fc369a08b0a2185a06bfba13cbbf55",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "6c9d56b6-5cf1-485e-b464-fee1bdae8df0-4",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\i\\frame-04-at-91s.png",
+          "time": 91,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584207259,
+          "contentHash": "1001f80bbc5d70a9e42a72cd9d58b1cdd4a67e73ba05f1f8776ab9a293163c88",
+          "revision": "a5d7bb78-240e-41da-854f-98851efb491e",
+          "inputFingerprint": "02f2fd34742a1f2dfb0b06dbb6afdbed22fc369a08b0a2185a06bfba13cbbf55",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "6c9d56b6-5cf1-485e-b464-fee1bdae8df0-5",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\i\\frame-05-at-92s.png",
+          "time": 92,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584207260,
+          "contentHash": "95b54358462f123ea68c2f02fe2542e4a52f8bcd323d4c362a54e8c4b2d5caa1",
+          "revision": "a5d7bb78-240e-41da-854f-98851efb491e",
+          "inputFingerprint": "02f2fd34742a1f2dfb0b06dbb6afdbed22fc369a08b0a2185a06bfba13cbbf55",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "6c9d56b6-5cf1-485e-b464-fee1bdae8df0-6",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\i\\frame-06-at-93s.png",
+          "time": 93,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584207261,
+          "contentHash": "7417b19ba9116299ec4a04b2c0e357105e1994fdb477169aa5cfdea47a1e2d2b",
+          "revision": "a5d7bb78-240e-41da-854f-98851efb491e",
+          "inputFingerprint": "02f2fd34742a1f2dfb0b06dbb6afdbed22fc369a08b0a2185a06bfba13cbbf55",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "6c9d56b6-5cf1-485e-b464-fee1bdae8df0-7",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\i\\frame-07-at-93.5s.png",
+          "time": 93.5,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584207261,
+          "contentHash": "30e55ea4992ab30871632280d6b3a270586378eb004f5bebca89dd6c9d70d2f1",
+          "revision": "a5d7bb78-240e-41da-854f-98851efb491e",
+          "inputFingerprint": "02f2fd34742a1f2dfb0b06dbb6afdbed22fc369a08b0a2185a06bfba13cbbf55",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ],
+      "3b8902aa-b3f4-4a15-b258-1b5701df7a21": [
+        {
+          "scope": "full",
+          "id": "836e93df-eb96-4cbc-8e23-8852805702a3-0",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\j\\frame-00-at-87.4s.png",
+          "time": 87.4,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584256351,
+          "contentHash": "4e4b377da1d696cb7ee326a5413b9b0b4fe6ea82b19e3c0b166f47df492dd28c",
+          "revision": "3b8902aa-b3f4-4a15-b258-1b5701df7a21",
+          "inputFingerprint": "853e707e41436883764c0ca5c0f491873e7b16fbf43c0f1e131890db00e6d7b2",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "836e93df-eb96-4cbc-8e23-8852805702a3-1",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\j\\frame-01-at-88.6s.png",
+          "time": 88.6,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584256352,
+          "contentHash": "3cffae2f9fe933f7b32514b520320402fb3acbfcb32fa415c8ce8c26e61bc108",
+          "revision": "3b8902aa-b3f4-4a15-b258-1b5701df7a21",
+          "inputFingerprint": "853e707e41436883764c0ca5c0f491873e7b16fbf43c0f1e131890db00e6d7b2",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "836e93df-eb96-4cbc-8e23-8852805702a3-2",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\j\\frame-02-at-89.6s.png",
+          "time": 89.6,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584256353,
+          "contentHash": "f05ebad47c942ef35ce57e96587e4c8ba0f3f5123043e5822f1c61e1bf4963f3",
+          "revision": "3b8902aa-b3f4-4a15-b258-1b5701df7a21",
+          "inputFingerprint": "853e707e41436883764c0ca5c0f491873e7b16fbf43c0f1e131890db00e6d7b2",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "836e93df-eb96-4cbc-8e23-8852805702a3-3",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\j\\frame-03-at-90.4s.png",
+          "time": 90.4,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584256354,
+          "contentHash": "c8d526671c570b7f1429a7fe3da9ccda6b7ed30bd107ec3e365684a4f31fe81c",
+          "revision": "3b8902aa-b3f4-4a15-b258-1b5701df7a21",
+          "inputFingerprint": "853e707e41436883764c0ca5c0f491873e7b16fbf43c0f1e131890db00e6d7b2",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "836e93df-eb96-4cbc-8e23-8852805702a3-4",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\j\\frame-04-at-91.2s.png",
+          "time": 91.2,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584256355,
+          "contentHash": "5d4f5d46388a3f5daed240de862f59a8dba00459bc23ca40ac78dde99b1abd00",
+          "revision": "3b8902aa-b3f4-4a15-b258-1b5701df7a21",
+          "inputFingerprint": "853e707e41436883764c0ca5c0f491873e7b16fbf43c0f1e131890db00e6d7b2",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "836e93df-eb96-4cbc-8e23-8852805702a3-5",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\j\\frame-05-at-92.2s.png",
+          "time": 92.2,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584256356,
+          "contentHash": "4ff03ef221d99771b8541366f3a28e2aed15b6917e69203f4489a12c51ac21fc",
+          "revision": "3b8902aa-b3f4-4a15-b258-1b5701df7a21",
+          "inputFingerprint": "853e707e41436883764c0ca5c0f491873e7b16fbf43c0f1e131890db00e6d7b2",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "836e93df-eb96-4cbc-8e23-8852805702a3-6",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\j\\frame-06-at-93s.png",
+          "time": 93,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584256356,
+          "contentHash": "636c82c302220ee4d24159bb2b3aeff9e7fad3698227f5f5c1030ff3dfc2b380",
+          "revision": "3b8902aa-b3f4-4a15-b258-1b5701df7a21",
+          "inputFingerprint": "853e707e41436883764c0ca5c0f491873e7b16fbf43c0f1e131890db00e6d7b2",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "836e93df-eb96-4cbc-8e23-8852805702a3-7",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\j\\frame-07-at-93.5s.png",
+          "time": 93.5,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584256357,
+          "contentHash": "7eef6caad5324002d4583e97cdcedde772fab4f984d06e388e634b60945d0acf",
+          "revision": "3b8902aa-b3f4-4a15-b258-1b5701df7a21",
+          "inputFingerprint": "853e707e41436883764c0ca5c0f491873e7b16fbf43c0f1e131890db00e6d7b2",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ],
+      "34da280c-80c7-49d7-bb1f-023cc672b6ee": [
+        {
+          "scope": "full",
+          "id": "485dee12-2982-49ac-bab2-a6d4a6c6ec18-0",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\k\\frame-00-at-87.4s.png",
+          "time": 87.4,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584295190,
+          "contentHash": "d765fdbf6d4ecb0e9654eaccffc055c9292a8c74057d64152c8543f4ec220820",
+          "revision": "34da280c-80c7-49d7-bb1f-023cc672b6ee",
+          "inputFingerprint": "f922f60464d966128f3858d64469984f7d756a48729af129a3027dd0f83ec47d",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "485dee12-2982-49ac-bab2-a6d4a6c6ec18-1",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\k\\frame-01-at-88.6s.png",
+          "time": 88.6,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584295191,
+          "contentHash": "3cfadcf141f0787bb2eed3c2ed5bfe160bc51bcea64a883ed5462d7f434f967e",
+          "revision": "34da280c-80c7-49d7-bb1f-023cc672b6ee",
+          "inputFingerprint": "f922f60464d966128f3858d64469984f7d756a48729af129a3027dd0f83ec47d",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "485dee12-2982-49ac-bab2-a6d4a6c6ec18-2",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\k\\frame-02-at-89.6s.png",
+          "time": 89.6,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584295192,
+          "contentHash": "e794b48ad67abc264e18311c83568c2e62d544dab14dcc36f6d6490a9fbc6df6",
+          "revision": "34da280c-80c7-49d7-bb1f-023cc672b6ee",
+          "inputFingerprint": "f922f60464d966128f3858d64469984f7d756a48729af129a3027dd0f83ec47d",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "485dee12-2982-49ac-bab2-a6d4a6c6ec18-3",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\k\\frame-03-at-90.6s.png",
+          "time": 90.6,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584295192,
+          "contentHash": "25101e267caa435ea0ef48ae003f5f5b9cf01eeddc11cdcc9b0d8e8729e330e9",
+          "revision": "34da280c-80c7-49d7-bb1f-023cc672b6ee",
+          "inputFingerprint": "f922f60464d966128f3858d64469984f7d756a48729af129a3027dd0f83ec47d",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "485dee12-2982-49ac-bab2-a6d4a6c6ec18-4",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\k\\frame-04-at-91.4s.png",
+          "time": 91.4,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584295193,
+          "contentHash": "3bd8bab7be1f89e56f76805e9aebce353d6a496dfb5313546dbdfe82c0bbb1fd",
+          "revision": "34da280c-80c7-49d7-bb1f-023cc672b6ee",
+          "inputFingerprint": "f922f60464d966128f3858d64469984f7d756a48729af129a3027dd0f83ec47d",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "485dee12-2982-49ac-bab2-a6d4a6c6ec18-5",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\k\\frame-05-at-92.3s.png",
+          "time": 92.3,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584295194,
+          "contentHash": "dd6083f83f14ad92ef2f91127dd8b6aa0e43b72a0316bc9c892723ca4e470f2a",
+          "revision": "34da280c-80c7-49d7-bb1f-023cc672b6ee",
+          "inputFingerprint": "f922f60464d966128f3858d64469984f7d756a48729af129a3027dd0f83ec47d",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ],
+      "614c02c0-6000-47b4-a6ec-34a82e014f9a": [
+        {
+          "scope": "full",
+          "id": "d668ae17-8a5b-4ffa-ad9e-d79670fe1c52-0",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\l\\frame-00-at-90.2s.png",
+          "time": 90.2,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584326505,
+          "contentHash": "fa6761cdc78553f304bef84bdd98436a17357d630c29237b04028dbd2e2cf216",
+          "revision": "614c02c0-6000-47b4-a6ec-34a82e014f9a",
+          "inputFingerprint": "dce88a9931fa92f3c19799da300d7f6651c222433194ad6fe01be0e2dda8d55f",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "d668ae17-8a5b-4ffa-ad9e-d79670fe1c52-1",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\l\\frame-01-at-90.9s.png",
+          "time": 90.9,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584326505,
+          "contentHash": "49d678944d988221a53589379a91835160ecd8d9009a82b35fe427d1d860cff2",
+          "revision": "614c02c0-6000-47b4-a6ec-34a82e014f9a",
+          "inputFingerprint": "dce88a9931fa92f3c19799da300d7f6651c222433194ad6fe01be0e2dda8d55f",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "d668ae17-8a5b-4ffa-ad9e-d79670fe1c52-2",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\l\\frame-02-at-91.6s.png",
+          "time": 91.6,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584326506,
+          "contentHash": "e72b41ec86a636aa45a31cb375d289cc7c8e4acdfa6bb0225db9d9e116f82491",
+          "revision": "614c02c0-6000-47b4-a6ec-34a82e014f9a",
+          "inputFingerprint": "dce88a9931fa92f3c19799da300d7f6651c222433194ad6fe01be0e2dda8d55f",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "d668ae17-8a5b-4ffa-ad9e-d79670fe1c52-3",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\l\\frame-03-at-92.4s.png",
+          "time": 92.4,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584326507,
+          "contentHash": "1a7efb0d9c1325183d02eb52305362473a4c42aef4a1b75fac0bfa41369dca58",
+          "revision": "614c02c0-6000-47b4-a6ec-34a82e014f9a",
+          "inputFingerprint": "dce88a9931fa92f3c19799da300d7f6651c222433194ad6fe01be0e2dda8d55f",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "d668ae17-8a5b-4ffa-ad9e-d79670fe1c52-4",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\l\\frame-04-at-93.1s.png",
+          "time": 93.1,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584326508,
+          "contentHash": "f055388b5ba6ccfdde0b4747cfbf35f28c511447c451135d45040627c0f6fa63",
+          "revision": "614c02c0-6000-47b4-a6ec-34a82e014f9a",
+          "inputFingerprint": "dce88a9931fa92f3c19799da300d7f6651c222433194ad6fe01be0e2dda8d55f",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "5c15a916-9afe-4797-ab5e-4fbba135b8e7-0",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\full\\frame-00-at-1.5s.jpg",
+          "time": 1.5,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584378840,
+          "contentHash": "845fc90f55db3f56da4eb3ea66e4109a05f70b94f125df8e22d5301de3fcb857",
+          "revision": "614c02c0-6000-47b4-a6ec-34a82e014f9a",
+          "inputFingerprint": "dce88a9931fa92f3c19799da300d7f6651c222433194ad6fe01be0e2dda8d55f",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "5c15a916-9afe-4797-ab5e-4fbba135b8e7-1",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\full\\frame-01-at-4s.png",
+          "time": 4,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584378841,
+          "contentHash": "fbd80542576b58a4f112aec7754ba7223ba2d9f57c149355f97889aaadd3b296",
+          "revision": "614c02c0-6000-47b4-a6ec-34a82e014f9a",
+          "inputFingerprint": "dce88a9931fa92f3c19799da300d7f6651c222433194ad6fe01be0e2dda8d55f",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "5c15a916-9afe-4797-ab5e-4fbba135b8e7-2",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\full\\frame-02-at-7.5s.png",
+          "time": 7.5,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584378841,
+          "contentHash": "2c2e7c4ae31f956c10bab8c273d9675a3b63269a0e65f1bf40ddf3a2f05beb39",
+          "revision": "614c02c0-6000-47b4-a6ec-34a82e014f9a",
+          "inputFingerprint": "dce88a9931fa92f3c19799da300d7f6651c222433194ad6fe01be0e2dda8d55f",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "5c15a916-9afe-4797-ab5e-4fbba135b8e7-3",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\full\\frame-03-at-12.5s.png",
+          "time": 12.5,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584378842,
+          "contentHash": "007a9d99ec58c3b09bf0fcc85ae66956ca0a29b52cc43a9292ab3390837e344c",
+          "revision": "614c02c0-6000-47b4-a6ec-34a82e014f9a",
+          "inputFingerprint": "dce88a9931fa92f3c19799da300d7f6651c222433194ad6fe01be0e2dda8d55f",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "5c15a916-9afe-4797-ab5e-4fbba135b8e7-4",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\full\\frame-04-at-16.5s.png",
+          "time": 16.5,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584378843,
+          "contentHash": "3fc0f2d276eb4cb39779a2c8b56a95243a6228f39d4fac2a2e64700054251fb9",
+          "revision": "614c02c0-6000-47b4-a6ec-34a82e014f9a",
+          "inputFingerprint": "dce88a9931fa92f3c19799da300d7f6651c222433194ad6fe01be0e2dda8d55f",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "5c15a916-9afe-4797-ab5e-4fbba135b8e7-5",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\full\\frame-05-at-18.5s.png",
+          "time": 18.5,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584378844,
+          "contentHash": "e8b3700c3ba7d3b6a374277801d1d24247013be5c6f3fc7d4dc4775ab91e240b",
+          "revision": "614c02c0-6000-47b4-a6ec-34a82e014f9a",
+          "inputFingerprint": "dce88a9931fa92f3c19799da300d7f6651c222433194ad6fe01be0e2dda8d55f",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "5c15a916-9afe-4797-ab5e-4fbba135b8e7-6",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\full\\frame-06-at-22s.png",
+          "time": 22,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584378845,
+          "contentHash": "96e0119cc37c42ef083d69af07b626d8ec3b6ede83698e1194e3e28e3f5a86cf",
+          "revision": "614c02c0-6000-47b4-a6ec-34a82e014f9a",
+          "inputFingerprint": "dce88a9931fa92f3c19799da300d7f6651c222433194ad6fe01be0e2dda8d55f",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "5c15a916-9afe-4797-ab5e-4fbba135b8e7-7",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\full\\frame-07-at-26s.png",
+          "time": 26,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584378845,
+          "contentHash": "4bfb2b5e4eef22e73b5158572a843df54448f19a96782eb44f05259b45f1da50",
+          "revision": "614c02c0-6000-47b4-a6ec-34a82e014f9a",
+          "inputFingerprint": "dce88a9931fa92f3c19799da300d7f6651c222433194ad6fe01be0e2dda8d55f",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "5c15a916-9afe-4797-ab5e-4fbba135b8e7-8",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\full\\frame-08-at-30.5s.png",
+          "time": 30.5,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584378846,
+          "contentHash": "f9e8f6688c2c6ff0dac02ab8c91aa39b1745e6b13b766dc56d8520c1071e5ecf",
+          "revision": "614c02c0-6000-47b4-a6ec-34a82e014f9a",
+          "inputFingerprint": "dce88a9931fa92f3c19799da300d7f6651c222433194ad6fe01be0e2dda8d55f",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "5c15a916-9afe-4797-ab5e-4fbba135b8e7-9",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\full\\frame-09-at-34.5s.png",
+          "time": 34.5,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584378847,
+          "contentHash": "d1b3d7745424f9f5bb3c93f2a8b189870ac88ac5a1514e9f0b6d34a7a50d4424",
+          "revision": "614c02c0-6000-47b4-a6ec-34a82e014f9a",
+          "inputFingerprint": "dce88a9931fa92f3c19799da300d7f6651c222433194ad6fe01be0e2dda8d55f",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "5c15a916-9afe-4797-ab5e-4fbba135b8e7-10",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\full\\frame-10-at-38.8s.png",
+          "time": 38.8,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584378848,
+          "contentHash": "03630c3ac693240e1a2e61ce02f4936cd06a5ee2e44dc57fc137aac355bfa992",
+          "revision": "614c02c0-6000-47b4-a6ec-34a82e014f9a",
+          "inputFingerprint": "dce88a9931fa92f3c19799da300d7f6651c222433194ad6fe01be0e2dda8d55f",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "5c15a916-9afe-4797-ab5e-4fbba135b8e7-11",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\full\\frame-11-at-42.5s.png",
+          "time": 42.5,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584378848,
+          "contentHash": "e913124f3fd44948de4218ea0dfcbb7c1ffdc0ff72348a10ecf6d29e96fa5dd5",
+          "revision": "614c02c0-6000-47b4-a6ec-34a82e014f9a",
+          "inputFingerprint": "dce88a9931fa92f3c19799da300d7f6651c222433194ad6fe01be0e2dda8d55f",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "5c15a916-9afe-4797-ab5e-4fbba135b8e7-12",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\full\\frame-12-at-47.5s.png",
+          "time": 47.5,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584378849,
+          "contentHash": "63d6d7f2e12479f3c4b96fb46859d86fd24d04b53270841e35d0fe4cf4d63680",
+          "revision": "614c02c0-6000-47b4-a6ec-34a82e014f9a",
+          "inputFingerprint": "dce88a9931fa92f3c19799da300d7f6651c222433194ad6fe01be0e2dda8d55f",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "5c15a916-9afe-4797-ab5e-4fbba135b8e7-13",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\full\\frame-13-at-50.5s.png",
+          "time": 50.5,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584378850,
+          "contentHash": "11313b3410ef8d1819be98896eb1f1a7887dbc56db0b4b0e62d0f3813bcdc545",
+          "revision": "614c02c0-6000-47b4-a6ec-34a82e014f9a",
+          "inputFingerprint": "dce88a9931fa92f3c19799da300d7f6651c222433194ad6fe01be0e2dda8d55f",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "5c15a916-9afe-4797-ab5e-4fbba135b8e7-14",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\full\\frame-14-at-54.5s.png",
+          "time": 54.5,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584378851,
+          "contentHash": "a2da07272f3616acc73a9ebc342ad2516cc7af59999e4a56bb84329cc391c628",
+          "revision": "614c02c0-6000-47b4-a6ec-34a82e014f9a",
+          "inputFingerprint": "dce88a9931fa92f3c19799da300d7f6651c222433194ad6fe01be0e2dda8d55f",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "5c15a916-9afe-4797-ab5e-4fbba135b8e7-15",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\full\\frame-15-at-58s.png",
+          "time": 58,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584378852,
+          "contentHash": "fec3c15a137a9efbe841d7b35f549c4fbd339c56960a4e16c566e62a724b85ca",
+          "revision": "614c02c0-6000-47b4-a6ec-34a82e014f9a",
+          "inputFingerprint": "dce88a9931fa92f3c19799da300d7f6651c222433194ad6fe01be0e2dda8d55f",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "5c15a916-9afe-4797-ab5e-4fbba135b8e7-16",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\full\\frame-16-at-62.5s.png",
+          "time": 62.5,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584378852,
+          "contentHash": "3d7de90e98bb12f7791a1407a6df3d34a1b793f4e02427e51a6e1c4a722722f3",
+          "revision": "614c02c0-6000-47b4-a6ec-34a82e014f9a",
+          "inputFingerprint": "dce88a9931fa92f3c19799da300d7f6651c222433194ad6fe01be0e2dda8d55f",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "5c15a916-9afe-4797-ab5e-4fbba135b8e7-17",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\full\\frame-17-at-66.5s.png",
+          "time": 66.5,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584378853,
+          "contentHash": "99924545c849f80f340fe276ba8f50a5bf3d14ed994bf3002b0bcf5155041de5",
+          "revision": "614c02c0-6000-47b4-a6ec-34a82e014f9a",
+          "inputFingerprint": "dce88a9931fa92f3c19799da300d7f6651c222433194ad6fe01be0e2dda8d55f",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "5c15a916-9afe-4797-ab5e-4fbba135b8e7-18",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\full\\frame-18-at-70.5s.png",
+          "time": 70.5,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584378854,
+          "contentHash": "43f50c094c751c48693a019b81953ff31efd740de8a776aa47c5c2a6262571e4",
+          "revision": "614c02c0-6000-47b4-a6ec-34a82e014f9a",
+          "inputFingerprint": "dce88a9931fa92f3c19799da300d7f6651c222433194ad6fe01be0e2dda8d55f",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "5c15a916-9afe-4797-ab5e-4fbba135b8e7-19",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\full\\frame-19-at-75.5s.png",
+          "time": 75.5,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584378855,
+          "contentHash": "7825b8d125e5963b9bdd9fa646b0ac8a93c88239f06fb9e9af57331631539fba",
+          "revision": "614c02c0-6000-47b4-a6ec-34a82e014f9a",
+          "inputFingerprint": "dce88a9931fa92f3c19799da300d7f6651c222433194ad6fe01be0e2dda8d55f",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "5c15a916-9afe-4797-ab5e-4fbba135b8e7-20",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\full\\frame-20-at-79.5s.png",
+          "time": 79.5,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584378855,
+          "contentHash": "c3654914afee8e0a9a72df848c5afce7e09835c131fa6ed01cdf17d632f77cf0",
+          "revision": "614c02c0-6000-47b4-a6ec-34a82e014f9a",
+          "inputFingerprint": "dce88a9931fa92f3c19799da300d7f6651c222433194ad6fe01be0e2dda8d55f",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "5c15a916-9afe-4797-ab5e-4fbba135b8e7-21",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\full\\frame-21-at-84s.png",
+          "time": 84,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584378856,
+          "contentHash": "dc78cec20385538e4254e39dce74cbdd6d226ba99c4e55f4cf394ccb50b61bd2",
+          "revision": "614c02c0-6000-47b4-a6ec-34a82e014f9a",
+          "inputFingerprint": "dce88a9931fa92f3c19799da300d7f6651c222433194ad6fe01be0e2dda8d55f",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "5c15a916-9afe-4797-ab5e-4fbba135b8e7-22",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\full\\frame-22-at-88.5s.png",
+          "time": 88.5,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584378857,
+          "contentHash": "a68c4dae16e14ec977b64c13a63010b03aa58dc3f6b6b42308234389731fbe03",
+          "revision": "614c02c0-6000-47b4-a6ec-34a82e014f9a",
+          "inputFingerprint": "dce88a9931fa92f3c19799da300d7f6651c222433194ad6fe01be0e2dda8d55f",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "5c15a916-9afe-4797-ab5e-4fbba135b8e7-23",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\full\\frame-23-at-91.5s.png",
+          "time": 91.5,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584378858,
+          "contentHash": "e72b41ec86a636aa45a31cb375d289cc7c8e4acdfa6bb0225db9d9e116f82491",
+          "revision": "614c02c0-6000-47b4-a6ec-34a82e014f9a",
+          "inputFingerprint": "dce88a9931fa92f3c19799da300d7f6651c222433194ad6fe01be0e2dda8d55f",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ],
+      "accadc6f-0db8-43ca-90f1-2d1ed5eb6de1": [
+        {
+          "scope": "full",
+          "id": "24bb3576-a0c5-4990-9073-61faa44aafe8-0",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\m\\frame-00-at-26s.png",
+          "time": 26,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584425621,
+          "contentHash": "629f52c36b7af2a7eea54400b70f71c0af82238b24ca68f42eaa60e75639fb19",
+          "revision": "accadc6f-0db8-43ca-90f1-2d1ed5eb6de1",
+          "inputFingerprint": "3804e70696e38f6db5411c95b22992f24eb16cef5e891eea69094da6dbebed49",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "24bb3576-a0c5-4990-9073-61faa44aafe8-1",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\m\\frame-01-at-27.2s.png",
+          "time": 27.2,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584425622,
+          "contentHash": "efec86e46d549a7fdd208d511d9a76087e0983b9149d6b63ddd50f6b28aa93d5",
+          "revision": "accadc6f-0db8-43ca-90f1-2d1ed5eb6de1",
+          "inputFingerprint": "3804e70696e38f6db5411c95b22992f24eb16cef5e891eea69094da6dbebed49",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "24bb3576-a0c5-4990-9073-61faa44aafe8-2",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\m\\frame-02-at-54.5s.png",
+          "time": 54.5,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584425623,
+          "contentHash": "7f7aaeb6678bdba5db815db265761efe02d395b5d812ce70af9a97f43892bd61",
+          "revision": "accadc6f-0db8-43ca-90f1-2d1ed5eb6de1",
+          "inputFingerprint": "3804e70696e38f6db5411c95b22992f24eb16cef5e891eea69094da6dbebed49",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "24bb3576-a0c5-4990-9073-61faa44aafe8-3",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\m\\frame-03-at-62.5s.png",
+          "time": 62.5,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584425624,
+          "contentHash": "f1761b5e8c0c650f0de58174114b73e28a27302efc1f91a6b3dcd79d86780a14",
+          "revision": "accadc6f-0db8-43ca-90f1-2d1ed5eb6de1",
+          "inputFingerprint": "3804e70696e38f6db5411c95b22992f24eb16cef5e891eea69094da6dbebed49",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "24bb3576-a0c5-4990-9073-61faa44aafe8-4",
+          "image": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\.hyperframes\\shots\\m\\frame-04-at-63.4s.png",
+          "time": 63.4,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792584425625,
+          "contentHash": "f1db8bf0f483128a08cd87372d6b3b9cca5711ba0f3e48e352968b71119ebeea",
+          "revision": "accadc6f-0db8-43ca-90f1-2d1ed5eb6de1",
+          "inputFingerprint": "3804e70696e38f6db5411c95b22992f24eb16cef5e891eea69094da6dbebed49",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ]
+    },
+    "unversioned": []
+  },
+  "renders": {
+    "latest": {
+      "id": "6da986c6-2af7-4675-bacc-6a9fa9392dc1",
+      "completedAt": 1792584677455,
+      "output": "E:\\projects\\内容创作\\vibe知识大赏\\第十二期\\videos\\family-of-origin\\renders\\family-of-origin-v1.mp4",
+      "status": "completed_with_warnings",
+      "revision": "b7f42000-c7b8-4975-8eae-982851c4380b"
+    },
+    "retainedRevisions": [
+      "b7f42000-c7b8-4975-8eae-982851c4380b"
+    ]
+  },
+  "pendingArtifactCleanup": []
+}

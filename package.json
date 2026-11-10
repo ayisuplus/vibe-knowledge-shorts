@@ -1,0 +1,9 @@
+{
+  "name": "vibe-zhishi-dashang",
+  "private": true,
+  "devDependencies": {
+    "gsap": "^3.14.2",
+    "hyperframes": "^0.8.143",
+    "three": "^0.181.2"
+  }
+}

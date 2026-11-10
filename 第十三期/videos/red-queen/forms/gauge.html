@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<!-- 形式样张 2 · 仪表特写：把读数推到满画幅，给节拍用（数字一位一拍地跳）。 -->
+<style>
+  @font-face { font-family: "SerifSC"; src: url("../assets/fonts/NotoSerifSC-VF.ttf"); font-weight: 200 900; }
+  @font-face { font-family: "NotoSC"; src: url("../assets/fonts/NotoSansSC-VF.ttf"); font-weight: 100 900; }
+  @font-face { font-family: "CMono"; src: local("Consolas"); }
+  html, body { margin: 0; height: 1080px; width: 1920px; overflow: hidden; background: #05070b; }
+  #root { position: relative; width: 1920px; height: 1080px;
+          background: radial-gradient(60% 60% at 50% 46%, #0d1a23 0%, #070c12 58%, #04060a 100%); }
+  .panel { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);
+           width: 1240px; height: 560px; border: 1.5px solid rgba(111,211,232,.55); border-radius: 26px;
+           box-shadow: 0 0 0 1px rgba(111,211,232,.12), 0 0 90px rgba(111,211,232,.10) inset, 0 0 60px rgba(111,211,232,.06);
+           background: linear-gradient(180deg, rgba(16,32,42,.55), rgba(8,15,21,.55)); }
+  .k { position: absolute; left: 62px; top: 52px; font-family: "NotoSC"; font-size: 33px; letter-spacing: .50em; color: #7fb9d0; }
+  .v { position: absolute; left: 54px; bottom: 108px; font-family: "CMono"; font-size: 318px; line-height: .82;
+       color: #d8f4ff; letter-spacing: -.02em;
+       text-shadow: 0 0 44px rgba(111,211,232,.60), 0 0 120px rgba(111,211,232,.30); }
+  .x { position: absolute; left: 720px; bottom: 150px; font-family: "CMono"; font-size: 132px; color: #6fd3e8; opacity: .85;
+       text-shadow: 0 0 26px rgba(111,211,232,.55); }
+  .sub { position: absolute; left: 66px; bottom: 54px; font-family: "NotoSC"; font-size: 30px; letter-spacing: .10em; color: #5d8ba2; }
+  .bars { position: absolute; right: 60px; bottom: 60px; display: flex; align-items: flex-end; gap: 13px; height: 190px; }
+  .bars i { display: block; width: 30px; border-radius: 3px; background: linear-gradient(180deg, #9fe8f7, #2f7f96); opacity: .85; }
+  .bars i.o { background: linear-gradient(180deg, #ffb27f, #b8481c); opacity: 1; }
+  .note { position: absolute; right: 96px; top: 72px; font-family: "NotoSC"; font-size: 22px; letter-spacing: .18em; color: #3f6880; }
+  .vig { position: absolute; inset: 0; pointer-events: none;
+         background: radial-gradient(58% 58% at 50% 48%, transparent 42%, rgba(3,5,8,.72) 100%); }
+</style></head>
+<body><div id="root">
+  <div class="panel">
+    <div class="k">跑道速度</div>
+    <div class="v">2.4</div><div class="x">×</div>
+    <div class="sub">十年前是 1.0×</div>
+    <div class="bars">
+      <i style="height:34px"></i><i style="height:42px"></i><i style="height:50px"></i>
+      <i style="height:60px"></i><i style="height:70px"></i><i style="height:82px"></i>
+      <i class="o" style="height:96px"></i><i class="o" style="height:112px"></i>
+      <i class="o" style="height:132px"></i><i class="o" style="height:156px"></i><i class="o" style="height:186px"></i>
+    </div>
+  </div>
+  <div class="vig"></div>
+  <div class="note">形式样张 · 仪表特写</div>
+</div></body></html>

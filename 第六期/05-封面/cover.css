@@ -1,0 +1,13 @@
+/* 第六期封面：工人、马克思、AI 站在关着的巨门前（门缝一线金光）+ 问句标题 */
+@font-face { font-family: "CoverSerif"; src: url("fonts/VibeSerifBlack.ttf"); }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { overflow: hidden; background: #0b0806; }
+.stage { position: relative; overflow: hidden; }
+.bg { position: absolute; inset: 0; background: url("bg.jpg") var(--bx, 50%) var(--by, 60%) / cover no-repeat; }
+.top { position: absolute; left: 0; right: 0; top: 0; background: linear-gradient(rgba(10, 6, 3, .78), rgba(10, 6, 3, 0)); }
+.seam { position: absolute; transform: translateX(-50%); background: radial-gradient(ellipse 50% 50% at 50% 50%, rgba(255, 214, 140, .55), rgba(255, 214, 140, 0) 70%); mix-blend-mode: screen; }
+.title { position: absolute; left: 0; right: 0; text-align: center; font-family: "CoverSerif"; color: #fff1d8; line-height: 1.18;
+  text-shadow: 0 6px 30px rgba(0, 0, 0, .9), 0 0 14px rgba(0, 0, 0, .7); }
+.title em { font-style: normal; color: #ff3b2a; text-shadow: 0 0 26px rgba(255, 70, 40, .55), 0 6px 30px rgba(0, 0, 0, .9); }
+.title .q { color: #ffd27a; }
+.vignette { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 75% at 50% 50%, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, .45) 100%); }

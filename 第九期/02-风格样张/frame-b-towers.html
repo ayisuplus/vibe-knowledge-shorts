@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>样张 B · 纸塔</title>
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  /* S2 约 24 秒：左边是那张 SKILL.md；右边三座半透明纸塔从地面升起，高度按数量比例。
+     不画任何成排的小图标：只有三座塔、几张飘起的纸、柔光。 */
+  #sheet { position: absolute; left: 110px; top: 170px; width: 560px; height: 640px; perspective: 1600px; }
+  #sheet .shot { inset: 0; transform: rotateY(16deg) rotateX(3deg); transform-origin: 0 50%; }
+  #sheet img { width: 1440px; transform-origin: 0 0; transform: scale(.66) translate(-400px, -360px); }
+
+  #floor { position: absolute; left: 760px; right: 60px; top: 760px; height: 160px;
+    background: radial-gradient(50% 60% at 50% 0%, rgba(184, 84, 0, .14), transparent 70%); }
+  #scene { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; perspective: 1800px; perspective-origin: 1250px 300px; }
+  .tower { position: absolute; transform-style: preserve-3d; transform: rotateX(-14deg) rotateY(-32deg); }
+  .face { position: absolute; border: 1.5px solid rgba(110, 119, 129, .75); }
+  .front, .side {
+    background:
+      repeating-linear-gradient(0deg, rgba(31, 35, 40, .11) 0 1px, transparent 1px 26px),
+      linear-gradient(180deg, #FFFFFF, #F6E2D0);
+    box-shadow: inset 0 -60px 90px -30px rgba(184, 84, 0, .28);
+  }
+  .side { filter: brightness(.93); }
+  .top { background: linear-gradient(135deg, #fff, #F9DCC2); box-shadow: 0 0 60px rgba(184, 84, 0, .35); }
+  .num { position: absolute; text-align: center; white-space: nowrap; }
+  .num b { display: block; font-weight: 450; line-height: 1; color: var(--ink); }
+  .num b small { font-size: .5em; font-weight: 400; margin-left: 6px; }
+  .num span { display: block; margin-top: 10px; font: 600 38px "CMono", monospace; color: var(--ink); }
+  .leaf { position: absolute; width: 120px; height: 150px; background: #fff; border: 1px solid var(--line); border-radius: 4px;
+    box-shadow: 0 16px 30px -12px rgba(31, 35, 40, .3); }
+  .leaf::before, .leaf::after { content: ""; position: absolute; left: 16px; right: 22px; height: 6px; border-radius: 3px; background: #C9D1D9; }
+  .leaf::before { top: 24px; background: rgba(184, 84, 0, .55); width: 40px; }
+  .leaf::after { top: 46px; }
+</style>
+</head>
+<body>
+<div id="sheet"><div class="shot"><img src="assets/img/gh-superpowers-skill-raw.jpg"></div></div>
+<div id="floor"></div>
+<div id="scene"></div>
+<div class="src">GitHub 代码搜索 · 2026 年 10 月</div>
+<div class="capzone"><span>字幕区</span></div>
+<script>
+  // 三座塔：数量（万）、文件名、底面中心 x、塔宽、数字字号
+  const MAXH = 470, base = 780;
+  const towers = [
+    [630, "SKILL", 1060, 210, 120],
+    [112, "AGENTS", 1430, 170, 84],
+    [84, "CLAUDE", 1720, 150, 76],
+  ];
+  const scene = document.getElementById("scene");
+  towers.forEach(([n, file, cx, w, fs]) => {
+    const h = Math.round(MAXH * n / 630), d = w;
+    const t = document.createElement("div");
+    t.className = "tower";
+    Object.assign(t.style, { left: cx - w / 2 + "px", top: base - h + "px", width: w + "px", height: h + "px" });
+    t.innerHTML = `
+      <div class="face front" style="width:${w}px;height:${h}px;transform:translateZ(${d / 2}px)"></div>
+      <div class="face side" style="width:${d}px;height:${h}px;transform:rotateY(90deg) translateZ(${w - d / 2}px)"></div>
+      <div class="face top" style="width:${w}px;height:${d}px;transform:rotateX(90deg) translateZ(${d / 2}px)"></div>`;
+    scene.appendChild(t);
+    const num = document.createElement("div");
+    num.className = "num";
+    num.innerHTML = `<b style="font-size:${fs}px">${n}<small>万</small></b><span>${file}<span class="md" style="display:inline">.md</span></span>`;
+    scene.appendChild(num);
+    const nw = num.offsetWidth, nh = num.offsetHeight;
+    Object.assign(num.style, { left: cx - nw / 2 + 20 + "px", top: base - h - nh - 46 + "px" });
+  });
+  // 最高那座塔顶上，三张纸像落叶一样慢慢飘起来
+  [[1210, 230, -18, .7], [1300, 120, 14, .55], [1180, 40, -6, .42]].forEach(([x, y, r, sc]) => {
+    const l = document.createElement("div");
+    l.className = "leaf";
+    Object.assign(l.style, { left: x + "px", top: y + 80 + "px", transform: `rotate(${r}deg) scale(${sc})`, opacity: .55 + sc * .45 });
+    scene.appendChild(l);
+  });
+</script>
+</body>
+</html>

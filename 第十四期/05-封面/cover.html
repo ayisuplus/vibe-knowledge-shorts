@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<!-- 第十四期封面：cover.html?a=43（1440×1080）/ ?a=34（1080×1440）。
+     纯代码绘制，不依赖成片截帧，可随时重现。 -->
+<style>
+  @font-face { font-family: "SerifSC"; src: url("../videos/words-retired/assets/fonts/NotoSerifSC-VF.ttf"); font-weight: 200 900; }
+  @font-face { font-family: "NotoSC";  src: url("../videos/words-retired/assets/fonts/NotoSansSC-VF.ttf");  font-weight: 100 900; }
+  @font-face { font-family: "WenKai";  src: url("../videos/words-retired/assets/fonts/LXGWWenKai-Regular.ttf"); font-weight: 400; }
+  html, body { margin: 0; overflow: hidden; background: #e7dcc2; }
+  #c { position: relative; overflow: hidden;
+       background: radial-gradient(120% 90% at 50% 42%, #f7f1e2 0%, #efe6d0 45%, #ded0b2 100%); }
+
+  /* 纸 */
+  #paper { position: absolute; background: #fbf6ea;
+           box-shadow: 0 26px 70px rgba(60,45,20,.34), 0 2px 0 rgba(255,255,255,.7) inset;
+           border: 1px solid rgba(120,96,60,.22); }
+
+  .head { position: absolute; left: 7%; right: 7%; top: 7%;
+          font-family: "NotoSC", sans-serif; font-weight: 500; color: #8a7a5c;
+          letter-spacing: .34em; }
+  .redline { position: absolute; left: 7%; right: 7%; height: 2px; background: #b0231a; }
+
+  .title { position: absolute; left: 0; right: 0; text-align: center;
+           font-family: "SerifSC", serif; font-weight: 900; color: #2a2419; letter-spacing: .02em; }
+  .title em { font-style: normal; color: #b0231a; }
+
+  .hook { position: absolute; left: 0; right: 0; text-align: center;
+          font-family: "NotoSC", sans-serif; font-weight: 700; color: #4a4033; letter-spacing: .05em; }
+  .hook em { font-style: normal; color: #b0231a; }
+
+  .foot { position: absolute; left: 0; right: 0; text-align: center;
+          font-family: "NotoSC", sans-serif; font-weight: 400; color: #9a8a6a; letter-spacing: .3em; }
+
+  /* 印章 */
+  #seal { position: absolute; border: 5px solid #b0231a; border-radius: 50%;
+          color: #b0231a; font-family: "NotoSC", sans-serif; font-weight: 800;
+          display: flex; align-items: center; justify-content: center;
+          letter-spacing: .08em; transform: rotate(-13deg);
+          box-shadow: 0 0 0 3px rgba(176,35,26,.18) inset;
+          opacity: .92; }
+
+  /* 硬朗的角标 */
+  .mark { position: absolute; left: 0; right: 0; text-align: center;
+          font-family: "NotoSC", sans-serif; font-weight: 700; color: #2f5a7a; letter-spacing: .42em; }
+</style>
+</head>
+<body>
+<div id="c">
+  <div id="paper">
+    <div class="head">词语档案 · 原文第 014 号</div>
+    <div class="redline"></div>
+    <div class="title"><em>打工人</em>去哪了</div>
+    <div class="hook">语言，比社会现实更早承认了<em>退场</em></div>
+    <div id="seal">停用</div>
+    <div class="foot">VIBE 知识大赏 · 第十四期</div>
+  </div>
+</div>
+<script>
+  const a = new URLSearchParams(location.search).get("a") || "43";
+  const c = document.getElementById("c");
+  const paper = document.getElementById("paper");
+  const head = paper.querySelector(".head");
+  const rl = paper.querySelector(".redline");
+  const t = paper.querySelector(".title");
+  const hook = paper.querySelector(".hook");
+  const seal = document.getElementById("seal");
+  const foot = paper.querySelector(".foot");
+  const set = (e, s) => Object.assign(e.style, s);
+
+  if (a === "43") {
+    // 1440 × 1080
+    set(c, { width: "1440px", height: "1080px" });
+    set(paper, { left: "210px", top: "96px", width: "1020px", height: "888px", transform: "rotate(-1.6deg)" });
+    set(head, { fontSize: "22px" });
+    set(rl, { top: "132px" });
+    set(t, { top: "212px", fontSize: "146px", lineHeight: "1.06" });
+    set(hook, { top: "498px", fontSize: "38px" });
+    set(seal, { right: "58px", bottom: "52px", width: "182px", height: "182px", fontSize: "58px" });
+    set(foot, { bottom: "40px", fontSize: "20px" });
+  } else {
+    // 1080 × 1440
+    set(c, { width: "1080px", height: "1440px" });
+    set(paper, { left: "92px", top: "176px", width: "896px", height: "1088px", transform: "rotate(-2.2deg)" });
+    set(head, { fontSize: "21px" });
+    set(rl, { top: "128px" });
+    t.innerHTML = '<em>打工人</em><br>去哪了';
+    set(t, { top: "250px", fontSize: "172px", lineHeight: "1.02" });
+    set(t, { width: "100%", padding: "0 40px", boxSizing: "border-box" });
+    set(hook, { top: "664px", fontSize: "42px" });
+    set(seal, { right: "60px", bottom: "118px", width: "200px", height: "200px", fontSize: "62px" });
+    set(foot, { bottom: "52px", fontSize: "20px" });
+  }
+</script>
+</body>
+</html>

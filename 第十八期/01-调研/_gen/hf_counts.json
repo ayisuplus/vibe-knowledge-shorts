@@ -1,0 +1,1868 @@
+{
+ "Qwen": {
+  "repos_checked": 10,
+  "repos_failed": 0,
+  "sum": {
+   "finetune": 12681,
+   "adapter": 10725,
+   "quantized": 5150,
+   "merge": 350,
+   "total": 28906
+  },
+  "top": [
+   {
+    "id": "Qwen/Qwen2.5-7B-Instruct",
+    "createdAt": "2024-09-16T11:55:40.000Z",
+    "downloads": 5732337,
+    "likes": 2458,
+    "finetune": 3220,
+    "adapter": 2838,
+    "quantized": 442,
+    "merge": 169,
+    "total": 6669
+   },
+   {
+    "id": "Qwen/Qwen3-8B",
+    "createdAt": "2025-04-27T03:42:21.000Z",
+    "downloads": 8114096,
+    "likes": 2145,
+    "finetune": 2234,
+    "adapter": 2386,
+    "quantized": 474,
+    "merge": 39,
+    "total": 5133
+   },
+   {
+    "id": "Qwen/Qwen3.5-9B",
+    "createdAt": "2026-02-27T12:58:26.000Z",
+    "downloads": 6085485,
+    "likes": 2242,
+    "finetune": 1164,
+    "adapter": 992,
+    "quantized": 619,
+    "merge": 33,
+    "total": 2808
+   },
+   {
+    "id": "Qwen/Qwen3-4B",
+    "createdAt": "2025-04-27T03:41:29.000Z",
+    "downloads": 11268043,
+    "likes": 772,
+    "finetune": 1199,
+    "adapter": 1213,
+    "quantized": 364,
+    "merge": 20,
+    "total": 2796
+   },
+   {
+    "id": "Qwen/Qwen3-0.6B",
+    "createdAt": "2025-04-27T03:40:08.000Z",
+    "downloads": 23833726,
+    "likes": 1851,
+    "finetune": 1387,
+    "adapter": 692,
+    "quantized": 506,
+    "merge": 14,
+    "total": 2599
+   },
+   {
+    "id": "Qwen/Qwen3.8-27B",
+    "createdAt": "2026-08-05T08:22:59.000Z",
+    "downloads": 7762014,
+    "likes": 18410,
+    "finetune": 731,
+    "adapter": 265,
+    "quantized": 1554,
+    "merge": 27,
+    "total": 2577
+   },
+   {
+    "id": "Qwen/Qwen3.5-4B",
+    "createdAt": "2026-02-27T14:45:03.000Z",
+    "downloads": 7430684,
+    "likes": 1128,
+    "finetune": 1118,
+    "adapter": 835,
+    "quantized": 568,
+    "merge": 21,
+    "total": 2542
+   },
+   {
+    "id": "Qwen/Qwen3-14B",
+    "createdAt": "2025-04-27T03:42:45.000Z",
+    "downloads": 10428928,
+    "likes": 520,
+    "finetune": 372,
+    "adapter": 1246,
+    "quantized": 230,
+    "merge": 22,
+    "total": 1870
+   }
+  ]
+ },
+ "Llama": {
+  "repos_checked": 10,
+  "repos_failed": 0,
+  "sum": {
+   "finetune": 12490,
+   "adapter": 10748,
+   "quantized": 3040,
+   "merge": 739,
+   "total": 27017
+  },
+  "top": [
+   {
+    "id": "meta-llama/Llama-3.1-8B-Instruct",
+    "createdAt": "2024-07-18T08:56:00.000Z",
+    "downloads": 4833514,
+    "likes": 8610,
+    "finetune": 3289,
+    "adapter": 2973,
+    "quantized": 935,
+    "merge": 105,
+    "total": 7302
+   },
+   {
+    "id": "meta-llama/Llama-2-7b-hf",
+    "createdAt": "2023-07-13T16:16:13.000Z",
+    "downloads": 419550,
+    "likes": 2475,
+    "finetune": 990,
+    "adapter": 2455,
+    "quantized": 78,
+    "merge": 11,
+    "total": 3534
+   },
+   {
+    "id": "meta-llama/Llama-3.2-3B-Instruct",
+    "createdAt": "2024-09-18T15:19:20.000Z",
+    "downloads": 1106217,
+    "likes": 2878,
+    "finetune": 2040,
+    "adapter": 873,
+    "quantized": 543,
+    "merge": 29,
+    "total": 3485
+   },
+   {
+    "id": "meta-llama/Llama-3.1-8B",
+    "createdAt": "2024-07-14T22:20:15.000Z",
+    "downloads": 602534,
+    "likes": 2693,
+    "finetune": 1506,
+    "adapter": 1355,
+    "quantized": 335,
+    "merge": 71,
+    "total": 3267
+   },
+   {
+    "id": "meta-llama/Meta-Llama-3-8B-Instruct",
+    "createdAt": "2024-04-17T09:35:12.000Z",
+    "downloads": 340477,
+    "likes": 5566,
+    "finetune": 1189,
+    "adapter": 1213,
+    "quantized": 281,
+    "merge": 412,
+    "total": 3095
+   },
+   {
+    "id": "meta-llama/Llama-3.2-1B-Instruct",
+    "createdAt": "2024-09-18T15:12:47.000Z",
+    "downloads": 3488705,
+    "likes": 1893,
+    "finetune": 1845,
+    "adapter": 683,
+    "quantized": 432,
+    "merge": 15,
+    "total": 2975
+   },
+   {
+    "id": "meta-llama/Llama-3.2-1B",
+    "createdAt": "2024-09-18T15:03:14.000Z",
+    "downloads": 534994,
+    "likes": 2722,
+    "finetune": 956,
+    "adapter": 753,
+    "quantized": 263,
+    "merge": 26,
+    "total": 1998
+   },
+   {
+    "id": "meta-llama/Llama-3.3-70B-Instruct",
+    "createdAt": "2024-11-26T16:08:47.000Z",
+    "downloads": 300174,
+    "likes": 3163,
+    "finetune": 669,
+    "adapter": 443,
+    "quantized": 171,
+    "merge": 70,
+    "total": 1353
+   }
+  ]
+ },
+ "Gemma": {
+  "repos_checked": 10,
+  "repos_failed": 0,
+  "sum": {
+   "finetune": 2820,
+   "adapter": 1768,
+   "quantized": 2786,
+   "merge": 80,
+   "total": 7454
+  },
+  "top": [
+   {
+    "id": "google/gemma-3-4b-it",
+    "createdAt": "2025-02-20T21:20:07.000Z",
+    "downloads": 970319,
+    "likes": 1596,
+    "finetune": 853,
+    "adapter": 504,
+    "quantized": 490,
+    "merge": 3,
+    "total": 1850
+   },
+   {
+    "id": "google/gemma-4-E4B-it",
+    "createdAt": "2026-03-02T19:57:40.000Z",
+    "downloads": 3990168,
+    "likes": 1777,
+    "finetune": 434,
+    "adapter": 422,
+    "quantized": 416,
+    "merge": 3,
+    "total": 1275
+   },
+   {
+    "id": "google/gemma-4-31B-it",
+    "createdAt": "2026-03-11T18:22:36.000Z",
+    "downloads": 8432279,
+    "likes": 4205,
+    "finetune": 329,
+    "adapter": 365,
+    "quantized": 345,
+    "merge": 40,
+    "total": 1079
+   },
+   {
+    "id": "google/gemma-4-E2B-it",
+    "createdAt": "2026-03-02T19:58:09.000Z",
+    "downloads": 2956124,
+    "likes": 1072,
+    "finetune": 422,
+    "adapter": 214,
+    "quantized": 413,
+    "merge": 4,
+    "total": 1053
+   },
+   {
+    "id": "google/gemma-4-12B-it",
+    "createdAt": "2026-05-23T01:17:15.000Z",
+    "downloads": 1720062,
+    "likes": 1690,
+    "finetune": 263,
+    "adapter": 146,
+    "quantized": 381,
+    "merge": 11,
+    "total": 801
+   },
+   {
+    "id": "google/gemma-4-26B-A4B-it",
+    "createdAt": "2026-03-11T21:25:57.000Z",
+    "downloads": 8174541,
+    "likes": 1701,
+    "finetune": 220,
+    "adapter": 104,
+    "quantized": 413,
+    "merge": 19,
+    "total": 756
+   },
+   {
+    "id": "google/embeddinggemma-300m",
+    "createdAt": "2025-07-17T19:53:55.000Z",
+    "downloads": 2303854,
+    "likes": 2061,
+    "finetune": 295,
+    "adapter": 12,
+    "quantized": 321,
+    "merge": 0,
+    "total": 628
+   },
+   {
+    "id": "google/gemma-4-12B-it-qat-w4a16-ct",
+    "createdAt": "2026-06-05T02:50:55.000Z",
+    "downloads": 878782,
+    "likes": 72,
+    "finetune": 2,
+    "adapter": 1,
+    "quantized": 2,
+    "merge": 0,
+    "total": 5
+   }
+  ]
+ },
+ "Mistral": {
+  "repos_checked": 10,
+  "repos_failed": 0,
+  "sum": {
+   "finetune": 3566,
+   "adapter": 5285,
+   "quantized": 1157,
+   "merge": 912,
+   "total": 10920
+  },
+  "top": [
+   {
+    "id": "mistralai/Mistral-7B-v0.1",
+    "createdAt": "2023-09-20T13:03:50.000Z",
+    "downloads": 355829,
+    "likes": 4226,
+    "finetune": 948,
+    "adapter": 2467,
+    "quantized": 195,
+    "merge": 390,
+    "total": 4000
+   },
+   {
+    "id": "mistralai/Mistral-7B-Instruct-v0.2",
+    "createdAt": "2023-12-11T13:18:44.000Z",
+    "downloads": 1780710,
+    "likes": 3271,
+    "finetune": 1157,
+    "adapter": 1208,
+    "quantized": 112,
+    "merge": 353,
+    "total": 2830
+   },
+   {
+    "id": "mistralai/Mistral-7B-Instruct-v0.3",
+    "createdAt": "2024-05-22T09:57:04.000Z",
+    "downloads": 1724933,
+    "likes": 3813,
+    "finetune": 545,
+    "adapter": 897,
+    "quantized": 309,
+    "merge": 26,
+    "total": 1777
+   },
+   {
+    "id": "mistralai/Mistral-7B-v0.3",
+    "createdAt": "2024-05-22T09:56:38.000Z",
+    "downloads": 180793,
+    "likes": 623,
+    "finetune": 460,
+    "adapter": 379,
+    "quantized": 91,
+    "merge": 5,
+    "total": 935
+   },
+   {
+    "id": "mistralai/Mistral-Nemo-Instruct-2407",
+    "createdAt": "2024-07-17T17:26:49.000Z",
+    "downloads": 178317,
+    "likes": 1737,
+    "finetune": 231,
+    "adapter": 100,
+    "quantized": 179,
+    "merge": 85,
+    "total": 595
+   },
+   {
+    "id": "mistralai/Mixtral-8x7B-Instruct-v0.1",
+    "createdAt": "2023-12-10T18:47:12.000Z",
+    "downloads": 241424,
+    "likes": 4774,
+    "finetune": 75,
+    "adapter": 147,
+    "quantized": 51,
+    "merge": 48,
+    "total": 321
+   },
+   {
+    "id": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+    "createdAt": "2025-06-19T17:41:13.000Z",
+    "downloads": 181449,
+    "likes": 641,
+    "finetune": 66,
+    "adapter": 19,
+    "quantized": 70,
+    "merge": 4,
+    "total": 159
+   },
+   {
+    "id": "mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+    "createdAt": "2025-03-11T17:04:58.000Z",
+    "downloads": 223802,
+    "likes": 1406,
+    "finetune": 57,
+    "adapter": 13,
+    "quantized": 63,
+    "merge": 0,
+    "total": 133
+   }
+  ]
+ },
+ "DeepSeek": {
+  "repos_checked": 10,
+  "repos_failed": 0,
+  "sum": {
+   "finetune": 1619,
+   "adapter": 576,
+   "quantized": 907,
+   "merge": 44,
+   "total": 3146
+  },
+  "top": [
+   {
+    "id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
+    "createdAt": "2025-01-20T09:04:18.000Z",
+    "downloads": 1274971,
+    "likes": 1646,
+    "finetune": 841,
+    "adapter": 340,
+    "quantized": 277,
+    "merge": 27,
+    "total": 1485
+   },
+   {
+    "id": "deepseek-ai/DeepSeek-R1",
+    "createdAt": "2025-01-20T03:46:07.000Z",
+    "downloads": 1485789,
+    "likes": 14410,
+    "finetune": 327,
+    "adapter": 122,
+    "quantized": 70,
+    "merge": 5,
+    "total": 524
+   },
+   {
+    "id": "deepseek-ai/DeepSeek-V4-Flash-0731",
+    "createdAt": "2026-07-31T07:30:24.000Z",
+    "downloads": 4112191,
+    "likes": 4090,
+    "finetune": 38,
+    "adapter": 7,
+    "quantized": 202,
+    "merge": 1,
+    "total": 248
+   },
+   {
+    "id": "deepseek-ai/DeepSeek-OCR",
+    "createdAt": "2025-10-17T06:22:05.000Z",
+    "downloads": 2072209,
+    "likes": 3457,
+    "finetune": 131,
+    "adapter": 27,
+    "quantized": 11,
+    "merge": 3,
+    "total": 172
+   },
+   {
+    "id": "deepseek-ai/DeepSeek-V4-Flash",
+    "createdAt": "2026-04-22T06:04:20.000Z",
+    "downloads": 936089,
+    "likes": 2348,
+    "finetune": 28,
+    "adapter": 4,
+    "quantized": 134,
+    "merge": 0,
+    "total": 166
+   },
+   {
+    "id": "deepseek-ai/DeepSeek-V4.1-Flash",
+    "createdAt": "2026-09-10T02:17:58.000Z",
+    "downloads": 1640989,
+    "likes": 4742,
+    "finetune": 25,
+    "adapter": 0,
+    "quantized": 139,
+    "merge": 0,
+    "total": 164
+   },
+   {
+    "id": "deepseek-ai/DeepSeek-V3",
+    "createdAt": "2024-12-25T12:52:23.000Z",
+    "downloads": 1431735,
+    "likes": 4451,
+    "finetune": 87,
+    "adapter": 36,
+    "quantized": 17,
+    "merge": 1,
+    "total": 141
+   },
+   {
+    "id": "deepseek-ai/DeepSeek-V3-0324",
+    "createdAt": "2025-03-24T09:28:22.000Z",
+    "downloads": 631701,
+    "likes": 3223,
+    "finetune": 72,
+    "adapter": 24,
+    "quantized": 26,
+    "merge": 5,
+    "total": 127
+   }
+  ]
+ },
+ "Phi": {
+  "repos_checked": 10,
+  "repos_failed": 0,
+  "sum": {
+   "finetune": 2508,
+   "adapter": 3843,
+   "quantized": 984,
+   "merge": 56,
+   "total": 7391
+  },
+  "top": [
+   {
+    "id": "microsoft/Phi-3-mini-4k-instruct",
+    "createdAt": "2024-04-22T16:18:17.000Z",
+    "downloads": 341977,
+    "likes": 1481,
+    "finetune": 1123,
+    "adapter": 870,
+    "quantized": 184,
+    "merge": 13,
+    "total": 2190
+   },
+   {
+    "id": "microsoft/phi-2",
+    "createdAt": "2023-12-13T21:19:59.000Z",
+    "downloads": 430490,
+    "likes": 3531,
+    "finetune": 413,
+    "adapter": 994,
+    "quantized": 64,
+    "merge": 8,
+    "total": 1479
+   },
+   {
+    "id": "microsoft/Phi-3.5-mini-instruct",
+    "createdAt": "2024-08-16T20:48:26.000Z",
+    "downloads": 380951,
+    "likes": 1283,
+    "finetune": 340,
+    "adapter": 716,
+    "quantized": 201,
+    "merge": 19,
+    "total": 1276
+   },
+   {
+    "id": "microsoft/phi-1_5",
+    "createdAt": "2023-09-10T04:03:46.000Z",
+    "downloads": 54800,
+    "likes": 1371,
+    "finetune": 236,
+    "adapter": 448,
+    "quantized": 36,
+    "merge": 0,
+    "total": 720
+   },
+   {
+    "id": "microsoft/Phi-4-mini-instruct",
+    "createdAt": "2025-02-19T01:00:58.000Z",
+    "downloads": 342842,
+    "likes": 870,
+    "finetune": 136,
+    "adapter": 203,
+    "quantized": 201,
+    "merge": 1,
+    "total": 541
+   },
+   {
+    "id": "microsoft/Phi-3-mini-128k-instruct",
+    "createdAt": "2024-04-22T16:26:23.000Z",
+    "downloads": 251473,
+    "likes": 1711,
+    "finetune": 44,
+    "adapter": 392,
+    "quantized": 87,
+    "merge": 13,
+    "total": 536
+   },
+   {
+    "id": "microsoft/phi-4",
+    "createdAt": "2024-12-11T11:47:29.000Z",
+    "downloads": 368280,
+    "likes": 2330,
+    "finetune": 129,
+    "adapter": 208,
+    "quantized": 169,
+    "merge": 2,
+    "total": 508
+   },
+   {
+    "id": "microsoft/Phi-4-multimodal-instruct",
+    "createdAt": "2025-02-24T22:33:32.000Z",
+    "downloads": 111473,
+    "likes": 1625,
+    "finetune": 55,
+    "adapter": 3,
+    "quantized": 11,
+    "merge": 0,
+    "total": 69
+   }
+  ]
+ },
+ "GLM": {
+  "repos_checked": 10,
+  "repos_failed": 0,
+  "sum": {
+   "finetune": 283,
+   "adapter": 71,
+   "quantized": 743,
+   "merge": 5,
+   "total": 1102
+  },
+  "top": [
+   {
+    "id": "zai-org/GLM-5.3-Flash",
+    "createdAt": "2026-08-25T06:43:14.000Z",
+    "downloads": 6352272,
+    "likes": 2947,
+    "finetune": 32,
+    "adapter": 8,
+    "quantized": 205,
+    "merge": 4,
+    "total": 249
+   },
+   {
+    "id": "zai-org/GLM-4.7-Flash",
+    "createdAt": "2026-01-19T06:28:10.000Z",
+    "downloads": 953714,
+    "likes": 1888,
+    "finetune": 81,
+    "adapter": 20,
+    "quantized": 107,
+    "merge": 0,
+    "total": 208
+   },
+   {
+    "id": "zai-org/GLM-5.2",
+    "createdAt": "2026-06-16T07:39:20.000Z",
+    "downloads": 298589,
+    "likes": 5186,
+    "finetune": 26,
+    "adapter": 1,
+    "quantized": 149,
+    "merge": 0,
+    "total": 176
+   },
+   {
+    "id": "zai-org/GLM-4.5-Air",
+    "createdAt": "2025-07-20T03:25:55.000Z",
+    "downloads": 975369,
+    "likes": 647,
+    "finetune": 39,
+    "adapter": 12,
+    "quantized": 65,
+    "merge": 0,
+    "total": 116
+   },
+   {
+    "id": "zai-org/GLM-5.3",
+    "createdAt": "2026-08-25T06:42:50.000Z",
+    "downloads": 2074062,
+    "likes": 2310,
+    "finetune": 16,
+    "adapter": 0,
+    "quantized": 92,
+    "merge": 0,
+    "total": 108
+   },
+   {
+    "id": "zai-org/GLM-OCR",
+    "createdAt": "2026-01-30T04:24:21.000Z",
+    "downloads": 1683243,
+    "likes": 2181,
+    "finetune": 35,
+    "adapter": 13,
+    "quantized": 36,
+    "merge": 0,
+    "total": 84
+   },
+   {
+    "id": "zai-org/GLM-5",
+    "createdAt": "2026-02-11T04:55:46.000Z",
+    "downloads": 1169522,
+    "likes": 2138,
+    "finetune": 38,
+    "adapter": 10,
+    "quantized": 19,
+    "merge": 1,
+    "total": 68
+   },
+   {
+    "id": "zai-org/GLM-5.1",
+    "createdAt": "2026-04-03T09:28:47.000Z",
+    "downloads": 726699,
+    "likes": 1850,
+    "finetune": 11,
+    "adapter": 1,
+    "quantized": 33,
+    "merge": 0,
+    "total": 45
+   }
+  ]
+ },
+ "Kimi": {
+  "repos_checked": 10,
+  "repos_failed": 0,
+  "sum": {
+   "finetune": 178,
+   "adapter": 67,
+   "quantized": 266,
+   "merge": 4,
+   "total": 515
+  },
+  "top": [
+   {
+    "id": "moonshotai/Kimi-K3",
+    "createdAt": "2026-06-13T06:42:57.000Z",
+    "downloads": 874512,
+    "likes": 11829,
+    "finetune": 52,
+    "adapter": 4,
+    "quantized": 59,
+    "merge": 0,
+    "total": 115
+   },
+   {
+    "id": "moonshotai/Kimi-K2.5",
+    "createdAt": "2026-01-01T06:06:03.000Z",
+    "downloads": 340246,
+    "likes": 2893,
+    "finetune": 46,
+    "adapter": 29,
+    "quantized": 39,
+    "merge": 1,
+    "total": 115
+   },
+   {
+    "id": "moonshotai/Kimi-K2.6",
+    "createdAt": "2026-04-14T04:23:36.000Z",
+    "downloads": 353428,
+    "likes": 1636,
+    "finetune": 18,
+    "adapter": 9,
+    "quantized": 45,
+    "merge": 1,
+    "total": 73
+   },
+   {
+    "id": "moonshotai/Kimi-K2-Thinking",
+    "createdAt": "2025-11-04T08:25:31.000Z",
+    "downloads": 47155,
+    "likes": 1730,
+    "finetune": 12,
+    "adapter": 10,
+    "quantized": 18,
+    "merge": 1,
+    "total": 41
+   },
+   {
+    "id": "moonshotai/Kimi-K2-Instruct",
+    "createdAt": "2025-07-11T00:55:12.000Z",
+    "downloads": 325113,
+    "likes": 3007,
+    "finetune": 17,
+    "adapter": 5,
+    "quantized": 18,
+    "merge": 0,
+    "total": 40
+   },
+   {
+    "id": "moonshotai/Kimi-K2.7-Code",
+    "createdAt": "2026-06-11T07:51:47.000Z",
+    "downloads": 89154,
+    "likes": 1424,
+    "finetune": 11,
+    "adapter": 0,
+    "quantized": 28,
+    "merge": 1,
+    "total": 40
+   },
+   {
+    "id": "moonshotai/Kimi-Linear-48B-A3B-Instruct",
+    "createdAt": "2025-10-30T12:37:31.000Z",
+    "downloads": 136030,
+    "likes": 611,
+    "finetune": 10,
+    "adapter": 3,
+    "quantized": 25,
+    "merge": 0,
+    "total": 38
+   },
+   {
+    "id": "moonshotai/Kimi-K2-Instruct-0905",
+    "createdAt": "2025-09-03T03:34:36.000Z",
+    "downloads": 27716,
+    "likes": 790,
+    "finetune": 4,
+    "adapter": 2,
+    "quantized": 16,
+    "merge": 0,
+    "total": 22
+   }
+  ]
+ },
+ "gpt-oss": {
+  "repos_checked": 4,
+  "repos_failed": 0,
+  "sum": {
+   "finetune": 701,
+   "adapter": 729,
+   "quantized": 408,
+   "merge": 11,
+   "total": 1849
+  },
+  "top": [
+   {
+    "id": "openai/gpt-oss-20b",
+    "createdAt": "2025-08-04T22:33:29.000Z",
+    "downloads": 5766151,
+    "likes": 5220,
+    "finetune": 568,
+    "adapter": 480,
+    "quantized": 254,
+    "merge": 7,
+    "total": 1309
+   },
+   {
+    "id": "openai/gpt-oss-120b",
+    "createdAt": "2025-08-04T22:33:06.000Z",
+    "downloads": 2871750,
+    "likes": 5440,
+    "finetune": 124,
+    "adapter": 249,
+    "quantized": 134,
+    "merge": 1,
+    "total": 508
+   },
+   {
+    "id": "openai/gpt-oss-safeguard-20b",
+    "createdAt": "2025-09-18T18:51:08.000Z",
+    "downloads": 18018,
+    "likes": 284,
+    "finetune": 7,
+    "adapter": 0,
+    "quantized": 14,
+    "merge": 2,
+    "total": 23
+   },
+   {
+    "id": "openai/gpt-oss-safeguard-120b",
+    "createdAt": "2025-09-18T18:50:45.000Z",
+    "downloads": 8517,
+    "likes": 120,
+    "finetune": 2,
+    "adapter": 0,
+    "quantized": 6,
+    "merge": 1,
+    "total": 9
+   }
+  ]
+ },
+ "GPT-2": {
+  "repos_checked": 4,
+  "repos_failed": 0,
+  "sum": {
+   "finetune": 2674,
+   "adapter": 2265,
+   "quantized": 150,
+   "merge": 11,
+   "total": 5100
+  },
+  "top": [
+   {
+    "id": "openai-community/gpt2",
+    "createdAt": "2022-03-02T23:29:04.000Z",
+    "downloads": 20867408,
+    "likes": 3893,
+    "finetune": 2299,
+    "adapter": 1737,
+    "quantized": 100,
+    "merge": 11,
+    "total": 4147
+   },
+   {
+    "id": "openai-community/gpt2-medium",
+    "createdAt": "2022-03-02T23:29:04.000Z",
+    "downloads": 164038,
+    "likes": 208,
+    "finetune": 187,
+    "adapter": 293,
+    "quantized": 15,
+    "merge": 0,
+    "total": 495
+   },
+   {
+    "id": "openai-community/gpt2-xl",
+    "createdAt": "2022-03-02T23:29:04.000Z",
+    "downloads": 76335,
+    "likes": 394,
+    "finetune": 68,
+    "adapter": 165,
+    "quantized": 20,
+    "merge": 0,
+    "total": 253
+   },
+   {
+    "id": "openai-community/gpt2-large",
+    "createdAt": "2022-03-02T23:29:04.000Z",
+    "downloads": 793606,
+    "likes": 371,
+    "finetune": 120,
+    "adapter": 70,
+    "quantized": 15,
+    "merge": 0,
+    "total": 205
+   }
+  ]
+ },
+ "BERT": {
+  "repos_checked": 10,
+  "repos_failed": 0,
+  "sum": {
+   "finetune": 13562,
+   "adapter": 238,
+   "quantized": 65,
+   "merge": 7,
+   "total": 13872
+  },
+  "top": [
+   {
+    "id": "google-bert/bert-base-uncased",
+    "createdAt": "2022-03-02T23:29:04.000Z",
+    "downloads": 28972374,
+    "likes": 3055,
+    "finetune": 7033,
+    "adapter": 144,
+    "quantized": 38,
+    "merge": 7,
+    "total": 7222
+   },
+   {
+    "id": "google-bert/bert-base-cased",
+    "createdAt": "2022-03-02T23:29:04.000Z",
+    "downloads": 3420746,
+    "likes": 394,
+    "finetune": 2940,
+    "adapter": 46,
+    "quantized": 5,
+    "merge": 0,
+    "total": 2991
+   },
+   {
+    "id": "google-bert/bert-base-multilingual-uncased",
+    "createdAt": "2022-03-02T23:29:04.000Z",
+    "downloads": 1633755,
+    "likes": 173,
+    "finetune": 1836,
+    "adapter": 0,
+    "quantized": 4,
+    "merge": 0,
+    "total": 1840
+   },
+   {
+    "id": "google-bert/bert-base-multilingual-cased",
+    "createdAt": "2022-03-02T23:29:04.000Z",
+    "downloads": 1405757,
+    "likes": 616,
+    "finetune": 1021,
+    "adapter": 30,
+    "quantized": 10,
+    "merge": 0,
+    "total": 1061
+   },
+   {
+    "id": "google-bert/bert-base-chinese",
+    "createdAt": "2022-03-02T23:29:04.000Z",
+    "downloads": 976813,
+    "likes": 1493,
+    "finetune": 270,
+    "adapter": 4,
+    "quantized": 3,
+    "merge": 0,
+    "total": 277
+   },
+   {
+    "id": "google-bert/bert-large-uncased",
+    "createdAt": "2022-03-02T23:29:04.000Z",
+    "downloads": 260051,
+    "likes": 148,
+    "finetune": 161,
+    "adapter": 12,
+    "quantized": 2,
+    "merge": 0,
+    "total": 175
+   },
+   {
+    "id": "google-bert/bert-base-german-cased",
+    "createdAt": "2022-03-02T23:29:04.000Z",
+    "downloads": 407077,
+    "likes": 82,
+    "finetune": 145,
+    "adapter": 1,
+    "quantized": 1,
+    "merge": 0,
+    "total": 147
+   },
+   {
+    "id": "google-bert/bert-large-cased",
+    "createdAt": "2022-03-02T23:29:04.000Z",
+    "downloads": 789533,
+    "likes": 38,
+    "finetune": 131,
+    "adapter": 1,
+    "quantized": 1,
+    "merge": 0,
+    "total": 133
+   }
+  ]
+ },
+ "Hunyuan": {
+  "repos_checked": 10,
+  "repos_failed": 0,
+  "sum": {
+   "finetune": 51,
+   "adapter": 7,
+   "quantized": 56,
+   "merge": 0,
+   "total": 114
+  },
+  "top": [
+   {
+    "id": "tencent/Hunyuan-A13B-Instruct",
+    "createdAt": "2025-06-25T12:39:52.000Z",
+    "downloads": 66424,
+    "likes": 795,
+    "finetune": 9,
+    "adapter": 3,
+    "quantized": 17,
+    "merge": 0,
+    "total": 29
+   },
+   {
+    "id": "tencent/Hunyuan-7B-Instruct",
+    "createdAt": "2025-07-30T03:40:59.000Z",
+    "downloads": 11516,
+    "likes": 90,
+    "finetune": 5,
+    "adapter": 0,
+    "quantized": 17,
+    "merge": 0,
+    "total": 22
+   },
+   {
+    "id": "tencent/Hunyuan3D-2.1",
+    "createdAt": "2025-06-13T16:10:02.000Z",
+    "downloads": 80002,
+    "likes": 1316,
+    "finetune": 18,
+    "adapter": 2,
+    "quantized": 1,
+    "merge": 0,
+    "total": 21
+   },
+   {
+    "id": "tencent/HunyuanOCR",
+    "createdAt": "2025-11-18T04:08:56.000Z",
+    "downloads": 830713,
+    "likes": 842,
+    "finetune": 7,
+    "adapter": 2,
+    "quantized": 11,
+    "merge": 0,
+    "total": 20
+   },
+   {
+    "id": "tencent/HunyuanImage-3.0-Instruct",
+    "createdAt": "2025-09-25T06:28:53.000Z",
+    "downloads": 40270,
+    "likes": 1061,
+    "finetune": 4,
+    "adapter": 0,
+    "quantized": 7,
+    "merge": 0,
+    "total": 11
+   },
+   {
+    "id": "tencent/Hunyuan3D-2",
+    "createdAt": "2025-01-20T06:55:37.000Z",
+    "downloads": 160751,
+    "likes": 1859,
+    "finetune": 7,
+    "adapter": 0,
+    "quantized": 2,
+    "merge": 0,
+    "total": 9
+   },
+   {
+    "id": "tencent/Hunyuan3D-2mini",
+    "createdAt": "2025-03-12T11:36:01.000Z",
+    "downloads": 48679,
+    "likes": 145,
+    "finetune": 1,
+    "adapter": 0,
+    "quantized": 1,
+    "merge": 0,
+    "total": 2
+   },
+   {
+    "id": "tencent/Hunyuan3D-2mv",
+    "createdAt": "2025-03-12T11:36:17.000Z",
+    "downloads": 17576,
+    "likes": 436,
+    "finetune": 0,
+    "adapter": 0,
+    "quantized": 0,
+    "merge": 0,
+    "total": 0
+   }
+  ]
+ },
+ "ERNIE": {
+  "repos_checked": 10,
+  "repos_failed": 0,
+  "sum": {
+   "finetune": 55,
+   "adapter": 50,
+   "quantized": 118,
+   "merge": 3,
+   "total": 226
+  },
+  "top": [
+   {
+    "id": "baidu/ERNIE-Image",
+    "createdAt": "2026-04-07T07:26:56.000Z",
+    "downloads": 1919,
+    "likes": 681,
+    "finetune": 13,
+    "adapter": 29,
+    "quantized": 15,
+    "merge": 1,
+    "total": 58
+   },
+   {
+    "id": "baidu/ERNIE-Image-Turbo",
+    "createdAt": "2026-04-02T10:57:06.000Z",
+    "downloads": 2846,
+    "likes": 409,
+    "finetune": 15,
+    "adapter": 13,
+    "quantized": 18,
+    "merge": 1,
+    "total": 47
+   },
+   {
+    "id": "baidu/ERNIE-4.5-0.3B-PT",
+    "createdAt": "2025-06-28T06:11:42.000Z",
+    "downloads": 10728,
+    "likes": 112,
+    "finetune": 11,
+    "adapter": 4,
+    "quantized": 25,
+    "merge": 0,
+    "total": 40
+   },
+   {
+    "id": "baidu/ERNIE-4.5-21B-A3B-Thinking",
+    "createdAt": "2025-09-08T14:18:31.000Z",
+    "downloads": 67271,
+    "likes": 794,
+    "finetune": 6,
+    "adapter": 2,
+    "quantized": 24,
+    "merge": 1,
+    "total": 33
+   },
+   {
+    "id": "baidu/ERNIE-4.5-21B-A3B-PT",
+    "createdAt": "2025-06-28T06:13:30.000Z",
+    "downloads": 15181,
+    "likes": 178,
+    "finetune": 1,
+    "adapter": 0,
+    "quantized": 23,
+    "merge": 0,
+    "total": 24
+   },
+   {
+    "id": "baidu/ERNIE-4.5-300B-A47B-PT",
+    "createdAt": "2025-06-28T05:38:53.000Z",
+    "downloads": 3270,
+    "likes": 78,
+    "finetune": 3,
+    "adapter": 0,
+    "quantized": 6,
+    "merge": 0,
+    "total": 9
+   },
+   {
+    "id": "baidu/ERNIE-4.5-0.3B-Base-PT",
+    "createdAt": "2025-06-28T06:10:12.000Z",
+    "downloads": 2219,
+    "likes": 27,
+    "finetune": 1,
+    "adapter": 1,
+    "quantized": 5,
+    "merge": 0,
+    "total": 7
+   },
+   {
+    "id": "baidu/ERNIE-4.5-VL-28B-A3B-Thinking",
+    "createdAt": "2025-11-07T02:48:32.000Z",
+    "downloads": 2499,
+    "likes": 544,
+    "finetune": 2,
+    "adapter": 1,
+    "quantized": 2,
+    "merge": 0,
+    "total": 5
+   }
+  ]
+ },
+ "MiniMax": {
+  "repos_checked": 10,
+  "repos_failed": 0,
+  "sum": {
+   "finetune": 294,
+   "adapter": 169,
+   "quantized": 392,
+   "merge": 15,
+   "total": 870
+  },
+  "top": [
+   {
+    "id": "MiniMaxAI/MiniMax-H3",
+    "createdAt": "2026-07-28T10:45:18.000Z",
+    "downloads": 5173270,
+    "likes": 6368,
+    "finetune": 199,
+    "adapter": 164,
+    "quantized": 83,
+    "merge": 9,
+    "total": 455
+   },
+   {
+    "id": "MiniMaxAI/MiniMax-M2.7",
+    "createdAt": "2026-04-09T03:37:12.000Z",
+    "downloads": 422497,
+    "likes": 1260,
+    "finetune": 27,
+    "adapter": 0,
+    "quantized": 110,
+    "merge": 2,
+    "total": 139
+   },
+   {
+    "id": "MiniMaxAI/MiniMax-M2.5",
+    "createdAt": "2026-02-12T06:05:24.000Z",
+    "downloads": 1019217,
+    "likes": 1526,
+    "finetune": 27,
+    "adapter": 1,
+    "quantized": 63,
+    "merge": 2,
+    "total": 93
+   },
+   {
+    "id": "MiniMaxAI/MiniMax-M3",
+    "createdAt": "2026-06-02T07:49:31.000Z",
+    "downloads": 201055,
+    "likes": 1597,
+    "finetune": 14,
+    "adapter": 1,
+    "quantized": 58,
+    "merge": 0,
+    "total": 73
+   },
+   {
+    "id": "MiniMaxAI/MiniMax-M2",
+    "createdAt": "2025-10-22T13:45:10.000Z",
+    "downloads": 110453,
+    "likes": 1513,
+    "finetune": 15,
+    "adapter": 2,
+    "quantized": 39,
+    "merge": 2,
+    "total": 58
+   },
+   {
+    "id": "MiniMaxAI/MiniMax-M2.1",
+    "createdAt": "2025-12-20T05:45:05.000Z",
+    "downloads": 12108,
+    "likes": 1373,
+    "finetune": 12,
+    "adapter": 1,
+    "quantized": 37,
+    "merge": 0,
+    "total": 50
+   },
+   {
+    "id": "MiniMaxAI/MiniMax-M3-MXFP8",
+    "createdAt": "2026-06-02T07:50:45.000Z",
+    "downloads": 46686,
+    "likes": 62,
+    "finetune": 0,
+    "adapter": 0,
+    "quantized": 2,
+    "merge": 0,
+    "total": 2
+   },
+   {
+    "id": "MiniMaxAI/MiniMax-M1-40k",
+    "createdAt": "2025-06-05T08:42:49.000Z",
+    "downloads": 24211,
+    "likes": 185,
+    "finetune": 0,
+    "adapter": 0,
+    "quantized": 0,
+    "merge": 0,
+    "total": 0
+   }
+  ]
+ },
+ "Seed": {
+  "repos_checked": 10,
+  "repos_failed": 0,
+  "sum": {
+   "finetune": 138,
+   "adapter": 20,
+   "quantized": 106,
+   "merge": 3,
+   "total": 267
+  },
+  "top": [
+   {
+    "id": "ByteDance-Seed/BAGEL-7B-MoT",
+    "createdAt": "2025-05-19T23:27:50.000Z",
+    "downloads": 3903,
+    "likes": 1237,
+    "finetune": 71,
+    "adapter": 5,
+    "quantized": 5,
+    "merge": 1,
+    "total": 82
+   },
+   {
+    "id": "ByteDance-Seed/Seed-OSS-36B-Instruct",
+    "createdAt": "2025-08-20T15:03:26.000Z",
+    "downloads": 44778,
+    "likes": 506,
+    "finetune": 21,
+    "adapter": 4,
+    "quantized": 39,
+    "merge": 1,
+    "total": 65
+   },
+   {
+    "id": "ByteDance-Seed/Seed-Coder-8B-Instruct",
+    "createdAt": "2025-04-27T07:52:37.000Z",
+    "downloads": 2912,
+    "likes": 119,
+    "finetune": 4,
+    "adapter": 8,
+    "quantized": 20,
+    "merge": 0,
+    "total": 32
+   },
+   {
+    "id": "ByteDance-Seed/UI-TARS-1.5-7B",
+    "createdAt": "2025-04-16T09:40:50.000Z",
+    "downloads": 103286,
+    "likes": 615,
+    "finetune": 12,
+    "adapter": 2,
+    "quantized": 13,
+    "merge": 1,
+    "total": 28
+   },
+   {
+    "id": "ByteDance-Seed/Seed-X-PPO-7B",
+    "createdAt": "2025-07-16T12:34:59.000Z",
+    "downloads": 2211,
+    "likes": 303,
+    "finetune": 5,
+    "adapter": 0,
+    "quantized": 14,
+    "merge": 0,
+    "total": 19
+   },
+   {
+    "id": "ByteDance-Seed/SeedVR2-3B",
+    "createdAt": "2025-06-10T15:59:52.000Z",
+    "downloads": 18139,
+    "likes": 143,
+    "finetune": 14,
+    "adapter": 1,
+    "quantized": 3,
+    "merge": 0,
+    "total": 18
+   },
+   {
+    "id": "ByteDance-Seed/SeedVR2-7B",
+    "createdAt": "2025-06-11T12:37:31.000Z",
+    "downloads": 38597,
+    "likes": 163,
+    "finetune": 9,
+    "adapter": 0,
+    "quantized": 1,
+    "merge": 0,
+    "total": 10
+   },
+   {
+    "id": "ByteDance-Seed/Seed-X-Instruct-7B",
+    "createdAt": "2025-07-16T13:46:09.000Z",
+    "downloads": 2495,
+    "likes": 129,
+    "finetune": 1,
+    "adapter": 0,
+    "quantized": 8,
+    "merge": 0,
+    "total": 9
+   }
+  ]
+ },
+ "Yi": {
+  "repos_checked": 10,
+  "repos_failed": 0,
+  "sum": {
+   "finetune": 65,
+   "adapter": 365,
+   "quantized": 114,
+   "merge": 8,
+   "total": 552
+  },
+  "top": [
+   {
+    "id": "01-ai/Yi-1.5-9B",
+    "createdAt": "2024-05-11T08:34:14.000Z",
+    "downloads": 14221,
+    "likes": 53,
+    "finetune": 9,
+    "adapter": 208,
+    "quantized": 11,
+    "merge": 1,
+    "total": 229
+   },
+   {
+    "id": "01-ai/Yi-1.5-9B-Chat",
+    "createdAt": "2024-05-10T05:38:24.000Z",
+    "downloads": 16708,
+    "likes": 149,
+    "finetune": 10,
+    "adapter": 104,
+    "quantized": 20,
+    "merge": 0,
+    "total": 134
+   },
+   {
+    "id": "01-ai/Yi-6B",
+    "createdAt": "2023-11-01T11:14:36.000Z",
+    "downloads": 13206,
+    "likes": 376,
+    "finetune": 10,
+    "adapter": 23,
+    "quantized": 8,
+    "merge": 0,
+    "total": 41
+   },
+   {
+    "id": "01-ai/Yi-1.5-34B-Chat",
+    "createdAt": "2024-05-10T06:47:21.000Z",
+    "downloads": 14055,
+    "likes": 280,
+    "finetune": 6,
+    "adapter": 0,
+    "quantized": 22,
+    "merge": 1,
+    "total": 29
+   },
+   {
+    "id": "01-ai/Yi-6B-Chat",
+    "createdAt": "2023-11-22T09:52:53.000Z",
+    "downloads": 21801,
+    "likes": 72,
+    "finetune": 7,
+    "adapter": 15,
+    "quantized": 6,
+    "merge": 0,
+    "total": 28
+   },
+   {
+    "id": "01-ai/Yi-34B",
+    "createdAt": "2023-11-01T07:03:50.000Z",
+    "downloads": 10305,
+    "likes": 1314,
+    "finetune": 11,
+    "adapter": 3,
+    "quantized": 9,
+    "merge": 3,
+    "total": 26
+   },
+   {
+    "id": "01-ai/Yi-1.5-34B",
+    "createdAt": "2024-05-11T08:32:01.000Z",
+    "downloads": 9917,
+    "likes": 51,
+    "finetune": 8,
+    "adapter": 0,
+    "quantized": 13,
+    "merge": 1,
+    "total": 22
+   },
+   {
+    "id": "01-ai/Yi-1.5-6B",
+    "createdAt": "2024-05-11T08:25:23.000Z",
+    "downloads": 14812,
+    "likes": 32,
+    "finetune": 3,
+    "adapter": 7,
+    "quantized": 7,
+    "merge": 2,
+    "total": 19
+   }
+  ]
+ },
+ "Falcon": {
+  "repos_checked": 10,
+  "repos_failed": 0,
+  "sum": {
+   "finetune": 162,
+   "adapter": 413,
+   "quantized": 180,
+   "merge": 2,
+   "total": 757
+  },
+  "top": [
+   {
+    "id": "tiiuae/falcon-7b",
+    "createdAt": "2023-04-24T16:36:24.000Z",
+    "downloads": 176136,
+    "likes": 1116,
+    "finetune": 47,
+    "adapter": 289,
+    "quantized": 13,
+    "merge": 0,
+    "total": 349
+   },
+   {
+    "id": "tiiuae/falcon-7b-instruct",
+    "createdAt": "2023-04-25T06:21:01.000Z",
+    "downloads": 32440,
+    "likes": 1041,
+    "finetune": 30,
+    "adapter": 81,
+    "quantized": 16,
+    "merge": 0,
+    "total": 127
+   },
+   {
+    "id": "tiiuae/Falcon3-7B-Instruct",
+    "createdAt": "2024-11-29T10:12:15.000Z",
+    "downloads": 11290,
+    "likes": 80,
+    "finetune": 36,
+    "adapter": 11,
+    "quantized": 55,
+    "merge": 1,
+    "total": 103
+   },
+   {
+    "id": "tiiuae/Falcon3-1B-Instruct",
+    "createdAt": "2024-12-14T05:43:18.000Z",
+    "downloads": 7694,
+    "likes": 46,
+    "finetune": 22,
+    "adapter": 16,
+    "quantized": 57,
+    "merge": 0,
+    "total": 95
+   },
+   {
+    "id": "tiiuae/falcon-mamba-7b",
+    "createdAt": "2024-07-17T07:06:26.000Z",
+    "downloads": 12414,
+    "likes": 248,
+    "finetune": 4,
+    "adapter": 4,
+    "quantized": 13,
+    "merge": 0,
+    "total": 21
+   },
+   {
+    "id": "tiiuae/falcon-40b",
+    "createdAt": "2023-05-24T12:08:30.000Z",
+    "downloads": 7602,
+    "likes": 2449,
+    "finetune": 5,
+    "adapter": 12,
+    "quantized": 4,
+    "merge": 0,
+    "total": 21
+   },
+   {
+    "id": "tiiuae/Falcon-H1-7B-Instruct",
+    "createdAt": "2025-05-01T15:44:30.000Z",
+    "downloads": 17620,
+    "likes": 36,
+    "finetune": 5,
+    "adapter": 0,
+    "quantized": 12,
+    "merge": 1,
+    "total": 18
+   },
+   {
+    "id": "tiiuae/Falcon-H1-0.5B-Base",
+    "createdAt": "2025-05-01T05:08:29.000Z",
+    "downloads": 19659,
+    "likes": 17,
+    "finetune": 11,
+    "adapter": 0,
+    "quantized": 3,
+    "merge": 0,
+    "total": 14
+   }
+  ]
+ },
+ "BLOOM": {
+  "repos_checked": 10,
+  "repos_failed": 0,
+  "sum": {
+   "finetune": 102,
+   "adapter": 656,
+   "quantized": 60,
+   "merge": 2,
+   "total": 820
+  },
+  "top": [
+   {
+    "id": "bigscience/bloomz-560m",
+    "createdAt": "2022-10-08T16:14:42.000Z",
+    "downloads": 807358,
+    "likes": 149,
+    "finetune": 33,
+    "adapter": 279,
+    "quantized": 7,
+    "merge": 0,
+    "total": 319
+   },
+   {
+    "id": "bigscience/bloom-560m",
+    "createdAt": "2022-05-19T11:51:24.000Z",
+    "downloads": 338668,
+    "likes": 376,
+    "finetune": 37,
+    "adapter": 129,
+    "quantized": 14,
+    "merge": 0,
+    "total": 180
+   },
+   {
+    "id": "bigscience/bloom-1b7",
+    "createdAt": "2022-05-19T11:52:06.000Z",
+    "downloads": 3546,
+    "likes": 123,
+    "finetune": 12,
+    "adapter": 53,
+    "quantized": 8,
+    "merge": 0,
+    "total": 73
+   },
+   {
+    "id": "bigscience/bloomz-3b",
+    "createdAt": "2022-10-08T16:47:24.000Z",
+    "downloads": 4381,
+    "likes": 81,
+    "finetune": 4,
+    "adapter": 50,
+    "quantized": 4,
+    "merge": 0,
+    "total": 58
+   },
+   {
+    "id": "bigscience/bloom-3b",
+    "createdAt": "2022-05-19T11:52:27.000Z",
+    "downloads": 10248,
+    "likes": 96,
+    "finetune": 5,
+    "adapter": 47,
+    "quantized": 5,
+    "merge": 0,
+    "total": 57
+   },
+   {
+    "id": "bigscience/bloom-7b1",
+    "createdAt": "2022-05-19T11:53:18.000Z",
+    "downloads": 2659,
+    "likes": 203,
+    "finetune": 3,
+    "adapter": 41,
+    "quantized": 8,
+    "merge": 0,
+    "total": 52
+   },
+   {
+    "id": "bigscience/bloom-1b1",
+    "createdAt": "2022-05-19T11:51:48.000Z",
+    "downloads": 28854,
+    "likes": 67,
+    "finetune": 4,
+    "adapter": 37,
+    "quantized": 4,
+    "merge": 0,
+    "total": 45
+   },
+   {
+    "id": "bigscience/bloomz-1b1",
+    "createdAt": "2022-10-08T16:16:01.000Z",
+    "downloads": 1331,
+    "likes": 33,
+    "finetune": 0,
+    "adapter": 13,
+    "quantized": 5,
+    "merge": 0,
+    "total": 18
+   }
+  ]
+ },
+ "Grok": {
+  "repos_checked": 2,
+  "repos_failed": 0,
+  "sum": {
+   "finetune": 13,
+   "adapter": 1,
+   "quantized": 10,
+   "merge": 1,
+   "total": 25
+  },
+  "top": [
+   {
+    "id": "xai-org/grok-2",
+    "createdAt": "2025-08-22T21:16:24.000Z",
+    "downloads": 9493,
+    "likes": 1196,
+    "finetune": 8,
+    "adapter": 0,
+    "quantized": 10,
+    "merge": 1,
+    "total": 19
+   },
+   {
+    "id": "xai-org/grok-1",
+    "createdAt": "2024-03-17T05:47:21.000Z",
+    "downloads": 2100,
+    "likes": 2482,
+    "finetune": 5,
+    "adapter": 1,
+    "quantized": 0,
+    "merge": 0,
+    "total": 6
+   }
+  ]
+ },
+ "OLMo": {
+  "repos_checked": 10,
+  "repos_failed": 0,
+  "sum": {
+   "finetune": 559,
+   "adapter": 305,
+   "quantized": 163,
+   "merge": 5,
+   "total": 1032
+  },
+  "top": [
+   {
+    "id": "allenai/Olmo-3-7B-Instruct",
+    "createdAt": "2025-11-19T20:49:53.000Z",
+    "downloads": 262454,
+    "likes": 159,
+    "finetune": 348,
+    "adapter": 49,
+    "quantized": 41,
+    "merge": 1,
+    "total": 439
+   },
+   {
+    "id": "allenai/Olmo-3-7B-Think",
+    "createdAt": "2025-11-18T01:22:27.000Z",
+    "downloads": 485730,
+    "likes": 110,
+    "finetune": 17,
+    "adapter": 140,
+    "quantized": 34,
+    "merge": 1,
+    "total": 192
+   },
+   {
+    "id": "allenai/Olmo-3-1025-7B",
+    "createdAt": "2025-09-12T19:24:57.000Z",
+    "downloads": 156273,
+    "likes": 90,
+    "finetune": 87,
+    "adapter": 74,
+    "quantized": 16,
+    "merge": 2,
+    "total": 179
+   },
+   {
+    "id": "allenai/OLMo-2-0425-1B",
+    "createdAt": "2025-04-17T22:45:45.000Z",
+    "downloads": 114094,
+    "likes": 82,
+    "finetune": 47,
+    "adapter": 12,
+    "quantized": 13,
+    "merge": 1,
+    "total": 73
+   },
+   {
+    "id": "allenai/OLMo-2-1124-7B",
+    "createdAt": "2024-10-29T21:08:22.000Z",
+    "downloads": 69879,
+    "likes": 72,
+    "finetune": 21,
+    "adapter": 9,
+    "quantized": 22,
+    "merge": 0,
+    "total": 52
+   },
+   {
+    "id": "allenai/OLMoE-1B-7B-0125-Instruct",
+    "createdAt": "2025-01-27T18:54:09.000Z",
+    "downloads": 68756,
+    "likes": 68,
+    "finetune": 26,
+    "adapter": 7,
+    "quantized": 13,
+    "merge": 0,
+    "total": 46
+   },
+   {
+    "id": "allenai/olmOCR-2-7B-1025",
+    "createdAt": "2025-10-06T21:16:59.000Z",
+    "downloads": 76658,
+    "likes": 159,
+    "finetune": 6,
+    "adapter": 10,
+    "quantized": 11,
+    "merge": 0,
+    "total": 27
+   },
+   {
+    "id": "allenai/OLMoE-1B-7B-0924",
+    "createdAt": "2024-07-20T18:38:51.000Z",
+    "downloads": 64096,
+    "likes": 156,
+    "finetune": 7,
+    "adapter": 4,
+    "quantized": 9,
+    "merge": 0,
+    "total": 20
+   }
+  ]
+ }
+}

@@ -1,0 +1,40 @@
+/* 第五期封面：和片头同一套视觉（虚化早餐图 + 深色参数卡 + 照片详情卡） */
+@font-face { font-family: "Sans"; src: url("fonts/NotoSansSC-Bold.otf"); font-weight: 700; }
+@font-face { font-family: "Sans"; src: url("fonts/NotoSansSC-Medium.otf"); font-weight: 500; }
+@font-face { font-family: "Mono"; src: url("fonts/CascadiaMono.ttf"); font-weight: 200 700; }
+:root { --ink: #23262b; --ink2: #5d636c; --hi: #ec7a2c; --paper: #f5f1ea; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { overflow: hidden; background: #111; }
+.stage { position: relative; overflow: hidden; font-family: "Sans"; }
+.bg { position: absolute; inset: -60px; background: url("hero.jpg") center/cover; filter: blur(26px) brightness(.46) saturate(.95); }
+.vignette { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 75% at 50% 45%, rgba(0,0,0,0) 50%, rgba(0,0,0,.4) 100%); }
+
+/* 参数宣传卡（通用，不出现品牌） */
+.spec { position: absolute; border-radius: 36px; overflow: hidden; box-shadow: 0 40px 80px rgba(0,0,0,.55);
+  background: radial-gradient(ellipse 80% 60% at 30% 20%, #3a3f48 0%, #16181c 70%); }
+.spec .lens { position: absolute; border-radius: 50%;
+  background: radial-gradient(circle, #0b0c0e 0 45%, #15171a 45% 58%, #3c414a 58% 66%, #101215 66% 82%, #2b2f36 82% 100%); }
+.spec .lens::after { content: ""; position: absolute; left: 34%; top: 30%; width: 16%; height: 11%; border-radius: 50%; background: rgba(140,190,255,.5); filter: blur(2px); }
+.spec .big { position: absolute; font-weight: 700; line-height: 1; letter-spacing: -.02em;
+  background: linear-gradient(180deg, #fff 0%, #d9dde3 45%, #8d949e 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.spec .unit { position: absolute; font-weight: 700; color: #e8ebef; letter-spacing: .1em; }
+
+/* 照片详情卡 */
+.info { position: absolute; border-radius: 30px; background: #fbfaf7; overflow: hidden; box-shadow: 0 40px 90px rgba(0,0,0,.5); }
+.info .thumb { background: url("hero.jpg") center 40%/cover; }
+.info .body { padding: .7em 1.2em .9em; }
+.info .h { font-weight: 700; color: var(--ink); margin-bottom: .35em; }
+.info .row { display: flex; justify-content: space-between; align-items: baseline; padding: .42em .55em; border-radius: .35em;
+  background: rgba(236,122,44,.13); box-shadow: 0 0 0 .1em var(--hi) inset; font-weight: 500; color: var(--ink); }
+.info .row .v { font-family: "Mono"; font-weight: 700; color: var(--hi); }
+.info .calc { margin-top: .5em; font-family: "Mono"; color: var(--ink); white-space: nowrap; }
+.info .calc .q { color: #9aa0a8; }
+
+/* 标题 */
+.title { position: absolute; color: #fff; text-shadow: 0 6px 30px rgba(0,0,0,.45); }
+.title .l1 { font-weight: 700; line-height: 1.12; white-space: nowrap; }
+.title .l2 { font-weight: 700; line-height: 1.08; white-space: nowrap; }
+.title .l2 em { font-style: normal; color: var(--hi); }
+.title .sub { display: inline-block; margin-top: .55em; padding: .22em .7em; border-radius: .5em; background: rgba(245,241,234,.94);
+  color: var(--ink); font-weight: 700; text-shadow: none; letter-spacing: .06em; }
+.arrow { position: absolute; color: var(--hi); font-weight: 700; text-shadow: 0 4px 20px rgba(0,0,0,.5); }

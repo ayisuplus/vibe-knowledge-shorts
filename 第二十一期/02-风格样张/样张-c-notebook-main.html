@@ -1,0 +1,41 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><title>样张 C · 实验记录本</title><style>
+@font-face{font-family:NotoSC;src:url(fonts/NotoSansSC-VF.ttf)}
+@font-face{font-family:NotoSerifSC;src:url(fonts/NotoSerifSC-VF.ttf)}
+@font-face{font-family:CascadiaMono;src:url(fonts/CascadiaMono.ttf)}
+@font-face{font-family:WenKai;src:url(fonts/LXGWWenKai-Regular.ttf)}
+*{box-sizing:border-box} html,body{margin:0;width:1920px;height:1080px;overflow:hidden}
+body{font-family:NotoSC,sans-serif}
+.frame{position:relative;width:1920px;height:1080px;overflow:hidden;isolation:isolate}
+.art{position:absolute;inset:0;width:1920px;height:1080px}
+.mono{font-family:CascadiaMono,NotoSC,monospace}
+.serif{font-family:NotoSerifSC,serif}
+.hand{font-family:WenKai,NotoSC,sans-serif}
+.abs{position:absolute}
+.mode{position:absolute;left:76px;top:47px;font-size:24px;font-weight:600;letter-spacing:.14em;opacity:.85}
+.tag{position:absolute;left:50%;top:37px;transform:translateX(-50%);height:48px;line-height:44px;padding:0 28px;border-radius:25px;font-size:23px;letter-spacing:.12em;border:1px solid;white-space:nowrap}
+.mark{position:absolute;right:80px;top:48px;font-size:25px;letter-spacing:.10em;opacity:.85}
+.note{position:absolute;top:782px;left:110px;width:1700px;text-align:center;font-size:30px;font-weight:500;line-height:1.3;white-space:nowrap}
+.caption{position:absolute;top:918px;left:110px;width:1700px;text-align:center;font-size:46px;line-height:1.35;font-weight:800;letter-spacing:.035em;white-space:nowrap;text-shadow:0 2px 12px #000c}
+.cap-en{display:block;font-size:26px;font-weight:400;font-style:italic;letter-spacing:.02em;opacity:.72;margin-top:4px}
+
+.frame{color:#f1ede4;background:radial-gradient(ellipse at 50% 45%,#262523 0%,#1a1918 55%,#0f0f0e 100%)}
+.mode,.mark{color:#b9b2a3}.tag{color:#ffc58a;border-color:#7a5a36;background:#171512e0}
+.note{color:#cfc8ba}.caption{color:#fffaf0}
+.hl{position:absolute;font-family:WenKai,NotoSC,sans-serif;white-space:nowrap}
+.tk{position:absolute;width:200px;margin-left:-100px;text-align:center;font-family:WenKai,NotoSC,sans-serif;font-size:34px;color:#e9e3d6}
+.card{position:absolute;left:190px;top:206px;width:800px;height:520px;background:#f1ead9;color:#26221b;transform:rotate(-1.6deg);box-shadow:0 30px 80px #000b;padding:48px 58px}
+.card:before{content:"";position:absolute;left:300px;top:-18px;width:180px;height:40px;background:#e8d9b0cc;transform:rotate(2deg)}
+.card .k{font-family:WenKai,NotoSC,sans-serif;font-size:28px;color:#8a5a26}
+.card .q{margin-top:22px;font-size:54px;line-height:1.38;font-weight:900}
+.card .en{margin-top:20px;font-size:22px;line-height:1.5;font-style:italic;color:#5e5546}
+.card .ft{position:absolute;left:58px;bottom:34px;font-size:21px;color:#6e6455}
+.big{position:absolute;font-family:WenKai,NotoSC,sans-serif;line-height:1}
+</style></head><body><div class="frame"><svg class="art" viewBox="0 0 1920 1080"><defs>
+<filter id="soft" filterUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1080"><feGaussianBlur stdDeviation="18"/></filter>
+<filter id="soft2" filterUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1080"><feGaussianBlur stdDeviation="42"/></filter>
+<filter id="rough" filterUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1080"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="7" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="4"/></filter>
+<radialGradient id="orbCore"><stop offset="0" stop-color="#fffbe9"/><stop offset=".35" stop-color="#ffd890"/><stop offset="1" stop-color="#ffb347" stop-opacity="0"/></radialGradient>
+<radialGradient id="orbHalo"><stop offset="0" stop-color="#ffb347" stop-opacity=".55"/><stop offset="1" stop-color="#ffb347" stop-opacity="0"/></radialGradient>
+<pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0 L0 0 0 40" fill="none" stroke="#ffffff" stroke-opacity=".045" stroke-width="1"/></pattern>
+<pattern id="grid5" width="200" height="200" patternUnits="userSpaceOnUse"><path d="M200 0 L0 0 0 200" fill="none" stroke="#ffffff" stroke-opacity=".08" stroke-width="1.2"/></pattern>
+</defs><rect width="1920" height="1080" fill="url(#grid)"/><rect width="1920" height="1080" fill="url(#grid5)"/><line x1="150" y1="0" x2="150" y2="1080" stroke="#ffb347" stroke-opacity=".22" stroke-width="2"/><g filter="url(#rough)"><path d="M300 640 L1700 640 M1680 628 L1702 640 L1680 652" fill="none" stroke="#f2eee4" stroke-width="4" stroke-linecap="round" opacity=".85"/><path d="M300 640 L300 230 M288 252 L300 228 L312 252" fill="none" stroke="#f2eee4" stroke-width="4" stroke-linecap="round" opacity=".85"/><line x1="420" y1="628" x2="420" y2="652" stroke="#f2eee4" stroke-width="4" stroke-linecap="round" opacity=".8"/><line x1="780" y1="628" x2="780" y2="652" stroke="#f2eee4" stroke-width="4" stroke-linecap="round" opacity=".8"/><line x1="1140" y1="628" x2="1140" y2="652" stroke="#f2eee4" stroke-width="4" stroke-linecap="round" opacity=".8"/><line x1="1500" y1="628" x2="1500" y2="652" stroke="#f2eee4" stroke-width="4" stroke-linecap="round" opacity=".8"/><path d="M380 640 C540 623 660 544.8 780 517.6 C950 483.6 990 300 1140 300 C1280 300 1330 306.8 1440 334 C1475 361.2 1485 589 1540 616.2 C1580 623 1620 623 1670 623" fill="none" stroke="#f2eee4" stroke-width="5.5" stroke-linecap="round"/><path d="M1580 566 L1650 566 L1654 600 L1576 600 Z M1580 566 L1562 544 M1650 566 L1670 542 M1580 566 L1598 552 L1666 552 L1650 566" fill="none" stroke="#f2eee4" stroke-width="3" stroke-linejoin="round" opacity=".75"/><path d="M1280 236 C1240 232 1200 250 1172 282" fill="none" stroke="#ffb347" stroke-width="3.5" stroke-linecap="round"/><path d="M1168 262 L1170 286 L1192 278" fill="none" stroke="#ffb347" stroke-width="3.5" stroke-linecap="round"/><path d="M1700 500 C1680 512 1660 526 1640 540" fill="none" stroke="#f2eee4" stroke-width="3" stroke-linecap="round" opacity=".8"/></g><circle cx="1140" cy="300" r="10" fill="none" stroke="#ffb347" stroke-width="3"/><circle cx="1478.4" cy="307.5" r="2.9" fill="#ffb347" opacity="0.17"/><circle cx="1497.4" cy="279.2" r="3.3" fill="#ffb347" opacity="0.23"/><circle cx="1516.8" cy="255.0" r="3.7" fill="#ffb347" opacity="0.28"/><circle cx="1536.7" cy="234.9" r="4.1" fill="#ffb347" opacity="0.34"/><circle cx="1557.1" cy="218.9" r="4.5" fill="#ffb347" opacity="0.39"/><circle cx="1578.0" cy="207.1" r="4.9" fill="#ffb347" opacity="0.45"/><circle cx="1599.4" cy="199.4" r="5.3" fill="#ffb347" opacity="0.50"/><circle cx="1621.3" cy="195.9" r="5.8" fill="#ffb347" opacity="0.56"/><circle cx="1643.7" cy="196.4" r="6.2" fill="#ffb347" opacity="0.61"/><circle cx="1666.6" cy="201.2" r="6.6" fill="#ffb347" opacity="0.67"/><circle cx="1690" cy="210" r="100.80000000000001" fill="url(#orbHalo)"/><circle cx="1690" cy="210" r="38.400000000000006" fill="url(#orbCore)"/><circle cx="1690" cy="210" r="10.08" fill="#fffdf4"/></svg><div class="tk" style="left:420px;top:664px">下单</div><div class="tk" style="left:780px;top:664px">发货</div><div class="tk" style="left:1140px;top:664px">派送中</div><div class="tk" style="left:1500px;top:664px">签收</div><div class="hl" style="left:208px;top:236px;font-size:32px;color:#e9e3d6">想要</div><div class="hl" style="left:1712px;top:618px;font-size:32px;color:#e9e3d6">时间</div><div class="hl" style="left:1290px;top:200px;font-size:36px;color:#ffc58a">最惦记的时候</div><div class="hl" style="left:1650px;top:450px;font-size:34px;color:#e9e3d6">拆开：光走了</div><div class="mode">C · 实验记录本</div><div class="tag">① 冷开场 · 签收那一刻</div><div class="mark">风格样张</div><div class="note" data-check="note">「想要」Wanting 在拿到之前最强 · 类比示意，不是测量数据</div><div class="caption" data-check="caption">刷了八遍物流，拆开那一刻，它就不亮了。<span class="cap-en">Eight refreshes of tracking — and the moment it's opened, the glow is gone.</span></div></div></body></html>

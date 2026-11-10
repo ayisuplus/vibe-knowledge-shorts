@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><link rel="stylesheet" href="style.css">
+<style>
+  /* S5 115s：AI 的冷光打开了锁 ① ③，锁 ② 打不开 */
+  .stage { background: radial-gradient(ellipse 70% 80% at 50% 30%, #1c2630 0%, #0d1218 55%, #07090c 100%); }
+  .beam { position: absolute; top: -100px; width: 360px; height: 900px; transform-origin: top center;
+    background: linear-gradient(180deg, rgba(200,235,250,.32), rgba(127,200,232,.06) 70%, rgba(127,200,232,0)); filter: blur(10px); }
+  .label { position: absolute; top: 742px; width: 480px; text-align: center; font-family: "Serif"; font-weight: 700; font-size: 38px; letter-spacing: 3px; color: #d6dde2; }
+  .label .n { display: block; font-size: 26px; color: rgba(214,221,226,.55); margin-bottom: 6px; letter-spacing: 2px; }
+  .label.open { color: var(--cold); text-shadow: 0 0 24px rgba(127,200,232,.55); }
+  .label.stuck { color: #f3d9d4; }
+  .floor { position: absolute; left: 0; right: 0; top: 700px; height: 380px; background: linear-gradient(180deg, rgba(127,200,232,.05), rgba(0,0,0,0)); }
+</style></head>
+<body><div class="stage">
+  <div class="beam" style="left:150px;transform:rotate(14deg)"></div>
+  <div class="beam" style="left:1410px;transform:rotate(-14deg)"></div>
+  <div class="floor"></div>
+  <svg width="1920" height="1080" style="position:absolute;inset:0">
+    <defs>
+      <linearGradient id="iron" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#5b6168"/><stop offset=".35" stop-color="#2e3237"/><stop offset=".7" stop-color="#1b1e22"/><stop offset="1" stop-color="#3a3f45"/>
+      </linearGradient>
+      <linearGradient id="ironLit" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#a9c3cf"/><stop offset=".35" stop-color="#55646d"/><stop offset=".7" stop-color="#2a3238"/><stop offset="1" stop-color="#6f8590"/>
+      </linearGradient>
+      <linearGradient id="shackle" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#2a2e33"/><stop offset=".3" stop-color="#9aa3ab"/><stop offset=".5" stop-color="#d9e0e5"/><stop offset=".7" stop-color="#8b949c"/><stop offset="1" stop-color="#25292d"/>
+      </linearGradient>
+      <radialGradient id="redglow"><stop offset="0" stop-color="#ff5a3c" stop-opacity=".55"/><stop offset="1" stop-color="#c8281e" stop-opacity="0"/></radialGradient>
+      <radialGradient id="iceglow"><stop offset="0" stop-color="#cdeefa" stop-opacity=".5"/><stop offset="1" stop-color="#7fc8e8" stop-opacity="0"/></radialGradient>
+      <filter id="soft"><feGaussianBlur stdDeviation="2"/></filter>
+      <!-- 一把锁：原点在锁身顶边中点，锁身 300×250 -->
+      <g id="body">
+        <rect x="-150" y="0" width="300" height="250" rx="34" />
+        <rect x="-150" y="0" width="300" height="250" rx="34" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="3"/>
+        <g fill="rgba(255,255,255,.25)"><circle cx="-118" cy="30" r="8"/><circle cx="118" cy="30" r="8"/><circle cx="-118" cy="220" r="8"/><circle cx="118" cy="220" r="8"/></g>
+        <path d="M0 92 a26 26 0 1 1 -0.1 0 Z M-12 128 L12 128 L20 190 L-20 190 Z" fill="#07090b"/>
+      </g>
+    </defs>
+
+    <!-- 锁 ①：已打开 -->
+    <g transform="translate(400 420)">
+      <ellipse cx="0" cy="120" rx="320" ry="300" fill="url(#iceglow)"/>
+      <g transform="translate(0 -46) rotate(-32 -90 40)">
+        <path d="M-90 40 V-70 a90 90 0 0 1 180 0 V10" fill="none" stroke="url(#shackle)" stroke-width="42" stroke-linecap="round"/>
+      </g>
+      <use href="#body" fill="url(#ironLit)"/>
+    </g>
+
+    <!-- 锁 ②：打不开，红光，晃动残影 -->
+    <g transform="translate(960 420)">
+      <ellipse cx="0" cy="130" rx="300" ry="280" fill="url(#redglow)"/>
+      <g opacity=".22" transform="rotate(-5 0 250)"><path d="M-90 40 V-70 a90 90 0 0 1 180 0 V40" fill="none" stroke="#d9e0e5" stroke-width="42"/><use href="#body" fill="#4a3a38"/></g>
+      <g opacity=".22" transform="rotate(5 0 250)"><path d="M-90 40 V-70 a90 90 0 0 1 180 0 V40" fill="none" stroke="#d9e0e5" stroke-width="42"/><use href="#body" fill="#4a3a38"/></g>
+      <g transform="rotate(2 0 250)">
+        <path d="M-90 40 V-70 a90 90 0 0 1 180 0 V40" fill="none" stroke="url(#shackle)" stroke-width="42"/>
+        <use href="#body" fill="url(#iron)"/>
+        <path d="M0 92 a26 26 0 1 1 -0.1 0 Z M-12 128 L12 128 L20 190 L-20 190 Z" fill="#ff4a2e" opacity=".35" filter="url(#soft)"/>
+      </g>
+      <!-- 震动线 -->
+      <g stroke="#ff7a5c" stroke-width="5" stroke-linecap="round" opacity=".75">
+        <path d="M-205 70 l-34 -12 M-210 125 l-40 0 M-205 180 l-34 12"/>
+        <path d="M205 70 l34 -12 M210 125 l40 0 M205 180 l34 12"/>
+      </g>
+    </g>
+
+    <!-- 锁 ③：已打开 -->
+    <g transform="translate(1520 420)">
+      <ellipse cx="0" cy="120" rx="320" ry="300" fill="url(#iceglow)"/>
+      <g transform="translate(0 -46) rotate(32 90 40)">
+        <path d="M-90 10 V-70 a90 90 0 0 1 180 0 V40" fill="none" stroke="url(#shackle)" stroke-width="42" stroke-linecap="round"/>
+      </g>
+      <use href="#body" fill="url(#ironLit)"/>
+    </g>
+  </svg>
+
+  <div class="label open" style="left:160px"><span class="n">①</span>分工不再奴役人</div>
+  <div class="label stuck" style="left:720px"><span class="n">②</span>劳动不再只是谋生手段</div>
+  <div class="label open" style="left:1280px"><span class="n">③</span>集体财富充分涌流</div>
+
+  <div class="vignette"></div><div class="grain"></div>
+  <div class="cap"><span class="t">可是<em>第二把锁</em>，打不开</span></div>
+  <div class="capnote">字幕：交付时为 SRT，此处仅预览</div>
+</div></body></html>

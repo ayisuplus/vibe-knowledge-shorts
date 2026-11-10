@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<!-- 第十八期封面：cover.html?a=43（1440×1080）/ ?a=34（1080×1440）。
+     主视觉：大模型星球「全家福」——用片里同一批定稿贴图，在样张实验室 planet.html?clean=1 渲成透明底的单球（planets/*.png），
+     排成一道弧；Fable（开场那颗）在正中。只写画面里真实存在的东西：片名、系列名。
+     要走 http（tools/cover.mjs 起静态服务，根 = 第十八期/），不能直接双击打开。 -->
+<style>
+  @font-face { font-family: "NotoSC"; src: url("../videos/model-universe/assets/fonts/NotoSansSC-VF.ttf"); font-weight: 100 900; }
+  @font-face { font-family: "NotoSerifSC"; src: url("../videos/model-universe/assets/fonts/NotoSerifSC-VF.ttf"); font-weight: 200 900; }
+  html, body { margin: 0; overflow: hidden; background: #03030a; }
+  #c { position: relative; overflow: hidden;
+       background: radial-gradient(60% 45% at 30% 30%, rgba(60, 90, 200, .22), transparent 70%),
+                   radial-gradient(55% 40% at 75% 35%, rgba(217, 119, 87, .18), transparent 70%),
+                   radial-gradient(90% 70% at 50% 40%, #0b0d22 0%, #04040c 70%); }
+  #sky { position: absolute; inset: 0; }
+  .pl { position: absolute; transform: translate(-50%, -50%); }
+  .pill { position: absolute; left: 50%; transform: translateX(-50%); white-space: nowrap; font-family: "NotoSC"; font-weight: 700; color: #e9edfa; letter-spacing: .18em;
+          border: 2px solid rgba(233, 237, 250, .55); border-radius: 999px; background: rgba(10, 12, 30, .55); }
+  .title { position: absolute; left: 0; right: 0; text-align: center; font-family: "NotoSerifSC"; font-weight: 800; color: #fbf7ef; letter-spacing: .03em;
+           text-shadow: 0 4px 24px rgba(0, 0, 0, .9), 0 0 60px rgba(0, 0, 0, .7); }
+  .title .l { display: block; white-space: nowrap; }
+  .title em { font-style: normal; color: #ffd27a; }
+  .foot { position: absolute; left: 0; right: 0; text-align: center; white-space: nowrap; font-family: "NotoSC"; font-weight: 600; color: rgba(220, 226, 245, .75); letter-spacing: .34em; }
+</style>
+</head>
+<body>
+<div id="c">
+  <canvas id="sky"></canvas>
+  <div class="pill" id="pill">大模型家族 · 3D 宇宙</div>
+  <div class="title" id="title"></div>
+  <div class="foot" id="foot">VIBE 知识大赏 · 第十八期</div>
+</div>
+<script type="module">
+  const a = new URLSearchParams(location.search).get("a") || "43";
+  const set = (e, s) => Object.assign(e.style, s);
+  const c = document.getElementById("c");
+  await document.fonts.load('800 100px "NotoSerifSC"'); await document.fonts.load('700 30px "NotoSC"'); await document.fonts.ready;
+  // [星, x, y, 直径]：Fable 在正中，越往两边越小、越靠后
+  const L = a === "43"
+    ? { W: 1440, H: 1080, pill: { top: 40, fs: 28, pad: "9px 30px" }, title: { top: 660, fs: 118, lh: 1.12 }, foot: { bottom: 34, fs: 22 },
+        pl: [["grok", 560, 175, 105], ["mistral", 880, 170, 115], ["pollux", 215, 190, 95], ["castor", 135, 245, 125], ["terra", 1300, 235, 125], ["opus", 1070, 175, 135],
+             ["deepseek", 275, 365, 175], ["kimi", 1165, 365, 175], ["qwen", 475, 420, 240], ["llama", 965, 420, 240], ["fable", 720, 385, 340]] }
+    : { W: 1080, H: 1440, pill: { top: 60, fs: 30, pad: "10px 32px" }, title: { top: 930, fs: 132, lh: 1.12 }, foot: { bottom: 46, fs: 24 },
+        pl: [["grok", 540, 175, 100], ["mistral", 360, 250, 125], ["opus", 725, 245, 145], ["pollux", 230, 175, 95], ["castor", 140, 245, 125], ["terra", 925, 300, 135],
+             ["deepseek", 140, 470, 180], ["kimi", 940, 470, 180], ["qwen", 300, 600, 250], ["llama", 785, 600, 250], ["fable", 540, 520, 370]] };
+  set(c, { width: L.W + "px", height: L.H + "px" });
+  // 星空：固定种子
+  const sky = document.getElementById("sky"); sky.width = L.W; sky.height = L.H;
+  const g = sky.getContext("2d"); let s = 18; const rnd = () => (s = (s * 16807) % 2147483647) / 2147483647;
+  for (let i = 0; i < 900; i++) { const r = rnd() ** 3 * 1.8 + 0.3; g.fillStyle = `rgba(220,228,255,${0.25 + rnd() * 0.6})`; g.beginPath(); g.arc(rnd() * L.W, rnd() * L.H, r, 0, 7); g.fill(); }
+  // 星球：小的在后、大的在前
+  const loads = [];
+  for (const [n, x, y, d] of L.pl) {
+    const im = new Image(); im.src = `planets/${n}.png`; im.className = "pl";
+    set(im, { left: x + "px", top: y + "px", width: d + "px", height: d + "px", zIndex: String(d) });
+    c.appendChild(im); loads.push(im.decode());
+  }
+  await Promise.all(loads);
+  const pill = document.getElementById("pill"), title = document.getElementById("title"), foot = document.getElementById("foot");
+  set(pill, { top: L.pill.top + "px", fontSize: L.pill.fs + "px", padding: L.pill.pad, zIndex: "999" });
+  title.innerHTML = `<span class="l">我把大模型，</span><span class="l">做成了<em>星星</em></span>`;
+  set(title, { top: L.title.top + "px", fontSize: L.title.fs + "px", lineHeight: L.title.lh, zIndex: "999" });
+  set(foot, { bottom: L.foot.bottom + "px", fontSize: L.foot.fs + "px", zIndex: "999" });
+  document.title = "ready";
+</script>
+</body>
+</html>

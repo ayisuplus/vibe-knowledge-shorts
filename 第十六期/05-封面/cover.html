@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<!-- 第十六期封面：cover.html?a=43（1440×1080）/ ?a=34（1080×1440）。
+     纯代码绘制：箭头、光晕、火花、波纹用片子里同一份 vec.js —— 取的是片头 n20「对顶相撞」前后的定格（金箭头 × 红箭头，箭头正对、一团白光）。
+     模块要走 http（tools/cover.mjs 起静态服务，根 = 第十六期/），不能直接双击打开。 -->
+<style>
+  @font-face { font-family: "NotoSC"; src: url("../videos/red-queen/assets/fonts/NotoSansSC-VF.ttf"); font-weight: 100 900; }
+  html, body { margin: 0; overflow: hidden; background: #050816; }
+  #c { position: relative; overflow: hidden; }
+  canvas { position: absolute; left: 0; top: 0; }
+
+  .pill { position: absolute; left: 50%; transform: translateX(-50%); white-space: nowrap;
+          font-family: "NotoSC", sans-serif; font-weight: 700; color: #ffd777; letter-spacing: .2em;
+          border: 2.5px solid rgba(255,194,71,.7); border-radius: 999px; background: rgba(10,18,41,.82); }
+  .title { position: absolute; left: 0; right: 0; text-align: center; color: #f6efdc;
+           font-family: "NotoSC", sans-serif; font-weight: 900; letter-spacing: .02em;
+           text-shadow: 0 4px 28px rgba(0,0,0,.7); }
+  .title .l { display: block; white-space: nowrap; }
+  .title em { font-style: normal; color: #ffc247; }
+  .title .cm { margin-right: -0.42em; }
+  .foot { position: absolute; left: 0; right: 0; text-align: center; white-space: nowrap;
+          font-family: "NotoSC", sans-serif; font-weight: 500; color: #a9b8d4; letter-spacing: .34em; }
+</style>
+</head>
+<body>
+<div id="c">
+  <canvas id="cv"></canvas>
+  <div class="pill">红皇后效应</div>
+  <div class="title" id="title"></div>
+  <div class="foot">VIBE 知识大赏 · 第十六期</div>
+</div>
+<script type="module">
+  import { PAL, rg, glow, arrow, ring, burst, beam, drawStars, drawBokeh } from "../videos/red-queen/assets/js/vec.js";
+
+  const a = new URLSearchParams(location.search).get("a") || "43";
+  const set = (e, s) => Object.assign(e.style, s);
+  const c = document.getElementById("c"), cv = document.getElementById("cv"), ctx = cv.getContext("2d");
+  const pill = c.querySelector(".pill"), title = document.getElementById("title"), foot = c.querySelector(".foot");
+  await document.fonts.load('900 100px "NotoSC"'); await document.fonts.load('700 20px "NotoSC"'); await document.fonts.ready;
+
+  // 版式：W×H；撞点 (cx, cy)；箭长 AL、箭宽 AW；冲击圈的基准半径
+  const L = a === "43"
+    ? { W: 1440, H: 1080, cx: 720, cy: 318, AL: 520, AW: 32, R: 1,
+        pill: { top: 40, fs: 28, pad: "8px 30px" },
+        lines: ["每个人都努力<span class=\"cm\">，</span>", "社会就<em>一定</em>更好吗？"], title: { top: 660, fs: 118, lh: 1.16 },
+        foot: { bottom: 40, fs: 20 } }
+    : { W: 1080, H: 1440, cx: 540, cy: 470, AL: 450, AW: 28, R: 0.92,
+        pill: { top: 48, fs: 28, pad: "8px 30px" },
+        lines: ["每个人都努力<span class=\"cm\">，</span>", "社会就<em>一定</em>", "更好吗？"], title: { top: 880, fs: 132, lh: 1.16 },
+        foot: { bottom: 52, fs: 22 } };
+  const { W, H, cx, cy, AL, AW, R } = L;
+  const dpr = window.devicePixelRatio || 1;
+  cv.width = W * dpr; cv.height = H * dpr; set(cv, { width: W + "px", height: H + "px" });
+  set(c, { width: W + "px", height: H + "px" });
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+  // 底：与片子同一套深蓝黑径向
+  const bg = ctx.createRadialGradient(W / 2, H * 0.34, 0, W / 2, H * 0.34, Math.max(W, H) * 0.78);
+  bg.addColorStop(0, "#112042"); bg.addColorStop(0.56, "#0a1229"); bg.addColorStop(1, "#050816");
+  ctx.fillStyle = bg; ctx.fillRect(0, 0, W, H);
+
+  // 星尘与虚化光斑（3:4 时竖向拉伸 1.34，铺满 1440 高）
+  ctx.save(); ctx.scale(W / 1920 > 0.9 ? 1 : 1, H / 1080); drawStars(ctx, 7.3, 0, { n: 170, seed: 5 }); drawBokeh(ctx, 7.3, 0, { n: 26, seed: 33, a: 1.4 }); ctx.restore();
+  // 撞点上方一团暖光、下方压暗给标题让位
+  glow(ctx, cx, cy, 760 * R, "gold", 0.16);
+
+  // 红色的地面波纹（同心、压扁），金 / 红交替——与片头相撞后的涟漪一致
+  for (let i = 0; i < 3; i++) ring(ctx, cx, cy, (190 + 190 * i) * R, { col: i === 1 ? "gold" : "red", w: 5 - i, a: 0.85 - 0.22 * i, squash: 0.38 });
+  // 两支箭：金（向右）与红（向左），箭头正对撞点
+  arrow(ctx, cx - AL - 52 * R, cy, 0, AL, { w: AW, col: "gold", a: 1, glow: 1.2, head: 1.0, hot: 0.9 });
+  ctx.save(); ctx.translate(cx + AL + 52 * R, cy); ctx.scale(-1, 1); arrow(ctx, 0, 0, 0, AL, { w: AW, col: "red", a: 1, glow: 1.2, head: 1.0, hot: 0.9 }); ctx.restore();
+  // 相撞：白热的核、迸散的火花
+  ctx.save(); ctx.globalCompositeOperation = "lighter";
+  glow(ctx, cx, cy, 250 * R, "white", 0.6); glow(ctx, cx, cy, 160 * R, "gold", 0.7); glow(ctx, cx, cy, 64 * R, "white", 1);
+  ctx.restore();
+  burst(ctx, cx, cy, 0.1, { n: 90, seed: 7, speed: 760 * R, life: 1.3, col: "gold", size: 4.2 });
+  burst(ctx, cx, cy, 0.1, { n: 60, seed: 9, speed: 560 * R, life: 1.1, col: "red", size: 4 });
+
+  // 文字
+  set(pill, { top: L.pill.top + "px", fontSize: L.pill.fs + "px", padding: L.pill.pad });
+  title.innerHTML = L.lines.map((t) => `<span class="l">${t}</span>`).join("");
+  set(title, { top: L.title.top + "px", fontSize: L.title.fs + "px", lineHeight: String(L.title.lh) });
+  set(foot, { bottom: L.foot.bottom + "px", fontSize: L.foot.fs + "px" });
+  document.title = "ready";
+</script>
+</body>
+</html>

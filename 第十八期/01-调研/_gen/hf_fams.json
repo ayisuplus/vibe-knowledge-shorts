@@ -1,0 +1,126 @@
+{
+"Qwen": [
+[
+"Qwen",
+"."
+]
+],
+"Llama": [
+[
+"meta-llama",
+"."
+]
+],
+"Gemma": [
+[
+"google",
+"gemma"
+]
+],
+"Mistral": [
+[
+"mistralai",
+"."
+]
+],
+"DeepSeek": [
+[
+"deepseek-ai",
+"."
+]
+],
+"Phi": [
+[
+"microsoft",
+"(?i)phi"
+]
+],
+"GLM": [
+[
+"zai-org",
+"."
+],
+[
+"THUDM",
+"."
+]
+],
+"Kimi": [
+[
+"moonshotai",
+"."
+]
+],
+"gpt-oss": [
+[
+"openai",
+"gpt-oss"
+]
+],
+"GPT-2": [
+[
+"openai-community",
+"gpt2"
+]
+],
+"BERT": [
+[
+"google-bert",
+"."
+]
+],
+"Hunyuan": [
+[
+"tencent",
+"(?i)hunyuan"
+]
+],
+"ERNIE": [
+[
+"baidu",
+"(?i)ernie"
+]
+],
+"MiniMax": [
+[
+"MiniMaxAI",
+"."
+]
+],
+"Seed": [
+[
+"ByteDance-Seed",
+"."
+]
+],
+"Yi": [
+[
+"01-ai",
+"."
+]
+],
+"Falcon": [
+[
+"tiiuae",
+"."
+]
+],
+"BLOOM": [
+[
+"bigscience",
+"(?i)bloom"
+]
+],
+"Grok": [
+[
+"xai-org",
+"."
+]
+],
+"OLMo": [
+[
+"allenai",
+"(?i)olmo"
+]
+]
+}

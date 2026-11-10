@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>样张 C · 两双眼睛</title>
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  /* S4 约 49 秒：同一张「周末计划」劈成两半。左边是人看到的排版，右边是 AI 看到的 token 积木（真实分词结果）。
+     加粗那一行和右边两块 ** 之间连一根粉色细线。 */
+  #stage { position: absolute; inset: 0; perspective: 2400px; perspective-origin: 50% 45%; }
+  .half { position: absolute; top: 190px; width: 760px; height: 640px; background: #fff; border: 1px solid var(--line);
+    box-shadow: 0 40px 80px -30px rgba(31, 35, 40, .3), 0 10px 20px -10px rgba(31, 35, 40, .12); }
+  #left { left: 110px; width: 700px; border-radius: 18px 4px 4px 18px; transform: rotateY(9deg); transform-origin: 100% 50%; padding: 70px 80px; }
+  #right { left: 940px; width: 880px; border-radius: 4px 18px 18px 4px; transform: rotateY(-9deg); transform-origin: 0 50%; padding: 64px 50px; }
+  #seam { position: absolute; left: 873px; top: 170px; width: 4px; height: 680px; border-radius: 2px;
+    background: linear-gradient(180deg, transparent, rgba(var(--pink-a), .9) 20%, rgba(var(--pink-a), .9) 80%, transparent);
+    box-shadow: 0 0 40px 10px rgba(var(--pink-a), .35); }
+  .label { position: absolute; top: 108px; font-size: 40px; font-weight: 700; letter-spacing: .06em; }
+  .label.l { left: 110px; } .label.r { left: 940px; }
+  .label small { font-size: 32px; font-weight: 500; color: var(--ink2); margin-left: 14px; letter-spacing: 0; }
+
+  /* 左：渲染后的页面 */
+  #left h1 { font-size: 72px; font-weight: 800; padding-bottom: 22px; margin-bottom: 34px; border-bottom: 3px solid #C9D1D9; }
+  #left ul { list-style: none; font-size: 44px; line-height: 1.75; }
+  #left li::before { content: ""; display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: var(--ink); margin: 0 26px 8px 6px; }
+  #left p { margin-top: 38px; font-size: 46px; font-weight: 800; }
+  #bold { position: relative; }
+
+  /* 右：token 积木 */
+  .line { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+  .tok { display: inline-flex; align-items: center; height: 72px; padding: 0 16px; border-radius: 12px;
+    font: 40px "NotoSC"; color: var(--ink); white-space: pre; box-shadow: inset 0 -4px 0 rgba(31, 35, 40, .14); }
+  .tok.sym { background: var(--md); color: #fff; font-family: "CMono"; font-weight: 600; box-shadow: 0 0 22px rgba(184, 84, 0, .45); }
+  .tok.nl { background: #D5DBE2; color: #424A53; font-size: 30px; padding: 0 14px; }
+  .tok.two { background-image: linear-gradient(90deg, transparent calc(50% - 1.5px), rgba(255, 255, 255, .95) calc(50% - 1.5px) calc(50% + 1.5px), transparent calc(50% + 1.5px)); padding: 0 26px; }
+  .tok .sp { color: #59636E; }
+  #link { position: absolute; inset: 0; pointer-events: none; }
+  .src { left: auto; right: 80px; }
+</style>
+</head>
+<body>
+<div class="label l">你看到的</div>
+<div class="label r">AI 看到的<small>28 个 token</small></div>
+<div id="stage">
+  <div class="half" id="left">
+    <h1>周末计划</h1>
+    <ul><li>买菜</li><li>看电影</li><li>给妈妈打电话</li></ul>
+    <p><span id="bold">最重要：别熬夜</span></p>
+  </div>
+  <div class="half" id="right"></div>
+</div>
+<div id="seam"></div>
+<svg id="link" width="1920" height="1080"></svg>
+<div class="src">实测：GPT-4o 分词器（o200k）</div>
+<div class="capzone"><span>字幕区</span></div>
+<script src="assets/img/tokens.js"></script>
+<script>
+  // 按原文的换行把 token 排成行；换行 token 画成淡灰的 ↵，跨两个 token 的汉字画成一块带中缝的积木
+  const colors = ["--t1", "--t2", "--t3", "--t4", "--t5"];
+  const right = document.getElementById("right");
+  let line = null, ci = 0;
+  const newLine = () => { line = document.createElement("div"); line.className = "line"; right.appendChild(line); };
+  newLine();
+  TOKENS.forEach(({ t, n }) => {
+    const sym = t.replace(/\n/g, "");
+    const el = document.createElement("span");
+    el.className = "tok";
+    if (/^(#|-|\*\*)$/.test(sym)) {
+      el.classList.add("sym"); el.textContent = sym;
+    } else if (!sym) {
+      el.classList.add("nl"); el.textContent = "↵".repeat(t.length);
+    } else {
+      el.innerHTML = t.startsWith(" ") ? `<span class="sp">·</span>${t.slice(1)}` : t;
+      el.style.backgroundColor = `var(${colors[ci++ % colors.length]})`;
+      if (n > 1) el.classList.add("two");
+    }
+    if (t.endsWith("\n") && sym) { // 「**\n」：符号块后面跟一个换行
+      line.appendChild(el);
+      const nl = document.createElement("span"); nl.className = "tok nl"; nl.textContent = "↵"; line.appendChild(nl);
+      newLine(); return;
+    }
+    line.appendChild(el);
+    if (!sym) newLine();
+  });
+
+  // 左边加粗那一行 → 右边两块 **：一根粉色细线
+  requestAnimationFrame(() => {
+    const svg = document.getElementById("link");
+    const b = document.getElementById("bold").getBoundingClientRect();
+    const stars = [...document.querySelectorAll(".tok.sym")].filter((e) => e.textContent === "**").map((e) => e.getBoundingClientRect());
+    stars.forEach((s, i) => {
+      const x1 = b.right + 8, y1 = b.top + b.height / 2, x2 = s.left + s.width / 2, y2 = s.bottom + 6;
+      const p = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      p.setAttribute("d", `M${x1},${y1} C${x1 + 180},${y1 + 90 + i * 30} ${x2 - 80},${y2 + 110} ${x2},${y2}`);
+      p.setAttribute("fill", "none"); p.setAttribute("stroke", "#D6404D"); p.setAttribute("stroke-width", "4.5");
+      p.setAttribute("stroke-linecap", "round"); p.setAttribute("style", "filter: drop-shadow(0 0 8px rgba(232,112,122,.7))");
+      svg.appendChild(p);
+    });
+  });
+</script>
+</body>
+</html>

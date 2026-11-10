@@ -1,0 +1,1390 @@
+{
+ "snapshot": "2026-10-26",
+ "families": [
+  {
+   "id": "origin",
+   "name": "起源星团",
+   "org": "Google 等",
+   "openness": "论文",
+   "name_fact": "2017《Attention Is All You Need》提出 Transformer",
+   "nebula_idea": "宇宙中心的大爆炸亮点，所有星云从这里喷出",
+   "src": "W-attn"
+  },
+  {
+   "id": "sesame",
+   "name": "芝麻街星团",
+   "org": "AllenAI / Google / 百度",
+   "openness": "开放",
+   "name_fact": "ELMo、BERT、ERNIE、Big Bird 都是《芝麻街》角色名",
+   "nebula_idea": "一簇彩色、卡通感的小行星，2018–2020 年",
+   "src": "W-bert"
+  },
+  {
+   "id": "openai",
+   "name": "GPT 星云",
+   "org": "OpenAI",
+   "openness": "大多闭源（gpt-oss 开放权重）",
+   "name_fact": "GPT = Generative Pre-trained Transformer；GPT-5.6 起分 Sol/Terra/Luna（太阳/地球/月亮）档",
+   "nebula_idea": "自带「日-地-月」小星系；ChatGPT 是一次超新星爆发",
+   "src": "W-openai"
+  },
+  {
+   "id": "anthropic",
+   "name": "Claude 星云",
+   "org": "Anthropic",
+   "openness": "闭源",
+   "name_fact": "据报道名字致敬香农；档位 Haiku（俳句）/Sonnet（十四行诗）/Opus（大型作品）/Mythos（神话）；Fable（寓言）是 Mythos 加安全护栏后的公开版",
+   "nebula_idea": "诗歌长短 = 星球大小；Mythos 是蒙着面纱的内核，Fable 是刻满寓言浮雕的外壳",
+   "src": "W-claude"
+  },
+  {
+   "id": "google",
+   "name": "Gemini 星云",
+   "org": "Google DeepMind",
+   "openness": "闭源（Gemma 开放权重）",
+   "name_fact": "Gemini = 双子座：Brain 和 DeepMind 两个团队合流；也致敬 NASA 双子星计划；占位名曾叫 Titan",
+   "nebula_idea": "双星系统，两颗互相绕转；旁边是一串宝石晶体卫星（Gemma，拉丁语「宝石」）",
+   "src": "P-gemini-name"
+  },
+  {
+   "id": "meta",
+   "name": "Llama 星云",
+   "org": "Meta",
+   "openness": "开放权重（Muse Spark 闭源）",
+   "name_fact": "LLaMA = Large Language Model Meta AI；2026-04 起由闭源的 Muse Spark 接班",
+   "nebula_idea": "安第斯高原地貌；星云本体不再诞生新星，但子孙尘埃仍在扩散",
+   "src": "W-llama"
+  },
+  {
+   "id": "qwen",
+   "name": "千问星云",
+   "org": "阿里巴巴（通义）",
+   "openness": "大多开放权重",
+   "name_fact": "通义千问：通晓意义、回答千种问题",
+   "nebula_idea": "漂满问号的星球；衍生尘埃最浓的星云（待核实，见 D 表）",
+   "src": "W-qwen"
+  },
+  {
+   "id": "deepseek",
+   "name": "DeepSeek 星云",
+   "org": "深度求索",
+   "openness": "开放权重",
+   "name_fact": "深度求索；logo 是蓝鲸",
+   "nebula_idea": "深海星球，发光海沟里有鲸影（呼应第十七期）",
+   "src": "W-deepseek"
+  },
+  {
+   "id": "kimi",
+   "name": "Kimi 星云",
+   "org": "月之暗面",
+   "openness": "开放权重（K2 起）",
+   "name_fact": "公司名取自 Pink Floyd 专辑《月之暗面》，在专辑发行 50 周年那个月创立；Kimi 是创始人杨植麟的英文昵称",
+   "nebula_idea": "永远只亮半面的星球",
+   "src": "W-moonshot"
+  },
+  {
+   "id": "mistral",
+   "name": "Mistral 星云",
+   "org": "Mistral AI",
+   "openness": "部分开放",
+   "name_fact": "密史脱拉风：法国南部强劲寒冷的西北风",
+   "nebula_idea": "被狂风刮出条纹的星球",
+   "src": "W-mistral"
+  },
+  {
+   "id": "xai",
+   "name": "Grok 星云",
+   "org": "xAI（维基现记为 SpaceXSI）",
+   "openness": "大多闭源（Grok-1/2 开放）",
+   "name_fact": "grok 是海因莱因 1961 年小说《异乡异客》里的火星语词，意为深刻地理解",
+   "nebula_idea": "红色火星质感",
+   "src": "W-grok"
+  },
+  {
+   "id": "zhipu",
+   "name": "GLM 星云",
+   "org": "智谱（Z.ai）",
+   "openness": "开放权重（2025-07 起 MIT）",
+   "name_fact": "GLM = General Language Model；训练法叫「自回归填空」",
+   "nebula_idea": "表面缺块、正被一块块补齐的星球",
+   "src": "W-zai"
+  },
+  {
+   "id": "phi",
+   "name": "Phi 星群",
+   "org": "Microsoft",
+   "openness": "开放权重",
+   "name_fact": "Phi-1 论文题为《Textbooks Are All You Need》",
+   "nebula_idea": "书页叠成的小行星（φ 黄金螺旋只是联想，未见官方出处）",
+   "src": "X-phi1"
+  },
+  {
+   "id": "baidu",
+   "name": "文心星云",
+   "org": "百度",
+   "openness": "闭源为主（4.5 起开放权重）",
+   "name_fact": "ERNIE = Enhanced Representation through kNowledge IntEgration，和 BERT 同属芝麻街",
+   "nebula_idea": "一端连着芝麻街星团的长尾",
+   "src": "W-ernie"
+  },
+  {
+   "id": "tencent",
+   "name": "混元星云",
+   "org": "腾讯",
+   "openness": "部分开放",
+   "name_fact": "混元：字面是天地未分的混沌元气（字义，非官方解释）",
+   "nebula_idea": "还没成形的气态原星",
+   "src": "H-tencent"
+  },
+  {
+   "id": "bytedance",
+   "name": "豆包星云",
+   "org": "字节跳动（Seed）",
+   "openness": "闭源为主（Seed-OSS 开放）",
+   "name_fact": "豆包；模型系列名 Seed（种子）",
+   "nebula_idea": "正在发芽的种子星",
+   "src": "W-doubao"
+  },
+  {
+   "id": "minimax",
+   "name": "MiniMax 星云",
+   "org": "MiniMax",
+   "openness": "开放权重（M 系列）",
+   "name_fact": "minimax 是博弈论里的「极小化极大」算法",
+   "nebula_idea": "棋盘纹理星球",
+   "src": "W-minimax"
+  },
+  {
+   "id": "others",
+   "name": "散星",
+   "org": "01.AI / BigScience / TII 等",
+   "openness": "开放",
+   "name_fact": "Yi、BLOOM、Falcon 等",
+   "nebula_idea": "不单独成云，作远景小星",
+   "src": "W-01ai"
+  }
+ ],
+ "planets": [
+  {
+   "id": "transformer",
+   "name": "Transformer（论文）",
+   "family": "origin",
+   "date": "2017-06-12",
+   "open": true,
+   "tier": "A",
+   "src": "X-attn",
+   "note": "8 位作者后来全部离开 Google"
+  },
+  {
+   "id": "elmo",
+   "name": "ELMo",
+   "family": "sesame",
+   "date": "2018-02",
+   "open": true,
+   "tier": "B",
+   "src": "X-elmo",
+   "note": "不是 Transformer（双向 LSTM），但开启芝麻街命名"
+  },
+  {
+   "id": "gpt1",
+   "name": "GPT-1",
+   "family": "openai",
+   "date": "2018-06-11",
+   "open": true,
+   "tier": "B",
+   "src": "P-gpt1",
+   "note": "1.17 亿参数"
+  },
+  {
+   "id": "bert",
+   "name": "BERT",
+   "family": "sesame",
+   "date": "2018-10",
+   "open": true,
+   "tier": "A",
+   "src": "X-bert",
+   "note": "只用编码器那一半"
+  },
+  {
+   "id": "gpt2",
+   "name": "GPT-2",
+   "family": "openai",
+   "date": "2019-02-14",
+   "open": true,
+   "tier": "B",
+   "src": "W-gpt2",
+   "note": ""
+  },
+  {
+   "id": "ernie1",
+   "name": "ERNIE 1.0",
+   "family": "baidu",
+   "date": "2019-04",
+   "open": true,
+   "tier": "B",
+   "src": "X-ernie",
+   "note": ""
+  },
+  {
+   "id": "gpt3",
+   "name": "GPT-3",
+   "family": "openai",
+   "date": "2020-05-28",
+   "open": false,
+   "tier": "B",
+   "src": "X-gpt3",
+   "note": "1750 亿参数"
+  },
+  {
+   "id": "bigbird",
+   "name": "Big Bird",
+   "family": "sesame",
+   "date": "2020-07",
+   "open": true,
+   "tier": "C",
+   "src": "X-bigbird",
+   "note": ""
+  },
+  {
+   "id": "glm",
+   "name": "GLM（论文）",
+   "family": "zhipu",
+   "date": "2021-03",
+   "open": true,
+   "tier": "C",
+   "src": "X-glm",
+   "note": "arXiv 2021-03；ACL 2022-05"
+  },
+  {
+   "id": "bloom",
+   "name": "BLOOM",
+   "family": "others",
+   "date": "2022-07-12",
+   "open": true,
+   "tier": "C",
+   "src": "W-bloom",
+   "note": "上千名志愿研究者合作"
+  },
+  {
+   "id": "chatgpt",
+   "name": "ChatGPT",
+   "family": "openai",
+   "date": "2022-11-30",
+   "open": false,
+   "tier": "A",
+   "src": "P-chatgpt",
+   "note": "超新星时刻"
+  },
+  {
+   "id": "llama1",
+   "name": "LLaMA",
+   "family": "meta",
+   "date": "2023-02-24",
+   "open": true,
+   "tier": "A",
+   "src": "X-llama",
+   "note": ""
+  },
+  {
+   "id": "alpaca",
+   "name": "Alpaca（斯坦福）",
+   "family": "meta",
+   "date": "2023-03-13",
+   "open": true,
+   "tier": "B",
+   "src": "P-alpaca",
+   "note": "最早出圈的社区微调之一：在 LLaMA 7B 上微调"
+  },
+  {
+   "id": "gpt4",
+   "name": "GPT-4",
+   "family": "openai",
+   "date": "2023-03-14",
+   "open": false,
+   "tier": "B",
+   "src": "W-gpt4",
+   "note": ""
+  },
+  {
+   "id": "claude1",
+   "name": "Claude",
+   "family": "anthropic",
+   "date": "2023-03-14",
+   "open": false,
+   "tier": "B",
+   "src": "W-claude",
+   "note": ""
+  },
+  {
+   "id": "chatglm",
+   "name": "ChatGLM-6B",
+   "family": "zhipu",
+   "date": "2023-03",
+   "open": true,
+   "tier": "B",
+   "src": "W-zai",
+   "note": ""
+  },
+  {
+   "id": "erniebot",
+   "name": "文心一言",
+   "family": "baidu",
+   "date": "2023-03-16",
+   "open": false,
+   "tier": "B",
+   "src": "W-ernie",
+   "note": ""
+  },
+  {
+   "id": "phi1",
+   "name": "phi-1",
+   "family": "phi",
+   "date": "2023-06-21",
+   "open": true,
+   "tier": "B",
+   "src": "W-phi",
+   "note": "13 亿参数"
+  },
+  {
+   "id": "llama2",
+   "name": "Llama 2",
+   "family": "meta",
+   "date": "2023-07-18",
+   "open": true,
+   "tier": "B",
+   "src": "W-llama",
+   "note": ""
+  },
+  {
+   "id": "claude2",
+   "name": "Claude 2",
+   "family": "anthropic",
+   "date": "2023-07-11",
+   "open": false,
+   "tier": "C",
+   "src": "W-claude",
+   "note": ""
+  },
+  {
+   "id": "doubao",
+   "name": "豆包",
+   "family": "bytedance",
+   "date": "2023-08",
+   "open": false,
+   "tier": "B",
+   "src": "W-doubao",
+   "note": ""
+  },
+  {
+   "id": "qwen1",
+   "name": "Qwen（通义千问）",
+   "family": "qwen",
+   "date": "2023-08",
+   "open": true,
+   "tier": "A",
+   "src": "W-qwen",
+   "note": "2023-04 内测，2023-09 公开；开放权重以 HF 仓库为准"
+  },
+  {
+   "id": "mistral7b",
+   "name": "Mistral 7B",
+   "family": "mistral",
+   "date": "2023-09",
+   "open": true,
+   "tier": "A",
+   "src": "W-mistral",
+   "note": ""
+  },
+  {
+   "id": "kimi",
+   "name": "Kimi",
+   "family": "kimi",
+   "date": "2023-10",
+   "open": false,
+   "tier": "A",
+   "src": "W-moonshot",
+   "note": "一次读 20 万汉字"
+  },
+  {
+   "id": "grok1",
+   "name": "Grok-1",
+   "family": "xai",
+   "date": "2023-11",
+   "open": true,
+   "tier": "A",
+   "src": "W-grok",
+   "note": "2024-03 开放权重"
+  },
+  {
+   "id": "yi34b",
+   "name": "Yi-34B",
+   "family": "others",
+   "date": "2023-11",
+   "open": true,
+   "tier": "C",
+   "src": "W-01ai",
+   "note": ""
+  },
+  {
+   "id": "deepseek-llm",
+   "name": "DeepSeek LLM",
+   "family": "deepseek",
+   "date": "2023-11-29",
+   "open": true,
+   "tier": "A",
+   "src": "W-deepseek",
+   "note": "DeepSeek-Coder 2023-11-02 更早"
+  },
+  {
+   "id": "gemini1",
+   "name": "Gemini 1.0",
+   "family": "google",
+   "date": "2023-12-06",
+   "open": false,
+   "tier": "A",
+   "src": "W-gemini",
+   "note": ""
+  },
+  {
+   "id": "mixtral",
+   "name": "Mixtral 8x7B",
+   "family": "mistral",
+   "date": "2023-12",
+   "open": true,
+   "tier": "B",
+   "src": "W-mistral",
+   "note": "混合专家"
+  },
+  {
+   "id": "gemma1",
+   "name": "Gemma",
+   "family": "google",
+   "date": "2024-02-21",
+   "open": true,
+   "tier": "A",
+   "src": "W-gemma",
+   "note": ""
+  },
+  {
+   "id": "claude3",
+   "name": "Claude 3 Haiku / Sonnet / Opus",
+   "family": "anthropic",
+   "date": "2024-03-04",
+   "open": false,
+   "tier": "A",
+   "src": "W-claude",
+   "note": "三档诗体命名从这里开始（Haiku 03-13）"
+  },
+  {
+   "id": "llama3",
+   "name": "Llama 3",
+   "family": "meta",
+   "date": "2024-04-18",
+   "open": true,
+   "tier": "B",
+   "src": "W-llama",
+   "note": ""
+  },
+  {
+   "id": "gpt4o",
+   "name": "GPT-4o",
+   "family": "openai",
+   "date": "2024-05-13",
+   "open": false,
+   "tier": "B",
+   "src": "W-openai",
+   "note": ""
+  },
+  {
+   "id": "dsv2",
+   "name": "DeepSeek-V2",
+   "family": "deepseek",
+   "date": "2024-05",
+   "open": true,
+   "tier": "B",
+   "src": "W-deepseek",
+   "note": ""
+  },
+  {
+   "id": "claude35",
+   "name": "Claude 3.5 Sonnet",
+   "family": "anthropic",
+   "date": "2024-06-20",
+   "open": false,
+   "tier": "B",
+   "src": "W-claude",
+   "note": ""
+  },
+  {
+   "id": "qwen2",
+   "name": "Qwen2",
+   "family": "qwen",
+   "date": "2024-06",
+   "open": true,
+   "tier": "B",
+   "src": "W-qwen",
+   "note": ""
+  },
+  {
+   "id": "llama31",
+   "name": "Llama 3.1 405B",
+   "family": "meta",
+   "date": "2024-07-23",
+   "open": true,
+   "tier": "B",
+   "src": "W-llama",
+   "note": ""
+  },
+  {
+   "id": "o1",
+   "name": "o1",
+   "family": "openai",
+   "date": "2024-09-12",
+   "open": false,
+   "tier": "B",
+   "src": "W-o1",
+   "note": ""
+  },
+  {
+   "id": "qwen25",
+   "name": "Qwen2.5",
+   "family": "qwen",
+   "date": "2024-09",
+   "open": true,
+   "tier": "B",
+   "src": "W-qwen",
+   "note": ""
+  },
+  {
+   "id": "dsv3",
+   "name": "DeepSeek-V3",
+   "family": "deepseek",
+   "date": "2024-12",
+   "open": true,
+   "tier": "B",
+   "src": "W-deepseek",
+   "note": ""
+  },
+  {
+   "id": "r1",
+   "name": "DeepSeek-R1",
+   "family": "deepseek",
+   "date": "2025-01-20",
+   "open": true,
+   "tier": "A",
+   "src": "X-r1",
+   "note": "同时发布用 Qwen、Llama 做底的蒸馏版"
+  },
+  {
+   "id": "k15",
+   "name": "Kimi k1.5",
+   "family": "kimi",
+   "date": "2025-01",
+   "open": false,
+   "tier": "C",
+   "src": "W-kimi",
+   "note": ""
+  },
+  {
+   "id": "grok3",
+   "name": "Grok 3",
+   "family": "xai",
+   "date": "2025-02",
+   "open": false,
+   "tier": "B",
+   "src": "W-grok",
+   "note": ""
+  },
+  {
+   "id": "claude37",
+   "name": "Claude 3.7 Sonnet",
+   "family": "anthropic",
+   "date": "2025-02-24",
+   "open": false,
+   "tier": "C",
+   "src": "W-claude",
+   "note": ""
+  },
+  {
+   "id": "gemma3",
+   "name": "Gemma 3",
+   "family": "google",
+   "date": "2025-03-12",
+   "open": true,
+   "tier": "B",
+   "src": "W-gemma",
+   "note": ""
+  },
+  {
+   "id": "gemini25",
+   "name": "Gemini 2.5 Pro",
+   "family": "google",
+   "date": "2025-03-25",
+   "open": false,
+   "tier": "B",
+   "src": "W-gemini",
+   "note": ""
+  },
+  {
+   "id": "llama4",
+   "name": "Llama 4 Scout / Maverick",
+   "family": "meta",
+   "date": "2025-04-05",
+   "open": true,
+   "tier": "A",
+   "src": "W-llama",
+   "note": "Llama 星云最后一颗新星"
+  },
+  {
+   "id": "qwen3",
+   "name": "Qwen3",
+   "family": "qwen",
+   "date": "2025-04",
+   "open": true,
+   "tier": "B",
+   "src": "W-qwen",
+   "note": ""
+  },
+  {
+   "id": "claude4",
+   "name": "Claude 4（Sonnet / Opus）",
+   "family": "anthropic",
+   "date": "2025-05-22",
+   "open": false,
+   "tier": "B",
+   "src": "W-claude",
+   "note": ""
+  },
+  {
+   "id": "ernie45",
+   "name": "ERNIE 4.5（开放权重）",
+   "family": "baidu",
+   "date": "2025-06",
+   "open": true,
+   "tier": "B",
+   "src": "W-ernie",
+   "note": ""
+  },
+  {
+   "id": "m1",
+   "name": "MiniMax-M1",
+   "family": "minimax",
+   "date": "2025-06",
+   "open": true,
+   "tier": "B",
+   "src": "W-minimax",
+   "note": ""
+  },
+  {
+   "id": "grok4",
+   "name": "Grok 4",
+   "family": "xai",
+   "date": "2025-07",
+   "open": false,
+   "tier": "B",
+   "src": "W-grok",
+   "note": ""
+  },
+  {
+   "id": "k2",
+   "name": "Kimi K2",
+   "family": "kimi",
+   "date": "2025-07",
+   "open": true,
+   "tier": "B",
+   "src": "W-moonshot",
+   "note": ""
+  },
+  {
+   "id": "glm45",
+   "name": "GLM-4.5",
+   "family": "zhipu",
+   "date": "2025-07",
+   "open": true,
+   "tier": "B",
+   "src": "W-zai",
+   "note": ""
+  },
+  {
+   "id": "gptoss",
+   "name": "gpt-oss-120b / 20b",
+   "family": "openai",
+   "date": "2025-08-05",
+   "open": true,
+   "tier": "A",
+   "src": "W-openai",
+   "note": "OpenAI 自 GPT-2 后首次开放权重（「首次」措辞待核）"
+  },
+  {
+   "id": "gpt5",
+   "name": "GPT-5",
+   "family": "openai",
+   "date": "2025-08-07",
+   "open": false,
+   "tier": "B",
+   "src": "W-openai",
+   "note": ""
+  },
+  {
+   "id": "gemini3",
+   "name": "Gemini 3 Pro",
+   "family": "google",
+   "date": "2025-11-18",
+   "open": false,
+   "tier": "B",
+   "src": "W-gemini",
+   "note": ""
+  },
+  {
+   "id": "opus45",
+   "name": "Claude Opus 4.5",
+   "family": "anthropic",
+   "date": "2025-11-24",
+   "open": false,
+   "tier": "C",
+   "src": "W-claude",
+   "note": ""
+  },
+  {
+   "id": "dsv32",
+   "name": "DeepSeek-V3.2",
+   "family": "deepseek",
+   "date": "2025-12-01",
+   "open": true,
+   "tier": "B",
+   "src": "W-deepseek",
+   "note": ""
+  },
+  {
+   "id": "mlarge3",
+   "name": "Mistral Large 3",
+   "family": "mistral",
+   "date": "2025-12",
+   "open": true,
+   "tier": "B",
+   "src": "W-mistral",
+   "note": ""
+  },
+  {
+   "id": "k25",
+   "name": "Kimi K2.5",
+   "family": "kimi",
+   "date": "2026-01",
+   "open": true,
+   "tier": "C",
+   "src": "W-moonshot",
+   "note": ""
+  },
+  {
+   "id": "glm5",
+   "name": "GLM-5",
+   "family": "zhipu",
+   "date": "2026-02-12",
+   "open": true,
+   "tier": "B",
+   "src": "W-zai",
+   "note": ""
+  },
+  {
+   "id": "seed2",
+   "name": "Doubao Seed 2.0",
+   "family": "bytedance",
+   "date": "2026-02-14",
+   "open": false,
+   "tier": "B",
+   "src": "W-doubao",
+   "note": ""
+  },
+  {
+   "id": "qwen35",
+   "name": "Qwen3.5",
+   "family": "qwen",
+   "date": "2026-02",
+   "open": true,
+   "tier": "B",
+   "src": "W-qwen",
+   "note": ""
+  },
+  {
+   "id": "gemma4",
+   "name": "Gemma 4",
+   "family": "google",
+   "date": "2026-04-02",
+   "open": true,
+   "tier": "B",
+   "src": "W-gemma",
+   "note": "Apache 2.0"
+  },
+  {
+   "id": "mythos-prev",
+   "name": "Claude Mythos Preview",
+   "family": "anthropic",
+   "date": "2026-04-07",
+   "open": false,
+   "tier": "A",
+   "src": "W-mythos",
+   "note": "只给少数机构（Project Glasswing）"
+  },
+  {
+   "id": "muse",
+   "name": "Muse Spark",
+   "family": "meta",
+   "date": "2026-04-08",
+   "open": false,
+   "tier": "A",
+   "src": "N-muse",
+   "note": "Meta 超级智能实验室首个模型，闭源，接替 Llama"
+  },
+  {
+   "id": "gpt55",
+   "name": "GPT-5.5",
+   "family": "openai",
+   "date": "2026-04-23",
+   "open": false,
+   "tier": "C",
+   "src": "W-gpt55",
+   "note": ""
+  },
+  {
+   "id": "dsv4",
+   "name": "DeepSeek-V4（Pro / Flash）",
+   "family": "deepseek",
+   "date": "2026-04-24",
+   "open": true,
+   "tier": "B",
+   "src": "W-deepseek",
+   "note": ""
+  },
+  {
+   "id": "ernie51",
+   "name": "ERNIE 5.1",
+   "family": "baidu",
+   "date": "2026-04-29",
+   "open": false,
+   "tier": "C",
+   "src": "W-ernie",
+   "note": ""
+  },
+  {
+   "id": "fable5",
+   "name": "Claude Fable 5 / Mythos 5",
+   "family": "anthropic",
+   "date": "2026-06-09",
+   "open": false,
+   "tier": "B",
+   "src": "W-mythos",
+   "note": "Fable = 同一模型加安全护栏的公开版"
+  },
+  {
+   "id": "m3",
+   "name": "MiniMax-M3",
+   "family": "minimax",
+   "date": "2026-06",
+   "open": true,
+   "tier": "C",
+   "src": "W-minimax",
+   "note": ""
+  },
+  {
+   "id": "gpt56",
+   "name": "GPT-5.6 Sol / Terra / Luna",
+   "family": "openai",
+   "date": "2026-07-09",
+   "open": false,
+   "tier": "A",
+   "src": "N-gpt56",
+   "note": "2026-06-26 起有限预览"
+  },
+  {
+   "id": "k3",
+   "name": "Kimi K3",
+   "family": "kimi",
+   "date": "2026-07",
+   "open": true,
+   "tier": "A",
+   "src": "W-moonshot",
+   "note": "2.8 万亿参数；维基称史上最大开放权重模型"
+  },
+  {
+   "id": "opus5",
+   "name": "Claude Opus 5",
+   "family": "anthropic",
+   "date": "2026-07-24",
+   "open": false,
+   "tier": "C",
+   "src": "W-claude",
+   "note": ""
+  },
+  {
+   "id": "grok46",
+   "name": "Grok 4.6",
+   "family": "xai",
+   "date": "2026-08",
+   "open": false,
+   "tier": "C",
+   "src": "W-grok",
+   "note": ""
+  },
+  {
+   "id": "qwen38",
+   "name": "Qwen3.8",
+   "family": "qwen",
+   "date": "2026-08",
+   "open": true,
+   "tier": "B",
+   "src": "W-qwen",
+   "note": "Max/Flash 闭源，大尺寸开放"
+  },
+  {
+   "id": "fable51",
+   "name": "Claude Fable 5.1 / Mythos 5.1",
+   "family": "anthropic",
+   "date": "2026-09-01",
+   "open": false,
+   "tier": "A",
+   "src": "W-claude",
+   "note": ""
+  },
+  {
+   "id": "gpt6",
+   "name": "GPT-6 Astra",
+   "family": "openai",
+   "date": "2026-09-03",
+   "open": false,
+   "tier": "A",
+   "src": "P-gpt6-astra",
+   "note": "GPT-6 旗舰档；同代 Sol / Luna 于 2026-09-22 推出（OpenAI 原公告：Astra「迄今综合表现最佳」，Sol、Luna 更快更便宜）；GPT-6 没有 Terra 档"
+  },
+  {
+   "id": "dsv41",
+   "name": "DeepSeek-V4.1",
+   "family": "deepseek",
+   "date": "2026-09-10",
+   "open": true,
+   "tier": "C",
+   "src": "W-deepseek",
+   "note": ""
+  },
+  {
+   "id": "opus55",
+   "name": "Claude Opus 5.5",
+   "family": "anthropic",
+   "date": "2026-09-22",
+   "open": false,
+   "tier": "B",
+   "src": "W-claude",
+   "note": "Sonnet 5.5：09-28；Haiku 5.5：10-07"
+  },
+  {
+   "id": "gpt61",
+   "name": "GPT-6.1 Sol",
+   "family": "openai",
+   "date": "2026-09-29",
+   "open": false,
+   "tier": "B",
+   "src": "W-gpt61",
+   "note": "有来源称同期的 GPT-6.1 Astra 被取消（单一来源，不上片）"
+  },
+  {
+   "id": "mlarge4",
+   "name": "Mistral Large 4（预览）",
+   "family": "mistral",
+   "date": "2026-10",
+   "open": null,
+   "tier": "C",
+   "src": "W-mistral",
+   "note": "许可未定"
+  }
+ ],
+ "threads": [
+  {
+   "from": "transformer",
+   "to": "gpt1",
+   "type": "架构",
+   "note": "只用解码器那一半",
+   "src": "P-gpt1"
+  },
+  {
+   "from": "transformer",
+   "to": "bert",
+   "type": "架构",
+   "note": "只用编码器那一半",
+   "src": "X-bert"
+  },
+  {
+   "from": "bert",
+   "to": "ernie1",
+   "type": "借鉴",
+   "note": "在 BERT 掩码思路上改成「知识掩码」",
+   "src": "X-ernie"
+  },
+  {
+   "from": "gpt3",
+   "to": "chatgpt",
+   "type": "继承",
+   "note": "ChatGPT 基于 GPT-3.5 系列微调",
+   "src": "P-chatgpt"
+  },
+  {
+   "from": "llama1",
+   "to": "alpaca",
+   "type": "微调",
+   "note": "LLaMA 7B → Alpaca",
+   "src": "P-alpaca"
+  },
+  {
+   "from": "r1",
+   "to": "qwen25",
+   "type": "蒸馏",
+   "note": "R1 的推理能力蒸馏进 Qwen2.5 底座（R1-Distill-Qwen）",
+   "src": "X-r1"
+  },
+  {
+   "from": "r1",
+   "to": "llama31",
+   "type": "蒸馏",
+   "note": "R1 的推理能力蒸馏进 Llama 底座（R1-Distill-Llama）",
+   "src": "X-r1"
+  },
+  {
+   "from": "dsv3",
+   "to": "r1",
+   "type": "继承",
+   "note": "R1 从 DeepSeek-V3-Base 初始化",
+   "src": "W-deepseek"
+  },
+  {
+   "from": "mythos-prev",
+   "to": "fable5",
+   "type": "同源",
+   "note": "Fable 是 Mythos 加安全护栏的公开版",
+   "src": "W-mythos"
+  },
+  {
+   "from": "llama4",
+   "to": "muse",
+   "type": "接班",
+   "note": "Muse 系列接替 Llama 系列",
+   "src": "N-muse"
+  },
+  {
+   "from": "gemini1",
+   "to": "gemma1",
+   "type": "同源技术",
+   "note": "Gemma 由做 Gemini 的同一套研究和技术打造（Google 官方表述，待抓原文）",
+   "src": "W-gemma"
+  },
+  {
+   "from": "mistral7b",
+   "to": "mixtral",
+   "type": "演进",
+   "note": "从稠密模型走向混合专家",
+   "src": "W-mistral"
+  },
+  {
+   "from": "k3",
+   "to": "others",
+   "type": "被用作底座",
+   "note": "维基称 Kimi 模型被多家美国公司拿来做底座/后训练（待核一手）",
+   "src": "W-moonshot"
+  }
+ ],
+ "sources": {
+  "W-claude": "https://en.wikipedia.org/wiki/Claude_(AI)",
+  "W-mythos": "https://en.wikipedia.org/wiki/Claude_Mythos",
+  "W-openai": "https://en.wikipedia.org/wiki/Products_and_applications_of_OpenAI",
+  "W-gpt51": "https://en.wikipedia.org/wiki/GPT-5.1",
+  "W-gpt55": "https://en.wikipedia.org/wiki/GPT-5.5",
+  "W-gpt61": "https://en.wikipedia.org/wiki/GPT-6.1",
+  "W-gemini": "https://en.wikipedia.org/wiki/Gemini_(language_model)",
+  "W-gemma": "https://en.wikipedia.org/wiki/Gemma_(language_model)",
+  "W-llama": "https://en.wikipedia.org/wiki/Llama_(language_model)",
+  "W-qwen": "https://en.wikipedia.org/wiki/Qwen",
+  "W-deepseek": "https://en.wikipedia.org/wiki/DeepSeek",
+  "W-grok": "https://en.wikipedia.org/wiki/Grok_(chatbot)",
+  "W-mistral": "https://en.wikipedia.org/wiki/Mistral_AI",
+  "W-kimi": "https://en.wikipedia.org/wiki/Kimi_(AI)",
+  "W-moonshot": "https://en.wikipedia.org/wiki/Moonshot_AI",
+  "W-zai": "https://en.wikipedia.org/wiki/Z.ai",
+  "W-phi": "https://en.wikipedia.org/wiki/Phi_(language_model)",
+  "W-ernie": "https://en.wikipedia.org/wiki/Ernie_Bot",
+  "W-doubao": "https://en.wikipedia.org/wiki/Doubao",
+  "W-minimax": "https://en.wikipedia.org/wiki/MiniMax_Group",
+  "W-01ai": "https://en.wikipedia.org/wiki/01.AI",
+  "W-bloom": "https://en.wikipedia.org/wiki/BLOOM_(language_model)",
+  "W-bert": "https://en.wikipedia.org/wiki/BERT_(language_model)",
+  "W-elmo": "https://en.wikipedia.org/wiki/ELMo",
+  "W-attn": "https://en.wikipedia.org/wiki/Attention_Is_All_You_Need",
+  "W-gpt1": "https://en.wikipedia.org/wiki/GPT-1",
+  "W-gpt2": "https://en.wikipedia.org/wiki/GPT-2",
+  "W-gpt3": "https://en.wikipedia.org/wiki/GPT-3",
+  "W-gpt4": "https://en.wikipedia.org/wiki/GPT-4",
+  "W-chatgpt": "https://en.wikipedia.org/wiki/ChatGPT",
+  "W-o1": "https://en.wikipedia.org/wiki/OpenAI_o1",
+  "X-attn": "https://arxiv.org/abs/1706.03762",
+  "X-elmo": "https://arxiv.org/abs/1802.05365",
+  "X-bert": "https://arxiv.org/abs/1810.04805",
+  "X-ernie": "https://arxiv.org/abs/1904.09223",
+  "X-gpt3": "https://arxiv.org/abs/2005.14165",
+  "X-bigbird": "https://arxiv.org/abs/2007.14062",
+  "X-glm": "https://arxiv.org/abs/2103.10360",
+  "X-llama": "https://arxiv.org/abs/2302.13971",
+  "X-phi1": "https://arxiv.org/abs/2306.11644",
+  "X-r1": "https://arxiv.org/abs/2501.12948",
+  "P-gpt1": "https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf",
+  "P-chatgpt": "https://openai.com/index/chatgpt/",
+  "P-alpaca": "https://crfm.stanford.edu/2023/03/13/alpaca.html",
+  "P-gemini-name": "https://blog.google/technology/ai/google-gemini-ai-name-meaning/",
+  "N-muse": "https://www.eweek.com/news/meta-muse-spark-ai-launch-multimodal-reasoning/",
+  "N-gpt56": "https://macrumors.com/2026/06/26/openai-gpt-5-6-sol/",
+  "N-gpt6": "https://www.datacamp.com/blog/gpt-6-sol-and-luna",
+  "P-gpt6-astra": "https://openai.com/index/gpt-6-astra/",
+  "P-gpt6-solluna": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+  "N-kimik3": "https://epoch.ai/models/kimi-k3",
+  "N-qwen-deriv": "https://www.constellationr.com/node/120320",
+  "H-tencent": "https://huggingface.co/tencent",
+  "H-tree": "https://huggingface.co/docs/hub/model-cards#specifying-a-base-model"
+ },
+ "nebula_density": {
+  "Qwen": {
+   "nebula": "千问星云",
+   "hf_org": "Qwen",
+   "finetune": 12681,
+   "adapter": 10725,
+   "quantized": 5150,
+   "merge": 350,
+   "total": 28906,
+   "repos_checked": 10,
+   "repos_failed": 0,
+   "top_repo": "Qwen/Qwen2.5-7B-Instruct"
+  },
+  "Llama": {
+   "nebula": "Llama 星云",
+   "hf_org": "meta-llama",
+   "finetune": 12490,
+   "adapter": 10748,
+   "quantized": 3040,
+   "merge": 739,
+   "total": 27017,
+   "repos_checked": 10,
+   "repos_failed": 0,
+   "top_repo": "meta-llama/Llama-3.1-8B-Instruct"
+  },
+  "BERT": {
+   "nebula": "芝麻街星团（BERT）",
+   "hf_org": "google-bert",
+   "finetune": 13562,
+   "adapter": 238,
+   "quantized": 65,
+   "merge": 7,
+   "total": 13872,
+   "repos_checked": 10,
+   "repos_failed": 0,
+   "top_repo": "google-bert/bert-base-uncased"
+  },
+  "Mistral": {
+   "nebula": "Mistral 星云",
+   "hf_org": "mistralai",
+   "finetune": 3566,
+   "adapter": 5285,
+   "quantized": 1157,
+   "merge": 912,
+   "total": 10920,
+   "repos_checked": 10,
+   "repos_failed": 0,
+   "top_repo": "mistralai/Mistral-7B-v0.1"
+  },
+  "Gemma": {
+   "nebula": "Gemini 星云（Gemma 支）",
+   "hf_org": "google（名含 gemma）",
+   "finetune": 2820,
+   "adapter": 1768,
+   "quantized": 2786,
+   "merge": 80,
+   "total": 7454,
+   "repos_checked": 10,
+   "repos_failed": 0,
+   "top_repo": "google/gemma-3-4b-it"
+  },
+  "Phi": {
+   "nebula": "Phi 星群",
+   "hf_org": "microsoft（名含 phi）",
+   "finetune": 2508,
+   "adapter": 3843,
+   "quantized": 984,
+   "merge": 56,
+   "total": 7391,
+   "repos_checked": 10,
+   "repos_failed": 0,
+   "top_repo": "microsoft/Phi-3-mini-4k-instruct"
+  },
+  "GPT-2": {
+   "nebula": "GPT 星云（GPT-2 支）",
+   "hf_org": "openai-community（gpt2）",
+   "finetune": 2674,
+   "adapter": 2265,
+   "quantized": 150,
+   "merge": 11,
+   "total": 5100,
+   "repos_checked": 4,
+   "repos_failed": 0,
+   "top_repo": "openai-community/gpt2"
+  },
+  "DeepSeek": {
+   "nebula": "DeepSeek 星云",
+   "hf_org": "deepseek-ai",
+   "finetune": 1619,
+   "adapter": 576,
+   "quantized": 907,
+   "merge": 44,
+   "total": 3146,
+   "repos_checked": 10,
+   "repos_failed": 0,
+   "top_repo": "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B"
+  },
+  "gpt-oss": {
+   "nebula": "GPT 星云（gpt-oss 支）",
+   "hf_org": "openai（gpt-oss）",
+   "finetune": 701,
+   "adapter": 729,
+   "quantized": 408,
+   "merge": 11,
+   "total": 1849,
+   "repos_checked": 4,
+   "repos_failed": 0,
+   "top_repo": "openai/gpt-oss-20b"
+  },
+  "GLM": {
+   "nebula": "GLM 星云",
+   "hf_org": "zai-org + THUDM",
+   "finetune": 283,
+   "adapter": 71,
+   "quantized": 743,
+   "merge": 5,
+   "total": 1102,
+   "repos_checked": 10,
+   "repos_failed": 0,
+   "top_repo": "zai-org/GLM-5.3-Flash"
+  },
+  "OLMo": {
+   "nebula": "散星（OLMo）",
+   "hf_org": "allenai（名含 olmo）",
+   "finetune": 559,
+   "adapter": 305,
+   "quantized": 163,
+   "merge": 5,
+   "total": 1032,
+   "repos_checked": 10,
+   "repos_failed": 0,
+   "top_repo": "allenai/Olmo-3-7B-Instruct"
+  },
+  "MiniMax": {
+   "nebula": "MiniMax 星云",
+   "hf_org": "MiniMaxAI",
+   "finetune": 294,
+   "adapter": 169,
+   "quantized": 392,
+   "merge": 15,
+   "total": 870,
+   "repos_checked": 10,
+   "repos_failed": 0,
+   "top_repo": "MiniMaxAI/MiniMax-H3"
+  },
+  "BLOOM": {
+   "nebula": "散星（BLOOM）",
+   "hf_org": "bigscience（名含 bloom）",
+   "finetune": 102,
+   "adapter": 656,
+   "quantized": 60,
+   "merge": 2,
+   "total": 820,
+   "repos_checked": 10,
+   "repos_failed": 0,
+   "top_repo": "bigscience/bloomz-560m"
+  },
+  "Falcon": {
+   "nebula": "散星（Falcon）",
+   "hf_org": "tiiuae",
+   "finetune": 162,
+   "adapter": 413,
+   "quantized": 180,
+   "merge": 2,
+   "total": 757,
+   "repos_checked": 10,
+   "repos_failed": 0,
+   "top_repo": "tiiuae/falcon-7b"
+  },
+  "Yi": {
+   "nebula": "散星（Yi）",
+   "hf_org": "01-ai",
+   "finetune": 65,
+   "adapter": 365,
+   "quantized": 114,
+   "merge": 8,
+   "total": 552,
+   "repos_checked": 10,
+   "repos_failed": 0,
+   "top_repo": "01-ai/Yi-1.5-9B"
+  },
+  "Kimi": {
+   "nebula": "Kimi 星云",
+   "hf_org": "moonshotai",
+   "finetune": 178,
+   "adapter": 67,
+   "quantized": 266,
+   "merge": 4,
+   "total": 515,
+   "repos_checked": 10,
+   "repos_failed": 0,
+   "top_repo": "moonshotai/Kimi-K3"
+  },
+  "Seed": {
+   "nebula": "豆包星云（Seed）",
+   "hf_org": "ByteDance-Seed",
+   "finetune": 138,
+   "adapter": 20,
+   "quantized": 106,
+   "merge": 3,
+   "total": 267,
+   "repos_checked": 10,
+   "repos_failed": 0,
+   "top_repo": "ByteDance-Seed/BAGEL-7B-MoT"
+  },
+  "ERNIE": {
+   "nebula": "文心星云",
+   "hf_org": "baidu（名含 ernie）",
+   "finetune": 55,
+   "adapter": 50,
+   "quantized": 118,
+   "merge": 3,
+   "total": 226,
+   "repos_checked": 10,
+   "repos_failed": 0,
+   "top_repo": "baidu/ERNIE-Image"
+  },
+  "Hunyuan": {
+   "nebula": "混元星云",
+   "hf_org": "tencent（名含 hunyuan）",
+   "finetune": 51,
+   "adapter": 7,
+   "quantized": 56,
+   "merge": 0,
+   "total": 114,
+   "repos_checked": 10,
+   "repos_failed": 0,
+   "top_repo": "tencent/Hunyuan-A13B-Instruct"
+  },
+  "Grok": {
+   "nebula": "Grok 星云",
+   "hf_org": "xai-org",
+   "finetune": 13,
+   "adapter": 1,
+   "quantized": 10,
+   "merge": 1,
+   "total": 25,
+   "repos_checked": 2,
+   "repos_failed": 0,
+   "top_repo": "xai-org/grok-2"
+  }
+ }
+}

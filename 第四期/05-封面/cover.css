@@ -1,0 +1,39 @@
+/* 第四期封面：大理石底 + 柏拉图胸像 + "我没有说过啊" 气泡 + 大标题 */
+@font-face { font-family: "Serif"; src: url("fonts/NotoSerifSC-VF.ttf"); font-weight: 200 900; }
+@font-face { font-family: "GaraI"; src: url("fonts/GARAIT.TTF"); }
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { overflow: hidden; background: #f3ebdd; }
+.stage { position: relative; overflow: hidden; background: linear-gradient(#f3ebdd, #ece1cf); }
+.marble { position: absolute; inset: 0; background: url("marble-bg.jpg") center / cover no-repeat; opacity: .85; }
+.light { position: absolute; inset: 0; background: radial-gradient(ellipse 45% 55% at var(--lx) var(--ly), rgba(255, 250, 238, .95), rgba(255, 250, 238, 0) 70%); }
+.vignette { position: absolute; inset: 0; background: radial-gradient(ellipse 75% 70% at 50% 45%, rgba(0, 0, 0, 0) 55%, rgba(92, 60, 30, .26) 100%); }
+.grain { position: absolute; inset: 0; opacity: .07; mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .4  0 0 0 0 .3  0 0 0 0 .2  0 0 0 1.4 -0.2'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"); }
+
+/* 背景里虚化的聊天气泡（只作质感） */
+.bb { position: absolute; padding: .5em .9em; border-radius: 999px; font-family: "Serif"; font-weight: 600; color: #2a1e16; background: #fffaf2;
+  box-shadow: 0 10px 28px rgba(110, 70, 40, .14); white-space: nowrap; filter: blur(3px); opacity: .5; }
+.bb.me { background: #f7cfc8; color: #4a2018; }
+
+.bust { position: absolute; filter: drop-shadow(0 34px 44px rgba(90, 58, 30, .34)); }
+.floor { position: absolute; border-radius: 50%; background: radial-gradient(ellipse 50% 50% at 50% 50%, rgba(138, 106, 72, .32), rgba(138, 106, 72, 0)); filter: blur(10px); }
+
+/* 柏拉图的回复气泡 */
+.reply { position: absolute; }
+.reply .who { font-family: "Serif"; font-weight: 700; color: #6b5646; letter-spacing: .12em; margin: 0 0 .3em .3em; }
+.reply .say { position: relative; display: inline-block; border-radius: .6em; border-bottom-right-radius: .16em; background: #fffdf8;
+  border: .06em solid #c99a4a; font-family: "Serif"; font-weight: 900; color: #2a1e16; white-space: nowrap; box-shadow: 0 .3em .7em rgba(110, 70, 40, .24); }
+.reply .quote { display: inline-block; border-radius: .3em; background: rgba(120, 96, 72, .12); font-family: "Serif"; font-weight: 500; color: #7a6450; }
+.reply .quote::before { content: "引用："; }
+.tail { position: absolute; overflow: visible; }
+
+/* 标题 */
+.title { position: absolute; }
+.title .latin { font-family: "GaraI"; color: #a8854a; letter-spacing: .06em; }
+.title .main { font-family: "Serif"; font-weight: 900; line-height: 1.05; letter-spacing: .04em;
+  background: linear-gradient(180deg, #3a2a1e 0%, #2a1e16 60%, #4a3524 100%); -webkit-background-clip: text; background-clip: text; color: transparent;
+  filter: drop-shadow(0 2px 0 rgba(255, 255, 255, .6)); }
+.title .rule { height: 4px; background: linear-gradient(90deg, #c99a4a, rgba(201, 154, 74, 0)); }
+.title .sub { font-family: "Serif"; font-weight: 700; color: #6b5646; letter-spacing: .14em; }
+.title .sub em { font-style: normal; color: #d4505e; }

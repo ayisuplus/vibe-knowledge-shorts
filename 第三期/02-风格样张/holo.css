@@ -1,0 +1,37 @@
+/* 第三期 · 科幻全息 · 共用样式（竖屏 1080×1920） */
+@font-face { font-family: "NSans"; src: url("fonts/NotoSansSC-VF.ttf"); font-weight: 100 900; }
+@font-face { font-family: "Mono"; src: url("fonts/CascadiaMono.ttf"); }
+
+:root {
+  --bg: #02070d;
+  --bg2: #04121c;
+  --holo: #3df2ff;      /* 全息青 */
+  --holo-dim: #1a7f8c;
+  --ice: #e8fdff;       /* 冰白 */
+  --heat: #ffb547;      /* 琥珀：温度 */
+  --heat-hot: #ffd27a;
+  --alert: #ff4d3a;     /* 信号红（偏橙，不偏品红） */
+  --alert-dim: #7a1d14;
+}
+
+html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: var(--bg); }
+.stage { position: relative; width: 1080px; height: 1920px; overflow: hidden;
+  background: radial-gradient(ellipse 90% 60% at 50% 42%, var(--bg2) 0%, var(--bg) 70%); }
+.stage.red { background: radial-gradient(ellipse 90% 60% at 50% 40%, #1a0705 0%, #070202 72%); }
+svg.layer { position: absolute; inset: 0; display: block; }
+text { font-family: "NSans", sans-serif; }
+.mono { font-family: "Mono", monospace; }
+
+/* 扫描线 + 噪点 + 暗角 */
+.scan { position: absolute; inset: 0; pointer-events: none;
+  background: repeating-linear-gradient(to bottom, rgba(61,242,255,0.055) 0 2px, transparent 2px 5px);
+  mix-blend-mode: screen; }
+.red .scan { background: repeating-linear-gradient(to bottom, rgba(255,77,58,0.06) 0 2px, transparent 2px 5px); }
+.vignette { position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse 75% 62% at 50% 45%, transparent 55%, rgba(0,0,0,0.72) 100%); }
+.grain { position: absolute; inset: 0; pointer-events: none; opacity: .09; mix-blend-mode: screen;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.6  0 0 0 0 1  0 0 0 0 1  0 0 0 1.4 -0.2'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"); }
+
+/* 平台 UI 安全区参考（仅调试用，加 class="debug" 显示） */
+.safe { display: none; position: absolute; border: 2px dashed rgba(255,255,0,.5); }
+.debug .safe { display: block; }

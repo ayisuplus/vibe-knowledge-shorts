@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<!-- 第十三期封面：cover.html?a=43（1440×1080）/ ?a=34（1080×1440）。底图是成片收尾那一帧（4K，无字幕），字排在上下留白里。 -->
+<style>
+  @font-face { font-family: "SerifSC"; src: url("../videos/red-queen/assets/fonts/NotoSerifSC-VF.ttf"); font-weight: 200 900; }
+  @font-face { font-family: "NotoSC"; src: url("../videos/red-queen/assets/fonts/NotoSansSC-VF.ttf"); font-weight: 100 900; }
+  html, body { margin: 0; background: #05070b; overflow: hidden; }
+  #c { position: relative; overflow: hidden; background: #05070b; }
+  #img { position: absolute; background: url("frame.jpg") no-repeat; background-size: 100% 100%; }
+  .fade { position: absolute; inset: 0; pointer-events: none; }
+  .t { position: absolute; left: 0; right: 0; text-align: center; font-family: "SerifSC", serif; font-weight: 900; color: #f4f8fc; }
+  .t b { display: block; line-height: 1.1; letter-spacing: .04em; }
+  .t em { font-style: normal; color: #ff8f5e; }
+  .hook { position: absolute; left: 0; right: 0; text-align: center; font-family: "NotoSC", sans-serif; font-weight: 700; color: #d3e4f2; letter-spacing: .06em; }
+  .hook span { color: #ff8f5e; }
+  .mark { position: absolute; left: 0; right: 0; text-align: center; font-family: "NotoSC", sans-serif; font-weight: 400; color: #5b8fa8; letter-spacing: .36em; }
+</style>
+</head>
+<body>
+<div id="c"><div id="img"></div><div class="fade"></div>
+  <div class="t"><b>社会进步了</b><b>为什么我<em>反而更累</em></b></div>
+  <div class="hook">不是你不够努力 —— 是<span>跑道在加速</span></div>
+  <div class="mark">VIBE 知识大赏 · 第十三期</div>
+</div>
+<script>
+  const a = new URLSearchParams(location.search).get("a") || "43";
+  const c = document.getElementById("c"), img = document.getElementById("img"), fade = c.querySelector(".fade");
+  const t = c.querySelector(".t"), b = t.querySelectorAll("b"), hook = c.querySelector(".hook"), mark = c.querySelector(".mark");
+  const set = (e, s) => Object.assign(e.style, s);
+  if (a === "43") {
+    set(c, { width: "1440px", height: "1080px" });
+    set(img, { left: "-240px", top: "0px", width: "1920px", height: "1080px" });
+    fade.style.background = "linear-gradient(180deg, rgba(5,7,11,.96) 0%, rgba(5,7,11,.72) 20%, rgba(5,7,11,0) 40%, rgba(5,7,11,0) 62%, rgba(5,7,11,.78) 84%, rgba(5,7,11,.97) 100%)";
+    set(t, { top: "66px" });
+    set(b[0], { fontSize: "124px" });
+    set(b[1], { fontSize: "110px", marginTop: "10px" });
+    set(hook, { top: "930px", fontSize: "46px" });
+    set(mark, { top: "1010px", fontSize: "23px" });
+  } else {
+    set(c, { width: "1080px", height: "1440px" });
+    set(img, { left: "-740px", top: "0px", width: "2560px", height: "1440px" });
+    fade.style.background = "linear-gradient(180deg, rgba(5,7,11,.97) 0%, rgba(5,7,11,.80) 19%, rgba(5,7,11,0) 38%, rgba(5,7,11,0) 66%, rgba(5,7,11,.80) 86%, rgba(5,7,11,.98) 100%)";
+    set(t, { top: "96px" });
+    set(b[0], { fontSize: "132px" });
+    set(b[1], { fontSize: "116px", marginTop: "12px" });
+    set(hook, { top: "1196px", fontSize: "48px" });
+    set(mark, { top: "1300px", fontSize: "24px" });
+  }
+</script>
+</body>
+</html>

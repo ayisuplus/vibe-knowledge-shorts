@@ -1,0 +1,246 @@
+/* 第十三期 · 社会进步了，为什么我反而更累
+   视觉方向 A · 深夜机舱
+   —— 颜色、对比、字号规则都在这里，改配色只改这一处。
+
+   基底：#05070b → #111a25 的冷黑，唯一的暖色是警示橙 #ff6b35（用来标「及格线」）。
+   冷青 #6fd3e8 只给机器（皮带、仪表、光），不给人的身体 —— 人是暖白到灰蓝的渐变，被顶灯打着。
+   对比：正文 #eef4fa on #0a0e15 ≈ 14:1；次要 #7f93a6 ≈ 5.6:1（手机尺寸实测可读）。
+*/
+
+@font-face {
+  font-family: "NotoSerifSC";
+  src: url("fonts/NotoSerifSC-VF.ttf") format("truetype");
+  font-weight: 200 900;
+  font-display: block;
+}
+@font-face {
+  font-family: "NotoSC";
+  src: url("fonts/NotoSansSC-VF.ttf") format("truetype");
+  font-weight: 100 900;
+  font-display: block;
+}
+@font-face {
+  font-family: "WenKai";
+  src: url("fonts/LXGWWenKai-Regular.ttf") format("truetype");
+  font-display: block;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  overflow: hidden;
+}
+#root {
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+  background: #05070b;
+}
+.layer {
+  position: absolute;
+  inset: 0;
+}
+
+/* ---------- 底 ---------- */
+#bg {
+  background: radial-gradient(
+    62% 58% at 50% 44%,
+    #111a25 0%,
+    #0a0e15 46%,
+    #05070b 100%
+  );
+}
+#bg .floor {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 44%;
+  background: linear-gradient(180deg, rgba(6, 9, 14, 0) 0%, #06090e 58%, #04060a 100%);
+}
+/* 顶灯：很淡的一束，制造「机舱」而不是「外景」 */
+#bg .lamp {
+  position: absolute;
+  left: 50%;
+  top: -26%;
+  width: 1200px;
+  height: 900px;
+  margin-left: -600px;
+  background: radial-gradient(closest-side, rgba(180, 214, 245, 0.10), transparent 72%);
+  filter: blur(24px);
+}
+#bg .grain {
+  position: absolute;
+  inset: -40px;
+  opacity: 0.055;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/></filter><rect width='240' height='240' filter='url(%23n)'/></svg>");
+}
+#bg .vig {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    78% 68% at 50% 44%,
+    transparent 40%,
+    rgba(0, 0, 0, 0.66) 100%
+  );
+}
+
+/* ---------- 主视觉 ---------- */
+#stage svg {
+  position: absolute;
+  inset: 0;
+  width: 1920px;
+  height: 1080px;
+  overflow: visible;
+}
+
+/* ---------- 字 ---------- */
+#hud {
+  font-family: "NotoSC", "NotoSerifSC", sans-serif;
+  color: #eef4fa;
+}
+
+.cap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 62px;
+  text-align: center;
+  font-family: "NotoSerifSC", serif;
+  font-weight: 600;
+  font-size: 58px;
+  letter-spacing: 0.02em;
+  line-height: 1.34;
+  color: #eef4fa;
+  text-shadow: 0 2px 34px rgba(0, 0, 0, 0.92);
+}
+.cap .hi {
+  color: #ff8f5e;
+}
+.cap.sm {
+  font-size: 44px;
+  color: #cfdcea;
+}
+
+/* 仪表数字 */
+.readout {
+  position: absolute;
+  font-family: Consolas, "Cascadia Mono", "SF Mono", monospace;
+  font-variant-numeric: tabular-nums;
+  color: #b9f2ff;
+  letter-spacing: -0.01em;
+}
+.readout .x {
+  font-size: 0.46em;
+  color: #5b8fa8;
+  margin-left: 0.06em;
+}
+.label {
+  position: absolute;
+  font-family: "NotoSC", sans-serif;
+  font-size: 20px;
+  letter-spacing: 0.36em;
+  color: #6f8ba3;
+}
+
+/* 片名 */
+.title {
+  font-family: "NotoSerifSC", serif;
+  font-weight: 900;
+  font-size: 116px;
+  line-height: 1.26;
+  letter-spacing: 0.02em;
+  color: #eef4fa;
+}
+.title em {
+  font-style: normal;
+  color: #ff8f5e;
+}
+
+/* ---------- 画面上的字（不是字幕） ---------- */
+.block { position: absolute; }
+
+.big {
+  font-family: Consolas, "Cascadia Mono", "SF Mono", monospace;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  color: #b9f2ff;
+  letter-spacing: -0.02em;
+}
+.mid {
+  font-family: "NotoSerifSC", serif;
+  font-weight: 700;
+  color: #eef4fa;
+}
+.small {
+  font-family: "NotoSC", sans-serif;
+  font-size: 22px;
+  letter-spacing: 0.12em;
+  color: #7f93a6;
+  line-height: 1.7;
+}
+.tag {
+  font-family: "NotoSC", sans-serif;
+  font-size: 20px;
+  letter-spacing: 0.36em;
+  color: #5b8fa8;
+}
+
+/* 引文卡：整屏压黑，一张斜切进来的纸 */
+.card {
+  background: linear-gradient(180deg, rgba(4, 6, 10, 0.94) 0%, rgba(4, 6, 10, 0.86) 100%);
+  opacity: 0;
+}
+.card .qwrap {
+  position: absolute;
+  left: 200px;
+  top: 268px;
+  width: 1240px;
+  padding-left: 44px;
+  border-left: 3px solid #ff6b35;
+}
+.qen {
+  font-family: Georgia, "NotoSerifSC", serif;
+  font-size: 62px;
+  line-height: 1.42;
+  color: #eef4fa;
+  letter-spacing: 0.005em;
+}
+.qcn {
+  font-family: "NotoSerifSC", serif;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1.5;
+  color: #cfe0ef;
+  margin-top: 34px;
+}
+.qsrc {
+  font-family: "NotoSC", sans-serif;
+  font-size: 21px;
+  letter-spacing: 0.08em;
+  color: #6f8ba3;
+  margin-top: 40px;
+}
+
+/* 横向条形图：数据用冷青，橙色留给及格线 */
+.bar {
+  height: 12px;
+  background: #6fd3e8;
+  border-radius: 6px;
+  box-shadow: 0 0 22px rgba(111, 211, 232, 0.5);
+}
+.barrow { display: flex; align-items: center; gap: 26px; margin-bottom: 30px; }
+.barrow .nm { width: 340px; text-align: right; font-family: "NotoSC", sans-serif; font-size: 24px; color: #a9c0d4; letter-spacing: 0.05em; }
+.barrow .vl { font-family: Consolas, monospace; font-size: 34px; color: #b9f2ff; font-variant-numeric: tabular-nums; }
+
+/* 结尾的暖光 */
+.glowup {
+  background: radial-gradient(60% 60% at 50% 46%, rgba(255, 226, 190, 0.5), transparent 70%);
+  mix-blend-mode: screen;
+}
+
+/* 等宽字体走系统本地字体；显式声明让 lint 与渲染器都能解析 */
+@font-face { font-family: "Consolas"; src: local("Consolas"); font-display: swap; }
+@font-face { font-family: "Cascadia Mono"; src: local("Cascadia Mono"); font-display: swap; }

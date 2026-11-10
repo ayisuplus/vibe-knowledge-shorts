@@ -1,0 +1,44 @@
+{
+ "1": {
+  "class_type": "BreezeTTS2LoadModel",
+  "inputs": {
+   "model": "bf16 (best quality)",
+   "dtype": "auto",
+   "device": "auto",
+   "attention": "auto",
+   "decode_mode": "eager",
+   "download_if_missing": false
+  }
+ },
+ "2": {
+  "class_type": "BreezeTTS2VoiceDesign",
+  "inputs": {
+   "breeze_model": [
+    "1",
+    0
+   ],
+   "text": "我把大模型家族，做成了星星。每一颗星，是一个模型；每一片星云，是一个家族。你每天聊天的那个 AI，就住在这里面。",
+   "instruction": "一位温暖知性的女性，声音柔和、略微低沉，平静而有感染力，像纪录片的旁白，语速偏慢，停顿自然。",
+   "cfg_scale": 4.0,
+   "max_new_tokens": 1500,
+   "temperature": 0.8,
+   "top_k": 50,
+   "top_p": 1.0,
+   "repetition_penalty": 1.1,
+   "depth_temperature": 0.8,
+   "depth_top_k": 50,
+   "depth_top_p": 1.0,
+   "seed": 20261026
+  }
+ },
+ "3": {
+  "class_type": "SaveAudio",
+  "inputs": {
+   "audio": [
+    "2",
+    0
+   ],
+   "filename_prefix": "ep18-voice/v2-doc"
+  }
+ }
+}

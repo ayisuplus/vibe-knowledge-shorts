@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>样张 B · 温度旋钮</title>
+<link rel="stylesheet" href="holo.css">
+</head>
+<body>
+<div class="stage" id="stage">
+  <svg class="layer" id="s" width="1080" height="1920" viewBox="0 0 1080 1920"></svg>
+  <div class="scan"></div><div class="grain"></div><div class="vignette"></div>
+  <div class="safe" style="left:60px;top:140px;width:880px;height:1500px"></div>
+</div>
+<script src="holo.js"></script>
+<script>
+const s = document.getElementById("s");
+H.defs(s);
+H.particles(s, { n: 160, seed: 11, op: 0.55 });
+H.grid(s, { y0: 1560, op: 0.3 });
+
+// ---- 背景大字（幽灵字） ----
+H.el(s, "text", { x: 540, y: 1180, "text-anchor": "middle", "font-size": 520, "font-weight": 900, fill: "#3df2ff", opacity: 0.035, class: "mono" }, "T=4");
+
+// ---- 1. 老师模型 ----
+const net = H.net(s, { cx: 600, top: 190, h: 400, w: 820, layers: [10, 16, 20, 20, 16, 5], seed: 4 });
+H.el(s, "text", { x: 70, y: 168, "font-size": 34, "font-weight": 700, fill: "#3df2ff", filter: "url(#glowS)" }, "老师模型");
+
+// 输入卡：柯基屁股
+const card = H.el(s, "g", { transform: "translate(70,250)" });
+H.el(card, "rect", { width: 230, height: 210, rx: 6, fill: "url(#fillIce)", stroke: "#3df2ff", "stroke-opacity": .5, "stroke-width": 1.5 });
+H.brackets(card, 0, 0, 230, 210, { len: 22, sw: 2.5 });
+const cg = H.el(card, "g", { stroke: "#e8fdff", "stroke-width": 3, fill: "none", filter: "url(#glowS)", "stroke-linecap": "round", "stroke-linejoin": "round" });
+// 两个面包一样的屁股 + 小短腿 + 尾巴
+H.el(cg, "path", { d: "M115 62 C70 50 40 80 44 120 C47 150 70 162 98 160 C108 160 113 154 115 146 C117 154 122 160 132 160 C160 162 183 150 186 120 C190 80 160 50 115 62 Z", fill: "rgba(255,181,71,0.16)" });
+H.el(cg, "path", { d: "M115 70 L115 140" , opacity: .7 });
+H.el(cg, "path", { d: "M72 160 L70 186 M90 162 L90 186 M140 162 L140 186 M158 160 L160 186" });
+H.el(cg, "path", { d: "M108 64 C102 44 118 30 128 46 C124 54 120 60 116 63" , fill: "rgba(232,253,255,0.18)" });
+H.el(card, "text", { x: 12, y: 200, "font-size": 18, fill: "#3df2ff", opacity: .75, class: "mono" }, "INPUT");
+// 输入线：卡片 → 网络顶层
+H.el(s, "path", { d: "M300 330 C380 330 420 220 470 200", stroke: "#3df2ff", "stroke-width": 2, fill: "none", "stroke-dasharray": "6 8", opacity: .7 });
+
+// 输出光束：网络底层 → 光柱
+const beam = H.el(s, "g", { opacity: .9 });
+H.el(beam, "path", { d: "M560 600 L230 960 L960 960 L640 600 Z", fill: "url(#fillHolo)", opacity: .35 });
+
+// ---- 2. 温度旋钮 ----
+const K = { x: 250, y: 770, r: 112 };
+const kn = H.el(s, "g", {});
+H.el(kn, "circle", { cx: K.x, cy: K.y, r: K.r + 26, fill: "none", stroke: "#ffb547", "stroke-opacity": .25, "stroke-width": 2 });
+H.el(kn, "circle", { cx: K.x, cy: K.y, r: K.r, fill: "rgba(255,181,71,0.06)", stroke: "#ffb547", "stroke-width": 3, filter: "url(#glowS)" });
+const a0 = -225, a1 = 45; // 刻度角（度，SVG 坐标）
+for (let i = 1; i <= 10; i++) {
+  const a = (a0 + (a1 - a0) * (i - 1) / 9) * Math.PI / 180;
+  const on = i <= 4;
+  const r1 = K.r + 8, r2 = K.r + (i === 1 || i === 4 ? 30 : 20);
+  H.el(kn, "line", { x1: K.x + r1 * Math.cos(a), y1: K.y + r1 * Math.sin(a), x2: K.x + r2 * Math.cos(a), y2: K.y + r2 * Math.sin(a),
+    stroke: on ? "#ffd27a" : "#ffb547", "stroke-opacity": on ? 1 : .35, "stroke-width": i === 1 || i === 4 ? 4 : 2.5, filter: on ? "url(#glowS)" : "" });
+  if (i === 1 || i === 4 || i === 10) H.el(kn, "text", { x: K.x + (K.r + 52) * Math.cos(a), y: K.y + (K.r + 52) * Math.sin(a) + 9, "text-anchor": "middle",
+    "font-size": 26, fill: "#ffb547", opacity: on ? 1 : .5, class: "mono" }, i);
+}
+// 已经走过的弧
+const arc = (r, d0, d1) => { const p = d => [K.x + r * Math.cos(d * Math.PI / 180), K.y + r * Math.sin(d * Math.PI / 180)];
+  const [x0, y0] = p(d0), [x1, y1] = p(d1); return `M${x0} ${y0} A${r} ${r} 0 ${d1 - d0 > 180 ? 1 : 0} 1 ${x1} ${y1}`; };
+H.el(kn, "path", { d: arc(K.r + 8, a0, a0 + (a1 - a0) * 3 / 9), stroke: "#ffd27a", "stroke-width": 6, fill: "none", filter: "url(#glow)" });
+// 指针
+const na = (a0 + (a1 - a0) * 3 / 9) * Math.PI / 180;
+H.el(kn, "line", { x1: K.x, y1: K.y, x2: K.x + (K.r - 14) * Math.cos(na), y2: K.y + (K.r - 14) * Math.sin(na), stroke: "#fff4d6", "stroke-width": 5, "stroke-linecap": "round", filter: "url(#glowS)" });
+// 中心火焰（呼应开头的酒精灯）
+H.el(kn, "path", { d: `M${K.x} ${K.y - 62} C${K.x + 30} ${K.y - 26} ${K.x + 34} ${K.y + 6} ${K.x} ${K.y + 28} C${K.x - 34} ${K.y + 6} ${K.x - 30} ${K.y - 26} ${K.x} ${K.y - 62} Z`, fill: "url(#flame)", filter: "url(#glowL)" });
+H.el(kn, "circle", { cx: K.x, cy: K.y, r: 9, fill: "#fff4d6" });
+
+// 温度读数
+H.el(s, "text", { x: 440, y: 725, "font-size": 34, "font-weight": 700, fill: "#ffb547" }, "温度");
+H.el(s, "text", { x: 440, y: 840, "font-size": 132, fill: "#ffd27a", class: "mono", filter: "url(#glowS)" }, "T=4");
+H.el(s, "text", { x: 440, y: 885, "font-size": 30, fill: "#ffb547", opacity: .6, class: "mono" }, "平时 T=1");
+
+// ---- 3. 概率光柱 ----
+const cls = ["柯基", "狐狸", "猫", "面包", "汽车"];
+const p4 = [48.9, 23.1, 14.0, 10.9, 3.1];
+const p1 = [94.4, 4.7, 0.6, 0.2, 0.0];
+const base = 1440, sc = 5.6, bw = 128, gap = 40, bx0 = 540 - (5 * bw + 4 * gap) / 2 - 30;
+H.el(s, "line", { x1: bx0 - 30, y1: base, x2: bx0 + 5 * bw + 4 * gap + 30, y2: base, stroke: "#3df2ff", "stroke-width": 2, opacity: .7 });
+cls.forEach((c, i) => {
+  const x = bx0 + i * (bw + gap), hot = c === "面包";
+  const col = hot ? "#ffb547" : "#3df2ff";
+  const h4 = Math.max(p4[i] * sc, 6), h1 = Math.max(p1[i] * sc, 2);
+  // T=1 时的高度（虚线幽灵）
+  H.el(s, "rect", { x, y: base - h1, width: bw, height: h1, fill: "none", stroke: "#e8fdff", "stroke-opacity": .35, "stroke-dasharray": "5 7", "stroke-width": 2 });
+  // T=4 光柱
+  H.el(s, "rect", { x, y: base - h4, width: bw, height: h4, fill: hot ? "url(#fillHeat)" : "url(#fillHolo)" });
+  H.el(s, "rect", { x, y: base - h4 - 3, width: bw, height: 6, fill: col, filter: "url(#glow)" });
+  H.el(s, "line", { x1: x, y1: base - h4, x2: x, y2: base, stroke: col, "stroke-opacity": .6, "stroke-width": 1.5 });
+  H.el(s, "line", { x1: x + bw, y1: base - h4, x2: x + bw, y2: base, stroke: col, "stroke-opacity": .6, "stroke-width": 1.5 });
+  // 数值
+  H.el(s, "text", { x: x + bw / 2, y: base - h4 - 22, "text-anchor": "middle", "font-size": hot ? 46 : 36, fill: hot ? "#ffd27a" : "#e8fdff", class: "mono", filter: hot ? "url(#glowS)" : "" }, p4[i].toFixed(1) + "%");
+  H.el(s, "text", { x: x + bw / 2, y: base + 54, "text-anchor": "middle", "font-size": 40, "font-weight": 700, fill: col }, c);
+});
+// 面包的注释：原来 0.2%
+const xb = bx0 + 3 * (bw + gap) + bw / 2, hb = p4[3] * sc;
+H.el(s, "text", { x: xb, y: base - hb - 82, "text-anchor": "middle", "font-size": 26, fill: "#ffb547", opacity: .85 }, "原来 0.2%");
+// 图例
+H.el(s, "rect", { x: 650, y: 960, width: 34, height: 18, fill: "none", stroke: "#e8fdff", "stroke-opacity": .5, "stroke-dasharray": "5 6", "stroke-width": 2 });
+H.el(s, "text", { x: 696, y: 977, "font-size": 24, fill: "#e8fdff", opacity: .6 }, "T=1 时的高度");
+
+// ---- 4. 主文字 ----
+H.el(s, "text", { x: 540, y: 1625, "text-anchor": "middle", "font-size": 92, "font-weight": 900, fill: "#e8fdff", filter: "url(#glowS)" }, "把温度调高");
+H.el(s, "text", { x: 540, y: 1705, "text-anchor": "middle", "font-size": 46, "font-weight": 500, fill: "#3df2ff" }, "老师的「犹豫」露出来了");
+
+H.brackets(s, 36, 120, 1008, 1620, { len: 46, sw: 2, op: .35 });
+</script>
+</body>
+</html>

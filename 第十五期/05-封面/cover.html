@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<!-- 第十五期封面：cover.html?a=43（1440×1080）/ ?a=34（1080×1440）。
+     纯代码绘制：织锦用片子里同一份 fabric.js（同一个 D16 菱纹），暗幕与金线是片头「幕落」的定格。
+     模块要走 http（render.mjs 起静态服务），不能直接双击打开。 -->
+<style>
+  @font-face { font-family: "NotoSerifSC"; src: url("../videos/pattern-tape/assets/fonts/NotoSerifSC-VF.ttf"); font-weight: 200 900; }
+  @font-face { font-family: "NotoSC";      src: url("../videos/pattern-tape/assets/fonts/NotoSansSC-VF.ttf");  font-weight: 100 900; }
+  html, body { margin: 0; overflow: hidden; background: #070b1d; }
+  #c { position: relative; overflow: hidden; }
+  canvas { position: absolute; left: 0; top: 0; }
+
+  .pill { position: absolute; left: 50%; transform: translateX(-50%); white-space: nowrap;
+          font-family: "NotoSC", sans-serif; font-weight: 700; color: #f0c15a; letter-spacing: .14em;
+          border: 2.5px solid rgba(240,193,90,.7); border-radius: 999px; background: rgba(10,15,40,.82); }
+  .title { position: absolute; left: 0; right: 0; text-align: center; color: #f6efdc;
+           font-family: "NotoSerifSC", serif; font-weight: 900; letter-spacing: .02em;
+           text-shadow: 0 4px 26px rgba(0,0,0,.65); }
+  .title .l { display: block; white-space: nowrap; }
+  .title em { font-style: normal; color: #f0c15a; }
+  .title .cm { margin-right: -0.42em; }
+  .foot { position: absolute; left: 0; right: 0; text-align: center; white-space: nowrap;
+          font-family: "NotoSC", sans-serif; font-weight: 500; color: #aab3d6; letter-spacing: .34em; }
+</style>
+</head>
+<body>
+<div id="c">
+  <canvas id="cv"></canvas>
+  <div class="pill">明 · 1637 · 《天工开物》</div>
+  <div class="title" id="title"></div>
+  <div class="foot">VIBE 知识大赏 · 第十五期</div>
+</div>
+<script type="module">
+  import { PAL, D16, drawClothFull, drawShuttle, drawGlint } from "../videos/pattern-tape/assets/js/fabric.js";
+
+  const a = new URLSearchParams(location.search).get("a") || "43";
+  const set = (e, s) => Object.assign(e.style, s);
+  const c = document.getElementById("c"), cv = document.getElementById("cv"), ctx = cv.getContext("2d");
+  const pill = c.querySelector(".pill"), title = document.getElementById("title"), foot = c.querySelector(".foot");
+  await document.fonts.load('900 100px "NotoSerifSC"'); await document.fonts.load('700 20px "NotoSC"'); await document.fonts.ready;
+
+  // 版式：W×H、织锦区高度 edge（幕沿）、花纹中心、胞格大小
+  const L = a === "43"
+    ? { W: 1440, H: 1080, edge: 520, cx: 720, cy: 250, S: 60,
+        pill: { top: 40, fs: 26, pad: "8px 28px" },
+        lines: ["织布的人<span class=\"cm\">，</span>为什么<em>不知道</em>", "自己织的是什么？"], title: { top: 604, fs: 112, lh: 1.16 },
+        foot: { bottom: 40, fs: 20 }, shuttle: { x: 1130, s: 1.5 } }
+    : { W: 1080, H: 1440, edge: 770, cx: 540, cy: 380, S: 60,
+        pill: { top: 48, fs: 26, pad: "8px 28px" },
+        lines: ["织布的人<span class=\"cm\">，</span>", "为什么<em>不知道</em>", "自己织的是什么？"], title: { top: 842, fs: 112, lh: 1.17 },
+        foot: { bottom: 52, fs: 22 }, shuttle: { x: 830, s: 1.6 } };
+  const { W, H, edge, S } = L;
+  const dpr = window.devicePixelRatio || 1;
+  cv.width = W * dpr; cv.height = H * dpr; set(cv, { width: W + "px", height: H + "px" });
+  set(c, { width: W + "px", height: H + "px" });
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+  // 底
+  const bg = ctx.createRadialGradient(W / 2, H * 0.42, 0, W / 2, H * 0.42, Math.max(W, H) * 0.72);
+  bg.addColorStop(0, "#1b2552"); bg.addColorStop(0.55, "#101838"); bg.addColorStop(1, "#070b1d");
+  ctx.fillStyle = bg; ctx.fillRect(0, 0, W, H);
+
+  // 织锦：花纹（涟漪中心在 8S 处）对准 (cx, cy)
+  const cols = Math.ceil(W / S) + 3, x0 = -S;
+  const kc = Math.round((L.cx - x0) / S), kr = 0, Y0 = L.cy - 8 * S;
+  const cShift = 8 - kc, rShift = 0;
+  const bit = (r, cc) => D16(r + rShift, cc + cShift);
+  const paint = (alpha, top, bottom) => drawClothFull(ctx, { x0, S, cols, Y0, bit, top, bottom, alpha });
+
+  // 幕下的「还有一整块布」：暗淡的织锦轮廓
+  ctx.save(); ctx.beginPath(); ctx.rect(0, edge, W, H - edge); ctx.clip(); paint(0.16, edge - 2 * S, H + 2 * S); ctx.restore();
+  // 幕上的织锦：满亮
+  ctx.save(); ctx.beginPath(); ctx.rect(0, 0, W, edge); ctx.clip(); paint(1, -2 * S, edge + 2 * S);
+  drawGlint(ctx, { u: 0.64, x0: 0, x1: W, y0: 0, y1: edge, w: 300, a: 0.3, color: "248,220,138" });
+  // 四周压暗，把视线收到中间
+  const vg = ctx.createRadialGradient(W / 2, edge * 0.5, edge * 0.35, W / 2, edge * 0.5, Math.max(W, edge * 2) * 0.62);
+  vg.addColorStop(0, "rgba(5,8,26,0)"); vg.addColorStop(1, "rgba(5,8,26,.55)");
+  ctx.fillStyle = vg; ctx.fillRect(0, 0, W, edge);
+  // 幕沿上方一道渐暗，免得织锦直接撞上金线
+  const eg = ctx.createLinearGradient(0, edge - 90, 0, edge);
+  eg.addColorStop(0, "rgba(5,8,26,0)"); eg.addColorStop(1, "rgba(5,8,26,.55)");
+  ctx.fillStyle = eg; ctx.fillRect(0, edge - 90, W, 90);
+  ctx.restore();
+  // 暗幕 + 金线（片头第 n3 拍的定格）
+  ctx.fillStyle = "rgba(5,8,26,.88)"; ctx.fillRect(0, edge, W, H - edge);
+  ctx.save();
+  ctx.shadowColor = "rgba(240,193,90,.8)"; ctx.shadowBlur = 22; ctx.fillStyle = "rgba(240,193,90,.95)";
+  ctx.fillRect(0, edge - 2, W, 4);
+  ctx.restore();
+  // 梭停在金线上
+  drawShuttle(ctx, L.shuttle.x, edge, L.shuttle.s, 1, 1);
+
+  // 文字
+  set(pill, { top: L.pill.top + "px", fontSize: L.pill.fs + "px", padding: L.pill.pad });
+  title.innerHTML = L.lines.map((t) => `<span class="l">${t}</span>`).join("");
+  set(title, { top: L.title.top + "px", fontSize: L.title.fs + "px", lineHeight: String(L.title.lh) });
+  set(foot, { bottom: L.foot.bottom + "px", fontSize: L.foot.fs + "px" });
+  document.title = "ready";
+</script>
+</body>
+</html>

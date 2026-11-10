@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>第二十期 · 3D 风格样张</title>
+<style>
+@font-face{font-family:NotoSC;src:url(../fonts/NotoSansSC-VF.ttf)}
+@font-face{font-family:NotoSerifSC;src:url(../fonts/NotoSerifSC-VF.ttf)}
+@font-face{font-family:CascadiaMono;src:url(../fonts/CascadiaMono.ttf)}
+@font-face{font-family:WenKai;src:url(../fonts/LXGWWenKai-Regular.ttf)}
+*{box-sizing:border-box} html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:#000}
+body{font-family:NotoSC,sans-serif}
+#c{position:absolute;inset:0;width:1920px;height:1080px;display:block}
+#ui{position:absolute;inset:0;pointer-events:none}
+.fade{position:absolute;left:0;right:0;bottom:0;height:360px}
+.mode{position:absolute;left:76px;top:47px;font-size:24px;font-weight:600;letter-spacing:.14em;opacity:.85}
+.tag{position:absolute;left:50%;top:37px;transform:translateX(-50%);height:48px;line-height:44px;padding:0 28px;border-radius:25px;font-size:23px;letter-spacing:.12em;border:1px solid;white-space:nowrap}
+.mark{position:absolute;right:80px;top:48px;font-size:25px;letter-spacing:.10em;opacity:.8}
+.note{position:absolute;top:788px;left:110px;width:1700px;text-align:center;font-size:30px;font-weight:500;line-height:1.3}
+.caption{position:absolute;top:918px;left:110px;width:1700px;text-align:center;font-size:46px;line-height:1.35;font-weight:800;letter-spacing:.035em;text-shadow:0 2px 18px #000a}
+.lbl{position:absolute;transform:translate(-50%,0);text-align:center;white-space:nowrap;line-height:1.45;text-shadow:0 2px 14px #000c}
+.mono{font-family:CascadiaMono,NotoSC,monospace}.serif{font-family:NotoSerifSC,serif}.hand{font-family:WenKai,NotoSC,sans-serif}
+/* B 引文：半透明黄铜框，压在浑天仪上 */
+.qf{position:absolute;left:800px;top:200px;width:980px;height:500px;border:3px solid #c9a45c;outline:1px solid #c9a45c66;outline-offset:10px;background:#0b1528c4;backdrop-filter:blur(5px);padding:62px 70px;box-shadow:0 40px 100px #000a}
+.qf .k{font-size:26px;letter-spacing:.18em;color:#d8bd85}
+.qf .qt{margin-top:34px;font-size:54px;line-height:1.5;font-weight:800;color:#fffaf0}
+</style>
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js","three/addons/":"./vendor/addons/"}}</script>
+</head>
+<body>
+<canvas id="c" width="1920" height="1080"></canvas>
+<div id="ui"></div>
+<script type="module" src="./lab.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<!-- 形式样张 3 · 同心圈：跟你比的人从“隔壁工位”扩到“全网”。 -->
+<style>
+  @font-face { font-family: "SerifSC"; src: url("../assets/fonts/NotoSerifSC-VF.ttf"); font-weight: 200 900; }
+  @font-face { font-family: "NotoSC"; src: url("../assets/fonts/NotoSansSC-VF.ttf"); font-weight: 100 900; }
+  html, body { margin: 0; height: 1080px; width: 1920px; overflow: hidden; background: #05070b; }
+  #root { position: relative; width: 1920px; height: 1080px; overflow: hidden;
+          background: radial-gradient(52% 52% at 50% 76%, #0f1e28 0%, #080e14 52%, #04070a 100%); }
+  .ring { position: absolute; left: 50%; top: 76%; transform: translate(-50%,-50%); border-radius: 50%;
+          border: 1.8px dashed rgba(111,211,232,.60); }
+  .ring.b { border-color: rgba(111,211,232,.40); }
+  .ring.c { border-color: rgba(190,224,240,.26); border-style: solid; }
+  .lbl { position: absolute; font-family: "NotoSC"; font-size: 26px; letter-spacing: .22em; color: #78a9c1; }
+  .dot { position: absolute; left: 50%; top: 76%; width: 10px; height: 10px; margin: -5px 0 0 -5px; border-radius: 50%;
+         background: #ff8f5e; box-shadow: 0 0 18px rgba(255,143,94,.8); }
+  .man { position: absolute; left: 50%; top: 76%; transform: translate(-50%,-100%); }
+  .cap { position: absolute; left: 0; right: 0; bottom: 96px; text-align: center; font-family: "SerifSC"; font-weight: 900;
+         font-size: 56px; letter-spacing: .02em; color: #eef6fb; }
+  .cap em { font-style: normal; color: #ff8f5e; }
+  .note { position: absolute; right: 96px; bottom: 40px; font-family: "NotoSC"; font-size: 22px; letter-spacing: .18em; color: #3f6880; }
+</style></head>
+<body><div id="root">
+  <div class="ring" style="width:340px;height:340px"></div>
+  <div class="ring b" style="width:800px;height:800px"></div>
+  <div class="ring c" style="width:1560px;height:1560px"></div>
+  <div class="lbl" style="left:50%;top:calc(76% - 206px);transform:translateX(-50%)">隔壁工位</div>
+  <div class="lbl" style="left:50%;top:calc(76% - 440px);transform:translateX(-50%)">同一座城市</div>
+  <div class="lbl" style="left:50%;top:calc(76% - 826px);transform:translateX(-50%);color:#cfe6f3">全网最会干这件事的人</div>
+  <svg class="man" width="120" height="210" viewBox="0 0 120 210">
+    <defs><linearGradient id="b" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#eaf6fb"/><stop offset=".55" stop-color="#a6c6d8"/><stop offset="1" stop-color="#47697b"/>
+    </linearGradient></defs>
+    <g fill="none" stroke="url(#b)" stroke-linecap="round" stroke-width="15">
+      <path d="M60 76 L60 132"/>
+      <path d="M60 132 L48 166 L46 202"/>
+      <path d="M60 132 L76 164 L80 200"/>
+      <path d="M60 86 L48 110 L44 130"/>
+      <path d="M60 86 L72 108 L76 128"/>
+    </g>
+    <circle cx="63" cy="57" r="17" fill="url(#b)"/>
+  </svg>
+  <div class="dot"></div>
+  <div class="cap">跟你比的，早就不是<em>隔壁工位</em>。</div>
+  <div class="note">形式样张 · 同心圈</div>
+</div></body></html>

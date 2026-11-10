@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>样张 C · AI 接管</title>
+<style>
+@font-face{font-family:NSSC;src:url("assets/fonts/NotoSansSC-VF.ttf") format("truetype");font-weight:100 900;font-display:block}
+@font-face{font-family:NSerif;src:url("assets/fonts/NotoSerifSC-VF.ttf") format("truetype");font-weight:200 900;font-display:block}
+@font-face{font-family:WenKai;src:url("assets/fonts/LXGWWenKai-Regular.ttf") format("truetype");font-display:block}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#07090d}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;
+  background:radial-gradient(62% 58% at 50% 40%,#0e141d 0%,#080b10 55%,#06070a 100%)}
+.mode{position:absolute;left:104px;top:88px;font-family:NSSC;font-size:15px;letter-spacing:.4em;color:rgba(52,211,153,.55)}
+.caption{position:absolute;left:0;right:0;bottom:56px;text-align:center;font-family:NSerif;font-weight:600;
+  font-size:52px;letter-spacing:.02em;color:#eef4fa;text-shadow:0 2px 34px rgba(0,0,0,.9)}
+.caption em{font-style:normal;color:#34d399}
+.grain{position:absolute;inset:-40px;pointer-events:none;opacity:.05;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/></filter><rect width='240' height='240' filter='url(%23n)'/></svg>")}
+
+.term{position:absolute;left:50%;top:50%;width:1440px;height:780px;transform:translate(-50%,-56%);
+  background:#0b0f16;border:1px solid #1e2a3a;border-radius:12px;box-shadow:0 30px 90px rgba(0,0,0,.55);overflow:hidden}
+.tbar{display:flex;align-items:center;gap:10px;height:52px;padding:0 18px;background:#131a24;border-bottom:1px solid #1e2a3a}
+.tbar .dot{width:12px;height:12px;border-radius:50%}
+.tbar .tname{font-family:"Consolas",monospace;font-size:15px;color:#64748b;margin-left:10px;letter-spacing:1px}
+.tbar .tbadge{margin-left:auto;font-family:"Consolas",monospace;font-size:13px;color:#34d399;background:rgba(52,211,153,.08);border:1px solid rgba(52,211,153,.3);padding:3px 10px;border-radius:999px}
+
+.body{display:flex;height:calc(100% - 52px)}
+.logs{width:520px;padding:22px 24px;font-family:"Consolas",monospace;font-size:15px;line-height:1.95;color:#94a3b8;border-right:1px solid #1e2a3a;overflow:hidden}
+.logs .t{color:#475569}
+.logs .ok{color:#34d399}
+.logs .warn{color:#fbbf24}
+.logs .kill{color:#f87171}
+.doc{flex:1;padding:26px 34px;font-family:NSSC;font-size:20px;line-height:2.0;color:#cbd5e1;overflow:hidden}
+.doc h3{font-family:NSSC;font-size:15px;letter-spacing:4px;color:#475569;margin-bottom:14px}
+.del{color:#f87171;text-decoration:line-through;text-decoration-thickness:3px;text-decoration-color:#f87171}
+.ins{color:#34d399;font-weight:600}
+.cur{display:inline-block;width:14px;height:26px;background:#34d399;vertical-align:-4px;margin-left:2px;box-shadow:0 0 12px rgba(52,211,153,.8)}
+.stat{position:absolute;left:0;right:0;bottom:0;height:34px;display:flex;align-items:center;gap:14px;padding:0 18px;
+  background:#0d1420;border-top:1px solid #1e2a3a;font-family:"Consolas",monospace;font-size:13px;color:#34d399}
+.stat .blk{width:9px;height:16px;background:#34d399;display:inline-block;animation:none}
+</style>
+</head>
+<body>
+<div id="root">
+
+<div class="term">
+  <div class="tbar">
+    <span class="dot" style="background:#f87171"></span>
+    <span class="dot" style="background:#fbbf24"></span>
+    <span class="dot" style="background:#34d399"></span>
+    <span class="tname">document-refactor — 全库词语替换作业</span>
+    <span class="tbadge">ai-worker v4.0 · RUNNING</span>
+  </div>
+  <div class="body">
+    <div class="logs">
+      <div class="t">[12:03:41]</div>
+      <div>扫描全库 4,812 处文本 … 命中 214 处</div>
+      <div class="t">[12:03:42]</div>
+      <div class="ok">替换 <span style="text-decoration:line-through">打工人</span> → 牛马 · 98 处</div>
+      <div class="t">[12:03:42]</div>
+      <div class="ok">替换 <span style="text-decoration:line-through">形式主义</span> → AI味 · 116 处</div>
+      <div class="t">[12:03:43]</div>
+      <div class="warn">检测到人类情绪残留（自嘲·批评）…</div>
+      <div class="warn">按规范继续清除</div>
+      <div class="t">[12:03:43]</div>
+      <div class="kill">人工复核 0 处 · 自动提交发布</div>
+      <div class="t">[12:03:44]</div>
+      <div class="ok">作业完成 ✓</div>
+    </div>
+    <div class="doc">
+      <h3>// 待发布文档 · 会议纪要_014.md</h3>
+      今天会上大家一致认为，<span class="del">打工人</span><span class="ins">牛马</span>的处境在改善，我们要继续<br/>
+      推进<del style="color:#f87171;text-decoration-thickness:3px">形式主义</del><span class="ins">AI味</span>的整治工作，确保<del style="color:#f87171;text-decoration-thickness:3px">认真做事</del><span class="ins">流程合规</span>。<br/><br/>
+      会议强调：<del style="color:#f87171;text-decoration-thickness:3px">反对空转</del><span class="ins">优化输出</span>、<del style="color:#f87171;text-decoration-thickness:3px">反对做样子</del><span class="ins">提升指标</span>……<span class="cur"></span>
+    </div>
+  </div>
+  <div class="stat">
+    <span class="blk"></span> ai-worker v4.0 · 已改写 214 处 · 人类复核 0 处 · 待机中
+  </div>
+</div>
+
+<div class="mode">A I 接 管 · 样 张 C</div>
+<div class="caption">"打工人"去哪了？——顺便，<em>"形式主义"也没人骂了</em></div>
+<div class="grain"></div>
+</div>
+</body>
+</html>

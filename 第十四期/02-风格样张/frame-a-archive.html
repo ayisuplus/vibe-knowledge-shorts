@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>样张 A · 词条博物馆</title>
+<style>
+@font-face{font-family:NSSC;src:url("assets/fonts/NotoSansSC-VF.ttf") format("truetype");font-weight:100 900;font-display:block}
+@font-face{font-family:NSerif;src:url("assets/fonts/NotoSerifSC-VF.ttf") format("truetype");font-weight:200 900;font-display:block}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#05060a}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;
+  background:radial-gradient(64% 60% at 50% 38%,#101a26 0%,#0a0e15 52%,#05060a 100%)}
+.mode{position:absolute;left:104px;top:88px;font-family:NSSC;font-size:15px;letter-spacing:.4em;color:rgba(111,211,232,.55)}
+.dates{position:absolute;right:112px;top:88px;font-family:NSSC;font-size:15px;letter-spacing:.28em;color:rgba(148,163,184,.5)}
+.caption{position:absolute;left:0;right:0;bottom:56px;text-align:center;font-family:NSerif;font-weight:600;
+  font-size:52px;letter-spacing:.02em;color:#eef4fa;text-shadow:0 2px 34px rgba(0,0,0,.9)}
+.caption em{font-style:normal;color:#ff8f5e}
+.sub{position:absolute;left:0;right:0;bottom:116px;text-align:center;font-family:NSSC;font-size:16px;letter-spacing:.5em;color:rgba(148,163,184,.55)}
+.grain{position:absolute;inset:-40px;pointer-events:none;opacity:.05;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/></filter><rect width='240' height='240' filter='url(%23n)'/></svg>")}
+.vig{position:absolute;inset:0;pointer-events:none;background:radial-gradient(80% 70% at 50% 40%,transparent 40%,rgba(0,0,0,.66) 100%)}
+
+.shelf{position:absolute;left:0;right:0;top:578px;height:2px;background:linear-gradient(90deg,transparent,#2b4258 18%,#2b4258 82%,transparent);box-shadow:0 18px 60px rgba(111,211,232,.06)}
+.shelfline{position:absolute;left:0;right:0;top:640px;height:300px;
+  background:linear-gradient(180deg,#141d28 0%,rgba(10,14,21,.6) 100%)}
+
+.cards{position:absolute;left:50%;top:170px;transform:translateX(-50%);display:flex;gap:46px;align-items:flex-start}
+.card{width:300px;border-radius:12px;background:linear-gradient(180deg,#16222f 0%,#0c1219 100%);border:2px solid #2e4a5e;overflow:hidden;position:relative}
+.card .bar{height:70px;display:flex;align-items:center;justify-content:center;font-family:NSSC;font-size:17px;letter-spacing:6px;border-bottom:1px solid rgba(43,66,88,.6);background:rgba(255,255,255,.02)}
+.card .word{font-family:NSerif;font-weight:700;text-align:center;margin-top:64px;font-size:56px;letter-spacing:.06em}
+.card .note{font-family:NSSC;text-align:center;font-size:16px;letter-spacing:3px;margin-top:20px}
+.card .foot{margin-top:66px;padding:0 0 26px;text-align:center;font-family:NSSC;font-size:15px;letter-spacing:8px}
+
+/* 熄灭卡 */
+.dead{filter:grayscale(.9) brightness(.62)}
+.dead .bar{color:#4b5563}
+.dead .word{color:#5b6270}
+.dead .note{color:#4b5563}
+.dead .foot{color:#7f1d1d}
+.dead .stamp{display:inline-block;border:2px solid #b91c1c;color:#b91c1c;padding:5px 16px;border-radius:4px;transform:rotate(-6deg);letter-spacing:8px}
+/* 半亮 */
+.half .word{color:#9fc4d8;text-shadow:0 0 24px rgba(111,211,232,.35)}
+.half .bar{color:#5b8fa8}
+.half .note{color:#5b8fa8}
+.half .foot{color:#3c6e8a}
+/* 全亮 */
+.lit .word{color:#d8f4ff;text-shadow:0 0 34px rgba(111,211,232,.85)}
+.lit .bar{color:#7fd8ec}
+.lit .note{color:#5b8fa8}
+.lit .foot{color:#6fd3e8}
+.lit2 .word{color:#f3e8ff;text-shadow:0 0 34px rgba(192,132,252,.8)}
+.lit2 .bar{color:#c4a5f3}
+.lit2 .note{color:#a78bfa}
+.lit2 .foot{color:#c084fc}
+
+.drift{transform:translateY(46px) rotate(-6deg)}
+.crack{position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(115deg,transparent 44%,rgba(0,0,0,.85) 46%,transparent 48%),
+             linear-gradient(60deg,transparent 62%,rgba(0,0,0,.7) 64%,transparent 66%)}
+</style>
+</head>
+<body>
+<div id="root">
+<div class="shelf"></div>
+<div class="shelfline"></div>
+
+<div class="cards">
+  <!-- 形式主义 · 熄灭 -->
+  <div class="card dead drift">
+    <div class="bar">2012—2026</div>
+    <div class="word">形式主义</div>
+    <div class="note">事的异化 · 行动≠目的</div>
+    <div class="foot"><span class="stamp">已下线</span></div>
+    <div class="crack"></div>
+  </div>
+  <!-- 打工人 · 熄灭 -->
+  <div class="card dead">
+    <div class="bar">2020—2023</div>
+    <div class="word">打工人</div>
+    <div class="note">人的异化 · 劳动者≠成果</div>
+    <div class="foot"><span class="stamp">已下线</span></div>
+    <div class="crack"></div>
+  </div>
+  <!-- 吗喽 · 半亮 -->
+  <div class="card half">
+    <div class="bar">2023—</div>
+    <div class="word">吗喽</div>
+    <div class="note">过渡词 · 卑微打工猴</div>
+    <div class="foot">— 接棒 —</div>
+  </div>
+  <!-- 牛马 · 亮 -->
+  <div class="card lit">
+    <div class="bar">2024—2026</div>
+    <div class="word">牛马</div>
+    <div class="note">去人化 · 干活的不是人</div>
+    <div class="foot">— 在架 —</div>
+  </div>
+  <!-- AI味 · 亮 -->
+  <div class="card lit2">
+    <div class="bar">2025—</div>
+    <div class="word">AI味</div>
+    <div class="note">无人化 · 文本由机器生成</div>
+    <div class="foot">— 在架 —</div>
+  </div>
+</div>
+
+<div class="mode">词 语 陈 列 馆 · 第 十 四 期</div>
+<div class="dates">2020 — 2026 · 退 场 记 录</div>
+<div class="sub">词 语 退 场 记 录</div>
+<div class="caption">"打工人"去哪了？——顺便，<em>"形式主义"也没人骂了</em></div>
+<div class="grain"></div>
+<div class="vig"></div>
+</div>
+</body>
+</html>

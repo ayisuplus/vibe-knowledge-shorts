@@ -1,0 +1,96 @@
+# ─────────────────────────────────────────────
+# 忽略：依赖与产物
+# ─────────────────────────────────────────────
+# 教训：旧版写 `**/renders/*.mp4`，只能匹配一层目录，
+# 挡不住 `renders/子目录/x.mp4`，导致 826MB 母版进了 git。
+# 本文件所有路径一律用 `**/` 递归匹配。
+
+node_modules/
+package-lock.json
+
+# ── 渲染产物（每次都能从源重建，一律不入库）──
+**/renders/**/*.mp4
+**/renders/**/*.webm
+**/renders/**/*.mov
+**/renders/**/*.mkv
+**/renders/**/*.gif
+**/06-交付/**/*.mp4
+**/06-交付/**/*.mov
+**/06-交付/**/*.ass
+
+# 逐帧截图、调试产物、生成中间物
+**/snapshots/
+**/renders/vsheet/
+**/renders/f*.png
+**/.hyperframes/shots/
+**/.hyperframes/artifacts/
+**/.hyperframes/.debug/
+**/gen/
+
+# 封面渲染的临时大图
+**/05-封面/*@2x.png
+
+# ── 大文件：字体 / 音乐 / 录音 ──
+# AGENTS.md 硬规矩：>100MB 不进 git。音频、字体一律不入库，换机器时另行同步。
+# 字体都是 OFL / 开源，下载可复现，没必要进版本库。
+**/*.ttf
+**/*.otf
+**/*.woff2
+**/assets/fonts/
+**/assets/audio/**/*.wav
+**/assets/audio/**/*.mp3
+**/assets/audio/**/*.m4a
+**/assets/music-full.m4a
+**/*.wav
+**/*.flac
+
+# 例外：交付级的音频成品（已截取 + 淡入淡出 + 响度处理，几 MB，重渲要用）
+!**/assets/audio/bgm.m4a
+!**/assets/audio/sfx.m4a
+
+# ── 辅料（ComfyUI / Codex 生成物）：记录参数即可，文件不入库 ──
+# 见 AGENTS.md 第 3 节「辅料使用纪律」
+**/02-素材/**/*.mp4
+**/02-素材/**/*.png
+**/assets/video/*.mp4
+
+# ── 第十八期：星球样张实验室只留定稿贴图（*-final.png）、脚本和提示词 ──
+# 原图、中间图（raw/fixed/prep/…）和试片可由 prompt.md + fix_texture.py 重新生成；片子实际用的贴图在 videos/model-universe/assets/tex/
+第十八期/02-风格样张/planet-lab/shots/
+第十八期/02-风格样张/planet-lab/**/*.png
+!第十八期/02-风格样张/planet-lab/**/*-final.png
+# 封面的单球抠图由 planet-lab/planet.html?clean=1 重新生成
+第十八期/05-封面/planets/
+# 旁白：逐句音频与预览不入库；参考音色（克隆全片的唯一依据）和工程用的整轨要入库
+第十八期/04-声音/**/*.mp3
+!第十八期/04-声音/voice/ref-v2.flac
+!第十八期/videos/model-universe/assets/audio/vo.m4a
+
+# ── 外部依赖快照（以 ~/.dsh/skills 为准，见 tools/sync-skills.ps1）──
+.claude/skills/
+
+# ── 系统垃圾 ──
+__pycache__/
+.DS_Store
+Thumbs.db
+*.log
+*.bak
+*.old.js
+
+# ── 渲染事务临时目录 ──
+**/renders/.hf-*
+**/renders/.red-queen*
+
+# ── 本地清理记录 ──
+_cleanup-log.tsv
+
+# ── 第二十四期：网上取的英雄原画、头像与 logo 不入库（用户授权使用，来源见 02-风格样张/README.md）──
+第二十四期/**/素材/
+第二十四期/videos/hok-split/assets/img/
+
+
+# 第二十六期：Codex 生成的底图及其派生图不入库（AGENTS.md 4.3），提示词与做法见 02-风格样张/README.md
+第二十六期/02-风格样张/bg/*.png
+第二十六期/02-风格样张/bg/*.jpg
+第二十六期/02-风格样张/*/assets/bg/
+第二十六期/videos/rb19-analysis/assets/bg/

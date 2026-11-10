@@ -1,0 +1,27 @@
+@font-face { font-family: "VibeSerif"; src: url("fonts/NotoSerifSC-VF.ttf"); font-weight: 200 900; }
+@font-face { font-family: "VibeSans"; src: url("fonts/NotoSansSC-VF.ttf"); font-weight: 100 900; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 1920px; height: 1080px; overflow: hidden; background: #f4eee4; }
+#root { position: relative; width: 100%; height: 100%; overflow: hidden; background: #f4eee4; font-family: "VibeSans", sans-serif; color: #2a2420; }
+.layer { position: absolute; inset: 0; }
+#gl { position: absolute; inset: 0; width: 1920px; height: 1080px; display: block; }
+#hud { pointer-events: none; }
+
+/* 画面内大字 */
+.big { position: absolute; left: 0; top: 0; visibility: hidden; font-family: "VibeSerif"; font-weight: 800; font-size: 96px; letter-spacing: 6px; color: #2a2420; white-space: nowrap; text-shadow: 0 0 24px rgba(248, 243, 234, 0.95), 0 0 6px rgba(248, 243, 234, 0.9); }
+.big em { font-style: normal; color: #c26f30; }
+.big small { display: block; font-size: 0.42em; letter-spacing: 3px; font-weight: 700; color: #6d5f50; margin-top: 8px; }
+/* 跟着 3D 点走的小标签 */
+.tag { position: absolute; left: 0; top: 0; visibility: hidden; white-space: nowrap; padding: 8px 22px; border-radius: 999px; background: rgba(255, 251, 244, 0.95); color: #2a2420; font-family: "VibeSans"; font-weight: 700; font-size: 32px; box-shadow: 0 6px 20px rgba(110, 80, 40, 0.18); border: 2px solid #f4b3b3; }
+.tag.today { border-color: #e8707a; color: #b9474f; }
+.tag.cool { border-color: #b9c3c9; color: #4d5a62; }
+.tag.warm { border-color: #e9b27a; color: #a85a24; }
+.stat { position: absolute; left: 0; top: 0; visibility: hidden; white-space: nowrap; font-family: "VibeSans"; font-weight: 900; font-size: 120px; color: #c26f30; letter-spacing: 2px; text-shadow: 0 0 30px rgba(248, 243, 234, 0.95); }
+.stat span { color: #2a2420; font-size: 0.55em; font-weight: 800; }
+.note { position: absolute; visibility: hidden; font-family: "VibeSans"; font-weight: 500; font-size: 22px; color: #8a7c6c; }
+/* 字幕预览（正式片里走 SRT，干净版不烧） */
+.cap { position: absolute; left: 160px; right: 160px; top: 905px; height: 100px; display: flex; align-items: center; justify-content: center; visibility: hidden; font-family: "VibeSerif"; font-weight: 800; font-size: 54px; color: #2a2420; text-shadow: 0 0 18px rgba(250, 246, 238, 1), 0 0 6px rgba(250, 246, 238, 1); }
+.cap em { font-style: normal; color: #d65c68; }
+.cap::after { content: "字幕预览"; position: absolute; right: -120px; top: 36px; font-family: "VibeSans"; font-size: 18px; font-weight: 600; color: #b3a593; text-shadow: none; }
+/* 大字后面一片柔和的纸色，压住背景里的月份字 */
+.panel { position: absolute; left: 0; top: 0; width: 1100px; height: 420px; visibility: hidden; background: radial-gradient(ellipse 60% 62% at 32% 38%, rgba(248, 243, 234, 0.96) 0%, rgba(248, 243, 234, 0.85) 55%, rgba(248, 243, 234, 0) 100%); }

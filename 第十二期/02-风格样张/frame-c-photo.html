@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><link rel="stylesheet" href="assets/style.css">
+<!-- 样张 C · 翻过来（约 82.7 秒）：词条卡背面是父母二十出头的老照片，后面滑出他们父母的黑白照片；最后几张便利贴正被风吹出画面 -->
+<style>
+  .print { position: absolute; background: #FBF7EE; padding: 26px 26px 64px; border-radius: 6px; border: 2px solid var(--edge);
+    box-shadow: 0 60px 100px -40px rgba(74,58,40,.6), 0 16px 30px -14px rgba(74,58,40,.4); }
+  .print img { display: block; width: 100%; }
+  .print.old { left: 1150px; top: 230px; width: 700px; transform: rotate(5deg); }
+  .print.main { left: 250px; top: 70px; width: 1150px; transform: rotate(-2deg); }
+  .print.main img { filter: sepia(.12) contrast(1.02); }
+  .gone { filter: blur(6px); opacity: .85; }
+  .light { position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(1000px 700px at 12% 8%, rgba(251,227,176,.45), transparent 65%); mix-blend-mode: screen; }
+</style></head>
+<body>
+<div class="window-shadow"></div>
+<div class="print old"><img src="assets/img/p5-grandparents-1960s.jpg"></div>
+<div class="print main"><img src="assets/img/p4-young-parents-1990s.jpg"></div>
+<div class="note c1 small gone" style="left:1700px; top:-40px; transform: rotate(28deg) scale(.8);">注定</div>
+<div class="note c3 small gone" style="left:-90px; top:620px; transform: rotate(-32deg) scale(.75);">都怪他们</div>
+<div class="light"></div>
+<div class="capzone"><span>字幕区 · SRT</span><i>他们，也是从一个家里走出来的孩子</i></div>
+</body></html>

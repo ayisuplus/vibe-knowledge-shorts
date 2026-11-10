@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <title>封面</title>
+    <!-- 封面：按封面画幅直接渲染 3D 日历墙（?a=43 → 1440×1080，?a=34 → 1080×1440），标题叠在上面 -->
+    <script src="../assets/vendor/gsap.min.js"></script>
+    <script type="importmap">
+      { "imports": { "three": "../assets/vendor/three.module.js", "three/addons/": "../assets/vendor/addons/" } }
+    </script>
+    <style>
+      @font-face { font-family: "VibeSerif"; src: url("../assets/fonts/NotoSerifSC-VF.ttf"); font-weight: 200 900; }
+      @font-face { font-family: "VibeSans"; src: url("../assets/fonts/NotoSansSC-VF.ttf"); font-weight: 100 900; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { overflow: hidden; background: #f4eee4; }
+      #root { position: relative; overflow: hidden; }
+      #gl { position: absolute; left: 0; top: 0; display: block; }
+      .veil { position: absolute; left: 0; right: 0; top: 0; background: linear-gradient(rgba(246, 241, 233, 0.97) 0%, rgba(246, 241, 233, 0.9) 62%, rgba(246, 241, 233, 0) 100%); }
+      .title { position: absolute; left: 0; right: 0; text-align: center; font-family: "VibeSerif"; font-weight: 900; color: #2a2420; line-height: 1.22; letter-spacing: 6px;
+        text-shadow: 0 0 24px rgba(251, 246, 236, 0.95), 0 0 6px rgba(251, 246, 236, 1); }
+      .title em { font-style: normal; color: #c26f30; }
+      .sub { position: absolute; left: 0; right: 0; text-align: center; }
+      .sub span { display: inline-block; padding: 10px 30px; border-radius: 999px; background: rgba(255, 249, 246, 0.96); border: 3px solid #e8707a; font-family: "VibeSerif"; font-weight: 900; color: #c24d59; letter-spacing: 3px; box-shadow: 0 10px 30px rgba(200, 90, 100, 0.18); }
+    </style>
+  </head>
+  <body>
+    <div id="root"><canvas id="gl"></canvas><div id="hud"></div></div>
+    <script>
+      window.__timelines = { main: gsap.timeline({ paused: true }) };
+    </script>
+    <script type="module">
+      import * as THREE from "three";
+      import { buildWorld, buildCalendar, loadPhotos, photoCanvas, photoCard, outline, dayIndex, CELL } from "../assets/js/wall.js";
+      await document.fonts.load("900 40px VibeSerif");
+      const portrait = /a=34/.test(location.search);
+      const w = portrait ? 1080 : 1440, h = portrait ? 1440 : 1080;
+      const root = document.getElementById("root"), cv = document.getElementById("gl");
+      root.style.width = cv.style.width = `${w}px`; root.style.height = cv.style.height = `${h}px`;
+      const W = buildWorld(cv, { width: w, height: h });
+      const cal = buildCalendar(W.scene);
+      const MEM = [[1, 29, "mem-newyear"], [2, 14, "mem-snowtrip"], [4, 5, "mem-puppy"], [5, 2, "mem-trip"], [6, 21, "mem-graduation"], [7, 26, "mem-concert"], [8, 9, "mem-seaside"], [9, 13, "mem-wedding"], [12, 31, "mem-birthday"]];
+      const img = await loadPhotos(MEM.map((m) => m[2]));
+      MEM.forEach(([m, d, n]) => {
+        const i = dayIndex(m, d);
+        const c = photoCard(photoCanvas(img[n], { aspect: 1, px: 512, border: 0.07 }), { w: CELL * 1.04, h: CELL * 1.04 });
+        c.position.copy(cal.days[i].pos).setZ(0.8); c.scale.setScalar(2.7); c.userData.setGlow(0.9);
+        cal.group.add(c); cal.setTile(i, { a: 0 });
+      });
+      cal.commit();
+      const ring = outline(1.16, 1.16, 0.08);
+      ring.position.copy(cal.days[dayIndex(10, 17)].pos).setZ(0.05);
+      W.scene.add(ring);
+      const cam = portrait ? { pos: [-2.5, -3, 33], tgt: [-6, 2.6, 0], fov: 40 } : { pos: [-1, -2.5, 26], tgt: [-6.5, 2.2, 0], fov: 40 };
+      const hud = document.getElementById("hud");
+      hud.innerHTML = portrait
+        ? `<div class="veil" style="height:560px"></div>
+           <div class="title" style="top:90px;font-size:116px">为什么<br><em>一年比一年</em><br>过得快？</div>
+           <div class="sub" style="top:610px;font-size:46px"><span>去年 365 天，你还记得几天？</span></div>`
+        : `<div class="veil" style="height:380px"></div>
+           <div class="title" style="top:60px;font-size:104px">为什么<em>一年比一年</em>过得快？</div>
+           <div class="sub" style="top:220px;font-size:42px"><span>去年 365 天，你还记得几天？</span></div>`;
+      const frame = () => { W.setCam(cam); W.render(); };
+      window.__timelines.main.to({}, { duration: 1, onUpdate: frame });
+      frame();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,110 @@
+{
+  "version": 1,
+  "skills": {
+    "embedded-captions": {
+      "source": "C:\\Users\\36322\\AppData\\Local\\Temp\\claude\\E--projects------vibe----\\273a6714-2cfd-4422-8237-fd48d7f74d0c\\scratchpad\\hf-src",
+      "sourceType": "local",
+      "computedHash": "c99d75dbc328e3c4a6b0947997fe421b81cd254ade6993d3f791715262f265aa"
+    },
+    "faceless-explainer": {
+      "source": "C:\\Users\\36322\\AppData\\Local\\Temp\\claude\\E--projects------vibe----\\273a6714-2cfd-4422-8237-fd48d7f74d0c\\scratchpad\\hf-src",
+      "sourceType": "local",
+      "computedHash": "8e04b9f45c1efb24e575c419522d932a9f3b6e18097f2f49f3cfcac7ad38cf19"
+    },
+    "figma": {
+      "source": "C:\\Users\\36322\\AppData\\Local\\Temp\\claude\\E--projects------vibe----\\273a6714-2cfd-4422-8237-fd48d7f74d0c\\scratchpad\\hf-src",
+      "sourceType": "local",
+      "computedHash": "0aed427d5eaac09e92181b85a7ccc9bbdeab138a01272a02c13349546c10bbc8"
+    },
+    "general-video": {
+      "source": "C:\\Users\\36322\\AppData\\Local\\Temp\\claude\\E--projects------vibe----\\273a6714-2cfd-4422-8237-fd48d7f74d0c\\scratchpad\\hf-src",
+      "sourceType": "local",
+      "computedHash": "d6deba70181518a3e4b6d82706b8d47c2bce80132599ecb711232928a1895b3b"
+    },
+    "hyperframes": {
+      "source": "C:\\Users\\36322\\AppData\\Local\\Temp\\claude\\E--projects------vibe----\\273a6714-2cfd-4422-8237-fd48d7f74d0c\\scratchpad\\hf-src",
+      "sourceType": "local",
+      "computedHash": "04c7577109c62b0de2fda5fcf4e578e908d3e0e7c9435d2587c8325fe0bc6006"
+    },
+    "hyperframes-animation": {
+      "source": "C:\\Users\\36322\\AppData\\Local\\Temp\\claude\\E--projects------vibe----\\273a6714-2cfd-4422-8237-fd48d7f74d0c\\scratchpad\\hf-src",
+      "sourceType": "local",
+      "computedHash": "e4902360b4578194f8088506a38388ea4355a0b2a690281492fc59591fb3bcfc"
+    },
+    "hyperframes-audio": {
+      "source": "C:\\Users\\36322\\AppData\\Local\\Temp\\claude\\E--projects------vibe----\\273a6714-2cfd-4422-8237-fd48d7f74d0c\\scratchpad\\hf-src",
+      "sourceType": "local",
+      "computedHash": "d6da35d6e64b830df3a5705b6d41402f5df9b2e526594973f304c31a16c3d59d"
+    },
+    "hyperframes-cli": {
+      "source": "C:\\Users\\36322\\AppData\\Local\\Temp\\claude\\E--projects------vibe----\\273a6714-2cfd-4422-8237-fd48d7f74d0c\\scratchpad\\hf-src",
+      "sourceType": "local",
+      "computedHash": "29a496b4f1ee9e0ce1bbd1d8c29946c6c594e7144e5b1b5c94ec65e2c9fa9ebc"
+    },
+    "hyperframes-core": {
+      "source": "C:\\Users\\36322\\AppData\\Local\\Temp\\claude\\E--projects------vibe----\\273a6714-2cfd-4422-8237-fd48d7f74d0c\\scratchpad\\hf-src",
+      "sourceType": "local",
+      "computedHash": "f50ee4785cb80fc4b6061ebd5576facf99fe01ee766544261ed917c60c805b21"
+    },
+    "hyperframes-creative": {
+      "source": "C:\\Users\\36322\\AppData\\Local\\Temp\\claude\\E--projects------vibe----\\273a6714-2cfd-4422-8237-fd48d7f74d0c\\scratchpad\\hf-src",
+      "sourceType": "local",
+      "computedHash": "58d5b2aba7ff2cb90c78c0863a17f139a95b8f27e643d79bd32c385e3fbfabf5"
+    },
+    "hyperframes-keyframes": {
+      "source": "C:\\Users\\36322\\AppData\\Local\\Temp\\claude\\E--projects------vibe----\\273a6714-2cfd-4422-8237-fd48d7f74d0c\\scratchpad\\hf-src",
+      "sourceType": "local",
+      "computedHash": "99f3b420941f6f91d49c36865fb21e46a562cd43a3b88a1f2297f79d55542c35"
+    },
+    "hyperframes-registry": {
+      "source": "C:\\Users\\36322\\AppData\\Local\\Temp\\claude\\E--projects------vibe----\\273a6714-2cfd-4422-8237-fd48d7f74d0c\\scratchpad\\hf-src",
+      "sourceType": "local",
+      "computedHash": "54b17fdebee3ac56d279f0e2c1cfdab78839c05344bb4c0874c6f3941621e2ff"
+    },
+    "hyperframes-studio": {
+      "source": "C:\\Users\\36322\\AppData\\Local\\Temp\\claude\\E--projects------vibe----\\273a6714-2cfd-4422-8237-fd48d7f74d0c\\scratchpad\\hf-src",
+      "sourceType": "local",
+      "computedHash": "3ac6b0019626b0cfa0d067c52ae3e46b5d98722784b1ef103ac301a1815dfd7a"
+    },
+    "media-use": {
+      "source": "C:\\Users\\36322\\AppData\\Local\\Temp\\claude\\E--projects------vibe----\\273a6714-2cfd-4422-8237-fd48d7f74d0c\\scratchpad\\hf-src",
+      "sourceType": "local",
+      "computedHash": "6a74fc2551e116721d92901406e0f69204a957544e58dd5703a23d07d50f8992"
+    },
+    "motion-graphics": {
+      "source": "C:\\Users\\36322\\AppData\\Local\\Temp\\claude\\E--projects------vibe----\\273a6714-2cfd-4422-8237-fd48d7f74d0c\\scratchpad\\hf-src",
+      "sourceType": "local",
+      "computedHash": "73420963bea97e1008257c32f89b172486e87b87132ee4ebc83d21e1805ffd25"
+    },
+    "music-to-video": {
+      "source": "C:\\Users\\36322\\AppData\\Local\\Temp\\claude\\E--projects------vibe----\\273a6714-2cfd-4422-8237-fd48d7f74d0c\\scratchpad\\hf-src",
+      "sourceType": "local",
+      "computedHash": "66793a5bc8dfb9ce03b7721fe42f4a685d8a95bc727602e6d661ec1f4aa9711d"
+    },
+    "pr-to-video": {
+      "source": "C:\\Users\\36322\\AppData\\Local\\Temp\\claude\\E--projects------vibe----\\273a6714-2cfd-4422-8237-fd48d7f74d0c\\scratchpad\\hf-src",
+      "sourceType": "local",
+      "computedHash": "c4a0aab95c0894f320b72a6d1c2afb977cd1c2dd0c845f4cb1e51cbf20d6f336"
+    },
+    "product-launch-video": {
+      "source": "C:\\Users\\36322\\AppData\\Local\\Temp\\claude\\E--projects------vibe----\\273a6714-2cfd-4422-8237-fd48d7f74d0c\\scratchpad\\hf-src",
+      "sourceType": "local",
+      "computedHash": "db277fa882177b5744f64569b80c1381fdbf741ea3924db3a59ea5503815371b"
+    },
+    "remotion-to-hyperframes": {
+      "source": "C:\\Users\\36322\\AppData\\Local\\Temp\\claude\\E--projects------vibe----\\273a6714-2cfd-4422-8237-fd48d7f74d0c\\scratchpad\\hf-src",
+      "sourceType": "local",
+      "computedHash": "17c26590575d28118b783f6a534288ac38df50fae5b95826ee9d4976328ad687"
+    },
+    "slideshow": {
+      "source": "C:\\Users\\36322\\AppData\\Local\\Temp\\claude\\E--projects------vibe----\\273a6714-2cfd-4422-8237-fd48d7f74d0c\\scratchpad\\hf-src",
+      "sourceType": "local",
+      "computedHash": "fa178947b4cfe834d416c4d826d50cdd1f92dfb22395569032a40aa5d26819cc"
+    },
+    "talking-head-recut": {
+      "source": "C:\\Users\\36322\\AppData\\Local\\Temp\\claude\\E--projects------vibe----\\273a6714-2cfd-4422-8237-fd48d7f74d0c\\scratchpad\\hf-src",
+      "sourceType": "local",
+      "computedHash": "991315e8803089b6b0d008026c9b42c2c83f6ea95c44b26956cd6ff6197f5305"
+    }
+  }
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>样张 C · 极简科普 · 主视觉</title>
+<style>
+@font-face{font-family:NotoSC;src:url("assets/fonts/NotoSansSC-VF.ttf") format("truetype");font-weight:100 900;font-display:block}
+@font-face{font-family:NotoSerifSC;src:url("assets/fonts/NotoSerifSC-VF.ttf") format("truetype");font-weight:200 900;font-display:block}
+@font-face{font-family:WenKai;src:url("assets/fonts/LXGWWenKai-Regular.ttf") format("truetype");font-display:block}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#04050a}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:radial-gradient(80% 66% at 50% 38%,#10151f 0%,#090c13 55%,#04050a 100%)}
+.mode{position:absolute;left:72px;top:52px;font-family:NotoSC;font-weight:700;font-size:15px;letter-spacing:.42em;color:#5d6b85}
+.tag{position:absolute;left:50%;top:36px;transform:translateX(-50%);padding:10px 32px;border:2px solid rgba(150,170,205,.45);border-radius:999px;font-family:NotoSC;font-weight:600;font-size:24px;letter-spacing:.14em;color:#cdd8ea;background:rgba(26,32,46,.8);white-space:nowrap}
+.note{position:absolute;left:0;right:0;top:788px;text-align:center;font-family:NotoSC;font-weight:500;font-size:27px;letter-spacing:.05em;color:#b6c2d6}
+.note b{color:#60a5fa;font-weight:700}
+.caption{position:absolute;left:0;right:0;top:918px;height:64px;line-height:64px;text-align:center;font-family:NotoSC;font-weight:800;font-size:46px;letter-spacing:.04em;color:#f6f8fc}
+.caption em{font-style:normal;color:#60a5fa}
+.vig{position:absolute;inset:0;pointer-events:none;background:radial-gradient(78% 72% at 50% 44%,transparent 55%,rgba(0,0,0,.5) 100%)}
+
+.logo-card{position:absolute;left:610px;top:250px;width:700px;height:470px;border-radius:26px;background:#fff;box-shadow:drop-shadow(0 22px 36px rgba(0,0,0,.6));transform:rotate(-1.2deg);overflow:hidden;}
+.logo-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:46px}
+.face{position:absolute;inset:0;pointer-events:none}
+.chip{position:absolute;font-family:WenKai;font-weight:700;font-size:30px;padding:8px 20px;border-radius:999px;background:rgba(26,32,46,.8);border:2px solid rgba(150,170,205,.45);color:#cdd8ea;letter-spacing:.06em;white-space:nowrap;box-shadow:0 10px 22px rgba(0,0,0,.35)}
+.chip2{position:absolute;font-family:NotoSC;font-weight:800;font-size:22px;padding:6px 16px;border-radius:8px;background:rgba(26,32,46,.8);border:2px solid rgba(150,170,205,.45);color:#cdd8ea;letter-spacing:.08em;white-space:nowrap}
+.arrow{position:absolute;left:1330px;top:436px;font-family:NotoSC;font-weight:800;font-size:30px;color:#60a5fa;letter-spacing:.1em;white-space:nowrap}
+.arrow b{color:#f5d78a}
+</style>
+</head>
+<body>
+<div id="root">
+
+<div class="logo-card">
+  <img src="assets/official-logo.jpg" alt="DeepSeek 官方鲸鱼 Logo"/>
+  <svg class="face" viewBox="0 0 700 470" preserveAspectRatio="xMidYMid meet">
+    <g transform="translate(350 250)">
+      <g transform="translate(-46 -2)"><circle cx="0" cy="0" r="13" fill="#10141f"/><circle cx="4" cy="-4" r="4.4" fill="#fff"/></g>
+      <g transform="translate(46 -2)"><circle cx="0" cy="0" r="13" fill="#10141f"/><circle cx="4" cy="-4" r="4.4" fill="#fff"/></g>
+      <circle cx="0" cy="26" r="24" fill="#ff9db1" opacity=".55"/>
+      <circle cx="-62" cy="30" r="24" fill="#ff9db1" opacity=".55"/>
+      <circle cx="62" cy="30" r="24" fill="#ff9db1" opacity=".55"/>
+      <path d="M-30 58 Q0 78 30 58" fill="none" stroke="#10141f" stroke-width="5" stroke-linecap="round"/>
+      <g transform="translate(0 118)">
+        <path d="M-56 -18 Q0 -46 56 -18 Q56 34 0 34 Q-56 34 -56 -18 Z" fill="#233252" stroke="#3b5aa8" stroke-width="4"/>
+        <circle cx="-14" cy="4" r="6" fill="#ffb86c"/><circle cx="14" cy="4" r="6" fill="#ffb86c"/>
+        <path d="M-6 10 L0 20 L6 10 Z" fill="#fff"/>
+      </g>
+    </g>
+  </svg>
+</div>
+<div class="chip" style="left:382px;top:206px;transform:rotate(-7deg)">闺女</div>
+<div class="chip" style="left:976px;top:216px;transform:rotate(5deg)">大肥鱼</div>
+<div class="chip" style="left:420px;top:478px;transform:rotate(4deg)">吃白饭</div>
+<div class="chip" style="left:972px;top:492px;transform:rotate(-5deg)">催起床</div>
+<div class="chip2" style="left:1120px;top:310px;transform:rotate(8deg)">摸鱼</div>
+<div class="chip2" style="left:386px;top:330px;transform:rotate(-6deg)">本鲸</div>
+<div class="arrow" style="top:402px">长出<b>脸</b>了 →</div>
+<div class="mode">样张 C · 极简科普</div>
+<div class="tag">机制 · 长出血肉</div>
+<div class="caption">贴上称呼，它开始<em>长出脸</em>。</div>
+<div class="note">变形装置 · 起点：官方 Logo → 贴满称呼 → 长出眼睛/腮红/女仆装 → <b>长成大肥鱼</b></div>
+<div class="vig"></div>
+</div>
+</body>
+</html>

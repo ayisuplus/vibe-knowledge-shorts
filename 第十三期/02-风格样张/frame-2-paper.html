@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>样张 B · 纸板机械</title>
+<style>
+@font-face{font-family:NSSC;src:url("assets/fonts/NotoSansSC-VF.ttf") format("truetype");font-weight:100 900;font-display:block}
+@font-face{font-family:NSerif;src:url("assets/fonts/NotoSerifSC-VF.ttf") format("truetype");font-weight:200 900;font-display:block}
+@font-face{font-family:WenKai;src:url("assets/fonts/LXGWWenKai-Regular.ttf") format("truetype");font-display:block}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#efe7d8}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;
+  background:radial-gradient(92% 82% at 50% 8%,#faf4e8 0%,#efe7d8 46%,#e0d5bf 100%)}
+svg.sheet{position:absolute;inset:0;width:1920px;height:1080px;transform:scale(1.05);transform-origin:50% 40%}
+.paper-tex{position:absolute;inset:0;opacity:.4;mix-blend-mode:multiply;
+  background-image:repeating-linear-gradient(0deg,rgba(120,100,70,.05) 0 1px,transparent 1px 3px),
+                   repeating-linear-gradient(90deg,rgba(120,100,70,.045) 0 1px,transparent 1px 4px)}
+.caption{position:absolute;left:0;right:0;bottom:54px;text-align:center;
+  font-family:NSerif;font-weight:700;font-size:56px;color:#23201c;letter-spacing:.01em}
+.caption mark{background:linear-gradient(transparent 58%,rgba(216,69,47,.30) 58%,rgba(216,69,47,.30) 92%,transparent 92%);
+  color:#b83a26;padding:0 4px}
+.tag{position:absolute;left:104px;top:92px;font-family:NSSC;font-size:15px;letter-spacing:.42em;color:#a08c6c}
+.vig{position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(82% 72% at 50% 44%,transparent 54%,rgba(120,96,60,.22) 100%)}
+</style>
+</head>
+<body>
+<div id="root">
+<svg class="sheet" viewBox="0 0 1920 1080" fill="none">
+  <defs>
+    <marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto-start-reverse">
+      <path d="M0 1 L9 5 L0 9 z" fill="#d8452f"/>
+    </marker>
+    <marker id="arK" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M0 1 L9 5 L0 9 z" fill="#5d5142"/>
+    </marker>
+    <pattern id="pencil" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="7" stroke="#8a7a5f" stroke-opacity=".55" stroke-width="1.1"/>
+    </pattern>
+    <linearGradient id="strip" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fbf5e7"/><stop offset="1" stop-color="#e9dfc9"/>
+    </linearGradient>
+    <clipPath id="beltClip">
+      <path d="M606 700 L1314 700 A46 46 0 0 1 1314 792 L606 792 A46 46 0 0 1 606 700 Z"/>
+    </clipPath>
+  </defs>
+
+  <!-- 纸上的阴影池 -->
+  <ellipse cx="960" cy="806" rx="540" ry="130" fill="#8a6f42" opacity=".13"/>
+
+  <!-- ===== 跑步机（纸做的） ===== -->
+  <path d="M606 700 L1314 700 A46 46 0 0 1 1314 792 L606 792 A46 46 0 0 1 606 700 Z"
+        fill="url(#strip)" stroke="#8a7a5f" stroke-width="2.4"/>
+  <g clip-path="url(#beltClip)" stroke="#a8977a" stroke-width="1.8">
+    <path d="M600 702 L600 790 M646 702 L646 790 M692 702 L692 790 M738 702 L738 790
+             M784 702 L784 790 M830 702 L830 790 M876 702 L876 790 M922 702 L922 790
+             M968 702 L968 790 M1014 702 L1014 790 M1060 702 L1060 790 M1106 702 L1106 790
+             M1152 702 L1152 790 M1198 702 L1198 790 M1244 702 L1244 790 M1290 702 L1290 790"/>
+  </g>
+  <!-- 折过的一道缝 -->
+  <path d="M606 746 L1314 746" stroke="#c4b393" stroke-width="1.4" stroke-dasharray="10 8"/>
+
+  <circle cx="606" cy="746" r="46" fill="#f7f0e2" stroke="#8a7a5f" stroke-width="2.6"/>
+  <circle cx="1314" cy="746" r="46" fill="#f7f0e2" stroke="#8a7a5f" stroke-width="2.6"/>
+  <circle cx="606" cy="746" r="7" fill="#8a7a5f"/>
+  <circle cx="1314" cy="746" r="7" fill="#8a7a5f"/>
+
+  <!-- 台面底架：铅笔排线 -->
+  <path d="M606 792 L1314 792" stroke="#8a7a5f" stroke-width="2"/>
+  <rect x="622" y="796" width="676" height="16" fill="url(#pencil)" stroke="#8a7a5f" stroke-width="1.4"/>
+
+  <!-- 支腿 -->
+  <path d="M640 812 L640 862 M1280 812 L1280 862" stroke="#8a7a5f" stroke-width="3"/>
+  <path d="M606 862 L674 862 M1246 862 L1314 862" stroke="#5d5142" stroke-width="4"/>
+  <path d="M470 862 L470 300" stroke="#8a7a5f" stroke-width="4"/>
+  <path d="M436 862 L504 862" stroke="#5d5142" stroke-width="4"/>
+  <path d="M470 792 L606 792" stroke="#8a7a5f" stroke-width="2.6"/>
+
+  <!-- 贴在仪表上的便签 -->
+  <g transform="rotate(-2.6 560 240)">
+    <rect x="446" y="184" width="232" height="112" fill="#fdf8ea" stroke="#d8c9a8" stroke-width="1.6"/>
+    <rect x="510" y="176" width="104" height="26" fill="#e8d9b4" opacity=".9"/>
+    <text x="562" y="222" text-anchor="middle" font-family="NSSC" font-size="14" letter-spacing="6" fill="#a08c6c">跑道速度</text>
+    <text x="536" y="292" text-anchor="middle" font-family="NSerif" font-size="76" font-weight="900" fill="#23201c">2.4</text>
+    <text x="606" y="292" font-family="NSerif" font-size="40" fill="#a8977a">×</text>
+  </g>
+
+  <!-- ===== 人：黑墨 + 错版红 ===== -->
+  <ellipse cx="1004" cy="702" rx="112" ry="13" fill="#6d5432" opacity=".22"/>
+  <g transform="translate(876,277) scale(1.15)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <g transform="translate(7,-5)">
+      <path d="M118 92 L104 116 L100 214 M100 214 L146 286 L156 366 M100 214 L58 264 L30 320 M104 116 L58 142 L44 92 M104 116 L152 150 L180 122"
+            stroke="#d8452f" stroke-width="31" opacity=".9"/>
+      <circle cx="118" cy="54" r="30" fill="#d8452f" opacity=".9"/>
+    </g>
+    <path d="M118 92 L104 116 L100 214 M100 214 L146 286 L156 366 M100 214 L58 264 L30 320 M104 116 L58 142 L44 92 M104 116 L152 150 L180 122"
+          stroke="#23201c" stroke-width="31"/>
+    <circle cx="118" cy="54" r="30" fill="#23201c"/>
+  </g>
+
+  <!-- ===== 及格线：手画的 ===== -->
+  <path d="M300 402 L1620 396" stroke="#d8452f" stroke-width="2.6" stroke-dasharray="30 15" opacity=".95"/>
+  <text x="300" y="374" font-family="WenKai" font-size="30" fill="#d8452f" transform="rotate(-.5 300 374)">及格线</text>
+  <path d="M1568 476 L1560 404" stroke="#d8452f" stroke-width="2.2" marker-start="url(#arR)" marker-end="url(#arR)"/>
+  <text x="1540" y="510" text-anchor="end" font-family="WenKai" font-size="28" fill="#8a4a38">每年往上挪一格</text>
+
+  <!-- 右上角：裁切线 -->
+  <path d="M1720 120 L1830 120 M1720 120 L1720 230" stroke="#b8a88c" stroke-width="1.4" stroke-dasharray="8 7"/>
+</svg>
+
+<div class="tag">2 0 2 6 · 第 十 三 期</div>
+<div class="caption">社会进步了，为什么我<mark>反而更累</mark></div>
+<div class="paper-tex"></div>
+<div class="vig"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><title>样张 A · 深夜的屏幕</title><style>
+@font-face{font-family:NotoSC;src:url(fonts/NotoSansSC-VF.ttf)}
+@font-face{font-family:NotoSerifSC;src:url(fonts/NotoSerifSC-VF.ttf)}
+@font-face{font-family:CascadiaMono;src:url(fonts/CascadiaMono.ttf)}
+@font-face{font-family:WenKai;src:url(fonts/LXGWWenKai-Regular.ttf)}
+*{box-sizing:border-box} html,body{margin:0;width:1920px;height:1080px;overflow:hidden}
+body{font-family:NotoSC,sans-serif}
+.frame{position:relative;width:1920px;height:1080px;overflow:hidden;isolation:isolate}
+.art{position:absolute;inset:0;width:1920px;height:1080px}
+.mono{font-family:CascadiaMono,NotoSC,monospace}
+.serif{font-family:NotoSerifSC,serif}
+.hand{font-family:WenKai,NotoSC,sans-serif}
+.abs{position:absolute;white-space:nowrap}
+.mode{position:absolute;left:76px;top:44px;font-size:30px;font-weight:600;letter-spacing:.1em;opacity:.85}
+.mark{position:absolute;right:80px;top:44px;font-size:30px;letter-spacing:.08em;opacity:.85}
+.note{position:absolute;top:800px;left:110px;width:1700px;text-align:center;font-size:38px;font-weight:500;line-height:1.3;white-space:nowrap}
+.caption{position:absolute;top:900px;left:110px;width:1700px;text-align:center;font-size:60px;line-height:1.3;font-weight:800;letter-spacing:.03em;white-space:nowrap;text-shadow:0 2px 12px #000c}
+/* 项目页：正文用色条，不放小字 */
+.page{position:absolute;overflow:hidden}
+.page .tt{font-size:58px;font-weight:800;letter-spacing:.02em}
+.page .bd{display:inline-block;margin-top:22px;padding:6px 24px;border-radius:30px;font-size:38px;font-weight:700}
+.page .ln{height:18px;border-radius:9px;margin-top:26px}
+.tagp{position:absolute;width:430px;height:232px;padding:34px 0 0 92px;font-weight:900;clip-path:polygon(16% 0,100% 0,100% 100%,16% 100%,0 50%)}
+.tagp .a{font-size:44px;line-height:1.2}
+.tagp .b{font-size:66px;line-height:1.25}
+.hole{position:absolute;width:30px;height:30px;border-radius:50%;left:30px;top:101px}
+/* 旧广告 */
+.ad{position:absolute;overflow:hidden}
+.ad .h{font-size:92px;line-height:1.05;font-weight:900;letter-spacing:-.01em}
+.ad .zh{font-size:44px;font-weight:700;margin-top:18px}
+.ad .word{display:inline-block;font-size:82px;font-weight:900;font-style:italic;margin-top:30px;padding:0 10px}
+.ad .ln{height:13px;margin-top:17px;opacity:.42}
+.nm{position:absolute;white-space:nowrap}
+.nm .who{font-size:40px;font-weight:700;letter-spacing:.06em}
+.nm .v{font-size:136px;font-weight:900;line-height:1.08;letter-spacing:-.01em}
+.nm .v small{font-size:68px;font-weight:800;margin-left:6px}
+
+.frame{color:#eef3fa;background:radial-gradient(ellipse at 42% 40%,#16233c 0%,#0b1220 48%,#05070d 100%)}
+.mode,.mark{color:#9fb4d0}.note{color:#c5d3e6}.caption{color:#fff}
+.page{left:300px;top:150px;width:900px;height:560px;padding:50px 60px;border-radius:18px;background:linear-gradient(180deg,#eef3fa,#cfdbea);color:#10192a;box-shadow:0 0 0 12px #1a2230,0 0 0 14px #33405a,0 0 160px #6ea3e044}
+.page .bd{background:#d8eadf;color:#0f5c37}
+.tagp{left:880px;top:430px;background:linear-gradient(170deg,#ff5247,#c9231a);color:#fff;transform:rotate(-8deg);box-shadow:0 24px 60px #000b}
+.hole{background:#0b1220}
+.ad{left:190px;top:170px;width:800px;height:570px;padding:44px 52px;background:linear-gradient(170deg,#ecdfc2,#cdb98f);color:#241b0e;transform:rotate(-2deg);box-shadow:0 40px 100px #000c}
+.ad .word{color:#b0231a;border:6px solid #b0231a;border-radius:50px}.ad .ln{background:#3a2c15}
+.nm .who{color:#c5d3e6}.nm .v{color:#eef3fa}.nm.hot .v{color:#ff6a5e;text-shadow:0 0 44px #ff3b3066}
+</style></head><body><div class="frame"><svg class="art" viewBox="0 0 1920 1080"><defs>
+<filter id="soft" filterUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1080"><feGaussianBlur stdDeviation="18"/></filter>
+<filter id="soft2" filterUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1080"><feGaussianBlur stdDeviation="46"/></filter>
+<filter id="rough" filterUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1080"><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="2" seed="11" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="4"/></filter>
+<radialGradient id="ledCore"><stop offset="0" stop-color="#fff4ef"/><stop offset=".3" stop-color="#ff8a7c"/><stop offset="1" stop-color="#ff3b30"/></radialGradient>
+<radialGradient id="ledHalo"><stop offset="0" stop-color="#ff3b30" stop-opacity=".62"/><stop offset=".45" stop-color="#ff3b30" stop-opacity=".16"/><stop offset="1" stop-color="#ff3b30" stop-opacity="0"/></radialGradient></defs><ellipse cx="760" cy="430" rx="720" ry="400" fill="#4f86c8" opacity=".14" filter="url(#soft2)"/><path d="M0 760 L1920 742 L1920 1080 L0 1080 Z" fill="#070a11"/><line x1="0" y1="760" x2="1920" y2="742" stroke="#2a3448" stroke-width="2"/><ellipse cx="590" cy="770" rx="600" ry="60" fill="#000" opacity=".5" filter="url(#soft)"/><g><defs><linearGradient id="case1660210" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9e7e2"/><stop offset="1" stop-color="#8f8f8f"/></linearGradient></defs><circle cx="1660" cy="210" r="211.2" fill="url(#ledHalo)" opacity="0.7"/><ellipse cx="1660" cy="218.96" rx="66.56" ry="65.28" fill="#000" opacity=".55"/><circle cx="1660" cy="210" r="64" fill="url(#case1660210)" stroke="#5a5a5a" stroke-width="3"/><circle cx="1660" cy="210" r="47.36" fill="none" stroke="#5a5a5a" stroke-width="3" opacity=".85"/><path d="M1713.8 224.3 A55.68 55.68 0 0 1 1695.5 252.9" fill="none" stroke="#5a5a5a" stroke-width="5.76" stroke-linecap="round" opacity=".8"/><path d="M1674.5 263.8 A55.68 55.68 0 0 1 1640.6 262.2" fill="none" stroke="#5a5a5a" stroke-width="5.76" stroke-linecap="round" opacity=".8"/><path d="M1620.7 249.4 A55.68 55.68 0 0 1 1605.1 219.3" fill="none" stroke="#5a5a5a" stroke-width="5.76" stroke-linecap="round" opacity=".8"/><path d="M1606.2 195.7 A55.68 55.68 0 0 1 1624.5 167.1" fill="none" stroke="#5a5a5a" stroke-width="5.76" stroke-linecap="round" opacity=".8"/><path d="M1645.5 156.2 A55.68 55.68 0 0 1 1679.4 157.8" fill="none" stroke="#5a5a5a" stroke-width="5.76" stroke-linecap="round" opacity=".8"/><path d="M1699.3 170.6 A55.68 55.68 0 0 1 1714.9 200.7" fill="none" stroke="#5a5a5a" stroke-width="5.76" stroke-linecap="round" opacity=".8"/><circle cx="1660" cy="210" r="19.2" fill="#ff3b30"/><circle cx="1660" cy="210" r="15.36" fill="url(#ledCore)"/><path d="M1726.7 162.4 A81.92 81.92 0 0 1 1726.7 257.6" fill="none" stroke="#ff3b30" stroke-width="7" stroke-linecap="round" opacity="0.61"/><path d="M1593.3 257.6 A81.92 81.92 0 0 1 1593.3 162.4" fill="none" stroke="#ff3b30" stroke-width="7" stroke-linecap="round" opacity="0.61"/><path d="M1741.3 152.0 A99.84 99.84 0 0 1 1741.3 268.0" fill="none" stroke="#ff3b30" stroke-width="7" stroke-linecap="round" opacity="0.47"/><path d="M1578.7 268.0 A99.84 99.84 0 0 1 1578.7 152.0" fill="none" stroke="#ff3b30" stroke-width="7" stroke-linecap="round" opacity="0.47"/><path d="M1755.8 141.6 A117.76 117.76 0 0 1 1755.8 278.4" fill="none" stroke="#ff3b30" stroke-width="7" stroke-linecap="round" opacity="0.33"/><path d="M1564.2 278.4 A117.76 117.76 0 0 1 1564.2 141.6" fill="none" stroke="#ff3b30" stroke-width="7" stroke-linecap="round" opacity="0.33"/></g></svg><div class="ad serif"><div class="h">He Never<br>Knew Why</div><div class="zh">他始终不知道为什么</div><div class="word">halitosis</div><div class="ln" style="width:92%"></div><div class="ln" style="width:78%"></div></div><div class="nm" style="left:1120px;top:300px"><div class="who">广告预算 · 1922</div><div class="v">10<small>万美元</small></div></div><div class="nm hot" style="left:1120px;top:530px"><div class="who">广告预算 · 1928</div><div class="v">500<small>万美元</small></div></div><div class="mode">A · 深夜的屏幕</div><div class="mark">风格样张</div><div class="note" data-check="note">Marchand 1985 · 一款美国漱口水 · 图为示意</div><div class="caption" data-check="caption">一个旧词典里翻出来的词，让口臭有了学名。</div></div></body></html>

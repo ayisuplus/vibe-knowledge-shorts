@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>纸娃娃角色表</title>
+<style>
+@font-face { font-family: "SESans"; src: url("../videos/she-economy/assets/fonts/NotoSansSC-VF.ttf"); font-weight: 100 900; }
+html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; background: #FFE0E5; }
+text { font-family: "SESans"; }
+</style>
+<script src="../videos/she-economy/assets/js/lib.js"></script>
+<script src="../videos/she-economy/assets/js/doll.js"></script>
+</head>
+<body>
+<svg id="s" width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg"></svg>
+<script>
+  const ages = [["baby", "婴儿"], ["a3", "3 岁"], ["a16", "16 岁"], ["a24", "24 岁"], ["a28", "28 岁"], ["a30", "30 岁"], ["a45", "45 岁"]];
+  let out = `<defs>${SE.defs()}</defs><rect width="1920" height="1080" fill="url(#dots)"/>`;
+  ages.forEach(([k, label], i) => {
+    const x = 140 + i * 272, y = 900;
+    const body = k === "baby" ? SE.baby({ id: "b" }) : SE.doll(k, { id: "d" + i });
+    out += `<g transform="translate(${x} ${y}) scale(0.92)" filter="url(#cut)">${body}</g>`;
+    out += `<text x="${x}" y="1000" text-anchor="middle" font-size="34" font-weight="800" fill="#5A1A24">${label}</text>`;
+  });
+  document.getElementById("s").innerHTML = out;
+</script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>样张 A · 仓库墙</title>
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  /* S0 约 4.8 秒：大仓库截图叠成一面斜墙，AI 文件那几行亮着；文件名标签正从墙上剥下来飞向中央 */
+  #stage { position: absolute; inset: 0; perspective: 2200px; perspective-origin: 50% 40%; }
+  #wall { position: absolute; left: 50%; top: 50%; width: 0; height: 0; transform-style: preserve-3d;
+    transform: translate3d(-40px, -30px, -560px) rotateX(8deg) rotateY(-20deg) rotateZ(-1.5deg); }
+  #wall .shot { transform-style: preserve-3d; }
+  #wall .hl { background: rgba(var(--pink-a), .26); box-shadow: inset 6px 0 0 var(--pink), 0 0 30px rgba(var(--pink-a), .55); }
+  .tag { position: absolute; left: 18px; top: 16px; display: flex; gap: 14px; align-items: baseline; padding: 10px 20px; border-radius: 12px;
+    background: rgba(255, 255, 255, .94); border: 1px solid var(--line); box-shadow: 0 10px 24px -10px rgba(31, 35, 40, .35); }
+  .tag b { font: 600 34px "CMono", monospace; color: var(--ink); }
+  .tag span { font: 500 26px "NotoSC"; color: var(--green); }
+  #fly { position: absolute; inset: 0; }
+  .chip .ext { color: var(--md); }
+  .trail { position: absolute; height: 6px; border-radius: 3px; transform-origin: 100% 50%;
+    background: linear-gradient(90deg, rgba(var(--pink-a), 0), rgba(var(--pink-a), .55)); filter: blur(2px); }
+</style>
+</head>
+<body>
+<div id="stage"><div id="wall"></div></div>
+<div id="fly"></div>
+<div class="capzone"><span>字幕区</span></div>
+<script src="assets/img/shots.js"></script>
+<script>
+  // 墙：少而大的卡片，前后错开有纵深；远处的卡片虚一点。superpowers 离镜头最近
+  // [截图, 牌子上的名字, star, x, y, z, 宽]
+  const cards = [
+    ["gh-bun", "bun", "9.6 万", -1380, -560, -700, 760],
+    ["gh-uv", "uv", "9.1 万", 1250, 560, -760, 760],
+    ["gh-react", "react", "25.1 万", -880, -330, -160, 820],
+    ["gh-vscode", "vscode", "19.4 万", 60, -560, -300, 820],
+    ["gh-n8n", "n8n", "20.8 万", 980, -300, -200, 820],
+    ["gh-transformers", "transformers", "16.8 万", -1060, 420, -260, 820],
+    ["gh-nextjs", "next.js", "14.3 万", 1000, 300, -60, 820],
+    ["gh-ollama", "ollama", "18.4 万", -60, 560, -380, 820],
+    ["gh-superpowers", "superpowers", "30.1 万", -40, -20, 220, 900],
+  ];
+  const wall = document.getElementById("wall");
+  cards.forEach(([name, label, stars, x, y, z, W]) => {
+    const meta = SHOTS[name], s = W / 1440, H = Math.round(W * 0.66);
+    const card = document.createElement("div");
+    card.className = "shot";
+    const blur = Math.max(0, -z - 250) / 160;
+    Object.assign(card.style, { width: W + "px", height: H + "px", filter: blur ? `blur(${blur.toFixed(1)}px)` : "",
+      transform: `translate3d(${x - W / 2}px, ${y - H / 2}px, ${z}px)` });
+    // 让 AI 文件那几行落在卡片里：从第一行往上留一点
+    const ys = meta.rows.map((r) => r.y);
+    const off = name === "gh-superpowers" ? 0
+      : Math.max(0, Math.min(Math.min(...ys) - 140, Math.max(...ys) + 60 - H / s, meta.h - H / s));
+    card.innerHTML = `<img src="assets/img/${name}.jpg" style="width:${meta.w}px;transform:translateY(${-off * s}px) scale(${s})">`
+      + `<div class="tag"><b>${label}</b><span>★ ${stars}</span></div>`;
+    meta.rows.forEach((b) => {
+      const hl = document.createElement("div");
+      hl.className = "hl";
+      Object.assign(hl.style, { left: b.x * s + "px", top: (b.y - off) * s + "px", width: b.w * s + "px", height: b.h * s + "px" });
+      card.appendChild(hl);
+    });
+    if (name === "gh-superpowers") { // star 按钮（每个仓库页同一位置）
+      const st = document.createElement("div");
+      st.className = "hl";
+      Object.assign(st.style, { left: 1222 * s + "px", top: (188 - 72) * s + "px", width: 110 * s + "px", height: 36 * s + "px",
+        background: "rgba(23, 112, 47, .16)", boxShadow: "inset 0 0 0 2px #17702F, 0 0 26px rgba(23, 112, 47, .5)" });
+      card.appendChild(st);
+    }
+    wall.appendChild(card);
+  });
+
+  // 剥下来的文件名标签：位置、角度、尾迹长度（尾迹朝来处）
+  const chips = [
+    ["CLAUDE", ".md", 560, 330, -6, 260],
+    ["AGENTS", ".md", 1090, 280, 5, 220],
+    ["SKILL", ".md", 840, 470, -2, 300],
+    ["GEMINI", ".md", 1260, 520, 7, 180],
+    [".claude", "", 470, 560, 4, 200],
+    [".codex", "", 1180, 680, -5, 240],
+    [".pi", "", 400, 740, 6, 160],
+  ];
+  const fly = document.getElementById("fly");
+  chips.forEach(([base, ext, x, y, rot, tail]) => {
+    const t = document.createElement("div");
+    t.className = "trail";
+    // 尾迹右端贴在标签中心，朝「远离画面中心」的方向拖出去（标签是从墙上往中央飞的）
+    const cx = x + 110, cy = y + 36;
+    const ang = Math.atan2(cy - 520, cx - 960) * 180 / Math.PI;
+    Object.assign(t.style, { left: cx - tail + "px", top: cy - 3 + "px", width: tail + "px", transform: `rotate(${ang - 180}deg)` });
+    fly.appendChild(t);
+    const c = document.createElement("div");
+    c.className = "chip";
+    c.innerHTML = ext ? `${base}<span class="ext">${ext}</span>` : `<span class="ext">.</span>${base.slice(1)}`;
+    Object.assign(c.style, { left: x + "px", top: y + "px", transform: `rotate(${rot}deg)` });
+    fly.appendChild(c);
+  });
+</script>
+</body>
+</html>

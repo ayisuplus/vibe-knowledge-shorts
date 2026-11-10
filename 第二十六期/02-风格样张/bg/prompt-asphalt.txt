@@ -1,0 +1,9 @@
+Use your built-in image generation tool to create ONE photorealistic image and save it. Do not write code.
+
+Image: a camera placed almost on the asphalt of an empty race track at dusk, looking straight across the track (side-on, 90 degrees to the racing direction).
+- No cars, no people, no text, no numbers, no logos, no brand names, no sponsor boards anywhere.
+- The lower third of the frame is dark, fine-grained track asphalt, seen almost edge-on, with a thin white painted edge line running perfectly horizontal across the whole frame.
+- Beyond the track: a low concrete pit wall and an empty grandstand far away, heavily out of focus, warm floodlight bokeh.
+- Deep blue evening sky in the upper part, calm and dark, leaving plenty of empty space.
+- Horizon perfectly level. Cinematic, realistic, 50 mm lens, very shallow depth of field.
+- Landscape 16:9, as large as the tool allows.

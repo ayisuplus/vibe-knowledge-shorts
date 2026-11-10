@@ -1,0 +1,10 @@
+{
+  "name": "anxiety-3d",
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "hyperframes": "0.8.143",
+    "puppeteer-core": "25.13.0",
+    "sharp": "0.35.5"
+  }
+}

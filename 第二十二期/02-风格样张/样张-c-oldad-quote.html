@@ -1,0 +1,53 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><title>样张 C · 旧广告版面</title><style>
+@font-face{font-family:NotoSC;src:url(fonts/NotoSansSC-VF.ttf)}
+@font-face{font-family:NotoSerifSC;src:url(fonts/NotoSerifSC-VF.ttf)}
+@font-face{font-family:CascadiaMono;src:url(fonts/CascadiaMono.ttf)}
+@font-face{font-family:WenKai;src:url(fonts/LXGWWenKai-Regular.ttf)}
+*{box-sizing:border-box} html,body{margin:0;width:1920px;height:1080px;overflow:hidden}
+body{font-family:NotoSC,sans-serif}
+.frame{position:relative;width:1920px;height:1080px;overflow:hidden;isolation:isolate}
+.art{position:absolute;inset:0;width:1920px;height:1080px}
+.mono{font-family:CascadiaMono,NotoSC,monospace}
+.serif{font-family:NotoSerifSC,serif}
+.hand{font-family:WenKai,NotoSC,sans-serif}
+.abs{position:absolute;white-space:nowrap}
+.mode{position:absolute;left:76px;top:44px;font-size:30px;font-weight:600;letter-spacing:.1em;opacity:.85}
+.mark{position:absolute;right:80px;top:44px;font-size:30px;letter-spacing:.08em;opacity:.85}
+.note{position:absolute;top:800px;left:110px;width:1700px;text-align:center;font-size:38px;font-weight:500;line-height:1.3;white-space:nowrap}
+.caption{position:absolute;top:900px;left:110px;width:1700px;text-align:center;font-size:60px;line-height:1.3;font-weight:800;letter-spacing:.03em;white-space:nowrap;text-shadow:0 2px 12px #000c}
+/* 项目页：正文用色条，不放小字 */
+.page{position:absolute;overflow:hidden}
+.page .tt{font-size:58px;font-weight:800;letter-spacing:.02em}
+.page .bd{display:inline-block;margin-top:22px;padding:6px 24px;border-radius:30px;font-size:38px;font-weight:700}
+.page .ln{height:18px;border-radius:9px;margin-top:26px}
+.tagp{position:absolute;width:430px;height:232px;padding:34px 0 0 92px;font-weight:900;clip-path:polygon(16% 0,100% 0,100% 100%,16% 100%,0 50%)}
+.tagp .a{font-size:44px;line-height:1.2}
+.tagp .b{font-size:66px;line-height:1.25}
+.hole{position:absolute;width:30px;height:30px;border-radius:50%;left:30px;top:101px}
+/* 旧广告 */
+.ad{position:absolute;overflow:hidden}
+.ad .h{font-size:92px;line-height:1.05;font-weight:900;letter-spacing:-.01em}
+.ad .zh{font-size:44px;font-weight:700;margin-top:18px}
+.ad .word{display:inline-block;font-size:82px;font-weight:900;font-style:italic;margin-top:30px;padding:0 10px}
+.ad .ln{height:13px;margin-top:17px;opacity:.42}
+.nm{position:absolute;white-space:nowrap}
+.nm .who{font-size:40px;font-weight:700;letter-spacing:.06em}
+.nm .v{font-size:136px;font-weight:900;line-height:1.08;letter-spacing:-.01em}
+.nm .v small{font-size:68px;font-weight:800;margin-left:6px}
+
+.frame{color:#f4ead2;background:radial-gradient(ellipse at 50% 40%,#2a2319 0%,#191510 58%,#0c0a07 100%)}
+.mode,.mark{color:#c8b78f}.note{color:#dcceac}.caption{color:#fff8e8}
+.page{left:230px;top:140px;width:880px;height:600px;padding:50px 60px;background:linear-gradient(172deg,#efe2c3,#d3bf93);color:#20180b;transform:rotate(-1.4deg);box-shadow:0 34px 90px #000c;border:3px double #5c4522;outline:3px solid #5c4522;outline-offset:-16px}
+.page .tt{font-family:NotoSerifSC,serif;font-weight:900;font-size:62px}
+.page .bd{background:none;border:4px solid #1d5a3b;color:#1d5a3b;border-radius:6px}
+.tagp{left:830px;top:470px;background:#a81f14;color:#fff3dc;transform:rotate(-9deg);box-shadow:0 18px 40px #0009;font-family:NotoSerifSC,serif}
+.hole{background:#d3bf93}
+.ad{left:210px;top:130px;width:860px;height:630px;padding:50px 58px;background:linear-gradient(172deg,#efe2c3,#d3bf93);color:#20180b;transform:rotate(-1.2deg);box-shadow:0 34px 90px #000c;outline:3px solid #5c4522;outline-offset:-16px}
+.ad .word{color:#a81f14;border:6px solid #a81f14;border-radius:50px}.ad .ln{background:#3a2c15}
+.nm .who{color:#dcceac}.nm .v{color:#f4ead2;font-family:NotoSerifSC,serif}.nm.hot .v{color:#ff7a68;text-shadow:0 0 40px #e0301e55}
+</style></head><body><div class="frame"><svg class="art" viewBox="0 0 1920 1080"><defs>
+<filter id="soft" filterUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1080"><feGaussianBlur stdDeviation="18"/></filter>
+<filter id="soft2" filterUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1080"><feGaussianBlur stdDeviation="46"/></filter>
+<filter id="rough" filterUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1080"><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="2" seed="11" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="4"/></filter>
+<radialGradient id="ledCore"><stop offset="0" stop-color="#fff4ef"/><stop offset=".3" stop-color="#ff8a7c"/><stop offset="1" stop-color="#ff3b30"/></radialGradient>
+<radialGradient id="ledHalo"><stop offset="0" stop-color="#ff3b30" stop-opacity=".62"/><stop offset=".45" stop-color="#ff3b30" stop-opacity=".16"/><stop offset="1" stop-color="#ff3b30" stop-opacity="0"/></radialGradient></defs><g filter="url(#rough)"><g><defs><linearGradient id="case1690200" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#efe2c3"/><stop offset="1" stop-color="#c4af82"/></linearGradient></defs><circle cx="1690" cy="200" r="204.6" fill="url(#ledHalo)" opacity="0.65"/><ellipse cx="1690" cy="208.68" rx="64.48" ry="63.24" fill="#000" opacity=".55"/><circle cx="1690" cy="200" r="62" fill="url(#case1690200)" stroke="#4a3618" stroke-width="6"/><circle cx="1690" cy="200" r="45.88" fill="none" stroke="#4a3618" stroke-width="4" opacity=".85"/><path d="M1742.1 213.9 A53.94 53.94 0 0 1 1724.4 241.6" fill="none" stroke="#4a3618" stroke-width="5.58" stroke-linecap="round" opacity=".8"/><path d="M1704.1 252.1 A53.94 53.94 0 0 1 1671.2 250.6" fill="none" stroke="#4a3618" stroke-width="5.58" stroke-linecap="round" opacity=".8"/><path d="M1651.9 238.2 A53.94 53.94 0 0 1 1636.8 209.0" fill="none" stroke="#4a3618" stroke-width="5.58" stroke-linecap="round" opacity=".8"/><path d="M1637.9 186.1 A53.94 53.94 0 0 1 1655.6 158.4" fill="none" stroke="#4a3618" stroke-width="5.58" stroke-linecap="round" opacity=".8"/><path d="M1675.9 147.9 A53.94 53.94 0 0 1 1708.8 149.4" fill="none" stroke="#4a3618" stroke-width="5.58" stroke-linecap="round" opacity=".8"/><path d="M1728.1 161.8 A53.94 53.94 0 0 1 1743.2 191.0" fill="none" stroke="#4a3618" stroke-width="5.58" stroke-linecap="round" opacity=".8"/><circle cx="1690" cy="200" r="18.599999999999998" fill="#ff3b30"/><circle cx="1690" cy="200" r="14.879999999999999" fill="url(#ledCore)"/><path d="M1754.6 153.9 A79.36 79.36 0 0 1 1754.6 246.1" fill="none" stroke="#ff3b30" stroke-width="7" stroke-linecap="round" opacity="0.61"/><path d="M1625.4 246.1 A79.36 79.36 0 0 1 1625.4 153.9" fill="none" stroke="#ff3b30" stroke-width="7" stroke-linecap="round" opacity="0.61"/><path d="M1768.7 143.8 A96.72 96.72 0 0 1 1768.7 256.2" fill="none" stroke="#ff3b30" stroke-width="7" stroke-linecap="round" opacity="0.47"/><path d="M1611.3 256.2 A96.72 96.72 0 0 1 1611.3 143.8" fill="none" stroke="#ff3b30" stroke-width="7" stroke-linecap="round" opacity="0.47"/><path d="M1782.8 133.7 A114.08 114.08 0 0 1 1782.8 266.3" fill="none" stroke="#ff3b30" stroke-width="7" stroke-linecap="round" opacity="0.33"/><path d="M1597.2 266.3 A114.08 114.08 0 0 1 1597.2 133.7" fill="none" stroke="#ff3b30" stroke-width="7" stroke-linecap="round" opacity="0.33"/></g></g></svg><div class="ad serif"><div class="h">He Never<br>Knew Why</div><div class="zh">他始终不知道为什么</div><div class="word">halitosis</div><div class="ln" style="width:92%"></div><div class="ln" style="width:78%"></div></div><div class="nm" style="left:1120px;top:300px"><div class="who">广告预算 · 1922</div><div class="v">10<small>万美元</small></div></div><div class="nm hot" style="left:1120px;top:530px"><div class="who">广告预算 · 1928</div><div class="v">500<small>万美元</small></div></div><div class="mode">C · 旧广告版面</div><div class="mark">风格样张</div><div class="note" data-check="note">Marchand 1985 · 一款美国漱口水 · 图为示意</div><div class="caption" data-check="caption">一个旧词典里翻出来的词，让口臭有了学名。</div></div></body></html>

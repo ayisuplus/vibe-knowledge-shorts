@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "preferences": {
+    "aspect": {
+      "value": "1080x1920",
+      "confirmed_in": [
+        "distillation"
+      ],
+      "updated_at": "2026-10-10T17:25:35.282Z"
+    },
+    "language": {
+      "value": "zh-CN",
+      "confirmed_in": [
+        "distillation"
+      ],
+      "updated_at": "2026-10-10T17:25:35.350Z"
+    },
+    "flow": {
+      "value": "automation",
+      "confirmed_in": [
+        "distillation"
+      ],
+      "updated_at": "2026-10-10T17:25:35.406Z"
+    },
+    "storyboard": {
+      "value": "no",
+      "confirmed_in": [
+        "distillation"
+      ],
+      "updated_at": "2026-10-10T17:25:35.461Z"
+    }
+  },
+  "sightings": {}
+}

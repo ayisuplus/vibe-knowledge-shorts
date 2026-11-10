@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><link rel="stylesheet" href="style.css">
+<style>
+  /* S0 11.5s：手稿贴在玻璃上，红印章刚落下 */
+  .bg { background-image: url("gen/factory-glass.jpg"); filter: brightness(.62) contrast(1.08) saturate(.85); transform: scale(1.06); transform-origin: 30% 60%; }
+  .sheet.hook { left: 860px; top: 150px; width: 860px; height: 560px; transform: rotate(1.6deg); padding: 70px 74px 0; box-sizing: border-box; }
+  .sheet.hook .q { font-size: 52px; }
+  .sheet.hook .seal { right: 70px; bottom: 58px; font-size: 40px; }
+  .sheet.hook .src { margin-top: 26px; font-size: 22px; }
+  /* 纸贴在玻璃上：四角一点胶带 */
+  .tape { position: absolute; width: 120px; height: 34px; background: rgba(235,228,210,.55); box-shadow: 0 2px 6px rgba(0,0,0,.2); }
+  .glare { position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(115deg, rgba(255,255,255,0) 40%, rgba(255,255,255,.07) 48%, rgba(255,255,255,0) 56%); }
+</style></head>
+<body><div class="stage">
+  <svg width="0" height="0" style="position:absolute"><filter id="rough"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3"/><feComponentTransfer><feFuncA type="discrete" tableValues="0 1 1 1 1 1 0.8 1"/></feComponentTransfer></filter></svg>
+  <div class="bg"></div>
+  <div class="sheet hook">
+    <div class="tape" style="left:-30px;top:18px;transform:rotate(-38deg)"></div>
+    <div class="tape" style="right:-30px;top:18px;transform:rotate(38deg)"></div>
+    <div class="q">“工人不再是生产过程的<br>主要作用者，而是<br><b>站在生产过程的旁边</b>。”</div>
+    <div class="src">《政治经济学批判（1857—1858 年手稿）》</div>
+    <div class="seal">马克思 · 1857</div>
+  </div>
+  <div class="glare"></div>
+  <div class="vignette"></div><div class="grain"></div>
+  <div class="cap"><span class="t">机器造出来的东西，归谁？</span></div>
+  <div class="capnote">字幕：交付时为 SRT，此处仅预览</div>
+</div></body></html>

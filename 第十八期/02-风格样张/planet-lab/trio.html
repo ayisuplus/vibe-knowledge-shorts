@@ -1,0 +1,63 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Claude trio test</title>
+<style>html,body{margin:0;background:#050510;overflow:hidden}canvas{display:block}</style>
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head><body>
+<script type="module">
+// 诗体三星试片：Haiku（3 行）< Sonnet（14 行）< Opus（大型作品），星球大小按诗的长短排；镜头侧向掠过
+// ?haiku=…&sonnet=…&opus=…&t=秒
+import * as THREE from 'three';
+const q = new URLSearchParams(location.search);
+const W = 1920, H = 1080;
+const r = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+r.setSize(W, H); r.setPixelRatio(1);
+r.outputColorSpace = THREE.SRGBColorSpace;
+r.toneMapping = THREE.NeutralToneMapping; r.toneMappingExposure = 1.0;
+document.body.appendChild(r.domElement);
+const scene = new THREE.Scene();
+const cam = new THREE.PerspectiveCamera(32, W / H, 0.1, 200);
+
+let s = 41; const rnd = () => (s = (s * 16807) % 2147483647) / 2147483647;
+const sp = []; for (let i = 0; i < 2500; i++) { const a = rnd() * 6.283, b = Math.acos(2 * rnd() - 1), R = 90; sp.push(R * Math.sin(b) * Math.cos(a), R * Math.cos(b), R * Math.sin(b) * Math.sin(a)); }
+const sg = new THREE.BufferGeometry(); sg.setAttribute('position', new THREE.Float32BufferAttribute(sp, 3));
+scene.add(new THREE.Points(sg, new THREE.PointsMaterial({ color: 0xc8cde0, size: 0.12 })));
+
+const SUN = new THREE.Vector3(-6, 5, 24);
+const sun = new THREE.DirectionalLight(0xfff4ea, 3.3); sun.position.copy(SUN); scene.add(sun);
+scene.add(new THREE.AmbientLight(0x30324a, 0.22));
+const sunDir = SUN.clone().normalize();
+const loader = new THREE.TextureLoader();
+const tex = async (f) => { const t = await loader.loadAsync(f); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 16; return t; };
+const vs = 'varying vec3 n;varying vec3 v;varying vec3 wn;void main(){n=normalize(normalMatrix*normal);wn=normalize(mat3(modelMatrix)*normal);vec4 mv=modelViewMatrix*vec4(position,1.);v=normalize(-mv.xyz);gl_Position=projectionMatrix*mv;}';
+const atmo = (R, col) => new THREE.Mesh(new THREE.SphereGeometry(R * 1.09, 128, 64), new THREE.ShaderMaterial({
+  side: THREE.BackSide, transparent: true, blending: THREE.AdditiveBlending, depthWrite: false,
+  uniforms: { c: { value: new THREE.Color(col) }, s: { value: sunDir } }, vertexShader: vs,
+  fragmentShader: 'uniform vec3 c;uniform vec3 s;varying vec3 n;varying vec3 v;varying vec3 wn;void main(){float d=clamp(-dot(n,v),0.,1.);float f=pow(smoothstep(0.,.42,d),2.)*(1.-smoothstep(.42,.55,d));float day=smoothstep(-.35,.45,dot(wn,s));gl_FragColor=vec4(c*f*day*1.1,1.);}'
+}));
+// 大小：按诗的长短单调递增（只表达「长短」顺序，不代表模型参数量——闭源参数未公开，见调研档案禁说）
+const PLANETS = [
+  { key: 'haiku', R: 0.42, pos: [-3.6, 0.15, 0], col: 0xf3e6d0, spin: 0.30 },
+  { key: 'sonnet', R: 0.80, pos: [-1.0, 0, -0.6], col: 0xf0b48c, spin: 0.22 },
+  { key: 'opus', R: 1.45, pos: [2.9, -0.15, -1.6], col: 0xe8946c, spin: 0.15 },
+];
+const meshes = [];
+for (const p of PLANETS) {
+  const m = new THREE.Mesh(new THREE.SphereGeometry(p.R, 256, 128),
+    new THREE.MeshStandardMaterial({ map: await tex(q.get(p.key) || `claude/${p.key}-fixed.png`), roughness: 0.85, metalness: 0 }));
+  m.position.set(...p.pos); m.rotation.x = 0.12; scene.add(m);
+  const a = atmo(p.R, p.col); a.position.set(...p.pos); scene.add(a);
+  meshes.push(m);
+}
+const camPos = new THREE.Vector3(), look = new THREE.Vector3();
+window.setState = (deg, t) => {
+  PLANETS.forEach((p, i) => { meshes[i].rotation.y = 0.5 + t * p.spin; });
+  // 镜头：从 Haiku 一侧平移到 Opus 一侧，始终把三颗都放进画面
+  const e = Math.min(t / 10, 1), u = e * e * (3 - 2 * e);
+  camPos.set(-2.2 + u * 2.6, 0.9, 8.6 - u * 0.6); look.set(-0.7 + u * 1.6, 0, -0.6);
+  cam.position.copy(camPos); cam.lookAt(look);
+  r.render(scene, cam);
+};
+window.setState(0, +(q.get('t') ?? 0));
+window.__ready = true;
+</script>
+</body></html>
